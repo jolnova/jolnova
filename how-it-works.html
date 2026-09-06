@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Jolnova Turns Streams Into Vertical Clips</title>
+<meta name="description" content="Add a source, set the hours it may work, and Jolnova records, finds candidate moments, captions them and hands you a review queue. Here is each step.">
+<link rel="canonical" href="https://jolnova.com/how-it-works.html">
+<link rel="alternate" hreflang="en" href="https://jolnova.com/how-it-works.html">
+<link rel="alternate" hreflang="tr" href="https://jolnova.com/how-it-works.html?lang=tr"><link rel="alternate" hreflang="de" href="https://jolnova.com/how-it-works.html?lang=de"><link rel="alternate" hreflang="fr" href="https://jolnova.com/how-it-works.html?lang=fr"><link rel="alternate" hreflang="es" href="https://jolnova.com/how-it-works.html?lang=es">
+<link rel="alternate" hreflang="x-default" href="https://jolnova.com/how-it-works.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jolnova">
+<meta property="og:title" content="How Jolnova Turns Streams Into Vertical Clips">
+<meta property="og:description" content="Add a source, set the hours it may work, and Jolnova records, finds candidate moments, captions them and hands you a review queue. Here is each step.">
+<meta property="og:url" content="https://jolnova.com/how-it-works.html">
+<meta property="og:image" content="https://jolnova.com/images/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Jolnova Turns Streams Into Vertical Clips">
+<meta name="twitter:description" content="Add a source, set the hours it may work, and Jolnova records, finds candidate moments, captions them and hands you a review queue. Here is each step.">
+<meta name="twitter:image" content="https://jolnova.com/images/og-cover.png">
+<meta name="theme-color" content="#05070B">
+<link rel="icon" type="image/png" href="images/favicon.png?v=6b02d18c4f">
+<link rel="preload" as="image" href="images/mock/dashboard.png">
+<link rel="stylesheet" href="site.css?v=6b02d18c4f">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=6b02d18c4f" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="how-it-works.html" class=on>How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
+  <div class="head-cta">
+   <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span id="langName">English</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"/><circle cx="24" cy="22.5" r="10" fill="#fff"/><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"/><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"/></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"/><rect y="15" width="60" height="15" fill="#DD0000"/><rect y="30" width="60" height="15" fill="#FFCE00"/></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"/><rect x="20" width="20" height="45" fill="#fff"/><rect x="40" width="20" height="45" fill="#EF4135"/></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"/><rect y="11.25" width="60" height="22.5" fill="#F1BF00"/></svg></i><span>Español</span></button></div></div>
+   <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+   <a href="download.html" class="btn btn-primary btn-sm">↓ Download</a>
+   <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="rjMenu()"><span></span></button>
+  </div>
+ </div>
+</header>
+<div class="mobnav" id="mobnav"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a>
+ <a href="login.html" class="btn btn-secondary">Sign in</a>
+ <a href="download.html" class="btn btn-primary">↓ Download for Windows</a>
+</div>
+<main id="main">
+<section class="section">
+ <div class="wrap">
+  <div class="sec-head">
+   <span class="eyebrow">HOW IT WORKS</span>
+   <h1 class="display" style="font-size:clamp(38px,4.6vw,62px)">You add the source. Jolnova handles the repetitive work.</h1>
+   <p class="body-lg">Live sources are tracked in the background, links and local files are processed on demand, and everything ends up in one review queue.</p>
+  </div>
+  <div class="strip" style="justify-content:flex-start">
+   <span class="strip-i">Source</span><span class="strip-i">Schedule</span><span class="strip-i">Capture</span><span class="strip-i">Detect</span>
+   <span class="strip-i">Format</span><span class="strip-i">Review</span><span class="strip-i">Export</span>
+  </div>
+ </div>
+</section>
+
+<section class="section-sm section-line"><div class="wrap">
+
+ <article class="story">
+  <div class="story-copy"><span class="eyebrow">STEP 01</span><h2 class="h-md">Add or choose a source</h2>
+   <p class="body">Paste a Kick, Twitch or TikTok channel to track it continuously, drop in a YouTube or VOD link for a one-off job, or pick a video that is already on your computer.</p>
+   <ul><li>Kick channel — live tracking</li><li>Twitch channel — live tracking</li>
+    <li>TikTok account — live tracking</li>
+    <li>YouTube, Kick VOD and Twitch VOD links</li><li>Local MP4, MKV, MOV and WEBM files</li></ul>
+   <div class="story-note">Local files are read in place. Jolnova never moves or deletes your originals.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Automation</span></div>
+   <img src="images/mock/automation.png" alt="Automation page with the three-step source setup" loading="lazy" width="1360" height="720"></div>
+ </article>
+
+ <article class="story rev">
+  <div class="story-copy"><span class="eyebrow">STEP 02</span><h2 class="h-md">Set the hours it may work</h2>
+   <p class="body">Streamers go live at certain hours, so there is no point tracking an empty channel all week. Give Jolnova a weekly plan and it stays idle outside it — or leave the schedule off and it tracks around the clock.</p>
+   <ul><li>Weekly time ranges, several days per range</li>
+    <li>Ranges that pass midnight, like 20:00 to 02:00</li>
+    <li>One-off exceptions for a single date</li>
+    <li>A live recording is roughly 5.6 GB per stream per hour, so this is real disk saved</li></ul>
+   <div class="story-note">It is a local timer. Jolnova follows the schedule while your computer is on and the app is running — nothing runs in the cloud.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Run schedule</span></div>
+   <img src="images/mock/schedule.png" alt="Run schedule with a weekly plan and one-off exceptions" loading="lazy" width="1360" height="620"></div>
+ </article>
+
+ <article class="story">
+  <div class="story-copy"><span class="eyebrow">STEP 03</span><h2 class="h-md">Capture or process the video</h2>
+   <p class="body">Tracked channels are checked on a schedule. When one goes live, Jolnova starts recording without asking. Links and files skip that step and go straight into processing.</p>
+   <ul><li>Recording starts automatically for live sources</li>
+    <li>Several streams at once — 1 on Starter, 2 on Creator, 4 on Pro</li>
+    <li>Links are downloaded, then processed</li>
+    <li>Local files are read directly from disk</li></ul></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Live Tracking</span></div>
+   <img src="images/mock/live.png" alt="Live tracking view showing tracked sources and recording state" loading="lazy" width="1360" height="620"></div>
+ </article>
+
+ <article class="story rev">
+  <div class="story-copy"><span class="eyebrow">STEP 04</span><h2 class="h-md">Find the candidate moments</h2>
+   <p class="body">Jolnova reads three signals from the recording — how dense the chat gets, where the audio jumps, and what is actually being said — and cuts a candidate where they line up. All three run on your own machine and cost nothing per clip.</p>
+   <ul><li>Chat density against the calm baseline</li><li>Audio spikes: laughter, shouting, sudden loudness</li><li>Speech content from the transcript</li>
+    <li>Sensitivity is a setting: Few, Balanced or Many</li></ul>
+   <div class="story-note">No clip carries an AI score or a quality grade. Every candidate goes to the review queue and you decide what leaves it.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Review Queue</span></div>
+   <img src="images/mock/review.png" alt="Review queue with generated clips ready for approval" loading="lazy" width="1360" height="640"></div>
+ </article>
+
+ <article class="story">
+  <div class="story-copy"><span class="eyebrow">STEP 05</span><h2 class="h-md">Prepare vertical output</h2>
+   <p class="body">Each moment is cut and reframed to 9:16 using the layout you picked for that streamer — or the one saved in a clip preset.</p>
+   <ul><li>Auto — decide per stream</li><li>Game — camera on top, gameplay below</li>
+    <li>IRL — full frame on a blurred background</li>
+    <li>Camera corner — large content, camera in the corner</li>
+    <li>Full screen — use the source as it is</li></ul></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip presets</span></div>
+   <img src="images/mock/presets.png" alt="Clip presets with layout options and saved preset cards" loading="lazy" width="1360" height="700"></div>
+ </article>
+
+ <article class="story rev">
+  <div class="story-copy"><span class="eyebrow">STEP 06</span><h2 class="h-md">Caption it — and correct what was misheard</h2>
+   <p class="body">Speech is transcribed and burned into the video in the same encode. Transcription is never perfect, so every line stays editable: fix the wording, or delete a line you do not want on screen.</p>
+   <ul><li>Transcribed, burned-in subtitles</li>
+    <li>Edit or delete any subtitle line — on every plan</li>
+    <li>Timings stay exactly as transcribed, only the words change</li>
+    <li>Font, size, colour, outline, placement and background box on Creator and Pro</li></ul>
+   <div class="story-note">Saving re-renders the clip once from a clean master, so correcting the text twice does not stack quality loss.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Subtitle text</span></div>
+   <img src="images/mock/captions.png" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1000" height="640"></div>
+ </article>
+
+ <article class="story">
+  <div class="story-copy"><span class="eyebrow">STEP 07</span><h2 class="h-md">Write the clip metadata</h2>
+   <p class="body">When you approve a clip, a title is written from what actually happens in it — so you are not renaming files by hand. A description and hashtags come with it.</p>
+   <ul><li>Titles written on approval</li>
+    <li>Description and hashtag suggestions</li>
+    <li>Optional text or image overlay you can add yourself</li></ul>
+   <div class="story-note">The transcript and a short chat summary are the only things that leave your computer. Your video is never uploaded.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip detail</span></div>
+   <img src="images/mock/player.png" alt="Clip detail with generated title, description and hashtags" loading="lazy" width="1000" height="640"></div>
+ </article>
+
+ <article class="story rev">
+  <div class="story-copy"><span class="eyebrow">STEP 08</span><h2 class="h-md">Fine-tune the clip yourself</h2>
+   <p class="body">Before you approve anything you can cut the ends, drop a logo on the frame or write a line across the video. Every change is applied to the original clip, so editing never costs you quality.</p>
+   <ul><li>Trim the start and the end with two handles</li>
+    <li>Pull up to seven extra seconds back from the recording on Creator and Pro</li>
+    <li>Place an image anywhere and resize it</li>
+    <li>Add text with position, size, colour and background</li>
+    <li>Remove any effect and get the clean clip back</li></ul></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Trim clip</span></div>
+   <img src="images/mock/trim.png" alt="Trim editor with start and end handles over the clip timeline" loading="lazy" width="900" height="640"></div>
+ </article>
+
+ <article class="story">
+  <div class="story-copy"><span class="eyebrow">STEP 09</span><h2 class="h-md">Review and export</h2>
+   <p class="body">Open the review queue, work through the candidates, and approve the ones worth posting. Approved clips download in HD to whichever folder you choose.</p>
+   <ul><li>Approve or reject in one click</li><li>Undo a rejection at any time</li>
+    <li>Watermark on or off on every paid plan</li>
+    <li>Download one clip or a whole selection</li><li>Choose the destination folder yourself</li></ul>
+   <div class="story-note">Download the finished clip, or connect a YouTube account and schedule it on the calendar. Nothing goes out that you did not approve yourself.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clips library</span></div>
+   <img src="images/mock/clips.png" alt="Clips library with approved, published and rejected tabs" loading="lazy" width="1360" height="620"></div>
+ </article>
+
+</div></section>
+
+<section class="section section-line"><div class="wrap">
+ <div class="sec-head"><span class="eyebrow">THE EDITOR</span><h2 class="h-lg">The four tools you actually use.</h2>
+  <p class="body-lg">They sit on the clip itself — open a clip, change it, approve it. There is no separate editing project to manage.</p></div>
+ <div class="grid-2">
+  <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Subtitle text</span></div>
+    <img src="images/mock/captions.png" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1000" height="640"></div>
+   <div class="h-row mt-m"><h3 class="h-sm">Subtitle text</h3><span class="badge badge-lime">EVERY PLAN</span></div>
+   <p>Fix a misheard word or drop a line. Timings stay exactly as transcribed.</p></article>
+  <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Subtitle style</span></div>
+    <img src="images/mock/capstyle.png" alt="Subtitle style panel with font, size, colour, outline and placement controls" loading="lazy" width="1000" height="640"></div>
+   <div class="h-row mt-m"><h3 class="h-sm">Subtitle style</h3><span class="badge badge-plan">CREATOR &amp; PRO</span></div>
+   <p>Font, size, colour, outline, placement and an optional background box.</p></article>
+ </div>
+ <div class="grid-3" style="margin-top:22px">
+  <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Trim</span></div>
+    <img src="images/mock/trim.png" alt="Trim editor with start and end handles" loading="lazy" width="900" height="640"></div>
+   <h3 class="mt-s">Trim</h3><p>Drag the two handles until the clip starts and ends exactly where the moment does.</p></article>
+  <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Image</span></div>
+    <img src="images/mock/image.png" alt="Image overlay being dragged and resized on the video" loading="lazy" width="900" height="640"></div>
+   <h3 class="mt-s">Image overlay</h3><p>Drag a logo or badge onto the frame, resize it from the corner, apply.</p></article>
+  <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Text</span></div>
+    <img src="images/mock/text.png" alt="Text overlay editor with position, size and colour controls" loading="lazy" width="900" height="640"></div>
+   <h3 class="mt-s">Text overlay</h3><p>Write a hook, choose where it sits and whether it gets a box behind it.</p></article>
+ </div>
+ <div class="story-note" style="margin-top:26px">Effects are always re-applied from the untouched original, so adding and removing them never degrades the video.</div>
+</div></section>
+
+<section class="section"><div class="wrap"><div class="cta">
+ <h2 class="h-lg">Ready to build your clip workflow?</h2>
+ <p class="body-lg">Install Jolnova, add one source, and let the first clips arrive on their own.</p>
+ <div class="cta-btns"><a href="download.html" class="btn btn-primary">↓ Download for Windows</a>
+  <a href="features.html" class="btn btn-secondary">Browse the features</a></div>
+ <p class="caption mt-m">The free trial runs for 3 days or 50 clips, whichever comes first, with the Jolnova watermark and 720p export.</p>
+</div></div></section>
+</main><footer class="site-footer">
+ <div class="wrap">
+  <div class="foot-grid">
+   <div class="foot-brand">
+    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=6b02d18c4f" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <p>Automatic stream clipping for Windows. Track your sources, let Jolnova prepare vertical clips, and review what is worth posting.</p>
+    <div class="foot-os"><span class="badge badge-neutral">Windows desktop app</span></div>
+   </div>
+   <div class="foot-col"><h4>PRODUCT</h4>
+    <a href="features.html">Features</a><a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a><a href="download.html">Download</a></div>
+   <div class="foot-col"><h4>RESOURCES</h4>
+    <a href="faq.html">FAQ</a><a href="login.html">Sign in</a><a href="signup.html">Create account</a><a href="support.html">Support</a></div>
+   <div class="foot-col"><h4>LEGAL</h4>
+    <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  </div>
+  <div class="foot-bot">
+   <span>© 2026 Jolnova. All rights reserved.</span>
+   <span>Jolnova for Windows 10 and 11</span>
+  </div>
+ </div>
+</footer>
+<script src="lang-de.js?v=6b02d18c4f"></script><script src="lang-fr.js?v=6b02d18c4f"></script><script src="lang-es.js?v=6b02d18c4f"></script><script src="lang.js?v=6b02d18c4f"></script>
+<script>
+function rjMenu(){var m=document.getElementById('mobnav'),b=document.querySelector('.burger');
+ var on=m.classList.toggle('on');document.body.classList.toggle('navopen',on);
+ b.setAttribute('aria-expanded',on?'true':'false');
+ if(on){var f=m.querySelector('a');if(f)f.focus();}}
+document.addEventListener('keydown',function(e){
+ if(e.key==='Escape'){var m=document.getElementById('mobnav');
+  if(m&&m.classList.contains('on')){rjMenu();document.querySelector('.burger').focus();}}});
+</script>
+</body></html>

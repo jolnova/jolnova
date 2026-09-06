@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Set Your Password — Jolnova</title>
+<meta name="description" content="Set or reset the password for your Jolnova account.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="images/favicon.png?v=6b02d18c4f">
+<link rel="stylesheet" href="site.css?v=6b02d18c4f">
+</head>
+<body>
+
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=6b02d18c4f" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
+  <div class="head-cta">
+   <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span id="langName">English</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"/><circle cx="24" cy="22.5" r="10" fill="#fff"/><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"/><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"/></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"/><rect y="15" width="60" height="15" fill="#DD0000"/><rect y="30" width="60" height="15" fill="#FFCE00"/></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"/><rect x="20" width="20" height="45" fill="#fff"/><rect x="40" width="20" height="45" fill="#EF4135"/></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"/><rect y="11.25" width="60" height="22.5" fill="#F1BF00"/></svg></i><span>Español</span></button></div></div>
+   <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+   <a href="download.html" class="btn btn-primary btn-sm">↓ Download</a>
+   <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="rjMenu()"><span></span></button>
+  </div>
+ </div>
+</header>
+
+<main>
+  <div class="auth">
+
+    <!-- ADIM 1: e-posta iste -->
+    <div class="authcard" id="step-ask">
+      <h1>Set your password</h1>
+      <div class="sub">We'll email you a link. It works whether you're resetting a forgotten password or setting one for the first time.</div>
+      <div id="msg1" class="amsg" style="display:none"></div>
+      <form onsubmit="sendLink(event)">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="ornek@mail.com" autocomplete="email" required>
+        </div>
+        <button id="btn1" type="submit" class="btn btn-primary btn-block" style="padding:14px">Send link</button>
+      </form>
+      <div class="amsg" style="display:block;background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.10);margin-top:16px">
+        <!-- Her cumle KENDI dugumunde: dil sozlugu tam metin dugumu arar,
+             cumleyi <b> ile bolersek TR karsiligi bulunamaz. -->
+        <b>Signed up with Google?</b><br>
+        <span>Then your account has no Jolnova password yet — a Google password is not one.</span><br>
+        <span>Set one here and you'll have a second way in, alongside the Google button.</span>
+      </div>
+      <div class="authfoot"><a href="login.html">Back to sign in</a></div>
+    </div>
+
+    <!-- ADIM 2: yeni sifre belirle -->
+    <div class="authcard" id="step-new" style="display:none">
+      <h1>Choose a new password</h1>
+      <div class="sub">Almost done — pick a password and you're in.</div>
+      <div id="msg2" class="amsg" style="display:none"></div>
+      <form onsubmit="savePass(event)">
+        <div class="field">
+          <label for="p1">New password</label>
+          <input id="p1" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required>
+        </div>
+        <div class="field">
+          <label for="p2">New password again</label>
+          <input id="p2" type="password" placeholder="••••••••" autocomplete="new-password" minlength="8" required>
+        </div>
+        <button id="btn2" type="submit" class="btn btn-primary btn-block" style="padding:14px">Save password</button>
+      </form>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="foot-grid">
+   <div class="foot-brand">
+    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=6b02d18c4f" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <p>Automatic stream clipping for Windows. Track your sources, let Jolnova prepare vertical clips, and review what is worth posting.</p>
+    <div class="foot-os"><span class="badge badge-neutral">Windows desktop app</span></div>
+   </div>
+   <div class="foot-col"><h4>PRODUCT</h4>
+    <a href="features.html">Features</a><a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a><a href="download.html">Download</a></div>
+   <div class="foot-col"><h4>RESOURCES</h4>
+    <a href="faq.html">FAQ</a><a href="login.html">Sign in</a><a href="signup.html">Create account</a><a href="support.html">Support</a></div>
+   <div class="foot-col"><h4>LEGAL</h4>
+    <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  </div>
+  <div class="foot-bot">
+   <span>© 2026 Jolnova. All rights reserved.</span>
+   <span>Jolnova for Windows 10 and 11</span>
+  </div>
+ </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.3/dist/umd/supabase.js" integrity="sha384-qafw21c/iciq0VXsi9FzkfoQv5I/V0iqE4lSNcKXPnW9/UTJLnv5CcN4FHxVLnKg" crossorigin="anonymous"></script>
+<script src="supabase.js"></script>
+<script>
+function say(id,t,ok){const m=document.getElementById(id);m.textContent=t;m.className='amsg '+(ok?'ok':'err');m.style.display='block';
+  /* Dil yuruyusu sayfa yuklenirken bir kez calisir; sonradan yazilan mesaj
+     TR secilijse cevrilmeden kalirdi. */
+  if(window.rjApplyLang)rjApplyLang();}
+
+// Kurtarma baglantisiyla gelindiyse dogrudan "yeni sifre" adimina gec.
+function showNewStep(){
+  document.getElementById('step-ask').style.display='none';
+  document.getElementById('step-new').style.display='';
+}
+if(location.hash.indexOf('type=recovery')>-1) showNewStep();
+sb.auth.onAuthStateChange((ev)=>{ if(ev==='PASSWORD_RECOVERY') showNewStep(); });
+
+// Baglanti hatali/suresi dolmus geldiyse kullaniciyi bos ekranda birakma.
+if(location.hash.indexOf('error')>-1){
+  const p=new URLSearchParams(location.hash.slice(1));
+  say('msg1', (p.get('error_description')||'That link is invalid or has expired.')+' Request a new one below.', false);
+}
+
+async function sendLink(e){
+  e.preventDefault();
+  const b=document.getElementById('btn1'); b.disabled=true; b.textContent='Sending…';
+  const base=location.href.replace(/[#?].*$/,'').replace(/[^/]*$/,'');
+  const {error}=await sb.auth.resetPasswordForEmail(document.getElementById('email').value.trim(),
+                                                    {redirectTo:base+'reset.html'});
+  b.disabled=false; b.textContent='Send link';
+  // Hesabin var olup olmadigini ele vermemek icin sonuc her durumda ayni.
+  if(error && error.status!==422) say('msg1',error.message,false);
+  else say('msg1','If an account exists for that email, the link is on its way. Check your inbox and spam folder.',true);
+}
+
+async function savePass(e){
+  e.preventDefault();
+  const p1=document.getElementById('p1').value, p2=document.getElementById('p2').value;
+  if(p1!==p2){say('msg2','The two passwords do not match.',false);return;}
+  const b=document.getElementById('btn2'); b.disabled=true; b.textContent='Saving…';
+  const {data:{session}}=await sb.auth.getSession();
+  if(!session){b.disabled=false;b.textContent='Save password';
+    say('msg2','This link has expired. Request a new one from the sign-in page.',false);return;}
+  const {error}=await sb.auth.updateUser({password:p1});
+  if(error){b.disabled=false;b.textContent='Save password';say('msg2',error.message,false);return;}
+  say('msg2','Password saved. Taking you to your account…',true);
+  setTimeout(()=>{location.href='account.html';},1200);
+}
+</script>
+<script src="lang-de.js?v=6b02d18c4f"></script><script src="lang-fr.js?v=6b02d18c4f"></script><script src="lang-es.js?v=6b02d18c4f"></script><script src="lang.js?v=6b02d18c4f"></script>
+</body>
+</html>

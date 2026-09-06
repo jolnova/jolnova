@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Account — Jolnova</title>
+<meta name="description" content="Your Jolnova account: subscription status, app download and settings.">
+<link rel="icon" type="image/png" href="images/favicon.png?v=6b02d18c4f">
+<link rel="stylesheet" href="site.css?v=6b02d18c4f">
+</head>
+<body>
+
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=6b02d18c4f" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
+  <div class="head-cta">
+   <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span id="langName">English</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"/><circle cx="24" cy="22.5" r="10" fill="#fff"/><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"/><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"/></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"/><rect y="15" width="60" height="15" fill="#DD0000"/><rect y="30" width="60" height="15" fill="#FFCE00"/></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"/><rect x="20" width="20" height="45" fill="#fff"/><rect x="40" width="20" height="45" fill="#EF4135"/></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"/><rect y="11.25" width="60" height="22.5" fill="#F1BF00"/></svg></i><span>Español</span></button></div></div>
+   <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+   <a href="download.html" class="btn btn-primary btn-sm">↓ Download</a>
+   <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="rjMenu()"><span></span></button>
+  </div>
+ </div>
+</header>
+
+<main class="wrap" style="max-width:820px">
+  <div class="pagehead" style="text-align:left;margin:0">
+    <span class="eyebrow">My Account</span>
+    <h1 style="font-size:32px" id="hello">Welcome 👋</h1>
+    <p id="mailrow" style="font-size:15px"></p>
+  </div>
+
+  <section style="padding:34px 0">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div class="ch" style="border-radius:16px">
+        <div class="eyebrow">Subscription</div>
+        <div id="sub-state" style="font-size:22px;font-weight:800;margin:12px 0 6px">— loading…</div>
+        <div id="sub-note" style="color:var(--dim);font-size:14px;line-height:1.5">Subscription system is being connected.</div>
+        <div style="margin-top:16px"><a href="pricing.html" class="btn btn-primary" style="padding:11px 18px">Plans &amp; pricing</a></div>
+      </div>
+      <div class="ch" style="border-radius:16px">
+        <div class="eyebrow">App</div>
+        <div style="font-size:22px;font-weight:800;margin:12px 0 6px">Jolnova for Windows</div>
+        <div style="color:var(--dim);font-size:14px;line-height:1.5">Download it, sign in with this account and start making clips.</div>
+        <div style="margin-top:16px"><a href="download.html" class="btn btn-secondary" style="padding:11px 18px">⬇ Download the app</a></div>
+      </div>
+    </div>
+  </section>
+
+  <div style="color:var(--dim2);font-size:13px">Account: <span id="uid" class="mono"></span></div>
+</main>
+
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="foot-grid">
+   <div class="foot-brand">
+    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=6b02d18c4f" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <p>Automatic stream clipping for Windows. Track your sources, let Jolnova prepare vertical clips, and review what is worth posting.</p>
+    <div class="foot-os"><span class="badge badge-neutral">Windows desktop app</span></div>
+   </div>
+   <div class="foot-col"><h4>PRODUCT</h4>
+    <a href="features.html">Features</a><a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a><a href="download.html">Download</a></div>
+   <div class="foot-col"><h4>RESOURCES</h4>
+    <a href="faq.html">FAQ</a><a href="login.html">Sign in</a><a href="signup.html">Create account</a><a href="support.html">Support</a></div>
+   <div class="foot-col"><h4>LEGAL</h4>
+    <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  </div>
+  <div class="foot-bot">
+   <span>© 2026 Jolnova. All rights reserved.</span>
+   <span>Jolnova for Windows 10 and 11</span>
+  </div>
+ </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.3/dist/umd/supabase.js" integrity="sha384-qafw21c/iciq0VXsi9FzkfoQv5I/V0iqE4lSNcKXPnW9/UTJLnv5CcN4FHxVLnKg" crossorigin="anonymous"></script>
+<script src="supabase.js"></script>
+<script>
+async function logout(){
+  // signOut() sunucu yanitini bekler; aginin yavas oldugu anda cikis kilitlenmis
+  // gibi gorunuyordu. Yerel oturumu her kosulda temizleyip en fazla 1.5sn bekle.
+  try{ await Promise.race([sb.auth.signOut(), new Promise(r=>setTimeout(r,1500))]); }catch(e){}
+  try{ Object.keys(localStorage).filter(k=>k.indexOf('sb-')===0).forEach(k=>localStorage.removeItem(k)); }catch(e){}
+  location.href='login.html';
+}
+(async()=>{
+  const {data}=await sb.auth.getSession();
+  if(!data.session){location.href='login.html';return;}
+  const u=data.session.user;
+  const name=(u.user_metadata&&u.user_metadata.full_name)||'';
+  document.getElementById('hello').textContent='Welcome'+(name?', '+name:'')+' 👋';
+  document.getElementById('mailrow').textContent=u.email;
+  document.getElementById('uid').textContent=u.id;
+  // subscription: real status once the table is connected
+  document.getElementById('sub-state').textContent='No subscription';
+  document.getElementById('sub-note').textContent="You do not have an active subscription yet. Starter, Creator and Pro each come in a Single Platform and an All Platforms version — see the pricing page for what each one includes.";
+})();
+</script>
+<script src="lang-de.js?v=6b02d18c4f"></script><script src="lang-fr.js?v=6b02d18c4f"></script><script src="lang-es.js?v=6b02d18c4f"></script><script src="lang.js?v=6b02d18c4f"></script>
+</body>
+</html>

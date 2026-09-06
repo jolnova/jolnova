@@ -1,0 +1,17 @@
+<svg width="880" height="220" viewBox="0 0 880 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="30" x2="0" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFBA4A"/>
+      <stop offset="1" stop-color="#DA8706"/>
+    </linearGradient>
+  </defs>
+  <!-- icon -->
+  <rect x="30" y="30" width="160" height="160" rx="40" fill="url(#g)"/>
+  <path d="M92 74 L92 146 Q92 155 100 150 L160 116 Q168 111 160 107 L100 71 Q92 66 92 75 Z" fill="#fff"/>
+  <circle cx="156" cy="76" r="13" fill="#FF5A1F"/>
+  <circle cx="156" cy="76" r="5" fill="#fff"/>
+  <!-- wordmark -->
+  <text x="222" y="140" font-family="'Segoe UI',Arial,sans-serif" font-size="86" font-weight="800" letter-spacing="-2">
+    <tspan fill="#F7F6F4">Jol</tspan><tspan fill="#FFA515">nova</tspan>
+  </text>
+</svg>

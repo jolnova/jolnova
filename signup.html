@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign Up — Jolnova</title>
+<meta name="description" content="Create a Jolnova account and start making clips.">
+<link rel="icon" type="image/png" href="images/favicon.png?v=6b02d18c4f">
+<link rel="stylesheet" href="site.css?v=6b02d18c4f">
+</head>
+<body>
+
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=6b02d18c4f" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
+  <div class="head-cta">
+   <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span id="langName">English</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"/><circle cx="24" cy="22.5" r="10" fill="#fff"/><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"/><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"/></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"/><rect y="15" width="60" height="15" fill="#DD0000"/><rect y="30" width="60" height="15" fill="#FFCE00"/></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"/><rect x="20" width="20" height="45" fill="#fff"/><rect x="40" width="20" height="45" fill="#EF4135"/></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"/><rect y="11.25" width="60" height="22.5" fill="#F1BF00"/></svg></i><span>Español</span></button></div></div>
+   <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+   <a href="download.html" class="btn btn-primary btn-sm">↓ Download</a>
+   <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="rjMenu()"><span></span></button>
+  </div>
+ </div>
+</header>
+
+<main>
+  <div class="auth">
+    <div class="authcard">
+      <h1>Create account</h1>
+      <div class="sub">Start making clips in minutes</div>
+      <div id="msg" class="amsg" style="display:none"></div>
+      <button type="button" onclick="googleAuth()" class="gbtn"><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 16 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35 26.7 36 24 36c-5.3 0-9.7-3.1-11.3-7.6l-6.5 5C9.6 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C41 38 44 31.7 44 24c0-1.3-.1-2.3-.4-3.5z"/></svg> Sign up with Google</button>
+      <div class="divider">or with email</div>
+      <form onsubmit="doSignup(event)">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" type="text" placeholder="Your name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="ornek@mail.com" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="pass">Password</label>
+          <input id="pass" type="password" placeholder="At least 6 characters" autocomplete="new-password" minlength="6" required>
+        </div>
+        <div class="authrow" style="margin-bottom:18px">
+          <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;line-height:1.5"><input type="checkbox" style="width:auto;margin-top:3px" required> <span>I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a></span></label>
+        </div>
+        <button id="sbtn" type="submit" class="btn btn-primary btn-block" style="padding:14px">Create account</button>
+      </form>
+      <div class="authfoot">Already have an account? <a href="login.html">Sign in</a></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="foot-grid">
+   <div class="foot-brand">
+    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=6b02d18c4f" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <p>Automatic stream clipping for Windows. Track your sources, let Jolnova prepare vertical clips, and review what is worth posting.</p>
+    <div class="foot-os"><span class="badge badge-neutral">Windows desktop app</span></div>
+   </div>
+   <div class="foot-col"><h4>PRODUCT</h4>
+    <a href="features.html">Features</a><a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a><a href="download.html">Download</a></div>
+   <div class="foot-col"><h4>RESOURCES</h4>
+    <a href="faq.html">FAQ</a><a href="login.html">Sign in</a><a href="signup.html">Create account</a><a href="support.html">Support</a></div>
+   <div class="foot-col"><h4>LEGAL</h4>
+    <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  </div>
+  <div class="foot-bot">
+   <span>© 2026 Jolnova. All rights reserved.</span>
+   <span>Jolnova for Windows 10 and 11</span>
+  </div>
+ </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.3/dist/umd/supabase.js" integrity="sha384-qafw21c/iciq0VXsi9FzkfoQv5I/V0iqE4lSNcKXPnW9/UTJLnv5CcN4FHxVLnKg" crossorigin="anonymous"></script>
+<script src="supabase.js"></script>
+<script>
+function showMsg(t,ok){const m=document.getElementById('msg');m.textContent=t;m.className='amsg '+(ok?'ok':'err');m.style.display='block';}
+async function doSignup(e){
+  e.preventDefault();
+  const btn=document.getElementById('sbtn');btn.disabled=true;btn.textContent='Creating…';
+  const {data,error}=await sb.auth.signUp({
+    email:document.getElementById('email').value,
+    password:document.getElementById('pass').value,
+    options:{data:{full_name:document.getElementById('name').value}}
+  });
+  if(error){
+    const tr={'User already registered':'That email is already registered. Try signing in.','Password should be at least 6 characters':'Password must be at least 6 characters.'};
+    showMsg(tr[error.message]||error.message,false);btn.disabled=false;btn.textContent='Create account';return;
+  }
+  if(data.session){location.href='account.html';return;}
+  showMsg('Account created! 🎉 We sent a verification link to your email — confirm it and you can sign in.',true);
+  btn.textContent='Check your email';
+}
+async function googleAuth(){
+  const base=location.href.replace(/[^/]*$/,'');
+  const {error}=await sb.auth.signInWithOAuth({provider:'google',options:{redirectTo:base+'account.html'}});
+  if(error)showMsg(error.message,false);
+}
+</script>
+<script src="lang-de.js?v=6b02d18c4f"></script><script src="lang-fr.js?v=6b02d18c4f"></script><script src="lang-es.js?v=6b02d18c4f"></script><script src="lang.js?v=6b02d18c4f"></script>
+</body>
+</html>

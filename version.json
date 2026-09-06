@@ -1,0 +1,9 @@
+{
+  "version": "1.54.0",
+  "url": "https://jolnova.com/dl/Jolnova-Setup.exe",
+  "notes": "Subtitles are in the streamer's own language now. The app used to assume Turkish for every broadcast, so an English stream came back translated instead of transcribed; the language is detected from the audio and held steady for the whole broadcast. Captions also land on the spoken word again: on a clip with silence removed they used to arrive four seconds late, because a timing shift meant to compensate for trimming was applied where nothing had been trimmed. Two related faults are fixed as well, so word timings move with the cut and only one caption line is ever on screen. Clip edges are cleaner: a clip now keeps a moment of breath at each end instead of starting and ending exactly on a word, and when a reaction lands late in the window the clip reaches back for its setup rather than skipping the trim altogether and shipping at full length. The app also measures the streamer's own reaction — how much of the clip is speech, how far the voice rises, whether they shout — separately from the game audio, and records it along with the score behind every clip you approve or reject, so selection can be tuned against real judgement instead of guesswork.",
+  "size_mb": 179,
+  "sha256": "43688c7d4ca413f9c5db7b1b1782a8d30a28c05a797eac1f46590f31496ca124",
+  "released": "2026-08-30",
+  "min": "1.0.0"
+}

@@ -1,0 +1,80 @@
+<!doctype html><html><head><meta charset=utf-8>
+<link rel=stylesheet href="_base.css"><style>html,body{width:1360px;height:780px}
+.wtabs{display:flex;gap:4px;background:#0F1621;border:1px solid rgba(146,163,190,.13);border-radius:11px;
+ padding:3px;margin-bottom:16px;width:max-content}
+.wtabs span{padding:7px 15px;border-radius:8px;font-size:12.5px;font-weight:650;color:#8B95A9}
+.wtabs span.on{background:var(--acc);color:var(--acc-ink);font-weight:750}
+.lay{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.lay .o{background:#0D131C;border:1px solid rgba(146,163,190,.13);border-radius:12px;padding:12px}
+.lay .o.on{border-color:var(--acc-a45);background:var(--acc-a05);box-shadow:0 0 0 1px var(--acc-a20)}
+.lay .n{font-size:12.5px;font-weight:720}
+.lay .h{color:#5B6577;font-size:10.5px;margin-top:3px;line-height:1.45}
+.frame{aspect-ratio:9/16;border-radius:6px;border:1px solid rgba(146,163,190,.2);overflow:hidden;
+ display:flex;flex-direction:column;margin-bottom:9px;width:34px}
+.pre{background:#111823;border:1px solid rgba(146,163,190,.13);border-radius:13px;padding:14px}
+.pre.on{border-color:var(--acc-a45)}
+.pre .t{font-size:13px;font-weight:720;display:flex;align-items:center;gap:8px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.chip{background:#1B2431;border:1px solid rgba(146,163,190,.16);border-radius:7px;padding:3px 8px;
+ font-size:10.5px;color:#A8B2C3}
+.chip.on{background:var(--acc-a12);border-color:var(--acc-a30);color:var(--acc)}
+.chip.off{color:#5B6577}
+</style></head>
+<body><div class=app><aside class=side>
+ <div class=logo><i></i>Jol<b>nova</b></div>
+ <nav class=nv><a><span class=ic></span>Dashboard</a><a><span class=ic></span>Live Tracking<span class=ct>2</span></a><a><span class=ic></span>Automation<span class=ct>4</span></a><a><span class=ic></span>Review Queue<span class=ct>42</span></a><a><span class=ic></span>Clips</a><a class=on><span class=ic></span>Templates</a><a><span class=ic></span>Run schedule</a><a><span class=ic></span>Analytics</a></nav>
+ <div class=side-b>
+  <div class=lang><b class=on>EN</b><b>TR</b></div>
+  <div class=prof><span class=av>N</span><div><div class=n>Creator</div><div class=r>Workspace</div></div></div>
+ </div>
+</aside><main class=main><div class=ph><div class=ph-l><div class=bolt>◫</div>
+ <div><h1>Clip presets</h1><div class=sub>Save a look once, apply it to any streamer in one click.</div></div></div>
+ <div><span class=btnp>+ New preset</span></div></div>
+<div class=wtabs><span>Subtitles</span><span class=on>Clip presets</span></div>
+<div class=card style="margin-bottom:14px">
+ <div class=card-h><div class=card-t>Layout</div><span class=card-a>Applies to the streamer you pick</span></div>
+ <div class=lay>
+  <div class=o><div class=frame><span style="flex:1;background:#1C2740"></span></div>
+   <div class=n>🔄 Auto</div><div class=h>Decide per stream.</div></div>
+  <div class="o on"><div class=frame><span style="flex:0 0 38%;background:#3A2A5E"></span><span style="flex:1;background:#1E2A4A"></span></div>
+   <div class=n>🎮 Game</div><div class=h>Camera on top, gameplay below.</div></div>
+  <div class=o><div class=frame><span style="flex:1;background:#12303A"></span></div>
+   <div class=n>🎤 IRL</div><div class=h>Full frame on a blurred background.</div></div>
+  <div class=o><div class=frame style="position:relative"><span style="flex:1;background:#2C4670"></span>
+    <span style="position:absolute;right:2px;bottom:2px;width:12px;height:9px;border-radius:2px;background:#9D6CFF"></span></div>
+   <div class=n>🧠 Camera corner</div><div class=h>Large content, camera in the corner.</div></div>
+  <div class=o><div class=frame><span style="flex:1;background:#4A3A18"></span></div>
+   <div class=n>⬛ Full screen</div><div class=h>Use the source as-is.</div></div>
+ </div>
+ <div style="display:flex;align-items:center;gap:10px;margin-top:13px;padding-top:12px;
+  border-top:1px solid rgba(146,163,190,.1)">
+  <span class=ib style="flex:0 0 auto;padding:7px 13px">🎥 Camera area</span>
+  <span style="color:#747F92;font-size:11.5px">Drawn once over a real frame, reused for every clip from that streamer.</span>
+  <span style="margin-left:auto;font-size:11.5px;color:#747F92">Max clips per stream</span>
+  <span style="background:#0F1621;border:1px solid rgba(146,163,190,.18);border-radius:8px;padding:6px 12px;font-size:11.5px">12 ⌄</span></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+ <div class="pre on"><div class=t>🎮 Gaming night <span class="pill p-live" style="margin-left:auto">Applied</span></div>
+  <div style="color:#5B6577;font-size:11px;margin-top:4px">NovaRift · Kick</div>
+  <div class=chips><span class="chip on">Game layout</span><span class="chip on">Camera box saved</span>
+   <span class="chip on">Subtitles</span><span class="chip on">±7 sec context</span>
+   <span class="chip on">Badge hidden</span><span class="chip off">Watermark off</span></div></div>
+ <div class=pre><div class=t>🎤 Just chatting</div>
+  <div style="color:#5B6577;font-size:11px;margin-top:4px">PixelPunk · Twitch</div>
+  <div class=chips><span class="chip on">IRL layout</span><span class="chip on">Subtitles</span>
+   <span class=chip>No context</span><span class="chip off">Watermark off</span></div></div>
+ <div class=pre><div class=t>📱 Vertical source</div>
+  <div style="color:#5B6577;font-size:11px;margin-top:4px">GlitchWave · TikTok</div>
+  <div class=chips><span class="chip on">Full screen</span><span class="chip on">Subtitles</span>
+   <span class="chip on">Badge hidden</span><span class="chip off">Watermark off</span></div></div>
+ <div class=pre><div class=t>🎧 Podcast file</div>
+  <div style="color:#5B6577;font-size:11px;margin-top:4px">My files</div>
+  <div class=chips><span class="chip on">Camera corner</span><span class="chip on">Subtitles</span>
+   <span class="chip on">±7 sec context</span></div></div>
+ <div class=pre><div class=t>⚡ Fast turnaround</div>
+  <div style="color:#5B6577;font-size:11px;margin-top:4px">Any streamer</div>
+  <div class=chips><span class="chip on">Auto layout</span><span class=chip>No subtitles</span>
+   <span class=chip>Max 6 clips</span></div></div>
+ <div class=pre style="border-style:dashed;display:flex;align-items:center;justify-content:center;
+  color:#5B6577;font-size:12.5px;font-weight:650;min-height:96px">+ Save current settings as a preset</div>
+</div></main></div></body></html>

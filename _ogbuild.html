@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#05070B; --surface-1:#0B1018; --surface-2:#0F1621; --surface-3:#141D2A;
+    --accent:#FFC53D; --accent-bright:#FFD873; --accent-strong:#F5B01E; --accent-dark:#C98A00;
+    --accent-ink:#1A1204;
+    --text-primary:#F7F9FC; --text-secondary:#A8B2C3; --text-muted:#7B8598;
+    --line:#1E2937;
+    --sans:"Geist","Inter","Manrope","Segoe UI",system-ui,-apple-system,sans-serif;
+  }
+  html,body{width:1200px;height:630px}
+  body{
+    background:var(--bg); font-family:var(--sans); color:var(--text-primary);
+    position:relative; overflow:hidden;
+  }
+  /* ambient gold glow, same language as the hero */
+  .glow-a{position:absolute;width:820px;height:820px;left:-260px;top:-330px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,197,61,.13) 0%,rgba(255,197,61,.05) 38%,transparent 68%)}
+  .glow-b{position:absolute;width:700px;height:700px;right:-210px;bottom:-330px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,197,61,.10) 0%,transparent 65%)}
+  .grid{position:absolute;inset:0;opacity:.5;
+    background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+    background-size:48px 48px}
+  .edge{position:absolute;left:0;right:0;top:0;height:4px;
+    background:linear-gradient(90deg,var(--accent-dark),var(--accent),var(--accent-bright),var(--accent-strong))}
+
+  .wrap{position:relative;padding:52px 64px;height:100%;display:flex;flex-direction:column}
+
+  header{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand img{width:54px;height:54px;display:block}
+  .brand .name{font-size:35px;font-weight:800;letter-spacing:-.5px}
+  .brand .name .jolt{color:var(--accent)}
+  .site{font-size:19px;font-weight:650;color:var(--text-muted);letter-spacing:.2px}
+
+  main{flex:1;display:flex;align-items:center;gap:52px;margin-top:6px}
+  .copy{width:600px}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:750;
+    letter-spacing:.16em;color:var(--accent);text-transform:uppercase;margin-bottom:20px}
+  .eyebrow::before{content:'';width:26px;height:3px;background:var(--accent);border-radius:2px}
+  h1{font-size:60px;line-height:1.06;font-weight:800;letter-spacing:-1.8px}
+  h1 .g{color:var(--accent)}
+  p.sub{margin-top:22px;font-size:23px;line-height:1.45;color:var(--text-secondary);max-width:600px}
+
+  /* 16:9 stream  ->  9:16 clip */
+  .viz{flex:1;display:flex;align-items:center;justify-content:center;gap:22px}
+  .src{width:230px;height:130px;border-radius:12px;background:var(--surface-2);
+    border:1px solid var(--line);position:relative;overflow:hidden;flex:none}
+  /* timeline with the auto-selected moment highlighted in gold */
+  .src .tl{position:absolute;left:14px;right:14px;bottom:14px;height:10px;border-radius:5px;
+    background:rgba(168,178,195,.22);overflow:hidden}
+  .src .tl b{position:absolute;left:46%;width:26%;top:0;bottom:0;border-radius:5px;
+    background:var(--accent);box-shadow:0 0 12px rgba(255,197,61,.55)}
+  .src .dot{position:absolute;left:14px;top:14px;width:9px;height:9px;border-radius:50%;
+    background:#FF5A1F;box-shadow:0 0 0 4px rgba(255,90,31,.16)}
+  .src .bars{position:absolute;left:14px;top:40px;display:flex;flex-direction:column;gap:7px}
+  .src .bars i{display:block;height:7px;border-radius:4px;background:rgba(168,178,195,.20)}
+
+  .arrow{display:flex;flex-direction:column;align-items:center;gap:7px;flex:none}
+  .arrow svg{display:block}
+  .arrow span{font-size:12px;font-weight:750;letter-spacing:.13em;color:var(--accent);text-transform:uppercase}
+
+  .out{width:132px;height:232px;border-radius:14px;flex:none;position:relative;overflow:hidden;
+    background:linear-gradient(160deg,#1a1608,var(--surface-2) 58%);
+    border:2px solid var(--accent);box-shadow:0 0 0 6px rgba(255,197,61,.10),0 18px 44px rgba(0,0,0,.5)}
+  .out .cap{position:absolute;left:12px;right:12px;bottom:16px;display:flex;flex-direction:column;gap:6px}
+  .out .cap i{display:block;height:11px;border-radius:5px;background:var(--accent);opacity:.95}
+  .out .cap i:nth-child(2){width:64%;opacity:.6}
+  .out .play{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);
+    width:0;height:0;border-left:26px solid var(--accent);border-top:16px solid transparent;
+    border-bottom:16px solid transparent;opacity:.92}
+
+  footer{display:flex;align-items:center;gap:10px;padding-top:6px}
+  .chip{font-size:17px;font-weight:700;color:var(--text-secondary);
+    background:var(--surface-1);border:1px solid var(--line);border-radius:999px;padding:9px 20px}
+  .chip.win{color:var(--accent-ink);background:var(--accent);border-color:var(--accent)}
+</style></head>
+<body>
+  <div class="glow-a"></div><div class="glow-b"></div><div class="grid"></div><div class="edge"></div>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="images/icon-clean.png" alt="">
+        <div class="name">Jol<span class="jolt">nova</span></div>
+      </div>
+      <div class="site">jolnova.com</div>
+    </header>
+
+    <main>
+      <div class="copy">
+        <div class="eyebrow">Automated stream clipping</div>
+        <h1>Turn live streams<br>into <span class="g">vertical clips</span><br>&mdash; automatically.</h1>
+        <p class="sub">Add a source once. Jolnova records the broadcast and prepares vertical clips with burned-in subtitles.</p>
+      </div>
+
+      <div class="viz">
+        <div class="src">
+          <span class="dot"></span>
+          <div class="bars"><i style="width:118px"></i><i style="width:86px"></i><i style="width:102px"></i></div>
+          <div class="tl"><b></b></div>
+        </div>
+        <div class="arrow">
+          <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+            <path d="M2 10 H32" stroke="#FFC53D" stroke-width="3" stroke-linecap="round"/>
+            <path d="M26 3 L35 10 L26 17" stroke="#FFC53D" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <span>9:16</span>
+        </div>
+        <div class="out">
+          <span class="play"></span>
+          <div class="cap"><i></i><i></i></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span class="chip win">Windows</span>
+      <span class="chip">Kick</span>
+      <span class="chip">Twitch</span>
+      <span class="chip">YouTube</span>
+      <span class="chip">Your own files</span>
+    </footer>
+  </div>
+</body></html>

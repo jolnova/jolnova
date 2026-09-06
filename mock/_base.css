@@ -1,0 +1,140 @@
+/* Jolnova UI mockup — sentetik, gercek kullanici verisi YOK
+   ------------------------------------------------------------------
+   VURGU RENGI — TEK KAYNAK. Uygulamanin vurgu rengi degisince yalnizca
+   asagidaki :root blogu degisir; dosyanin geri kalaninda ham renk yok.
+   Mockup'lar yeniden uretilirken (tools/shoot.sh) otomatik uygulanir. */
+:root{
+  /* ALTIN (42 derece). DIKKAT: altin zemin uzerine BEYAZ yazi okunmaz
+     (1.58:1). Vurgu zemininde daima var(--acc-ink) kullanilir (11.8:1). */
+  --acc:#FFC53D;          /* ana vurgu */
+  --acc-bright:#FFD873;   /* acik uc (grafik cubugu tepesi) */
+  --acc-dark:#C98A00;     /* gradyan alt ucu */
+  --acc-mid:#F8BC2E;      /* buton gradyani ust ucu */
+  --acc-mid2:#D9970A;     /* buton gradyani alt ucu */
+  --acc-ink:#1A1204;      /* vurgu zemin uzerindeki yazi */
+  /* UYARI / DIKKAT — vurgudan AYRI. Eski #F6BB50 (39 derece) altinla
+     ayni tona dustugu icin turuncuya (17 derece) tasindi. */
+  --warn:#FF7A45;
+  --acc-a10:color-mix(in srgb,var(--acc) 10%,transparent);
+  --acc-a12:color-mix(in srgb,var(--acc) 12%,transparent);
+  --acc-a13:color-mix(in srgb,var(--acc) 13%,transparent);
+  --acc-a16:color-mix(in srgb,var(--acc) 16%,transparent);
+  --acc-a20:color-mix(in srgb,var(--acc) 20%,transparent);
+  --acc-a22:color-mix(in srgb,var(--acc) 22%,transparent);
+  --acc-a30:color-mix(in srgb,var(--acc) 30%,transparent);
+  --acc-a45:color-mix(in srgb,var(--acc) 45%,transparent);
+  --acc-a50:color-mix(in srgb,var(--acc) 50%,transparent);
+  --acc-a60:color-mix(in srgb,var(--acc) 60%,transparent);
+  --acc-a05:color-mix(in srgb,var(--acc) 5%,transparent);
+  --acc-a045:color-mix(in srgb,var(--acc) 4.5%,transparent);
+  /* platform marka renkleri — vurgudan BAGIMSIZ.
+     --pf-file: My Files (yerel dosyalar) — azur, 217 derece. */
+  --pf-kick:#53FC18; --pf-twitch:#9D6CFF; --pf-yt:#FF5D68; --pf-tiktok:#25F4EE; --pf-file:#5D9CFF;
+  --pf-file-text:#8FBCFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0A0E14;color:#F7F9FC;font:14px/1.5 "Geist","Inter","Segoe UI",system-ui,sans-serif;
+ -webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+.app{display:grid;grid-template-columns:212px 1fr;height:100vh;overflow:hidden}
+/* sidebar */
+.side{background:linear-gradient(180deg,#0D1119,#090C12);border-right:1px solid rgba(146,163,190,.12);
+ padding:18px 12px;display:flex;flex-direction:column}
+.logo{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:800;padding:4px 8px 20px;letter-spacing:-.03em}
+.logo i{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,var(--acc),var(--acc-dark));
+ display:block;box-shadow:0 0 12px var(--acc-a50)}
+.logo b{color:var(--acc);font-weight:800}
+.nv{display:flex;flex-direction:column;gap:2px}
+.nv a{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:9px;color:#8B95A9;font-size:13px;font-weight:600}
+.nv a .ic{width:15px;height:15px;border-radius:4px;background:#232D3D;flex-shrink:0}
+.nv a .ct{margin-left:auto;font-size:10.5px;font-weight:800;background:#1B2431;color:#8B95A9;padding:2px 7px;border-radius:20px}
+.nv a.on{background:var(--acc-a10);color:#F7F9FC;position:relative}
+.nv a.on .ic{background:var(--acc);box-shadow:0 0 8px var(--acc-a60)}
+.nv a.on .ct{background:var(--acc-a16);color:var(--acc)}
+.nv a.on::before{content:'';position:absolute;left:-12px;top:8px;bottom:8px;width:3px;background:var(--acc);border-radius:0 3px 3px 0}
+.side-lbl{color:#5B6577;font-size:9.5px;font-weight:800;letter-spacing:.14em;padding:16px 11px 7px}
+.side-b{margin-top:auto;padding-top:14px;border-top:1px solid rgba(146,163,190,.12);display:flex;flex-direction:column;gap:7px}
+.lang{display:flex;background:#0F1621;border:1px solid rgba(146,163,190,.12);border-radius:9px;padding:2px}
+.lang b{flex:1;text-align:center;padding:6px;border-radius:7px;font-size:11px;font-weight:800;color:#747F92}
+.lang b.on{background:var(--acc);color:var(--acc-ink)}
+.prof{display:flex;align-items:center;gap:9px;background:#0F1621;border:1px solid rgba(146,163,190,.12);
+ border-radius:11px;padding:9px}
+.prof .av{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#2A3750,#1B2338);
+ display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#CDD5E4;flex-shrink:0}
+.prof .n{font-size:12px;font-weight:700}
+.prof .r{font-size:10px;color:#747F92}
+/* ana alan */
+.main{padding:26px 30px;overflow:hidden;background:
+ radial-gradient(800px 400px at 70% -10%,var(--acc-a045),transparent 60%),
+ radial-gradient(600px 400px at 10% 0%,rgba(157,108,255,.04),transparent 55%)}
+.ph{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:22px}
+.ph-l{display:flex;align-items:center;gap:12px}
+.bolt{width:38px;height:38px;border-radius:11px;background:radial-gradient(circle at 50% 35%,var(--acc-a20),var(--acc-a05));
+ border:1px solid var(--acc-a30);display:flex;align-items:center;justify-content:center;color:var(--acc);font-size:17px}
+h1{font-size:23px;font-weight:770;letter-spacing:-.03em}
+.sub{color:#A8B2C3;font-size:12.5px;margin-top:2px}
+.btnp{background:var(--acc);color:var(--acc-ink);border:0;border-radius:10px;padding:9px 16px;font:inherit;font-size:12.5px;font-weight:750}
+.btns{background:#1B2431;color:#CDD5E4;border:1px solid rgba(176,192,220,.22);border-radius:10px;padding:9px 14px;font:inherit;font-size:12.5px;font-weight:700}
+/* kart */
+.card{background:linear-gradient(180deg,rgba(255,255,255,.03),transparent 42%),#111823;
+ border:1px solid rgba(146,163,190,.13);border-radius:16px;padding:18px}
+.card-h{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;
+ border-bottom:1px solid rgba(146,163,190,.10);margin-bottom:14px}
+.card-t{font-size:14px;font-weight:720;display:flex;align-items:center;gap:8px}
+.card-t::before{content:'';width:3px;height:14px;border-radius:2px;background:var(--acc);box-shadow:0 0 8px var(--acc-a50)}
+.card-a{color:#747F92;font-size:11.5px}
+/* rozet */
+.pill{display:inline-flex;align-items:center;gap:5px;height:20px;padding:0 8px;border-radius:6px;font-size:10.5px;font-weight:750}
+.pill .d{width:5px;height:5px;border-radius:50%;background:currentColor}
+.p-live{background:var(--acc-a12);color:var(--acc)}
+.p-rec{background:rgba(255,93,104,.13);color:#FF8F96}
+.p-off{background:#1B2431;color:#8B95A9}
+/* platform rozetleri kendi marka tonlarindan beslenir — vurgudan bagimsiz */
+.p-kick{background:color-mix(in srgb,var(--pf-kick) 12%,transparent);color:var(--pf-kick)}
+.p-twitch{background:rgba(157,108,255,.14);color:#C3ADFF}
+.p-yt{background:rgba(255,93,104,.10);color:#FF9AA0}
+.p-tiktok{background:rgba(37,244,238,.12);color:#7FF3EF}
+.p-file{background:color-mix(in srgb,var(--pf-file) 12%,transparent);color:var(--pf-file-text)}
+.p-soon{background:color-mix(in srgb,var(--warn) 14%,transparent);color:var(--warn)}
+/* metrik */
+.mrow{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:18px}
+.mc{background:linear-gradient(168deg,rgba(255,255,255,.04),transparent 60%),#121A25;
+ border:1px solid rgba(146,163,190,.13);border-radius:14px;padding:14px 16px;position:relative;overflow:hidden}
+.mc::before{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,rgba(176,192,220,.3),transparent)}
+.mc.lime::before{background:linear-gradient(90deg,transparent,var(--acc),transparent)}
+.mc.pur::before{background:linear-gradient(90deg,transparent,#9D6CFF,transparent)}
+.mc-l{color:#8B95A9;font-size:10.5px;font-weight:700;display:flex;align-items:center;gap:6px}
+.mc-l .d{width:5px;height:5px;border-radius:50%;background:#5B6577}
+.mc.lime .mc-l .d{background:var(--acc);box-shadow:0 0 6px var(--acc)}
+.mc.pur .mc-l .d{background:#9D6CFF}
+.mc-v{font-size:26px;font-weight:780;letter-spacing:-.03em;margin-top:6px}
+.mc.lime .mc-v{color:var(--acc)}.mc.pur .mc-v{color:#B9A0FF}
+.mc-s{color:#5B6577;font-size:10px;margin-top:4px}
+/* klip karti */
+.clips{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.clip{background:#111823;border:1px solid rgba(146,163,190,.13);border-radius:13px;overflow:hidden}
+.clip .th{aspect-ratio:16/11;position:relative;display:flex;align-items:center;justify-content:center}
+.clip .th::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(8,11,16,.8))}
+.play{width:34px;height:34px;border-radius:50%;border:2px solid rgba(255,255,255,.85);position:relative;z-index:2;
+ display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.28)}
+.play::after{content:'';border-left:9px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+.ai{position:absolute;left:7px;top:7px;z-index:2;background:rgba(7,10,15,.8);border:1px solid var(--acc-a30);
+ color:var(--acc);border-radius:6px;padding:2px 7px;font-size:10px;font-weight:800}
+.dur{position:absolute;right:7px;top:7px;z-index:2;background:rgba(7,10,15,.75);border:1px solid rgba(146,163,190,.16);
+ border-radius:6px;padding:2px 7px;font-size:10px;font-weight:700}
+.clip .b{padding:10px 11px}
+.clip .t{font-size:12px;font-weight:680;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.clip .m{color:#5B6577;font-size:10px;margin-top:5px;display:flex;align-items:center;gap:6px}
+.clip .acts{display:flex;gap:5px;padding:0 11px 11px;flex-wrap:wrap}
+.ok{flex:1 0 100%;background:linear-gradient(180deg,var(--acc-mid),var(--acc-mid2));color:var(--acc-ink);border:0;border-radius:8px;
+ padding:7px;font:inherit;font-size:11.5px;font-weight:780}
+.ib{flex:1;background:#1B2431;border:1px solid rgba(146,163,190,.16);border-radius:8px;padding:6px 0;
+ color:#8B95A9;font-size:11px;text-align:center}
+/* soyut klip gorselleri — gercek icerik YOK */
+.g1{background:linear-gradient(135deg,#1E2A4A,#3A2A5E 55%,#1B2033)}
+.g2{background:linear-gradient(135deg,#12303A,#1C4A46 55%,#122229)}
+.g3{background:linear-gradient(135deg,#3A2038,#5A2A46 55%,#241826)}
+.g4{background:linear-gradient(135deg,#22304A,#2C4670 55%,#161E2C)}
+.g5{background:linear-gradient(135deg,#2A3320,#47571F 55%,#1B2016)}
+.g6{background:linear-gradient(135deg,#331F2A,#5A2E33 55%,#221619)}
+.g7{background:linear-gradient(135deg,#1C2740,#334066 55%,#161B28)}
+.g8{background:linear-gradient(135deg,#25203A,#40316A 55%,#1A1727)}

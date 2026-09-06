@@ -1,0 +1,685 @@
+/* ============================================================
+   Jolnova — premium marketing site design system
+   Tek kaynak: token'lar + tipografi + layout + bilesenler
+   ============================================================ */
+:root{
+  /* --- yuzeyler --- */
+  --bg-page:#05070B; --bg-page-soft:#070A10; --bg-header:rgba(5,7,11,.86);
+  --surface-1:#0B1018; --surface-2:#0F1621; --surface-3:#141D2A;
+  --surface-hover:#192433; --surface-elevated:#182231;
+  /* --- metin --- */
+  /* --text-muted eskiden #747F92 idi: --surface-2 uzerinde 4.49:1 ile AA'nin
+     hemen altinda kaliyordu (dil secici pasif "TR"). #7B8598 -> 4.89:1.
+     --text-disabled BILGI TASIYAN metinde KULLANILMAZ (matris "n/a", plan "X"
+     satirlari artik --text-muted kullanir); yalnizca dekoratif oge icindir. */
+  --text-primary:#F7F9FC; --text-secondary:#A8B2C3; --text-muted:#7B8598; --text-disabled:#4F5969;
+  /* ============================================================
+     VURGU RENGI — TEK KAYNAK
+     Uygulamanin vurgu rengi degisince YALNIZCA bu blok degisir.
+     Dosyanin geri kalaninda hicbir yerde ham vurgu rengi yazili
+     degildir; her kullanim var(--accent*) uzerinden gelir.
+     --accent      : ana ton (butonlar, eyebrow, ikonlar)
+     --accent-bright: hover tonu (bir tik acik)
+     --accent-strong/-dark: gradyan uclari
+     --accent-ink  : vurgu zemin uzerindeki yazi rengi
+
+     ALTIN (42 derece) — lime yesilden gelen degisiklik.
+     DIKKAT: altin zemin uzerine BEYAZ yazi okunmaz (1.58:1). Vurgu
+     zemininde daima var(--accent-ink) kullanilir (11.8:1). Lime'da
+     calisan beyaz/acik yazi kombinasyonlari burada calismaz.
+     ============================================================ */
+  --accent:#FFC53D;
+  --accent-bright:#FFD873;
+  --accent-strong:#F5B01E;
+  --accent-dark:#C98A00;
+  --accent-ink:#1A1204;
+  /* vurgu zemini uzerindeki saydam koyu katmanlar (ic rozet vb.) */
+  --accent-ink-a13:color-mix(in srgb,var(--accent-ink) 13%,transparent);
+  --accent-ink-a24:color-mix(in srgb,var(--accent-ink) 24%,transparent);
+  /* seffaf turevler — ham rgba() yerine tek kaynaktan uretilir */
+  --accent-a10:color-mix(in srgb,var(--accent) 10%,transparent);
+  --accent-a18:color-mix(in srgb,var(--accent) 18%,transparent);
+  --accent-a24:color-mix(in srgb,var(--accent) 24%,transparent);
+  --accent-a28:color-mix(in srgb,var(--accent) 28%,transparent);
+  --accent-a32:color-mix(in srgb,var(--accent) 32%,transparent);
+  --accent-a40:color-mix(in srgb,var(--accent) 40%,transparent);
+  --accent-glow:color-mix(in srgb,var(--accent) 17%,transparent);
+  --accent-wash:color-mix(in srgb,var(--accent) 5.5%,transparent);
+  --accent-wash-2:color-mix(in srgb,var(--accent) 12%,transparent);
+  /* eski adlar — geriye uyum, hepsi ayni kaynaga bagli */
+  --lime-primary:var(--accent); --lime-bright:var(--accent-bright);
+  --lime-strong:var(--accent-strong); --lime-dark:var(--accent-dark);
+  --lime-soft:var(--accent-a10); --lime-border:var(--accent-a32);
+  /* --- yardimci --- */
+  --purple-primary:#9D6CFF; --purple-soft:rgba(157,108,255,.12);
+  --blue-primary:#5D9CFF; --success:#39D777; --danger:#FF5D68;
+  /* UYARI / DIKKAT RENGI — vurgudan AYRI TUTULUR.
+     Eskiden #F6BB50 (39 derece) idi; vurgu altina (42 derece) tasininca
+     ikisi ayni tona dustu ve "birincil eylem" ile "dikkat" ayirt edilemedi.
+     Uyari turuncuya (17 derece) tasindi: vurguya 25 derece uzak. */
+  --warning:#FF7A45;
+  --warning-a07:color-mix(in srgb,var(--warning) 7%,transparent);
+  --warning-a12:color-mix(in srgb,var(--warning) 12%,transparent);
+  --warning-a24:color-mix(in srgb,var(--warning) 24%,transparent);
+  --warning-a30:color-mix(in srgb,var(--warning) 30%,transparent);
+  /* PLATFORM MARKA RENKLERI — vurgu renginden BAGIMSIZ.
+     Kick yesili burada kendi degeriyle durur; vurgu rengi degistiginde
+     bu satir DEGISMEZ (rozetin Kick'i temsil etmesi gerekiyor).
+     --files: My Files (yerel dosyalar) — azur, 217 derece. */
+  --kick:#53FC18; --twitch:#9D6CFF; --youtube:#FF5D68; --tiktok:#25F4EE; --files:#5D9CFF;
+  --files-text:#8FBCFF;
+  --kick-a10:color-mix(in srgb,var(--kick) 10%,transparent);
+  --kick-a28:color-mix(in srgb,var(--kick) 28%,transparent);
+  --files-a10:color-mix(in srgb,var(--files) 10%,transparent);
+  --files-a26:color-mix(in srgb,var(--files) 26%,transparent);
+  --files-a28:color-mix(in srgb,var(--files) 28%,transparent);
+  /* --- kenarlik --- */
+  --border-subtle:rgba(146,163,190,.12); --border-default:rgba(146,163,190,.18);
+  --border-strong:rgba(176,192,220,.26);
+  /* --- golge --- */
+  --shadow-small:0 8px 24px rgba(0,0,0,.22);
+  --shadow-card:0 16px 46px rgba(0,0,0,.30);
+  --shadow-elevated:0 26px 80px rgba(0,0,0,.42);
+  --shadow-lime:0 0 28px var(--accent-glow);
+  /* --- yaricap --- */
+  --r-xs:7px; --r-sm:10px; --r-md:14px; --r-lg:18px; --r-xl:24px; --r-2xl:30px;
+  /* --- genislik --- */
+  --w-wide:1320px; --w-std:1200px; --w-read:780px;
+  /* --- font --- */
+  --sans:"Geist","Inter","Manrope","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,monospace;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg-page);color:var(--text-primary);
+  font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;letter-spacing:-.005em;
+}
+/* katmanli arka plan — okunabilirligi bozmayan cok hafif isik */
+body::before{
+  content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(1200px 680px at 68% -6%,var(--accent-wash),transparent 62%),
+    radial-gradient(900px 620px at 12% 4%,rgba(157,108,255,.05),transparent 58%),
+    linear-gradient(180deg,#05070B 0%,#070A10 60%,#05070B 100%);
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:inherit}
+::selection{background:var(--accent-a24);color:#fff}
+
+/* --- erisilebilirlik --- */
+:focus-visible{outline:2px solid var(--lime-primary);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;z-index:999;background:var(--lime-primary);
+  color:var(--accent-ink);padding:11px 18px;border-radius:10px;font-weight:750}
+.skip:focus{left:16px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ============ layout ============ */
+.wrap{width:100%;max-width:var(--w-std);margin:0 auto;padding:0 40px}
+/* GENIS EKRAN. 1320 px tavan 1080p'de dogru duruyor ama 1700 px ve uzeri
+   ekranda basligi ortada sikisik birakiyor, iki yanda genis bos alan kaliyor
+   (kullanici bildirdi). Tavan DEGISKENDEN buyutuluyor: baslik ve icerik AYNI
+   anda genisler, hizalari bozulmaz.
+   --w-read BILEREK BUYUMUYOR: metin sutunu genisledikce satir uzar ve
+   okunabilirlik duser; yasal sayfalar ve uzun paragraflar 780 px kalir. */
+@media(min-width:1700px){
+  :root{--w-wide:1560px;--w-std:1420px}
+  .wrap{padding:0 48px}
+}
+.wrap-wide{max-width:var(--w-wide)}
+.wrap-read{max-width:var(--w-read)}
+@media(max-width:1180px){.wrap{padding:0 32px}}
+@media(max-width:700px){.wrap{padding:0 22px}}
+.section{padding:104px 0}
+.section-sm{padding:72px 0}
+.section-line{border-top:1px solid var(--border-subtle)}
+@media(max-width:900px){.section{padding:72px 0}.section-sm{padding:52px 0}}
+
+/* ============ tipografi ============ */
+.display{font-size:clamp(33px,7.2vw,80px);font-weight:770;line-height:.98;letter-spacing:-.045em;max-width:1000px}
+.h-lg{font-size:clamp(27px,4.6vw,54px);font-weight:750;line-height:1.04;letter-spacing:-.035em}
+.h-md{font-size:clamp(23px,3.4vw,40px);font-weight:730;line-height:1.1;letter-spacing:-.03em}
+.h-sm{font-size:clamp(19px,1.5vw,22px);font-weight:700;line-height:1.25;letter-spacing:-.02em}
+.body-lg{font-size:19px;line-height:1.62;color:var(--text-secondary)}
+.body{font-size:16px;line-height:1.65;color:var(--text-secondary)}
+.caption{font-size:13px;line-height:1.55;color:var(--text-muted)}
+.lime{color:var(--lime-primary)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:750;
+  letter-spacing:.16em;color:var(--lime-primary);margin-bottom:18px}
+.eyebrow::before{content:'';width:22px;height:2px;background:var(--lime-primary);border-radius:2px}
+.sec-head{max-width:820px;margin-bottom:52px}
+.sec-head .body-lg{margin-top:18px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* ============ butonlar ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  height:50px;padding:0 26px;border-radius:13px;border:1px solid transparent;
+  font-size:15.5px;font-weight:700;cursor:pointer;white-space:nowrap;
+  transition:transform .17s,box-shadow .17s,background .17s,border-color .17s}
+.btn-primary{background:var(--lime-primary);color:var(--accent-ink);box-shadow:0 8px 26px var(--accent-a18)}
+.btn-primary:hover{background:var(--lime-bright);transform:translateY(-1px);box-shadow:0 12px 34px var(--accent-a28)}
+.btn-primary:active{transform:scale(.985)}
+.btn-secondary{background:var(--surface-2);color:var(--text-primary);border-color:var(--border-default)}
+.btn-secondary:hover{border-color:var(--border-strong);background:var(--surface-hover);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--text-secondary);border-color:var(--border-subtle)}
+.btn-ghost:hover{color:var(--text-primary);border-color:var(--border-default)}
+.btn[disabled],.btn.disabled{opacity:.45;cursor:not-allowed;box-shadow:none;pointer-events:none}
+.btn-sm{height:42px;padding:0 18px;font-size:14px;border-radius:11px}
+.tlink{display:inline-flex;align-items:center;gap:7px;color:var(--text-secondary);font-weight:650;font-size:15px}
+.tlink:hover{color:var(--lime-primary)}
+.tlink::after{content:'→';transition:transform .16s}
+.tlink:hover::after{transform:translateX(3px)}
+
+/* ============ header ============ */
+.site-header{position:sticky;top:0;z-index:100;height:74px;
+  background:var(--bg-header);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border-subtle)}
+.site-header .wrap{height:100%;display:flex;align-items:center;gap:34px;max-width:var(--w-wide)}
+.brand{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:780;letter-spacing:-.03em;flex-shrink:0}
+.brand img{width:32px;height:32px;object-fit:contain;filter:drop-shadow(0 0 10px var(--accent-a40))}
+.brand .jolt{color:var(--lime-primary)}
+.nav{display:flex;align-items:center;gap:32px;margin-right:auto}
+.nav a{font-size:15px;font-weight:600;color:var(--text-secondary);position:relative;padding:6px 0;transition:color .16s}
+.nav a:hover{color:var(--text-primary)}
+.nav a.on{color:var(--text-primary)}
+.nav a.on::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;
+  background:var(--lime-primary);border-radius:2px}
+.head-cta{display:flex;align-items:center;gap:12px;flex-shrink:0}
+/* DIL SECICI - bayrakli acilir menu.
+   Eskiden iki metin dugmesiydi (EN|TR) ve 520px altinda tamamen
+   gizleniyordu; bes dil oraya sigmaz. Tek dugme + liste hem sigar hem
+   buyumeye acik. Bayraklar SVG: Windows'ta bolge gostergesi emojileri
+   bayrak degil "DE"/"TR" harfleri olarak ciziliyor. */
+.langsw{position:relative;display:inline-flex}
+.langbtn{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 11px;
+  background:var(--surface-2);border:1px solid var(--border-subtle);border-radius:11px;
+  color:var(--text-secondary);font:inherit;font-size:13px;font-weight:650;
+  cursor:pointer;transition:border-color .16s,color .16s}
+.langbtn:hover{color:var(--text-primary);border-color:var(--border-strong)}
+.langbtn .cev{width:10px;height:6px;opacity:.7;transition:transform .18s}
+.langsw.open .langbtn .cev{transform:rotate(180deg)}
+.langsw .flag{display:block;width:21px;height:15px;border-radius:3px;overflow:hidden;
+  flex:0 0 auto;box-shadow:0 0 0 1px rgba(255,255,255,.13) inset}
+.langsw .flag svg{display:block;width:100%;height:100%}
+.langmenu{position:absolute;top:calc(100% + 7px);right:0;z-index:60;min-width:178px;
+  background:var(--surface-1);border:1px solid var(--border-strong);border-radius:13px;
+  padding:6px;box-shadow:var(--shadow-card);
+  opacity:0;visibility:hidden;transform:translateY(-5px);
+  transition:opacity .16s,transform .16s,visibility .16s}
+.langsw.open .langmenu{opacity:1;visibility:visible;transform:none}
+.langopt{display:flex;align-items:center;gap:10px;width:100%;padding:8px 10px;
+  background:none;border:0;border-radius:9px;color:var(--text-secondary);
+  font:inherit;font-size:13.5px;font-weight:600;text-align:left;cursor:pointer;
+  transition:background .14s,color .14s}
+.langopt:hover{background:var(--surface-2);color:var(--text-primary)}
+.langopt[aria-selected=true]{color:var(--accent-ink);background:var(--lime-primary)}
+.burger{display:none;width:44px;height:44px;border-radius:11px;background:var(--surface-2);
+  border:1px solid var(--border-subtle);cursor:pointer;align-items:center;justify-content:center}
+.burger span{display:block;width:18px;height:2px;background:var(--text-primary);border-radius:2px;position:relative}
+.burger span::before,.burger span::after{content:'';position:absolute;left:0;width:18px;height:2px;
+  background:var(--text-primary);border-radius:2px}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+/* mobil menu */
+.mobnav{position:fixed;inset:74px 0 0;z-index:99;background:var(--bg-page);padding:28px 22px;
+  display:none;flex-direction:column;gap:6px;overflow-y:auto}
+.mobnav.on{display:flex}
+.mobnav a{font-size:19px;font-weight:650;padding:15px 4px;border-bottom:1px solid var(--border-subtle)}
+.mobnav .btn{margin-top:14px;width:100%}
+body.navopen{overflow:hidden}
+@media(max-width:1080px){
+  .nav{display:none}
+  .burger{display:flex}
+  .head-cta .btn-secondary{display:none}
+}
+/* Dil secici artik telefonda da duruyor: tek dugme sigiyor ve
+   ziyaretcinin dilini degistirebilmesi gizlemekten onemli. */
+@media(max-width:520px){.langbtn span{display:none}.langbtn{padding:0 9px;gap:5px}}
+
+/* ============ kartlar ============ */
+.card{background:linear-gradient(180deg,rgba(255,255,255,.024),transparent 42%),var(--surface-1);
+  border:1px solid var(--border-subtle);border-radius:var(--r-xl);padding:28px;
+  box-shadow:var(--shadow-small);transition:transform .17s,border-color .17s,box-shadow .17s}
+.card-hover:hover{transform:translateY(-2px);border-color:var(--border-strong);box-shadow:var(--shadow-card)}
+.card-lg{padding:34px;border-radius:var(--r-2xl)}
+.card-ico{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  font-size:21px;background:var(--lime-soft);border:1px solid var(--lime-border);color:var(--lime-primary);margin-bottom:20px}
+.card-ico.purple{background:var(--purple-soft);border-color:rgba(157,108,255,.28);color:#C3ADFF}
+.card-ico.blue{background:var(--files-a10);border-color:var(--files-a26);color:var(--files-text)}
+.card-ico.red{background:rgba(255,93,104,.10);border-color:rgba(255,93,104,.26);color:#FF9AA0}
+.card h3{font-size:19px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.card p{color:var(--text-secondary);font-size:15px;line-height:1.62}
+
+/* ============ rozetler ============ */
+.badge{display:inline-flex;align-items:center;gap:7px;height:28px;padding:0 12px;border-radius:9px;
+  font-size:12.5px;font-weight:700;letter-spacing:.01em}
+.badge-lime{background:var(--lime-soft);color:var(--lime-primary);border:1px solid var(--lime-border)}
+.badge-soon{background:var(--warning-a12);color:var(--warning);border:1px solid var(--warning-a30)}
+.badge-neutral{background:var(--surface-3);color:var(--text-secondary);border:1px solid var(--border-subtle)}
+/* platform rozetleri kendi marka tonlarindan beslenir — vurgudan bagimsiz */
+.badge-kick{background:var(--kick-a10);color:var(--kick);border:1px solid var(--kick-a28)}
+.badge-twitch{background:rgba(157,108,255,.12);color:#C3ADFF;border:1px solid rgba(157,108,255,.3)}
+.badge-youtube{background:rgba(255,93,104,.10);color:#FF9AA0;border:1px solid rgba(255,93,104,.28)}
+.badge-files{background:var(--files-a10);color:var(--files-text);border:1px solid var(--files-a28)}
+.badge-tiktok{background:rgba(37,244,238,.10);color:#7FF3EF;border:1px solid rgba(37,244,238,.28)}
+/* paket rozeti — hangi paketlerde oldugunu soyler (vurgu renginden bagimsiz) */
+.badge-plan{background:rgba(157,108,255,.12);color:#C3ADFF;border:1px solid rgba(157,108,255,.30)}
+.h-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.h-row h2{margin-bottom:0}
+.dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
+
+/* ============ urun penceresi (ekran goruntusu cercevesi) ============ */
+.pwin{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border-strong);
+  background:var(--surface-1);box-shadow:var(--shadow-elevated);position:relative}
+.pwin-bar{height:34px;display:flex;align-items:center;gap:7px;padding:0 14px;
+  background:#0A0F16;border-bottom:1px solid var(--border-subtle)}
+.pwin-bar i{width:10px;height:10px;border-radius:50%;background:#2A3444;display:block}
+.pwin-bar .t{margin-left:10px;font-size:11.5px;color:var(--text-muted);font-weight:600}
+.pwin img{width:100%;display:block}
+.pwin-glow::after{content:'';position:absolute;inset:-1px;border-radius:var(--r-lg);pointer-events:none;
+  box-shadow:inset 0 0 0 1px var(--accent-a10)}
+
+/* ============ hero ============ */
+.hero{padding:72px 0 92px;position:relative}
+.hero-visual .pwin{max-width:none}
+.hero-grid{display:grid;grid-template-columns:minmax(0,50fr) minmax(0,50fr);gap:48px;align-items:center}
+.hero-copy{max-width:640px}
+.hero .display{margin-bottom:24px}
+.hero .body-lg{max-width:560px}
+.hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero-micro{display:flex;gap:14px 22px;margin-top:30px;flex-wrap:wrap;color:var(--text-muted);font-size:13.5px}
+.hero-micro span{display:inline-flex;align-items:center;gap:8px}
+.hero-micro span::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--lime-primary)}
+.hero-visual{position:relative}
+.hero-visual .pwin{transform:perspective(1400px) rotateY(-3deg)}
+.hero-clip{position:absolute;right:-26px;bottom:-42px;width:150px;aspect-ratio:9/16;border-radius:14px;
+  overflow:hidden;border:1px solid var(--border-strong);box-shadow:var(--shadow-elevated);
+  background:var(--surface-2)}
+.hero-clip img{width:100%;height:100%;object-fit:cover}
+.hero-clip .dur{position:absolute;right:8px;top:8px;background:rgba(5,7,11,.8);border:1px solid var(--border-subtle);
+  border-radius:7px;padding:2px 8px;font-size:11px;font-weight:700}
+@media(max-width:1080px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:48px}
+  .hero-visual .pwin{transform:none}
+  .hero-clip{display:none}
+}
+@media(max-width:640px){.hero-cta .btn{width:100%}}
+
+/* ============ uyumluluk seridi ============ */
+.strip{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:26px 0}
+.strip-i{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 18px;border-radius:12px;
+  background:var(--surface-1);border:1px solid var(--border-subtle);font-size:14px;font-weight:650;
+  color:var(--text-secondary)}
+.strip-i .dot{width:8px;height:8px}
+
+/* ============ surec zaman cizelgesi ============ */
+.tl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;position:relative}
+.tl::before{content:'';position:absolute;left:6%;right:6%;top:34px;height:2px;
+  background:linear-gradient(90deg,var(--lime-primary),var(--accent-a18));border-radius:2px}
+.tl-i{position:relative;padding-top:0}
+.tl-n{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:800;background:var(--surface-2);border:1px solid var(--lime-border);
+  color:var(--lime-primary);margin-bottom:22px;position:relative;z-index:1;box-shadow:0 0 0 6px var(--bg-page)}
+.tl-i h3{font-size:19px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.tl-i p{color:var(--text-secondary);font-size:15px;line-height:1.6}
+.tl-i ul{margin-top:14px;display:flex;flex-direction:column;gap:7px}
+.tl-i li{list-style:none;color:var(--text-muted);font-size:13.5px;display:flex;gap:9px;align-items:flex-start}
+.tl-i li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--lime-primary);margin-top:8px;flex-shrink:0}
+@media(max-width:1000px){.tl{grid-template-columns:repeat(2,minmax(0,1fr))}.tl::before{display:none}}
+@media(max-width:620px){.tl{grid-template-columns:1fr}}
+
+/* ============ bento ============ */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.b-2{grid-column:span 2}.b-3{grid-column:span 3}.b-4{grid-column:span 4}.b-6{grid-column:span 6}
+@media(max-width:1000px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .b-2,.b-3,.b-4,.b-6{grid-column:span 2}}
+@media(max-width:640px){.bento{grid-template-columns:1fr}
+  .b-2,.b-3,.b-4,.b-6{grid-column:span 1}}
+
+/* ============ ozellik hikayesi (degisimli) ============ */
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;
+  padding:64px 0;border-top:1px solid var(--border-subtle)}
+.story:first-of-type{border-top:0}
+.story.rev .story-copy{order:2}
+.story-copy h2{margin-bottom:16px}
+.story ul{margin-top:26px;display:flex;flex-direction:column;gap:13px}
+.story li{list-style:none;display:flex;gap:12px;align-items:flex-start;color:var(--text-secondary);font-size:15.5px}
+.story li::before{content:'✓';color:var(--lime-primary);font-weight:800;flex-shrink:0;margin-top:1px}
+.story-note{margin-top:22px;display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border-radius:11px;
+  background:var(--surface-2);border:1px solid var(--border-subtle);color:var(--text-muted);font-size:13px}
+@media(max-width:980px){.story{grid-template-columns:1fr;gap:36px;padding:48px 0}
+  .story.rev .story-copy{order:0}}
+
+/* ============ kaynak kartlari ============ */
+.srcs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+@media(max-width:1000px){.srcs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.srcs{grid-template-columns:1fr}}
+
+/* ============ ozellik matrisi ============ */
+.matrix{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface-1);
+  border:1px solid var(--border-subtle);border-radius:var(--r-xl);overflow:hidden}
+.matrix th,.matrix td{padding:16px 20px;text-align:left;font-size:14.5px;border-bottom:1px solid var(--border-subtle)}
+.matrix thead th{background:var(--bg-page-soft);font-size:12.5px;font-weight:750;color:var(--text-muted);
+  letter-spacing:.06em}
+.matrix tbody tr:last-child td{border-bottom:0}
+.matrix tbody tr:hover{background:var(--surface-2)}
+.matrix td:not(:first-child),.matrix th:not(:first-child){text-align:center;width:16%}
+.mk{color:var(--lime-primary);font-weight:800}
+.mn{color:var(--text-muted)}
+.mx{color:var(--text-muted);font-weight:800}
+.ms{color:var(--warning);font-size:11.5px;font-weight:750}
+/* sayisal deger hucresi (720p / 1080p / 4K / limit sayilari) */
+.mv{font-weight:750;color:var(--text-primary);font-variant-numeric:tabular-nums}
+.mv-n{color:var(--text-muted);font-weight:600}
+.matrix-wrap{overflow-x:auto}
+@media(max-width:760px){.matrix{min-width:640px}}
+
+/* ============ fiyatlandirma ============ */
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+@media(max-width:980px){.plans{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+.plan{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent 40%),var(--surface-1);
+  border:1px solid var(--border-subtle);border-radius:var(--r-2xl);padding:32px;
+  display:flex;flex-direction:column}
+.plan.pop{border-color:var(--lime-border);box-shadow:var(--shadow-lime)}
+.plan-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%)}
+.plan-n{font-size:17px;font-weight:700;letter-spacing:-.02em}
+.plan-p{font-size:46px;font-weight:790;letter-spacing:-.04em;margin:14px 0 4px;font-variant-numeric:tabular-nums}
+.plan-p sub{font-size:15px;font-weight:600;color:var(--text-muted);vertical-align:baseline}
+.plan-eff{color:var(--text-muted);font-size:13px;min-height:20px}
+/* kota kutusu */
+.plan-q{margin-top:22px;padding:15px 18px;border-radius:var(--r-md);
+  background:var(--lime-soft);border:1px solid var(--lime-border)}
+.plan-q b{display:block;font-size:18px;font-weight:770;letter-spacing:-.025em;color:var(--lime-primary);
+  font-variant-numeric:tabular-nums}
+.plan-q span{display:block;margin-top:4px;font-size:13px;color:var(--text-secondary)}
+.plan-same{margin-top:22px;font-size:12.5px;font-weight:700;color:var(--text-muted)}
+.plan-same+ul{margin-top:14px!important}
+/* Liste alani ESNER (flex:1), boylece madde sayisi kartlar arasinda farkli olsa
+   da butonlar ayni yatay cizgide kalir. Kartlar grid'de zaten esit yukseklikte. */
+.plan ul{margin:26px 0;display:flex;flex-direction:column;gap:12px;flex:1 1 auto}
+.plan li{list-style:none;display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--text-secondary)}
+.plan li::before{content:'✓';color:var(--lime-primary);font-weight:800;flex-shrink:0;line-height:1.5}
+.plan li.soon{color:var(--text-muted)}
+.plan li.soon::before{content:'○';color:var(--warning)}
+/* bu pakete OZEL olan satir — "bir ust pakete gecince ne aliyorum" cevabi */
+.plan li.up{color:var(--text-primary);font-weight:640}
+.plan li.up::before{content:'★';color:var(--lime-primary)}
+.li-tag{display:inline-flex;align-items:center;height:17px;padding:0 6px;margin-left:8px;
+  border-radius:5px;background:var(--lime-soft);border:1px solid var(--lime-border);
+  color:var(--lime-primary);font-size:9.5px;font-weight:800;letter-spacing:.09em;
+  vertical-align:1px;white-space:nowrap}
+.li-note{display:block;margin-top:5px;font-size:12px;font-weight:400;line-height:1.5;
+  color:var(--text-muted)}
+.plan .btn{width:100%}
+.notice{display:flex;gap:14px;align-items:flex-start;padding:18px 22px;border-radius:var(--r-lg);
+  background:var(--warning-a07);border:1px solid var(--warning-a24);margin-bottom:40px}
+.notice-i{color:var(--warning);font-size:19px;flex-shrink:0;line-height:1.3}
+.notice p{color:var(--text-secondary);font-size:14.5px;line-height:1.6}
+.notice b{color:var(--warning)}
+.notice-lime{background:var(--lime-soft);border-color:var(--lime-border);margin-bottom:0}
+.notice-lime .notice-i,.notice-lime b{color:var(--lime-primary)}
+/* olumsuz ozellik satiri (plan karti) */
+.plan li.no{color:var(--text-muted)}
+.plan li.no::before{content:'✕';color:var(--text-muted);font-weight:800}
+/* kapsam anahtari (Single Platform / All Platforms) */
+.billwrap{text-align:center;margin-bottom:38px}
+.billsw{display:inline-flex;background:var(--surface-2);border:1px solid var(--border-subtle);
+  border-radius:14px;padding:4px;gap:4px}
+.billsw button{display:inline-flex;align-items:center;gap:9px;height:44px;padding:0 22px;border:0;
+  border-radius:10px;background:transparent;color:var(--text-secondary);
+  font-size:14.5px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .16s,color .16s}
+.billsw button:hover{color:var(--text-primary)}
+.billsw button[aria-pressed="true"]{background:var(--lime-primary);color:var(--accent-ink)}
+.billsw .badge{height:23px;padding:0 9px;font-size:11.5px}
+.billsw button[aria-pressed="true"] .badge{background:var(--accent-ink-a13);color:var(--accent-ink);border-color:var(--accent-ink-a24)}
+.billwrap .caption{margin-top:14px}
+@media(max-width:520px){.billsw{width:100%}.billsw button{flex:1;padding:0 10px;font-size:13.5px;gap:6px}
+  .billsw .badge{padding:0 7px;font-size:10.5px}}
+/* kapsam varyantlarinin gorunurlugu — metin DOM'da kalir, ceviri bozulmaz */
+html[data-scope="single"] .s-all,html[data-scope="all"] .s-single{display:none}
+/* paket adi (Starter / Creator / Pro) — marka adi gibi, cevrilmez */
+.plan-n{font-variant-ligatures:none}
+
+/* ============ ucretsiz seviye seridi ============
+   Fiyat kartlarinin altinda tek satirlik serit. Indirme akisi buna bagli. */
+.freetier{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;
+  padding:20px 26px;border-radius:var(--r-lg);
+  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent 60%),var(--surface-1);
+  border:1px solid var(--border-subtle);border-left:3px solid var(--lime-border)}
+.ft-head{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.ft-head b{font-size:15.5px;font-weight:730;letter-spacing:-.02em;white-space:nowrap}
+.ft-list{flex:1 1 320px;display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px 22px;margin:0}
+.ft-list li{list-style:none;display:flex;gap:9px;align-items:center;font-size:13.5px;color:var(--text-secondary)}
+.ft-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--lime-primary);flex-shrink:0}
+.ft-line{flex:1 1 260px;margin:0;font-size:14.5px;color:var(--text-secondary)}
+.ft-line b{color:var(--text-primary);font-weight:730}
+.ft-line a{color:var(--lime-primary);text-decoration:none;white-space:nowrap}
+.ft-line a:hover{text-decoration:underline}
+.freetier .btn{flex-shrink:0}
+/* dikey yiginda 'flex:1' YUKSEKLIGI buyutur — satirlar arasi bosluk acilmasin */
+@media(max-width:760px){.freetier{flex-direction:column;align-items:flex-start;padding:20px;gap:14px}
+  .ft-list,.ft-line{flex:0 0 auto;width:100%}
+  .freetier .btn{width:100%}}
+
+/* tikli liste (kart icinde) */
+.ticks{margin:16px 0 0;display:flex;flex-direction:column;gap:10px}
+.ticks li{list-style:none;display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--text-secondary)}
+.ticks li::before{content:'✓';color:var(--lime-primary);font-weight:800;flex-shrink:0}
+.ticks.ticks-ai li::before{content:'◆';color:var(--purple-primary);font-size:12px;line-height:1.5}
+
+/* ============ FAQ ============ */
+.faq-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:48px;align-items:start}
+@media(max-width:940px){.faq-layout{grid-template-columns:1fr;gap:28px}}
+.faq-nav{position:sticky;top:100px;display:flex;flex-direction:column;gap:4px}
+@media(max-width:940px){.faq-nav{position:static;flex-direction:row;flex-wrap:wrap;gap:8px}}
+.faq-nav a{padding:11px 15px;border-radius:11px;font-size:14px;font-weight:620;color:var(--text-secondary);
+  border:1px solid transparent;transition:.16s}
+.faq-nav a:hover{background:var(--surface-2);color:var(--text-primary)}
+.faq-nav a.on{background:var(--lime-soft);color:var(--lime-primary);border-color:var(--lime-border)}
+.faq-search{display:flex;align-items:center;gap:11px;background:var(--surface-1);
+  border:1px solid var(--border-default);border-radius:14px;padding:0 16px;margin-bottom:32px}
+.faq-search:focus-within{border-color:var(--lime-primary);box-shadow:0 0 0 3px var(--accent-a10)}
+.faq-search input{flex:1;background:none;border:0;outline:none;color:var(--text-primary);
+  font-size:15.5px;padding:15px 0}
+.faq-search button{background:none;border:0;color:var(--text-muted);cursor:pointer;font-size:16px;padding:6px}
+.faq-search button:hover{color:var(--text-primary)}
+.faq-cat{margin-bottom:44px;scroll-margin-top:100px}
+.faq-cat h2{font-size:22px;font-weight:730;letter-spacing:-.025em;margin-bottom:18px}
+.acc{border:1px solid var(--border-subtle);border-radius:var(--r-md);background:var(--surface-1);margin-bottom:10px;
+  overflow:hidden;transition:border-color .16s}
+.acc:hover{border-color:var(--border-default)}
+.acc[open]{border-color:var(--lime-border);background:var(--surface-2)}
+.acc summary{list-style:none;cursor:pointer;padding:19px 22px;display:flex;align-items:center;gap:16px;
+  font-size:16px;font-weight:650;letter-spacing:-.015em}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:'+';margin-left:auto;font-size:21px;font-weight:400;color:var(--text-muted);
+  transition:transform .2s;flex-shrink:0}
+.acc[open] summary::after{content:'−';color:var(--lime-primary)}
+.acc-b{padding:0 22px 22px;color:var(--text-secondary);font-size:15.5px;line-height:1.68;max-width:760px}
+.acc-b p+p{margin-top:12px}
+.faq-none{display:none;padding:40px;text-align:center;color:var(--text-muted);
+  border:1px dashed var(--border-default);border-radius:var(--r-lg)}
+
+/* ============ CTA paneli ============ */
+.cta{background:
+    radial-gradient(700px 300px at 24% 0%,var(--accent-wash-2),transparent 62%),
+    linear-gradient(180deg,#0B1410,#080C11);
+  border:1px solid var(--lime-border);border-radius:var(--r-2xl);padding:64px 56px;text-align:center;
+  box-shadow:var(--shadow-lime)}
+.cta .h-lg{margin-bottom:18px}
+.cta .body-lg{max-width:600px;margin:0 auto}
+.cta-btns{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+@media(max-width:640px){.cta{padding:44px 26px}.cta-btns .btn{width:100%}}
+
+/* ============ footer ============ */
+.site-footer{border-top:1px solid var(--border-subtle);background:var(--bg-page-soft);
+  padding:64px 0 34px;margin-top:96px}
+.foot-grid{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));gap:44px}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+.foot-brand p{color:var(--text-muted);font-size:14px;line-height:1.65;margin-top:16px;max-width:320px}
+.foot-os{margin-top:18px}
+.foot-col h4{font-size:12.5px;font-weight:750;letter-spacing:.1em;color:var(--text-muted);margin-bottom:18px}
+.foot-col a{display:block;color:var(--text-secondary);font-size:14.5px;padding:7px 0;transition:color .15s}
+.foot-col a:hover{color:var(--lime-primary)}
+.foot-bot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  margin-top:52px;padding-top:26px;border-top:1px solid var(--border-subtle);
+  color:var(--text-muted);font-size:13.5px}
+
+/* ============ yardimci ============ */
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media(max-width:980px){.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.grid-3,.grid-2{grid-template-columns:1fr}}
+.mt-s{margin-top:16px}.mt-m{margin-top:28px}.mt-l{margin-top:48px}
+
+/* --- kucuk ekranlarda tasma korumasi --- */
+@media(max-width:700px){
+ .display,.h-lg,.h-md{overflow-wrap:break-word;hyphens:auto}
+ .body-lg{font-size:16.5px}
+ .hero{padding:44px 0 64px}
+ .eyebrow{font-size:11px;letter-spacing:.12em}
+ .hero-micro{gap:10px 18px;font-size:12.5px}
+ .card,.plan{padding:22px}
+ .cta{padding:38px 22px}
+}
+@media(max-width:420px){.display{font-size:30px;line-height:1.06}}
+
+/* --- izgara cocuklari asla min-content'e sismez (yatay tasma korumasi) --- */
+.hero-grid>*,.story>*,.bento>*,.tl>*,.srcs>*,.grid-3>*,.grid-2>*,.plans>*,.foot-grid>*{min-width:0}
+.hero-copy{max-width:100%}
+.pwin{max-width:100%}
+@media(max-width:1080px){.hero-copy{max-width:640px}}
+
+/* --- HEADER mobil tasma duzeltmesi: brand ve CTA daralabilsin --- */
+@media(max-width:700px){
+ .site-header .wrap{gap:12px;padding:0 16px}
+ .brand{flex-shrink:1;min-width:0;font-size:17px;gap:8px}
+ .brand img{width:26px;height:26px}
+ .head-cta{gap:8px;min-width:0}
+ .head-cta .btn-sm{height:38px;padding:0 12px;font-size:13px}
+ .burger{width:38px;height:38px}
+ .mobnav{inset:74px 0 0}
+}
+@media(max-width:400px){
+ .head-cta .btn-primary{padding:0 10px;font-size:12.5px}
+}
+
+/* =====================================================================
+   HESAP / GIRIS / YASAL SAYFALAR
+   Bu sayfalar eskiden AYRI bir stil dosyasi (style.css) kullaniyordu; site
+   iki farkli tasarim kusagina bolunmustu. Kurallar buraya TASINDI ve
+   yukaridaki degiskenlerle yeniden yazildi - renk, font, kose ve golge artik
+   TEK kaynaktan geliyor. Baslik ve alt bilgi kodu da pazarlama sayfalariyla
+   ayni (site-header / site-footer).
+   ===================================================================== */
+
+/* ---- sayfa basligi (Gizlilik, Sartlar, Hesap, Indir) ---- */
+.pagehead{text-align:center;padding:72px 0 34px}
+.pagehead h1{font-size:clamp(30px,4.4vw,44px);letter-spacing:-.02em;margin:10px 0 12px}
+.pagehead p{color:var(--text-secondary);font-size:16px;max-width:660px;margin:0 auto;line-height:1.65}
+
+/* ---- giris / kayit / sifre kartlari ---- */
+.auth{display:flex;align-items:center;justify-content:center;
+      min-height:calc(100vh - 220px);padding:56px 20px}
+.authcard{width:100%;max-width:452px;background:var(--surface-1);
+          border:1px solid var(--border-default);border-radius:20px;
+          padding:34px 32px;box-shadow:0 24px 70px rgba(0,0,0,.45)}
+.authcard h1{font-size:26px;letter-spacing:-.02em;margin-bottom:6px}
+.authcard .sub{color:var(--text-secondary);font-size:14.5px;margin-bottom:22px}
+
+.field{margin-bottom:15px}
+.field label{display:block;font-size:13px;font-weight:600;
+             color:var(--text-secondary);margin-bottom:7px}
+.field input{width:100%;height:48px;padding:0 14px;border-radius:12px;
+             background:var(--surface-2);border:1px solid var(--border-default);
+             color:var(--text-primary);font:inherit;font-size:15px;transition:.15s}
+.field input:focus{outline:none;border-color:var(--accent);
+                   box-shadow:0 0 0 3px var(--accent-a18)}
+.field input::placeholder{color:var(--text-disabled)}
+
+.authrow{display:flex;align-items:center;justify-content:space-between;
+         gap:12px;margin:6px 0 18px;font-size:13.5px;color:var(--text-secondary)}
+.authrow a{color:var(--accent);text-decoration:none}
+.authrow a:hover{text-decoration:underline}
+.authfoot{margin-top:20px;text-align:center;font-size:14px;color:var(--text-secondary)}
+.authfoot a{color:var(--accent);text-decoration:none;font-weight:600}
+.authfoot a:hover{text-decoration:underline}
+
+/* Google dugmesi: marka rengi beyaz zemin ister, bu yuzden .btn ailesine
+   girmiyor - tek istisna ve bilincli. */
+.gbtn{width:100%;height:50px;display:flex;align-items:center;justify-content:center;
+      gap:10px;background:#fff;color:#1f1f1f;border:0;border-radius:12px;
+      font:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:.15s}
+.gbtn:hover{background:#f1f3f6;transform:translateY(-1px)}
+
+.divider{display:flex;align-items:center;gap:12px;margin:20px 0;
+         color:var(--text-muted);font-size:12.5px}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border-subtle)}
+
+/* ---- bilgi / hata seridi ---- */
+.amsg{padding:12px 14px;border-radius:12px;font-size:13.5px;line-height:1.55;
+      margin-bottom:16px;border:1px solid var(--border-default);
+      background:var(--surface-2);color:var(--text-secondary)}
+.amsg.err{border-color:color-mix(in srgb,#FF6B72 45%,transparent);
+          background:color-mix(in srgb,#FF6B72 10%,transparent);color:#FFC9CC}
+.amsg.ok{border-color:var(--accent-a32);background:var(--accent-a10);
+         color:var(--accent-bright)}
+
+/* ---- tam genislik dugme ---- */
+.btn-block{width:100%;display:flex}
+
+/* ---- yasal metin (Gizlilik / Sartlar) ---- */
+.legal{max-width:820px;margin:0 auto;padding:0 20px 90px;
+       color:var(--text-secondary);line-height:1.75;font-size:15px}
+.legal h2{color:var(--text-primary);font-size:21px;margin:34px 0 12px;letter-spacing:-.01em}
+.legal h3{color:var(--text-primary);font-size:16.5px;margin:22px 0 8px}
+.legal p{margin-bottom:13px}
+.legal ul{margin:0 0 15px 20px}
+.legal li{margin-bottom:8px}
+.legal a{color:var(--accent);text-decoration:none}
+.legal a:hover{text-decoration:underline}
+.legal b{color:var(--text-primary)}
+
+/* ---- indirme sayfasi kutusu ---- */
+.ctabox{max-width:560px;margin:0 auto;background:var(--surface-1);
+        border:1px solid var(--border-default);border-radius:20px;
+        padding:32px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.ctabox .note{color:var(--text-muted);font-size:13px;margin-top:14px;line-height:1.6}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:12.5px}
+
+/* ---- indirme sayfasi: pencere onizlemesi + adimlar ---- */
+.win{background:var(--surface-1);border:1px solid var(--border-default);
+     border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.win .bar{display:flex;align-items:center;gap:8px;padding:11px 14px;
+          background:var(--surface-2);border-bottom:1px solid var(--border-subtle)}
+.win .bar .d{width:11px;height:11px;border-radius:50%;background:var(--text-disabled)}
+.win .bar .d.r{background:#ff5f57}
+.win .bar .d.y{background:#febc2e}
+.win .bar .d.g{background:#28c840}
+.win .bar .t{margin-left:8px;font-family:ui-monospace,Consolas,monospace;
+             font-size:12px;color:var(--text-muted)}
+.win .body{padding:20px}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.step{background:var(--surface-1);border:1px solid var(--border-default);
+      border-radius:16px;padding:24px}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);
+              font-family:ui-monospace,Consolas,monospace;font-size:13px;
+              font-weight:700;color:var(--accent);display:block}
+.step h3{font-size:19px;margin:14px 0 8px;font-weight:750;color:var(--text-primary)}
+.step p{color:var(--text-secondary);font-size:15px;line-height:1.65}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+
+/* ---- hesap sayfasi kartlari ---- */
+.ch{background:var(--surface-1);border:1px solid var(--border-default);
+    border-radius:16px;padding:22px}
+
+/* ---- ortak yardimci metinler ---- */
+.lead{color:var(--text-secondary);font-size:17px;line-height:1.7;max-width:680px}
+.h1{font-size:clamp(30px,4.4vw,44px);letter-spacing:-.02em;line-height:1.12;
+    color:var(--text-primary)}

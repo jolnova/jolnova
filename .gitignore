@@ -1,0 +1,20 @@
+# --- KURULUM DOSYASI DEPOYA GIRMEZ ---
+# Jolnova-Setup.exe ~179 MB. GitHub'in dosya basina siniri 100 MB; ustelik
+# her surumde yeni bir 179 MB'lik nesne eklemek depoyu birkac surumde
+# gigabaytlara cikarir ve klonlamayi imkansizlastirir.
+# Kurulum dosyasi AYRI barindirilir (Cloudflare R2 ya da GitHub Releases);
+# sitedeki indirme linki oraya isaret eder.
+dl/*.exe
+dl/*.zip
+
+# --- isletim sistemi / editor artiklari ---
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+*~
+
+# --- yerel deneme ciktilari ---
+.vscode/
+.idea/
+node_modules/

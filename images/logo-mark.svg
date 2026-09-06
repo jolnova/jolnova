@@ -1,0 +1,51 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bolt" x1="150" y1="120" x2="400" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD36B"/>
+      <stop offset=".45" stop-color="#FBB534"/>
+      <stop offset="1" stop-color="#DC8B0C"/>
+    </linearGradient>
+    <linearGradient id="card" x1="90" y1="130" x2="420" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#413529"/>
+      <stop offset="1" stop-color="#211A14"/>
+    </linearGradient>
+    <linearGradient id="card2" x1="200" y1="80" x2="400" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#362C22"/>
+      <stop offset="1" stop-color="#261E18"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- arka film karti (hafif egik) -->
+  <g transform="rotate(-9 300 150)">
+    <rect x="196" y="92" width="196" height="86" rx="22" fill="url(#card2)" stroke="#5B4B3B" stroke-width="3"/>
+    <rect x="228" y="120" width="34" height="26" rx="9" fill="#1A140F" opacity=".85"/>
+    <rect x="288" y="120" width="34" height="26" rx="9" fill="#1A140F" opacity=".85"/>
+  </g>
+
+  <!-- hiz cizgileri -->
+  <g fill="#FBB534" opacity=".95">
+    <rect x="44" y="112" width="112" height="17" rx="8.5"/>
+    <rect x="70" y="146" width="86" height="17" rx="8.5"/>
+    <rect x="96" y="180" width="60" height="15" rx="7.5"/>
+  </g>
+
+  <!-- ana film karti + sol kenarda perforasyon -->
+  <rect x="86" y="150" width="330" height="292" rx="40" fill="url(#card)" stroke="#5B4B3B" stroke-width="3.5"/>
+  <g fill="#17120D" opacity=".9">
+    <rect x="112" y="182" width="34" height="30" rx="10"/>
+    <rect x="112" y="228" width="34" height="30" rx="10"/>
+    <rect x="112" y="274" width="34" height="30" rx="10"/>
+    <rect x="112" y="320" width="34" height="30" rx="10"/>
+    <rect x="112" y="366" width="34" height="30" rx="10"/>
+  </g>
+
+  <!-- YILDIRIM + PLAY (marka isareti) -->
+  <g filter="url(#glow)">
+    <path d="M430 126 L214 250 L296 268 L156 330 L268 352 L128 486 L392 300 L300 282 L438 214 Z"
+          fill="url(#bolt)" stroke="#FFE7B0" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+</svg>

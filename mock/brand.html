@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset=utf-8>
+<link rel=stylesheet href="_base.css"><style>
+html,body{width:1000px;height:520px;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center;
+ background:radial-gradient(700px 400px at 50% 0%,rgba(157,108,255,.06),transparent 60%),#080C12;padding:26px}
+.modal{background:linear-gradient(180deg,#161E2B,#101621);border:1px solid rgba(176,192,220,.26);
+ border-radius:20px;box-shadow:0 26px 80px rgba(0,0,0,.5);width:100%;max-width:900px;padding:26px}
+.modal h3{font-size:19px;font-weight:750;letter-spacing:-.025em;margin-bottom:6px}
+.modal .s{color:#A8B2C3;font-size:13px;line-height:1.55;margin-bottom:20px}
+.bx{background:#0D131C;border:1px solid rgba(146,163,190,.13);border-radius:14px;padding:16px}
+.bt{font-size:14px;font-weight:720}
+.bs{color:#747F92;font-size:11.5px;margin-top:3px;line-height:1.5}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
+.tgl{width:44px;height:25px;border-radius:20px;position:relative;display:block;flex:0 0 auto}
+.tgl.on{background:var(--acc-a22);border:1px solid var(--acc-a45)}
+.tgl.on i{position:absolute;right:3px;top:2px;width:18px;height:18px;border-radius:50%;background:var(--acc);
+ box-shadow:0 0 8px var(--acc-a60)}
+.tgl.off{background:#1B2431;border:1px solid rgba(176,192,220,.2)}
+.tgl.off i{position:absolute;left:3px;top:2px;width:18px;height:18px;border-radius:50%;background:#5B6577}
+.tag{font-size:9.5px;font-weight:800;letter-spacing:.09em;border-radius:5px;padding:2px 7px;
+ background:rgba(157,108,255,.16);color:#C3ADFF;border:1px solid rgba(157,108,255,.34);margin-left:7px}
+.mini{width:56px;aspect-ratio:9/16;border-radius:7px;border:1px solid rgba(146,163,190,.2);
+ position:relative;overflow:hidden;flex:0 0 auto}
+</style></head><body><div class=modal><h3>🏷 Clip branding</h3>
+<div class=s>What appears on the clip itself. Both switches live in Settings and apply to every clip you produce next.</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+ <div class=bx>
+  <div class=bt>Jolnova watermark</div>
+  <div class=bs>A small Jolnova badge in the corner of the finished clip.</div>
+  <div class=row>
+   <div style="display:flex;align-items:center;gap:12px">
+    <span class="mini g1"><span style="position:absolute;right:3px;bottom:3px;background:rgba(7,10,15,.75);
+     color:var(--acc);border-radius:3px;padding:1px 4px;font-size:6px;font-weight:800">Jolnova</span></span>
+    <span class="mini g4"></span></div>
+   <span class="tgl off"><i></i></span></div>
+  <div style="color:#747F92;font-size:11px;margin-top:12px;padding-top:11px;
+   border-top:1px solid rgba(146,163,190,.1);line-height:1.5">
+   Off on every paid plan — it is a switch, not an upgrade. During the free trial the badge stays on.</div>
+ </div>
+ <div class=bx>
+  <div class=bt>Platform badge<span class=tag>CREATOR &amp; PRO</span></div>
+  <div class=bs>The platform name and channel line Jolnova draws on the clip.</div>
+  <div class=row>
+   <div style="display:flex;align-items:center;gap:12px">
+    <span class="mini g2"><span style="position:absolute;left:0;right:0;top:6px;text-align:center;
+     color:#F7F9FC;font-size:6px;font-weight:800;letter-spacing:.04em">KICK<br><span style="font-weight:600;opacity:.75">kick.com/novarift</span></span></span>
+    <span class="mini g3"></span></div>
+   <span class="tgl on"><i></i></span></div>
+  <div style="color:#747F92;font-size:11px;margin-top:12px;padding-top:11px;
+   border-top:1px solid rgba(146,163,190,.1);line-height:1.5">
+   Hidden here. The badge is drawn by Jolnova, not by the source, so removing it leaves the picture untouched.</div>
+ </div>
+ <div class=bx style="grid-column:1/-1;display:flex;align-items:center;gap:14px">
+  <span style="width:26px;height:26px;border-radius:8px;background:var(--acc-a12);border:1px solid var(--acc-a30);
+   color:var(--acc);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:0 0 auto">i</span>
+  <div style="color:#A8B2C3;font-size:12px;line-height:1.55">Both settings are account-wide and are stored in your
+   clip presets too — a preset can carry "watermark off, badge hidden" and apply it to a streamer in one click.</div>
+  <span class=btns style="margin-left:auto;flex:0 0 auto">Open presets</span>
+ </div>
+</div></div></body></html>

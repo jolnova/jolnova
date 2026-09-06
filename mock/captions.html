@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset=utf-8>
+<link rel=stylesheet href="_base.css"><style>
+html,body{width:1000px;height:640px;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center;
+ background:radial-gradient(700px 400px at 50% 0%,rgba(157,108,255,.06),transparent 60%),#080C12;padding:26px}
+.modal{background:linear-gradient(180deg,#161E2B,#101621);border:1px solid rgba(176,192,220,.26);
+ border-radius:20px;box-shadow:0 26px 80px rgba(0,0,0,.5);width:100%;max-width:900px;padding:26px}
+.modal h3{font-size:19px;font-weight:750;letter-spacing:-.025em;margin-bottom:6px;
+ display:flex;align-items:center;gap:10px}
+.modal .s{color:#A8B2C3;font-size:12.5px;line-height:1.55;margin-bottom:18px}
+.tag{font-size:10px;font-weight:800;letter-spacing:.09em;border-radius:6px;padding:3px 8px;
+ background:var(--acc-a12);color:var(--acc);border:1px solid var(--acc-a30)}
+.seg{display:flex;align-items:center;gap:11px;background:#0D131C;border:1px solid rgba(146,163,190,.13);
+ border-radius:11px;padding:9px 11px;margin-top:8px}
+.seg .tc{font-family:ui-monospace,Consolas,monospace;font-size:10.5px;color:#5B6577;flex:0 0 82px}
+.seg .in{flex:1;background:#070B11;border:1px solid rgba(146,163,190,.18);border-radius:8px;
+ padding:7px 10px;font-size:12.5px;color:#F7F9FC}
+.seg .in.edited{border-color:var(--acc-a45);box-shadow:0 0 0 2px var(--acc-a12)}
+.seg .del{flex:0 0 auto;background:#1B2431;border:1px solid rgba(255,93,104,.28);color:#FF8F96;
+ border-radius:8px;padding:6px 10px;font-size:11px;font-weight:700}
+.foot{display:flex;gap:10px;margin-top:20px;justify-content:flex-end;align-items:center}
+.lbl{color:#747F92;font-size:10.5px;font-weight:750;letter-spacing:.1em}
+</style></head><body><div class=modal>
+<h3>💬 Subtitles <span class=tag>ON EVERY PLAN</span></h3>
+<div class=s>Fix the wording or drop a line. The clip is re-rendered once from a clean master — editing twice does not stack quality loss.</div>
+<div style="display:grid;grid-template-columns:250px 1fr;gap:22px">
+ <div class="g2" style="aspect-ratio:9/16;border-radius:14px;border:1px solid rgba(146,163,190,.16);
+  position:relative;display:flex;align-items:flex-end;padding:14px;overflow:hidden">
+  <span style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(6,9,13,.72))"></span>
+  <span style="position:absolute;left:9px;top:9px;background:rgba(7,10,15,.8);border:1px solid var(--acc-a30);
+   color:var(--acc);border-radius:6px;padding:3px 8px;font-size:10px;font-weight:800">LIVE PREVIEW</span>
+  <div style="position:relative;z-index:2;width:100%;text-align:center;font-size:14px;font-weight:800;
+   line-height:1.28;letter-spacing:-.01em;text-shadow:0 0 6px #000,0 2px 5px #000">HE PULLED IT BACK<br>IN THE LAST SECOND</div>
+ </div>
+ <div>
+  <div class=lbl>LINES</div>
+  <div style="color:#747F92;font-size:11px;margin-top:4px">Timings stay exactly as transcribed — only the words change.</div>
+  <div class=seg><span class=tc>0:04.2 → 0:06.8</span>
+   <span class=in>okay okay watch this one</span>
+   <span class=del>Delete</span></div>
+  <div class=seg><span class=tc>0:06.8 → 0:09.1</span>
+   <span class="in edited">he pulled it back in the last second</span>
+   <span class=del>Delete</span></div>
+  <div class=seg style="opacity:.45"><span class=tc>0:09.1 → 0:10.0</span>
+   <span class=in style="text-decoration:line-through">uhh— uh</span>
+   <span class=del style="background:rgba(255,93,104,.14)">Removed</span></div>
+  <div class=seg><span class=tc>0:10.0 → 0:13.4</span>
+   <span class=in>chat is completely gone right now</span>
+   <span class=del>Delete</span></div>
+  <div style="display:flex;align-items:center;gap:8px;background:#0D131C;border:1px solid rgba(146,163,190,.13);
+   border-radius:11px;padding:10px 12px;margin-top:12px;color:#A8B2C3;font-size:11.5px">
+   <span style="width:20px;height:20px;border-radius:6px;background:var(--acc-a12);border:1px solid var(--acc-a30);
+    color:var(--acc);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">i</span>
+   1 line edited · 1 line removed — timings untouched</div>
+  <div class=foot>
+   <span class=btns>Cancel</span>
+   <span class=btnp>Save &amp; re-render</span></div>
+ </div></div></div></body></html>
