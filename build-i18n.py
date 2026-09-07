@@ -109,7 +109,11 @@ def yollari_duzelt(html):
         html = html.replace('src="' + varlik, 'src="../' + varlik)
         html = html.replace('href="' + varlik, 'href="../' + varlik)
         html = html.replace("url(" + varlik, "url(../" + varlik)
-    for dosya in ("site.css", "supabase.js", "lang.js",
+    # ⚠️ YENI ORTAK DOSYA EKLENDIGINDE BU LISTEYE DE EKLE.
+    # Unutulursa alt klasordeki sayfa dosyayi KENDI klasorunde arar
+    # (/tr/user.js) ve 404 alir; sayfa acilir ama o betik calismaz -
+    # sessiz bir bozulma. (user.js tam olarak boyle atlanmisti.)
+    for dosya in ("site.css", "supabase.js", "user.js", "lang.js",
                   "lang-de.js", "lang-fr.js", "lang-es.js"):
         html = html.replace('href="' + dosya, 'href="../' + dosya)
         html = html.replace('src="' + dosya, 'src="../' + dosya)

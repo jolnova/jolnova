@@ -683,3 +683,31 @@ html[data-scope="single"] .s-all,html[data-scope="all"] .s-single{display:none}
 .lead{color:var(--text-secondary);font-size:17px;line-height:1.7;max-width:680px}
 .h1{font-size:clamp(30px,4.4vw,44px);letter-spacing:-.02em;line-height:1.12;
     color:var(--text-primary)}
+
+/* ---------------------------------------------------------------
+   KULLANICI ROZETI (baslikta "Giris yap" yerine gecer) — user.js
+   Dugun degil bir KIMLIK gostergesi: dolgu yok, ince kenarlik,
+   hover'da hafif aydinlanma. Yaninda duran sari "Indir" birincil
+   eylem olmaya devam etsin diye bilerek sakin.
+   --------------------------------------------------------------- */
+.userchip{display:inline-flex;align-items:center;gap:9px;
+  padding:6px 14px 6px 6px;border-radius:999px;
+  border:1px solid var(--border-default);background:var(--surface-1);
+  color:var(--text-primary);text-decoration:none;font-weight:600;
+  font-size:14px;line-height:1;transition:border-color .18s,background .18s}
+.userchip:hover{border-color:rgba(255,197,61,.5);background:var(--surface-2)}
+.userchip.sm{font-size:13.5px;padding:5px 12px 5px 5px}
+
+.userchip-av{width:28px;height:28px;border-radius:50%;flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  background:linear-gradient(135deg,#FFC53D,#C98A00);color:#1A1204;
+  font-size:11px;font-weight:800;letter-spacing:.3px}
+.userchip.sm .userchip-av{width:26px;height:26px;font-size:10.5px}
+.userchip-av img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Uzun isimler basligi tasirmasin. */
+.userchip-ad{max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:900px){.userchip-ad{max-width:110px}}
+
+/* Mobil menude tam genislik (oradaki digerleri de oyle). */
+.mobnav .userchip{width:100%;justify-content:center;padding:11px 14px}

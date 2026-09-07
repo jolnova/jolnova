@@ -6,14 +6,14 @@
 <title>My Account — Jolnova</title>
 <meta name="description" content="Your Jolnova account: subscription status, app download and settings.">
 <meta name="robots" content="noindex,follow">
-<link rel="icon" type="image/png" href="images/favicon.png?v=e48868daad">
-<link rel="stylesheet" href="site.css?v=e48868daad">
+<link rel="icon" type="image/png" href="images/favicon.png?v=442c6ac9af">
+<link rel="stylesheet" href="site.css?v=442c6ac9af">
 </head>
 <body>
 
 <header class="site-header">
  <div class="wrap">
-  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=e48868daad" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=442c6ac9af" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
   <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
   <div class="head-cta">
    <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span id="langName">English</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"/><circle cx="24" cy="22.5" r="10" fill="#fff"/><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"/><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"/></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"/><rect y="15" width="60" height="15" fill="#DD0000"/><rect y="30" width="60" height="15" fill="#FFCE00"/></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"/><rect x="20" width="20" height="45" fill="#fff"/><rect x="40" width="20" height="45" fill="#EF4135"/></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"/><rect y="11.25" width="60" height="22.5" fill="#F1BF00"/></svg></i><span>Español</span></button></div></div>
@@ -48,6 +48,32 @@
     </div>
   </section>
 
+  <!-- ---------------- PROFIL ----------------
+       Ad ve fotograf Supabase'in user_metadata alaninda tutuluyor.
+       AYNI ALANI UYGULAMA DA OKUYOR (src/panel.py -> full_name / avatar_url),
+       yani burada degistirilen ad uygulamada da gorunur; ayri bir
+       "profil tablosu" acmadik ki iki kaynak birbirinden sapmasin. -->
+  <section style="padding:0 0 34px">
+    <div class="ch" style="border-radius:16px">
+      <div class="eyebrow">Profile</div>
+      <div style="display:flex;align-items:center;gap:18px;margin-top:14px;flex-wrap:wrap">
+        <span id="pf-av" class="userchip-av" style="width:64px;height:64px;font-size:22px"></span>
+        <div style="flex:1;min-width:240px">
+          <label for="pf-name" style="display:block;font-size:13px;color:var(--dim);margin-bottom:6px">Display name</label>
+          <input id="pf-name" type="text" maxlength="60" autocomplete="name"
+                 style="width:100%;max-width:360px">
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:16px;flex-wrap:wrap">
+        <button id="pf-save" class="btn btn-primary" style="padding:11px 18px">Save</button>
+        <span id="pf-msg" style="font-size:13.5px;color:var(--dim)"></span>
+      </div>
+      <div style="color:var(--dim2);font-size:12.5px;margin-top:14px;line-height:1.6">
+        The photo comes from the account you signed in with. Changing the name here also changes it in the Windows app.
+      </div>
+    </div>
+  </section>
+
   <div style="color:var(--dim2);font-size:13px">Account: <span id="uid" class="mono"></span></div>
 </main>
 
@@ -55,7 +81,7 @@
  <div class="wrap">
   <div class="foot-grid">
    <div class="foot-brand">
-    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=e48868daad" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=442c6ac9af" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
     <p>Automatic stream clipping for Windows. Track your sources, let Jolnova prepare vertical clips, and review what is worth posting.</p>
     <div class="foot-os"><span class="badge badge-neutral">Windows desktop app</span></div>
    </div>
@@ -82,21 +108,68 @@ async function logout(){
   // gibi gorunuyordu. Yerel oturumu her kosulda temizleyip en fazla 1.5sn bekle.
   try{ await Promise.race([sb.auth.signOut(), new Promise(r=>setTimeout(r,1500))]); }catch(e){}
   try{ Object.keys(localStorage).filter(k=>k.indexOf('sb-')===0).forEach(k=>localStorage.removeItem(k)); }catch(e){}
+  // Basliktaki rozet de gitmeli; yoksa cikis yapmis kullanici hala
+  // adini gorur ve "cikamadim mi?" der.
+  if(window.jolnovaProfilSil) jolnovaProfilSil();
   location.href='login.html';
 }
+
+/* Profil ipucunu yaz: baslik rozeti (user.js) bunu okur.
+   Supabase'in kendi 'sb-...' kaydini okumuyoruz - bicimi surume gore
+   degisiyor ve kutuphane guncellenince rozet sessizce bosalirdi. */
+function profilYaz(u){
+  const md=u.user_metadata||{};
+  if(window.jolnovaProfilYaz)
+    jolnovaProfilYaz(md.full_name||md.name||'', u.email||'',
+                     md.avatar_url||md.picture||'');
+}
+
 (async()=>{
   const {data}=await sb.auth.getSession();
   if(!data.session){location.href='login.html';return;}
   const u=data.session.user;
-  const name=(u.user_metadata&&u.user_metadata.full_name)||'';
+  const md=u.user_metadata||{};
+  const name=md.full_name||md.name||'';
   document.getElementById('hello').textContent='Welcome'+(name?', '+name:'')+' 👋';
   document.getElementById('mailrow').textContent=u.email;
   document.getElementById('uid').textContent=u.id;
+  profilYaz(u);
+
+  // ---- profil kutusu ----
+  const av=document.getElementById('pf-av');
+  const foto=md.avatar_url||md.picture||'';
+  if(foto){
+    const im=new Image(); im.src=foto; im.alt='';
+    im.style.cssText='width:100%;height:100%;object-fit:cover;display:block';
+    im.onerror=()=>{av.textContent=(name||u.email||'?').trim()[0].toUpperCase();};
+    av.appendChild(im);
+  } else {
+    av.textContent=(name||u.email||'?').trim()[0].toUpperCase();
+  }
+  const inp=document.getElementById('pf-name');
+  const msg=document.getElementById('pf-msg');
+  const btn=document.getElementById('pf-save');
+  inp.value=name;
+  btn.onclick=async()=>{
+    const yeni=inp.value.trim().slice(0,60);
+    btn.disabled=true; msg.textContent='Saving…';
+    // full_name YAZILIYOR cunku uygulama da o alani okuyor
+    // (src/panel.py: md.get("full_name") or md.get("name")).
+    const {data:d2,error}=await sb.auth.updateUser({data:{full_name:yeni}});
+    btn.disabled=false;
+    if(error){ msg.textContent='Could not save. Try again.'; return; }
+    msg.textContent='Saved.';
+    document.getElementById('hello').textContent='Welcome'+(yeni?', '+yeni:'')+' 👋';
+    if(d2&&d2.user) profilYaz(d2.user);
+    // Rozeti aninda tazele (sayfa yenilenmeden gorunsun)
+    document.querySelectorAll('.userchip-ad').forEach(e=>{e.textContent=yeni;});
+    setTimeout(()=>{msg.textContent='';},2500);
+  };
   // subscription: real status once the table is connected
   document.getElementById('sub-state').textContent='No subscription';
   document.getElementById('sub-note').textContent="You do not have an active subscription yet. Starter, Creator and Pro each come in a Single Platform and an All Platforms version — see the pricing page for what each one includes.";
 })();
 </script>
-<script src="lang-de.js?v=e48868daad"></script><script src="lang-fr.js?v=e48868daad"></script><script src="lang-es.js?v=e48868daad"></script><script src="lang.js?v=e48868daad"></script>
+<script src="user.js?v=442c6ac9af"></script><script src="lang-de.js?v=442c6ac9af"></script><script src="lang-fr.js?v=442c6ac9af"></script><script src="lang-es.js?v=442c6ac9af"></script><script src="lang.js?v=442c6ac9af"></script>
 </body>
 </html>
