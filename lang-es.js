@@ -759,7 +759,7 @@ var RJ_ES = {
  "9. Changes":"9. Cambios",
  "These terms may be updated; we'll update the date on this page for significant changes.":"Estos términos pueden actualizarse; actualizaremos la fecha de esta página ante cambios importantes.",
  "10. Contact":"10. Contacto",
- "Questions about this page can be sent through your account area inside the application.":"Las preguntas sobre esta página se pueden enviar desde tu área de cuenta dentro de la aplicación.",
+ "Questions about this page can be sent through your account area inside the application, or by e-mail to":"Las preguntas sobre esta página se pueden enviar desde tu área de cuenta dentro de la aplicación, o por correo electrónico a",
 "Kick, Twitch and TikTok live tracking":"Seguimiento en directo de Kick, Twitch y TikTok",
  "TikTok — live tracking":"TikTok — seguimiento en directo",
  "My Files — MP4, MKV, MOV, WEBM":"Mis archivos — MP4, MKV, MOV, WEBM",

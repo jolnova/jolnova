@@ -1,9 +1,9 @@
 {
-  "version": "1.54.0",
-  "url": "https://jolnova.com/dl/Jolnova-Setup.exe",
-  "notes": "Subtitles are in the streamer's own language now. The app used to assume Turkish for every broadcast, so an English stream came back translated instead of transcribed; the language is detected from the audio and held steady for the whole broadcast. Captions also land on the spoken word again: on a clip with silence removed they used to arrive four seconds late, because a timing shift meant to compensate for trimming was applied where nothing had been trimmed. Two related faults are fixed as well, so word timings move with the cut and only one caption line is ever on screen. Clip edges are cleaner: a clip now keeps a moment of breath at each end instead of starting and ending exactly on a word, and when a reaction lands late in the window the clip reaches back for its setup rather than skipping the trim altogether and shipping at full length. The app also measures the streamer's own reaction — how much of the clip is speech, how far the voice rises, whether they shout — separately from the game audio, and records it along with the score behind every clip you approve or reject, so selection can be tuned against real judgement instead of guesswork.",
+  "version": "1.67.4",
+  "url": "https://github.com/jolnova/jolnova/releases/latest/download/Jolnova-Setup.exe",
+  "notes": "The app is now called Jolnova. Everything carries over: your clips, channels, settings and sign-in move with the update, and nothing needs to be set up again.\n\nSports broadcasts now work on full matches as well as highlight reels, across every discipline rather than football alone, and a match link posted on X can be used the same way. The commentary is transcribed against sports vocabulary, so names and terms come back written properly instead of guessed at, and the scoreboard is framed tighter.\n\nClips keep the streamer in frame: when the camera sits high in the shot the crop reaches up for it instead of cutting the top of their head, measured per clip rather than once per recording.\n\nThe review queue opens one streamer at a time and pages through long lists fifteen at a time, so a busy night no longer arrives as one endless column. Past broadcasts show an estimated processing time before they start. There are thirteen caption templates.\n\nRecording a live broadcast is no longer cut short at the earlier limit, so a full match is captured from start to finish.",
   "size_mb": 179,
-  "sha256": "43688c7d4ca413f9c5db7b1b1782a8d30a28c05a797eac1f46590f31496ca124",
-  "released": "2026-08-30",
+  "sha256": "41fa452c2e00287527b5a979b11068f2cc432ed301b59d1dc833183c0252fc6e",
+  "released": "2026-09-07",
   "min": "1.0.0"
 }

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="de" data-static-lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jolnova Funktionen — Verfolgung, Untertitel, Zeitplan und Export</title>
+<meta name="description" content="Live-Verfolgung für Kick, Twitch und TikTok, YouTube-Links, Bearbeitung und Gestaltung der Untertitel, ein Laufzeitplan, Clip-Vorlagen, Steuerung von Wasserzeichen und Plattform-Abzeichen — jede Jolnova-Funktion erklärt.">
+<link rel="canonical" href="https://jolnova.com/de/features.html">
+<link rel="alternate" hreflang="en" href="https://jolnova.com/features.html">
+<link rel="alternate" hreflang="tr" href="https://jolnova.com/tr/features.html">
+<link rel="alternate" hreflang="de" href="https://jolnova.com/de/features.html">
+<link rel="alternate" hreflang="fr" href="https://jolnova.com/fr/features.html">
+<link rel="alternate" hreflang="es" href="https://jolnova.com/es/features.html">
+<link rel="alternate" hreflang="x-default" href="https://jolnova.com/features.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jolnova">
+<meta property="og:title" content="Jolnova Features — Tracking, Subtitles, Schedule and Export">
+<meta property="og:description" content="Live tracking for Kick, Twitch and TikTok, YouTube links, subtitle text editing and styling, a run schedule, clip presets, watermark and platform badge control — every Jolnova feature explained.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://jolnova.com/de/features.html">
+<meta property="og:image" content="https://jolnova.com/images/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jolnova Features — Tracking, Subtitles, Schedule and Export">
+<meta name="twitter:description" content="Live tracking for Kick, Twitch and TikTok, YouTube links, subtitle text editing and styling, a run schedule, clip presets, watermark and platform badge control — every Jolnova feature explained.">
+<meta name="twitter:image" content="https://jolnova.com/images/og-cover.png">
+<meta name="theme-color" content="#05070B">
+<link rel="icon" type="image/png" href="../images/favicon.png?v=9683e1be18">
+<link rel="preload" as="image" href="../images/mock/dashboard.png">
+<link rel="stylesheet" href="../site.css?v=9683e1be18">
+<!-- kaynak-sha1: 2189d87bd302acf16b7ecc0f83bc22094f523014 -->
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=9683e1be18" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <nav class="nav" aria-label="Main"><a href="index.html">Start</a><a href="how-it-works.html">So funktioniert es</a><a href="features.html" class="on">Funktionen</a><a href="pricing.html">Preise</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
+  <div class="head-cta">
+   <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span id="langName">Deutsch</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"></rect><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"></path><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"></path><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"></path><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"></path></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"></rect><circle cx="24" cy="22.5" r="10" fill="#fff"></circle><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"></circle><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"></path></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="true"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"></rect><rect x="20" width="20" height="45" fill="#fff"></rect><rect x="40" width="20" height="45" fill="#EF4135"></rect></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"></rect><rect y="11.25" width="60" height="22.5" fill="#F1BF00"></rect></svg></i><span>Español</span></button></div></div>
+   <a href="../login.html" class="btn btn-secondary btn-sm">Anmelden</a>
+   <a href="download.html" class="btn btn-primary btn-sm">↓ Herunterladen</a>
+   <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="rjMenu()"><span></span></button>
+  </div>
+ </div>
+</header>
+<div class="mobnav" id="mobnav"><a href="index.html">Start</a><a href="how-it-works.html">So funktioniert es</a><a href="features.html">Funktionen</a><a href="pricing.html">Preise</a><a href="faq.html">FAQ</a><a href="support.html">Support</a>
+ <a href="../login.html" class="btn btn-secondary">Anmelden</a>
+ <a href="download.html" class="btn btn-primary">↓ Für Windows herunterladen</a>
+</div>
+<main id="main">
+<section class="section">
+ <div class="wrap">
+  <div class="sec-head">
+   <span class="eyebrow">FUNKTIONEN</span>
+   <h1 class="display" style="font-size:clamp(38px,4.6vw,62px)">Ein genauerer Blick auf den Jolnova-Ablauf.</h1>
+   <p class="body-lg">Von der Quellenverfolgung bis zu prüfbereiten hochkanten Clips — das kann die Anwendung heute tatsächlich. Nichts auf dieser Seite ist geplant, bald verfügbar oder in der Beta.</p>
+  </div>
+  <div class="strip">
+   <span class="strip-i"><span class="dot" style="color:var(--kick)"></span>Kick — Live-Verfolgung</span>
+   <span class="strip-i"><span class="dot" style="color:var(--twitch)"></span>Twitch — Live-Verfolgung</span>
+   <span class="strip-i"><span class="dot" style="color:var(--tiktok)"></span>TikTok — Live-Verfolgung</span>
+   <span class="strip-i"><span class="dot" style="color:var(--youtube)"></span>YouTube — Live-Verfolgung</span>
+   <span class="strip-i"><span class="dot" style="color:var(--files)"></span>Meine Dateien — deine eigenen Videos</span>
+  </div>
+ </div>
+</section>
+
+<section class="section-sm section-line"><div class="wrap">
+
+ <article class="story" id="live-tracking">
+  <div class="story-copy"><span class="eyebrow">LIVE-VERFOLGUNG</span><h2 class="h-md">Sieh, was live ist, was aufnimmt und was still geworden ist</h2>
+   <p class="body">One page shows every source you track, with its live state, recording state and capture mode. Kick, Twitch, TikTok and YouTube are all tracked live.</p>
+   <ul><li>Zustände Live, Offline, Nimmt auf und Pausiert</li><li>Zuschauerzahl, wenn die Plattform sie meldet</li>
+    <li>Pausieren und Fortsetzen pro Quelle</li><li>Zwischen Automatisch, Spiel und IRL wechseln</li>
+    <li>Mehrere Streams gleichzeitig aufnehmen — 1 bei Starter, 2 bei Creator, 4 bei Pro</li></ul>
+   <div class="story-note">Eine Liveaufnahme braucht etwa 5,6 GB pro Stream und Stunde — die Gleichzeitigkeitsgrenze hat also mit deiner Festplatte zu tun, nicht mit der Lizenz.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Live-Verfolgung</span></div>
+   <img src="../images/mock/live.png" alt="Live tracking view showing tracked sources and recording state" loading="lazy" width="1360" height="620"></div>
+ </article>
+
+ <article class="story rev" id="detection">
+  <div class="story-copy"><span class="eyebrow">MOMENTERKENNUNG</span><h2 class="h-md">Drei Signale entscheiden, was zum Clip wird</h2>
+   <p class="body">Die Erkennung läuft auf deinem eigenen Rechner und kostet pro Clip nichts. Jolnova liest drei Dinge aus der Aufnahme und schneidet dort einen Kandidaten, wo sie zusammentreffen.</p>
+   <ul><li>Chat-Dichte — wie schnell Nachrichten eintreffen, verglichen mit dem ruhigen Normalwert</li>
+    <li>Lautstärkespitzen — Lachen, Schreien, ein plötzlicher Sprung in der Lautheit</li>
+    <li>Sprachinhalt — was tatsächlich gesagt wird, aus dem Transkript</li>
+    <li>Die Erkennungsempfindlichkeit ist eine Einstellung: Wenige, Ausgewogen oder Viele</li></ul>
+   <div class="story-note">Es gibt weder eine KI-Punktzahl noch eine Qualitätsnote auf einem Clip. Die KI schreibt eine einzige Sache: den Titel eines Clips, den du freigegeben hast.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Prüfliste</span></div>
+   <img src="../images/mock/review.png" alt="Review queue with generated clips ready for approval" loading="lazy" width="1360" height="640"></div>
+ </article>
+
+ <article class="story" id="review-queue">
+  <div class="story-copy"><span class="eyebrow">PRÜFLISTE</span><h2 class="h-md">Eine Warteschlange für alles, was Jolnova erstellt hat</h2>
+   <p class="body">Die Clips sind nach Quelle gruppiert und auf Seiten verteilt, damit eine Liste mit Hunderten Einträgen schnell bleibt. Filtern, suchen, mehrere auf einmal auswählen und gemeinsam bearbeiten.</p>
+   <ul><li>Nach Kick, Twitch, TikTok, YouTube oder lokalen Dateien filtern</li><li>Clip-Titel und Quellen durchsuchen</li>
+    <li>Nach neuesten, ältesten oder Dauer sortieren</li><li>Mehrere Clips auswählen und im Stapel freigeben oder ablehnen</li>
+    <li>Alle Clips einer Quelle in einem Schritt löschen</li></ul></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clips</span></div>
+   <img src="../images/mock/clips.png" alt="Clips library with approved, published and rejected tabs" loading="lazy" width="1360" height="620"></div>
+ </article>
+
+ <article class="story rev" id="run-schedule">
+  <div class="story-copy"><span class="eyebrow">LAUFZEITPLAN</span><h2 class="h-md">Bestimm die Tage und Stunden, an denen Jolnova arbeiten darf</h2>
+   <p class="body">Deine Streamer gehen zu bestimmten Zeiten live. Außerhalb davon gibt es keinen Grund, dass die Anwendung Speicher und Bandbreite verbraucht. Leg einen Wochenplan fest und Jolnova bleibt die übrige Zeit im Leerlauf.</p>
+   <ul><li>Wöchentliche Zeiträume, mehrere Tage pro Zeitraum</li>
+    <li>Zeiträume über Mitternacht hinaus — 20:00 bis 02:00 funktioniert</li>
+    <li>Einmalige Ausnahmen: den ganzen Tag ruhen oder nur zwischen zwei Uhrzeiten laufen</li>
+    <li>Die Zeiten richten sich nach der lokalen Uhr deines Computers, die Sommerzeit regelt sich also von selbst</li>
+    <li>Schalte den Zeitplan aus und Jolnova verfolgt wieder rund um die Uhr</li></ul>
+   <div class="story-note">Es ist ein lokaler Zeitgeber. Jolnova folgt dem Zeitplan, solange dein Computer läuft und die App geöffnet ist — nichts läuft in der Cloud.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Laufzeitplan</span></div>
+   <img src="../images/mock/schedule.png" alt="Run schedule with a weekly plan and one-off exceptions" loading="lazy" width="1360" height="620"></div>
+ </article>
+
+ <article class="story" id="link-processing">
+  <div class="story-copy"><span class="eyebrow">LINK-VERARBEITUNG</span><h2 class="h-md">Link einfügen, Clips bekommen</h2>
+   <p class="body">Vergangene Übertragungen und hochgeladene Videos durchlaufen dieselbe Pipeline wie Liveaufnahmen. Der Fortschritt wird angezeigt, während das Video geladen, durchsucht und zu Clips verarbeitet wird.</p>
+   <ul><li>Kick-VOD-Links</li><li>Twitch-VOD-Links</li><li>TikTok-Videolinks</li>
+    <li>YouTube-Videos und vergangene Streams</li>
+    <li>Heruntergeladen → durchsucht → Clips landen in der Warteschlange</li></ul></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Automatisierung</span></div>
+   <img src="../images/mock/automation.png" alt="Automation page with the three-step source setup" loading="lazy" width="1360" height="720"></div>
+ </article>
+
+ <article class="story rev" id="local-files">
+  <div class="story-copy"><span class="eyebrow">MEINE DATEIEN</span><h2 class="h-md">Deine eigenen Aufnahmen funktionieren auch</h2>
+   <p class="body">Wähl ein beliebiges Video von deinem Computer — einen Podcast, ein Interview, eine alte Aufnahme — und Jolnova lässt dieselbe Erkennung und Aufbereitung darüber laufen.</p>
+   <ul><li>MP4, MKV, MOV und WEBM</li><li>Die Datei wird dort gelesen, wo sie liegt</li>
+    <li>Dein Original wird nie verschoben oder gelöscht</li>
+    <li>In jedem Tarif enthalten — deine eigenen Dateien zählen nie als Plattform</li></ul>
+   <div class="story-note">Die Verarbeitung läuft auf deinem Rechner; nur der KI-Textschritt kontaktiert einen Dienst.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Meine Dateien</span></div>
+   <img src="../images/mock/files.png" alt="Add content from a link, a local file or a YouTube video" loading="lazy" width="1360" height="700"></div>
+ </article>
+
+ <article class="story" id="vertical-layout">
+  <div class="story-copy"><span class="eyebrow">CLIP-LAYOUT</span><h2 class="h-md">Fünf Wege, ein 9:16-Bild zu füllen</h2>
+   <p class="body">Ein Clip wird fürs Hochformat gerahmt, nicht darauf zurechtgeschnitten. Wähl das Layout pro Streamer, oder lass Automatisch anhand der Quelle entscheiden.</p>
+   <ul><li>Automatisch — pro Stream entscheiden</li>
+    <li>Spiel — Kamera oben, Gameplay unten</li>
+    <li>IRL — ganzes Bild auf unscharfem Hintergrund</li>
+    <li>Kamera-Ecke — großer Inhalt mit der Kamera in der Ecke</li>
+    <li>Vollbild — die Quelle so nutzen, wie sie ist, ideal für TikTok</li></ul></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Aufnahmemodi</span></div>
+   <img src="../images/mock/vertical.png" alt="Vertical 9:16 clip output examples" loading="lazy" width="1360" height="640"></div>
+ </article>
+
+ <article class="story rev" id="camera-region">
+  <div class="story-copy"><span class="eyebrow">KAMERABEREICH</span><h2 class="h-md">Sag ihr, wo die Kamera ist — oder lass sie eine finden</h2>
+   <p class="body">Im Spielmodus kommt die Kamera des Streamers nach oben und das Gameplay darunter. Jolnova kann den Kamerarahmen selbst erkennen; bei ungewöhnlichem Layout zeichnest du den Rahmen über ein echtes Bild aus dem Stream.</p>
+   <ul><li>Automatische Kameraerkennung</li><li>Den Rahmen selbst zeichnen und in der Größe ändern</li>
+    <li>Ecken-Vorlagen für die vier üblichen Positionen</li>
+    <li>Über einem echten Bild aus der Quelle platziert</li><li>Pro Quelle gespeichert und für jeden Clip wiederverwendet</li></ul></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Kameraeinstellung</span></div>
+   <img src="../images/mock/camera.png" alt="Camera region setup with the camera box drawn over a stream frame" loading="lazy" width="860" height="540"></div>
+ </article>
+
+ <article class="story" id="presets">
+  <div class="story-copy"><span class="eyebrow">CLIP-VORLAGEN</span><h2 class="h-md">Einen Look einmal speichern, auf jeden Streamer anwenden</h2>
+   <p class="body">Eine Vorlage ist ein benanntes Bündel von Einstellungen, die du ohnehin nutzt: Layout, Kamerarahmen, Cliplimit pro Stream, Untertitel, Wasserzeichen, Zusatzkontext und Plattform-Abzeichen. Wende sie mit einem Klick auf einen Streamer an, statt dieselbe Einrichtung von Hand zu wiederholen.</p>
+   <ul><li>Layout und Kamerarahmen pro Streamer</li>
+    <li>Maximale Clips pro Stream</li>
+    <li>Vorlieben zu Untertiteln, Wasserzeichen, Clip-Kontext und Plattform-Abzeichen</li>
+    <li>Eigene Vorlagen umbenennen, duplizieren und löschen</li>
+    <li>Vorlagen zu speichern ist in jedem Tarif möglich, auch in der kostenlosen Testphase</li></ul>
+   <div class="story-note">Eine Vorlage umgeht nie eine Tarifgrenze. Enthält sie eine Einstellung, die dein Tarif nicht abdeckt, wird die Vorliebe gespeichert, bleibt aber inaktiv.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip-Vorlagen</span></div>
+   <img src="../images/mock/presets.png" alt="Clip presets with layout options and saved preset cards" loading="lazy" width="1360" height="700"></div>
+ </article>
+
+</div></section>
+
+<section class="section section-line" id="subtitles"><div class="wrap">
+ <div class="sec-head">
+  <span class="eyebrow">UNTERTITEL</span>
+  <h2 class="h-lg">Lesbar ohne Ton — und korrigierbar, wenn das Transkript danebenliegt.</h2>
+  <p class="body-lg">Gesprochenes wird auf deinem Rechner transkribiert und in einem einzigen Kodiervorgang ins Bild gerendert, es gibt also keinen Qualitätsverlust durch eine zweite Generation. Eine Transkription ist nie perfekt, deshalb bleibt der Text danach bearbeitbar.</p>
+ </div>
+ <div class="grid-2">
+  <article class="card">
+   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Untertiteltext</span></div>
+    <img src="../images/mock/captions.png" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1000" height="640"></div>
+   <div class="h-row mt-m"><h3 class="h-sm">Die Wörter korrigieren</h3><span class="badge badge-lime">JEDER TARIF</span></div>
+   <p>Korrigier ein falsch verstandenes Wort, schreib eine ganze Zeile neu oder lösch eine Zeile, die du nicht auf dem Bild haben willst. Die Zeiten bleiben genau wie transkribiert — nur die Wörter ändern sich.</p>
+   <ul class="ticks mt-s">
+    <li>Jede Zeile direkt bearbeiten</li>
+    <li>Lösch eine Zeile und sie verschwindet aus dem Video</li>
+    <li>Einmal aus einem sauberen Master neu gerendert — zweimal bearbeiten summiert also keinen Qualitätsverlust</li>
+    <li>In jedem Tarif enthalten — den eigenen Text zu korrigieren ist kein kostenpflichtiges Upgrade</li>
+   </ul>
+  </article>
+  <article class="card">
+   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Untertitel-Stil</span></div>
+    <img src="../images/mock/capstyle.png" alt="Subtitle style panel with font, size, colour, outline and placement controls" loading="lazy" width="1000" height="640"></div>
+   <div class="h-row mt-m"><h3 class="h-sm">Das Aussehen ändern</h3><span class="badge badge-plan">CREATOR &amp; PRO</span></div>
+   <p>Gib den Untertiteln deinen eigenen Look: Schriftart, Größe, Farbe, Konturstärke und -farbe, wo sie im Bild sitzen und wie weit vom Rand entfernt.</p>
+   <ul class="ticks mt-s">
+    <li>Schriftart, Größe und Textfarbe</li>
+    <li>Konturstärke und Konturfarbe</li>
+    <li>Neun Platzierungspositionen, dazu der Abstand zum Rand</li>
+    <li>Deckende Hintergrundbox mit eigener Farbe und Deckkraft</li>
+    <li>Live-Vorschau auf einem echten Bild — beim Einstellen wird nichts neu kodiert</li>
+   </ul>
+  </article>
+ </div>
+ <div class="story-note" style="margin-top:26px">Jeder Tarif brennt Untertitel in den Clip ein. Creator und Pro ergänzen den Editor — die Wörter korrigieren und das Aussehen der Untertitel ändern.</div>
+</div></section>
+
+<section class="section-sm section-line"><div class="wrap">
+
+ <article class="story" id="titles">
+  <div class="story-copy"><span class="eyebrow">TITEL UND ANGABEN</span><h2 class="h-md">Die KI schreibt eine einzige Sache: den Titel eines Clips, den du freigegeben hast</h2>
+   <p class="body">Wenn du einen Clip freigibst, werden sein Transkript und eine kurze Chat-Zusammenfassung verschickt, damit Titel, Beschreibung und Hashtags dafür geschrieben werden können. Dein Video verlässt deinen Computer nie.</p>
+   <ul><li>Titel entstehen bei der Freigabe, aus dem, was im Clip tatsächlich passiert</li>
+    <li>Vorschläge für Beschreibung und Hashtags</li>
+    <li>Kopier sie selbst und füg sie in der Plattform ein</li>
+    <li>Keine KI-Bewertung, keine Qualitätsnote — diese Entscheidung triffst du in der Prüfliste</li></ul>
+   <div class="story-note">Jolnova veröffentlicht in deinem Namen auf keiner Plattform. Du lädst den fertigen Clip herunter und postest ihn selbst.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip-Details</span></div>
+   <img src="../images/mock/player.png" alt="Clip detail with generated title, description and hashtags" loading="lazy" width="1000" height="640"></div>
+ </article>
+
+ <article class="story rev" id="branding">
+  <div class="story-copy"><span class="eyebrow">CLIP-BRANDING</span><h2 class="h-md">Bestimm, was auf deinem Clip steht</h2>
+   <p class="body">Zwei Dinge können auf einem fertigen Clip erscheinen, und beide sind Schalter statt Upgrades: das Jolnova-Wasserzeichen und das Plattform-Abzeichen mit dem Kanalnamen.</p>
+   <ul><li>Wasserzeichen an oder aus in jedem bezahlten Tarif</li>
+    <li>Plattformname und Kanalzeile ausblenden — Creator und Pro</li>
+    <li>Das Abzeichen wird von Jolnova gezeichnet, das Entfernen lässt das Bild also unberührt</li>
+    <li>Beide Einstellungen lassen sich in einer Clip-Vorlage speichern</li></ul>
+   <div class="story-note">Während der kostenlosen Testphase bleibt das Jolnova-Wasserzeichen an. Jeder bezahlte Tarif kann es in den Einstellungen abschalten.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip-Branding</span></div>
+   <img src="../images/mock/brand.png" alt="Clip branding settings with watermark and platform badge switches" loading="lazy" width="1000" height="520"></div>
+ </article>
+
+ <article class="story" id="text-overlay">
+  <div class="story-copy"><span class="eyebrow">TEXT-OVERLAY</span><h2 class="h-md">Setz deine eigene Zeile aufs Video</h2>
+   <p class="body">Tipp den Text, bestimm, wo er sitzt, wie groß er ist, welche Farbe er hat und ob er einen deckenden Hintergrund bekommt. Der Text wird ins Video eingebrannt und übersteht damit erneutes Hochladen.</p>
+   <ul><li>Platzierung oben, mittig oder unten</li><li>Vorlagen für Größe und Farbe</li>
+    <li>Schatten oder eine deckende Box hinter dem Text</li><li>Live-Vorschau, bevor du es anwendest</li>
+    <li>Entferne es später und der Clip kehrt in seinen Originalzustand zurück</li></ul>
+   <div class="story-note">Das Text-Overlay gibt es in jedem Tarif, auch in der kostenlosen Testphase.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Text-Overlay</span></div>
+   <img src="../images/mock/text.png" alt="Text overlay editor with position, size, colour and background controls" loading="lazy" width="900" height="640"></div>
+ </article>
+
+ <article class="story rev" id="image-overlay">
+  <div class="story-copy"><span class="eyebrow">BILD-OVERLAY</span><h2 class="h-md">Setz ein Logo an eine beliebige Stelle im Bild</h2>
+   <p class="body">Wähl ein PNG oder JPG, zieh es dorthin, wo du es willst, und ändere die Größe an der Ecke. Anwenden brennt es in den Clip ein; Entfernen gibt dir das saubere Video zurück.</p>
+   <ul><li>Ziehen zum Platzieren, Eckgriff zum Skalieren</li><li>Vorschau auf dem echten Bild</li>
+    <li>So oft hinzufügen und entfernen, wie du willst</li>
+    <li>Jeder Effekt wird neu vom unberührten Original angewendet — kein Generationsverlust</li></ul>
+   <div class="story-note">Nichts wird auf einen bereits komprimierten Export draufgestapelt — ein fünfmal bearbeiteter Clip sieht also aus wie ein einmal bearbeiteter.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Bild-Overlay</span></div>
+   <img src="../images/mock/image.png" alt="Image overlay editor with a logo being dragged and resized on the video" loading="lazy" width="900" height="640"></div>
+ </article>
+
+ <article class="story" id="trim">
+  <div class="story-copy"><span class="eyebrow">ZUSCHNEIDEN UND KONTEXT</span><h2 class="h-md">Schneid den Leerlauf an beiden Enden weg</h2>
+   <p class="body">Die Erkennung bringt dich nah heran; das Zuschneiden macht es genau. Zieh die Griffe für Anfang und Ende, bis der Clip genau mit dem Moment beginnt, und sieh die entstehende Länge dabei mit.</p>
+   <ul><li>Getrennte Griffe für Anfang und Ende</li><li>Die gewählte Dauer wird beim Ziehen angezeigt</li>
+    <li>Bildgenauer Schnitt, einmal neu kodiert</li>
+    <li>Der Clip-Kontext holt zusätzliche Sekunden aus der Originalaufnahme zurück — ±3 Sek. bei Starter, ±7 bei Creator, ±10 bei Pro</li>
+    <li>Später erneut zuschneiden — du schneidest immer vom Original</li></ul></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip zuschneiden</span></div>
+   <img src="../images/mock/trim.png" alt="Trim editor with start and end handles over the clip timeline" loading="lazy" width="900" height="640"></div>
+ </article>
+
+ <article class="story rev" id="export">
+  <div class="story-copy"><span class="eyebrow">EXPORT</span><h2 class="h-md">Dorthin herunterladen, wo du es wirklich willst</h2>
+   <p class="body">Freigegebene Clips werden in voller Qualität in einen Ordner deiner Wahl gespeichert. Speichere einen einzelnen oder schick einen ganzen Bereich in einem Schritt in einen Ordner.</p>
+   <ul><li>Wasserzeichen an oder aus — deine Entscheidung in jedem bezahlten Tarif</li><li>Den Zielordner selbst wählen</li>
+    <li>Einen einzelnen Clip oder einen ganzen Bereich speichern</li><li>Deine Originale bleiben unberührt</li></ul>
+   <div class="story-note">Die Exportauflösung richtet sich nach deinem Tarif und deiner Quelle: 720p bei Starter, 1080p bei Creator und 4K bei Pro, wenn die Quelle 4K ist. Twitch und Kick senden höchstens in 1080p.</div></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip-Ausgabe</span></div>
+   <img src="../images/mock/vertical.png" alt="Vertical 9:16 clip output examples" loading="lazy" width="1360" height="640"></div>
+ </article>
+
+ <article class="story" id="settings">
+  <div class="story-copy"><span class="eyebrow">EINSTELLUNGEN</span><h2 class="h-md">Einmal einstellen, dann in Ruhe lassen</h2>
+   <p class="body">Entscheide, wie eifrig Jolnova einen Moment schneidet, wo fertige Clips gespeichert werden und welche Sprache die App spricht. Diese Einstellungen liegen auf deinem Rechner.</p>
+   <ul><li>Erkennungsempfindlichkeit: Wenige, Ausgewogen oder Viele</li><li>Dein eigener Download-Ordner</li>
+    <li>Aufräumbudget für Aufnahmen, in GB</li>
+    <li>Oberfläche auf Englisch oder Türkisch</li><li>Versions- und Updateprüfung</li></ul></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Einstellungen</span></div>
+   <img src="../images/mock/settings.png" alt="Settings page with detection, storage, language and application options" loading="lazy" width="1000" height="520"></div>
+ </article>
+
+</div></section>
+
+<section class="section section-line"><div class="wrap">
+ <div class="sec-head"><span class="eyebrow">AUSSERDEM DABEI</span><h2 class="h-lg">Kleinigkeiten, die sich summieren.</h2></div>
+ <div class="grid-3">
+  <article class="card"><h3>Englisch oder Türkisch</h3><p>Schalte die ganze Oberfläche jederzeit zwischen EN und TR um.</p></article>
+  <article class="card"><h3>Läuft im Hintergrund</h3><p>Schließ das Fenster — die Verfolgung läuft weiter. Öffne es wieder, wann immer du prüfen willst.</p></article>
+  <article class="card"><h3>Automatische Updates</h3><p>Neue Versionen werden erkannt und direkt aus der App installiert.</p></article>
+  <article class="card"><h3>Kontogeschützt</h3><p>Die Anmeldung ist erforderlich und wird bei jedem Start überprüft — eine kopierte Installation ist damit unbrauchbar.</p></article>
+  <article class="card"><h3>Aufräumen pro Quelle</h3><p>Entferne alle Clips einer einzelnen Quelle, ohne den Rest anzurühren.</p></article>
+  <article class="card"><h3>Auswertung deiner eigenen Ergebnisse</h3><p>Sieh, wie viele Clips erstellt wurden, wie hoch die Freigabequote ist und wie sich die Plattformen verteilen — aus deinen echten Daten.</p></article>
+ </div>
+</div></section>
+
+<section class="section section-line" id="not-included"><div class="wrap">
+ <div class="sec-head">
+  <span class="eyebrow">WAS JOLNOVA NICHT MACHT</span>
+  <h2 class="h-lg">New in this version.</h2>
+  <p class="body-lg">Three additions that change what you can do with a clip.</p>
+ </div>
+ <div class="grid-3">
+  <article class="card"><h3>Viewer clips become reels</h3>
+   <p>Paste a Kick or Twitch clip link and it is turned into a vertical reel exactly as it was clipped — camera placement, subtitles, audio, export. No moment search: someone already decided that moment was good.</p></article>
+  <article class="card"><h3>Sports</h3>
+   <p>Give it a match or a highlights video. Goals are found from the commentary — including the ones announced only by a new scoreline or a turn of phrase — and each clip starts far enough back to hold the whole build-up, with the scoreboard placed where a phone can read it.</p></article>
+  <article class="card"><h3>Scheduled sharing</h3>
+   <p>Connect a YouTube account, pick a day and a time on the calendar, and approved clips go out on their own. The file uploaded is the clip as produced — no re-encoding, no quality loss.</p></article>
+ </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+ <div class="sec-head">
+  <h2 class="h-lg">Genauso nützlich zu wissen.</h2>
+  <p class="body-lg">Two things people expect from a clipping tool that this one deliberately does not have.</p>
+ </div>
+ <div class="grid-3">
+  <article class="card"><h3>No AI moment scoring</h3>
+   <p>No clip is graded by a language model. Detection is a signal-based cut and the decision at the review queue stays yours.</p></article>
+  <article class="card"><h3>Nichts geht ohne deine Freigabe hinaus</h3>
+   <p>A clip is only uploaded after you approve it and schedule it yourself. Nothing is posted automatically from the review queue.</p></article>
+  <article class="card"><h3>Kein Zusammenschnitt, keine Compilation</h3>
+   <p>Clips werden einzeln erstellt. Es gibt keine Funktion, die mehrere Momente zu einem längeren Video zusammennäht.</p></article>
+ </div>
+</div></section>
+
+<section class="section"><div class="wrap"><div class="cta">
+ <h2 class="h-lg">Sieh es mit deinen eigenen Quellen laufen.</h2>
+ <p class="body-lg">Installier Jolnova und füge einen Kanal hinzu — die ersten Clips kommen ohne weiteres Zutun.</p>
+ <div class="cta-btns"><a href="download.html" class="btn btn-primary">↓ Für Windows herunterladen</a>
+  <a href="pricing.html" class="btn btn-secondary">Preise ansehen</a></div>
+ <p class="caption mt-m">Die kostenlose Testphase läuft 3 Tage oder 50 Clips, je nachdem, was zuerst eintritt, mit Jolnova-Wasserzeichen und 720p-Export.</p>
+</div></div></section>
+</main><footer class="site-footer">
+ <div class="wrap">
+  <div class="foot-grid">
+   <div class="foot-brand">
+    <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=9683e1be18" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <p>Automatisches Stream-Clipping für Windows. Verfolge deine Quellen, lass Jolnova hochkante Clips vorbereiten und prüf, was sich zu posten lohnt.</p>
+    <div class="foot-os"><span class="badge badge-neutral">Windows-Desktop-App</span></div>
+   </div>
+   <div class="foot-col"><h4>PRODUKT</h4>
+    <a href="features.html">Funktionen</a><a href="how-it-works.html">So funktioniert es</a>
+    <a href="pricing.html">Preise</a><a href="download.html">Herunterladen</a></div>
+   <div class="foot-col"><h4>RESSOURCEN</h4>
+    <a href="faq.html">FAQ</a><a href="../login.html">Anmelden</a><a href="../signup.html">Konto erstellen</a><a href="support.html">Support</a></div>
+   <div class="foot-col"><h4>RECHTLICHES</h4>
+    <a href="privacy.html">Datenschutz</a><a href="terms.html">AGB</a></div>
+  </div>
+  <div class="foot-bot">
+   <span>© 2026 Jolnova. Alle Rechte vorbehalten.</span>
+   <span>Jolnova für Windows 10 und 11</span>
+  </div>
+ </div>
+</footer>
+<script src="../lang-de.js?v=9683e1be18"></script><script src="../lang-fr.js?v=9683e1be18"></script><script src="../lang-es.js?v=9683e1be18"></script><script src="../lang.js?v=9683e1be18"></script>
+<script>
+function rjMenu(){var m=document.getElementById('mobnav'),b=document.querySelector('.burger');
+ var on=m.classList.toggle('on');document.body.classList.toggle('navopen',on);
+ b.setAttribute('aria-expanded',on?'true':'false');
+ if(on){var f=m.querySelector('a');if(f)f.focus();}}
+document.addEventListener('keydown',function(e){
+ if(e.key==='Escape'){var m=document.getElementById('mobnav');
+  if(m&&m.classList.contains('on')){rjMenu();document.querySelector('.burger').focus();}}});
+</script>
+</body></html>

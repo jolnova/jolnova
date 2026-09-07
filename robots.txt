@@ -1,0 +1,20 @@
+# Jolnova — https://jolnova.com
+#
+# Hesap ve oturum sayfalari indekslenmez: ince icerik, kimlik arkasi ve marka
+# aramasinda ana sayfanin onune gecebiliyorlar. Sayfalarin kendisinde de
+# <meta name="robots" content="noindex,follow"> duruyor - asil is onlar yapar.
+# BURADAKI Disallow yalnizca TARAMAYI azaltir; noindex'i GORUNMEZ kilmaz, bu
+# yuzden ikisi ayni sayfaya birlikte yazilmaz. Asagidakiler bilerek sadece
+# tarama disi: zaten meta ile noindex isaretliler.
+
+User-agent: *
+Allow: /
+
+# Uretim disi / kullaniciya gosterilmeyen dosyalar
+Disallow: /_ogbuild.html
+Disallow: /mock/
+
+# 179 MB'lik kurulum dosyasi taranmasin (bant genisligi)
+Disallow: /dl/
+
+Sitemap: https://jolnova.com/sitemap.xml

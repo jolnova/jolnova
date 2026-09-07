@@ -9,7 +9,7 @@ const TR = {
   "Support": "Destek",
   "Tell us what happened.": "Ne olduğunu anlat.",
   "A problem, an idea, or a question — it all lands with the people who build Jolnova. We read every message.":
-    "Bir sorun, bir fikir ya da bir soru — hepsi doğrudan Jolnova'u yapan kişilere ulaşır. Her mesajı okuyoruz.",
+    "Bir sorun, bir fikir ya da bir soru — hepsi doğrudan Jolnova'yı yapan kişilere ulaşır. Her mesajı okuyoruz.",
   "Problem": "Sorun", "Suggestion": "Öneri", "Question": "Soru",
   "Your e-mail": "E-posta adresin",
   "So we can reply. Nothing else is sent to it.": "Sana dönebilmemiz için. Başka hiçbir şey gönderilmez.",
@@ -116,7 +116,7 @@ const TR = {
   "Is setup difficult?": "Kurulum zor mu?", "Ready when you are.": "Hazırsan başlayalım.",
 
   // ---- indirme ----
-  "Download": "İndir", "Download Jolnova and start in minutes.": "Jolnova'u indir, dakikalar içinde başla.",
+  "Download": "İndir", "Download Jolnova and start in minutes.": "Jolnova'yı indir, dakikalar içinde başla.",
   "⬇ Download for Windows (.exe)": "⬇ Windows için indir (.exe)",
   "Download & run": "İndir & çalıştır", "Download &amp; run": "İndir & çalıştır",
   "Add a streamer": "Yayıncıyı ekle", "No subscription yet? Start there.": "Aboneliğin yoksa oradan başla.",
@@ -244,7 +244,7 @@ const TR = {
   "Of course. Trim any clip on the timeline, drag in your own logo or image, and copy the title and description.": "Elbette. Her klibi zaman çubuğundan kırp, kendi logonu/görselini sürükle, başlık ve açıklamayı kopyala.",
   "No. Download the Windows app, open it and paste a streamer link. Your first clips arrive within minutes.": "Hayır. Windows uygulamasını indir, aç ve yayıncı linkini yapıştır. İlk klipler dakikalar içinde gelir.",
   "No. The AI cost per clip is included in your subscription — no API key or extra payment needed.": "Hayır. Klip başına AI maliyeti aboneliğe dahildir — API anahtarı ya da ek ödeme gerekmez.",
-    "Download Jolnova and start in minutes.": "Jolnova'u indir, dakikalar içinde başla.",
+    "Download Jolnova and start in minutes.": "Jolnova'yı indir, dakikalar içinde başla.",
   "A Windows app. Install it, sign in, paste a streamer link — the rest is automatic.": "Bir Windows uygulaması. Kur, giriş yap, yayıncı linkini yapıştır — gerisi otomatik.",
   "No setup wizard — just run the file you downloaded and Jolnova opens.": "Kurulum sihirbazı yok — indirdiğin dosyayı çalıştır, Jolnova açılır.",
   "Run the setup file and follow the wizard — Jolnova opens when it finishes.": "Kurulum dosyasını çalıştır ve sihirbazı takip et — bitince Jolnova açılır.",
@@ -421,9 +421,9 @@ const TR = {
   "Scheduling": "Zamanlama",
   "COMING SOON": "YAKINDA",
   "Build your clip pipeline once.": "Klip hattını bir kez kur.",
-  "Add your sources, keep streaming, and review the moments Jolnova prepares while you were busy.": "Kaynaklarını ekle, yayına devam et; sen meşgulken Jolnova'un hazırladığı anları incele.",
+  "Add your sources, keep streaming, and review the moments Jolnova prepares while you were busy.": "Kaynaklarını ekle, yayına devam et; sen meşgulken Jolnova'nın hazırladığı anları incele.",
   "PRICING": "FİYATLANDIRMA",
-  "One subscription. The full Jolnova workflow.": "Tek abonelik. Jolnova'un tamamı.",
+  "One subscription. The full Jolnova workflow.": "Tek abonelik. Jolnova'nın tamamı.",
   "Every plan includes the same capabilities. Only the term length differs.": "Tüm planlar aynı yetenekleri içerir. Yalnızca süre değişir.",
   "Pricing is a preview.": "Fiyatlandırma bir önizlemedir.",
   "Checkout not available yet": "Ödeme henüz açık değil",
@@ -489,7 +489,7 @@ const TR = {
   "YouTube &amp; VOD": "YouTube ve VOD",
   "Turn a six-hour broadcast into a set of short-form candidates without scrubbing the timeline yourself.": "Altı saatlik yayını, zaman çizelgesinde tek tek gezmeden kısa video adaylarına çevir.",
   "Reactions, clutches and chat explosions get cut with the camera and gameplay both in frame.": "Tepkiler, kritik anlar ve chat patlamaları kamera ve oyun aynı karede olacak şekilde kesilir.",
-  "Point Jolnova at a local recording and get vertical segments with subtitles already burned in.": "Jolnova'u yerel bir kayda yönlendir; altyazısı gömülü dikey bölümler al.",
+  "Point Jolnova at a local recording and get vertical segments with subtitles already burned in.": "Jolnova'yı yerel bir kayda yönlendir; altyazısı gömülü dikey bölümler al.",
   "Live sources are tracked continuously. Links and local files are processed when you ask for them.": "Canlı kaynaklar sürekli takip edilir. Link ve yerel dosyalar sen istediğinde işlenir.",
   "You add the source. Jolnova handles the repetitive work.": "Kaynağı sen ekle. Tekrar eden işi Jolnova yapsın.",
   "Live sources are tracked in the background, links and local files are processed on demand, and everything ends up in one review queue.": "Canlı kaynaklar arka planda takip edilir, link ve yerel dosyalar istendiğinde işlenir, hepsi tek inceleme kuyruğunda toplanır.",
@@ -537,7 +537,7 @@ const TR = {
   "Download one clip or a whole selection": "Tek klip ya da bütün bir seçim indir",
   "Choose the destination folder yourself": "Hedef klasörü kendin seç",
     "Ready to build your clip workflow?": "Klip akışını kurmaya hazır mısın?",
-  "Install Jolnova, add one source, and let the first clips arrive on their own.": "Jolnova'u kur, bir kaynak ekle, ilk klipler kendiliğinden gelsin.",
+  "Install Jolnova, add one source, and let the first clips arrive on their own.": "Jolnova'yı kur, bir kaynak ekle, ilk klipler kendiliğinden gelsin.",
   "Browse the features": "Özelliklere göz at",
   "From source tracking to review-ready vertical clips — here is what the application actually does today.": "Kaynak takibinden incelemeye hazır dikey kliplere — uygulamanın bugün gerçekten yaptıkları.",
   "LIVE TRACKING": "CANLI TAKİP",
@@ -548,7 +548,7 @@ const TR = {
   "Pause and resume per source": "Kaynak bazında duraklat ve devam ettir",
   "Switch between Auto, Game and IRL capture": "Auto, Game ve IRL yakalama arasında geçiş",
   "Open a detail panel for any source": "Herhangi bir kaynağın ayrıntı panelini aç",
-  "One queue for everything Jolnova produced": "Jolnova'un ürettiği her şey için tek kuyruk",
+  "One queue for everything Jolnova produced": "Jolnova'nın ürettiği her şey için tek kuyruk",
   "Clips are grouped by source and paginated, so a queue with hundreds of items stays fast. Filter, search, select several at once and act on them together.": "Klipler kaynağa göre gruplanır ve sayfalanır; yüzlerce klipte bile hızlı kalır. Filtrele, ara, birden fazlasını seç ve topluca işlem yap.",
   "Filter by Kick, Twitch, YouTube or local files": "Kick, Twitch, YouTube ya da yerel dosyalara göre filtrele",
   "Search across clip titles and sources": "Klip başlıklarında ve kaynaklarda ara",
@@ -609,7 +609,7 @@ const TR = {
   "Analytics on your own output": "Kendi çıktın üzerine analiz",
   "See how many clips were produced, approval rate and platform split — from your real data.": "Kaç klip üretildi, onay oranı ve platform dağılımı — gerçek verinden.",
   "See it running on your own sources.": "Kendi kaynaklarında çalışırken gör.",
-  "Install Jolnova and add a channel — the first clips arrive without any further work.": "Jolnova'u kur ve bir kanal ekle — ilk klipler başka iş yapmadan gelir.",
+  "Install Jolnova and add a channel — the first clips arrive without any further work.": "Jolnova'yı kur ve bir kanal ekle — ilk klipler başka iş yapmadan gelir.",
   "View pricing": "Fiyatları gör",
   "Subscriptions are not connected yet, so checkout is disabled. The application is available to download and sign in to today; billing will be switched on later.": "Abonelikler henüz bağlı değil, bu yüzden ödeme kapalı. Uygulama bugün indirilebilir ve giriş yapılabilir; faturalandırma sonra açılacak.",
   "Works out to $25 per month": "Aylık 25 dolara denk gelir",
@@ -621,11 +621,11 @@ const TR = {
   "PRICING QUESTIONS": "FİYAT SORULARI",
   "Before you decide": "Karar vermeden önce",
   "Try it before pricing goes live.": "Fiyatlandırma açılmadan önce dene.",
-  "Download Jolnova, sign in and run it on your own sources.": "Jolnova'u indir, giriş yap ve kendi kaynaklarında çalıştır.",
+  "Download Jolnova, sign in and run it on your own sources.": "Jolnova'yı indir, giriş yap ve kendi kaynaklarında çalıştır.",
   "Read the FAQ": "SSS'yi oku",
   "Answers about supported sources, how clips are produced, what happens to your files and how billing will work.": "Desteklenen kaynaklar, kliplerin nasıl üretildiği, dosyalarına ne olduğu ve faturalandırmanın nasıl işleyeceği hakkında yanıtlar.",
   "Still have a question?": "Hâlâ sorun mu var?",
-  "Install Jolnova and try it on one source — most questions answer themselves in the first session.": "Jolnova'u kur ve tek bir kaynakta dene — soruların çoğu ilk oturumda kendiliğinden yanıtlanır.",
+  "Install Jolnova and try it on one source — most questions answer themselves in the first session.": "Jolnova'yı kur ve tek bir kaynakta dene — soruların çoğu ilk oturumda kendiliğinden yanıtlanır.",
   "Automatic stream clipping for Windows. Track your sources, let Jolnova prepare vertical clips, and review what is worth posting.": "Windows için otomatik yayın kliplemesi. Kaynaklarını takip et, Jolnova dikey klipleri hazırlasın, sen paylaşmaya değeni seç.",
 
   // ---- klip editoru + SSS (2026-08) ----
@@ -930,7 +930,7 @@ const TR = {
   // ---- daraltilan yerellik ifadeleri (2026-08-23) ----
   "No. Jolnova is a desktop application: tracking, recording and clip production all run on your own machine, so the computer needs to be on and awake for them to continue.": "Hayır. Jolnova bir masaüstü uygulamasıdır: takip, kayıt ve klip üretiminin tamamı kendi makinende çalışır; dolayısıyla bunların sürmesi için bilgisayarın açık ve uyanık olması gerekir.",
   "Video stays on your machine, and speech is transcribed there too. Only the writing step leaves your computer: a short text description — the transcript and a chat summary — is sent to an AI service so it can write the clip's title. Your video itself is never uploaded.": "Video senin makinende kalır, konuşma da orada yazıya dökülür. Bilgisayarından çıkan tek adım yazma adımıdır: klibin başlığını yazabilmesi için kısa bir metin açıklaması — transkript ve bir chat özeti — bir AI hizmetine gönderilir. Videonun kendisi hiçbir zaman yüklenmez.",
-  "Decide how eagerly Jolnova cuts a moment, where finished clips are saved and which language the app speaks. These settings live on your machine.": "Jolnova'un bir anı ne kadar istekli keseceğine, biten kliplerin nereye kaydedileceğine ve uygulamanın hangi dili konuşacağına karar ver. Bu ayarlar senin makinende durur.",
+  "Decide how eagerly Jolnova cuts a moment, where finished clips are saved and which language the app speaks. These settings live on your machine.": "Jolnova'nın bir anı ne kadar istekli keseceğine, biten kliplerin nereye kaydedileceğine ve uygulamanın hangi dili konuşacağına karar ver. Bu ayarlar senin makinende durur.",
 
   // ---- Pro es zamanli kayit / platform rozeti (2026-08-23) ----
   "1 simultaneous recording": "1 eş zamanlı kayıt",
@@ -944,7 +944,7 @@ const TR = {
 
   // ---- kullanim sartlari (terms.html) ----
   "Last updated: 30 July 2026": "Son güncelleme: 30 Temmuz 2026",
-  "By using Jolnova you agree to these terms. If you don't agree, please don't use the app.": "Jolnova'u kullanarak bu şartları kabul etmiş olursun. Kabul etmiyorsan lütfen uygulamayı kullanma.",
+  "By using Jolnova you agree to these terms. If you don't agree, please don't use the app.": "Jolnova'yı kullanarak bu şartları kabul etmiş olursun. Kabul etmiyorsan lütfen uygulamayı kullanma.",
   "1. The service": "1. Hizmet",
   "2. Your account": "2. Hesabın",
   "You are responsible for keeping your account credentials secure and shouldn't share your account. You must be 18 or older to use the service.": "Hesap bilgilerini güvende tutmaktan sen sorumlusun ve hesabını paylaşmamalısın. Hizmeti kullanmak için 18 yaşından büyük olmalısın.",
@@ -965,7 +965,7 @@ const TR = {
   "9. Changes": "9. Değişiklikler",
   "These terms may be updated; we'll update the date on this page for significant changes.": "Bu şartlar güncellenebilir; önemli değişikliklerde bu sayfadaki tarihi güncelleriz.",
   "10. Contact": "10. İletişim",
-  "Questions about this page can be sent through your account area inside the application.": "Bu sayfayla ilgili sorular, uygulama içindeki hesap alanından iletilebilir.",
+  "Questions about this page can be sent through your account area inside the application, or by e-mail to": "Bu sayfayla ilgili sorularınızı uygulama içindeki hesap alanından ya da e-posta ile şu adrese iletebilirsiniz:",
 
   // ---- ozellik turu 2026-08-23: altyazi duzenleme/stili, calisma programi,
   //      klip on ayarlari, platform rozeti, es zamanli kayit, 4 platform,
@@ -986,7 +986,7 @@ const TR = {
   "Editable subtitles": "Düzenlenebilir altyazı",
   "Speech is transcribed and burned in. Misheard a word? Fix the line or delete it — on every plan.": "Konuşma yazıya dökülür ve videoya gömülür. Bir kelime yanlış mı anlaşıldı? Satırı düzelt ya da sil — her pakette.",
   "Run schedule": "Çalışma programı",
-  "Pick the days and hours Jolnova may work. Outside them it stays idle instead of filling your disk.": "Jolnova'un hangi gün ve saatlerde çalışacağını seç. Dışında diskini doldurmak yerine boşta bekler.",
+  "Pick the days and hours Jolnova may work. Outside them it stays idle instead of filling your disk.": "Jolnova'nın hangi gün ve saatlerde çalışacağını seç. Dışında diskini doldurmak yerine boşta bekler.",
   "Clip presets": "Klip ön ayarları",
   "Save layout, camera box and clip preferences as a named preset, then apply it to any streamer in one click.": "Yerleşimi, kamera kutusunu ve klip tercihlerini adlandırılmış bir ön ayar olarak kaydet, sonra tek tıkla istediğin yayıncıya uygula.",
   "Approved clips download at full quality to any folder you pick, with the watermark on or off.": "Onaylanan klipler tam kalitede, seçtiğin klasöre iner; filigran açık ya da kapalı, sen seçersin.",
@@ -999,7 +999,7 @@ const TR = {
   "Live preview on a real frame while you tune the style": "Stili ayarlarken gerçek bir kare üzerinde canlı önizleme",
   "RUN SCHEDULE": "ÇALIŞMA PROGRAMI",
   "It works when your streamers do — and rests when they do not.": "Yayıncıların çalışırken çalışır — çalışmadıklarında dinlenir.",
-  "A live recording costs roughly 5.6 GB per stream per hour. Tell Jolnova which days and hours to track, and it stays idle the rest of the week instead of burning disk and bandwidth on an empty channel.": "Canlı kayıt, yayın başına saatte yaklaşık 5,6 GB tutar. Jolnova'a hangi gün ve saatlerde takip edeceğini söyle; haftanın kalanında boş bir kanal için disk ve bant genişliği harcamak yerine boşta bekler.",
+  "A live recording costs roughly 5.6 GB per stream per hour. Tell Jolnova which days and hours to track, and it stays idle the rest of the week instead of burning disk and bandwidth on an empty channel.": "Canlı kayıt, yayın başına saatte yaklaşık 5,6 GB tutar. Jolnova'ya hangi gün ve saatlerde takip edeceğini söyle; haftanın kalanında boş bir kanal için disk ve bant genişliği harcamak yerine boşta bekler.",
   "Weekly time ranges, several days at once": "Haftalık saat aralıkları, aynı anda birden fazla gün",
   "Ranges that pass midnight — 20:00 to 02:00 works": "Gece yarısını aşan aralıklar — 20:00 ile 02:00 çalışır",
   "One-off exceptions for a single date": "Tek bir güne özel istisnalar",
@@ -1033,7 +1033,7 @@ const TR = {
   "2 YouTube links in total": "Toplam 2 YouTube linki",
   "Jolnova watermark stays on": "Jolnova filigranı açık kalır",
   "Whichever runs out first ends the trial — the days or the clips. Nothing is deleted: the clips you already made stay where they are.": "Hangisi önce biterse denemeyi o bitirir — günler ya da klipler. Hiçbir şey silinmez: ürettiğin klipler yerinde kalır.",
-  "Add your sources, keep streaming, and review the moments Jolnova prepared while you were busy.": "Kaynaklarını ekle, yayına devam et; sen meşgulken Jolnova'un hazırladığı anları incele.",
+  "Add your sources, keep streaming, and review the moments Jolnova prepared while you were busy.": "Kaynaklarını ekle, yayına devam et; sen meşgulken Jolnova'nın hazırladığı anları incele.",
   "From source tracking to review-ready vertical clips — here is what the application actually does today. Nothing on this page is planned, coming soon or in beta.": "Kaynak takibinden incelemeye hazır dikey kliplere — uygulamanın bugün gerçekten yaptıkları. Bu sayfada planlanan, yakında gelecek ya da beta olan hiçbir şey yok.",
   "MY FILES": "DOSYALARIM",
   "One page shows every source you track, with its live state, recording state and capture mode. Kick, Twitch and TikTok are tracked live; YouTube is processed from links.": "Tek sayfada takip ettiğin her kaynak; canlı durumu, kayıt durumu ve yakalama modu. Kick, Twitch ve TikTok canlı takip edilir; YouTube linkten işlenir.",
@@ -1045,7 +1045,7 @@ const TR = {
   "Detection sensitivity is a setting: Few, Balanced or Many": "Tespit hassasiyeti bir ayardır: Az, Normal ya da Çok",
   "There is no AI score and no quality grade on a clip. The AI writes one thing: the title of a clip you approved.": "Klipte AI puanı ya da kalite notu yoktur. AI tek bir şey yazar: onayladığın klibin başlığı.",
   "Filter by Kick, Twitch, TikTok, YouTube or local files": "Kick, Twitch, TikTok, YouTube ya da yerel dosyalara göre filtrele",
-  "Decide the days and hours Jolnova is allowed to work": "Jolnova'un hangi gün ve saatlerde çalışabileceğine karar ver",
+  "Decide the days and hours Jolnova is allowed to work": "Jolnova'nın hangi gün ve saatlerde çalışabileceğine karar ver",
   "Your streamers go live at certain hours. Outside them there is no reason for the application to burn disk and bandwidth. Set a weekly plan and Jolnova stays idle the rest of the time.": "Yayıncıların belli saatlerde yayında olur. Dışında uygulamanın disk ve bant genişliği harcaması için bir sebep yok. Haftalık bir plan kur; Jolnova kalan zamanda boşta bekler.",
   "Weekly time ranges, several days per range": "Haftalık saat aralıkları, aralık başına birden fazla gün",
   "One-off exceptions: stay idle all day, or run only between two hours": "Tek seferlik istisnalar: bütün gün boşta kal ya da yalnızca iki saat arasında çalış",
@@ -1119,7 +1119,7 @@ const TR = {
   "The free trial runs for 3 days or 50 clips, whichever comes first, with the Jolnova watermark and 720p export.": "Ücretsiz deneme 3 gün ya da 50 klip — hangisi önce gelirse; Jolnova filigranı açık ve 720p dışa aktarımla.",
   "Schedule": "Program",
   "Set the hours it may work": "Çalışabileceği saatleri belirle",
-  "Streamers go live at certain hours, so there is no point tracking an empty channel all week. Give Jolnova a weekly plan and it stays idle outside it — or leave the schedule off and it tracks around the clock.": "Yayıncılar belli saatlerde yayına çıkar; boş bir kanalı bütün hafta takip etmenin anlamı yok. Jolnova'a haftalık bir plan ver, dışında boşta beklesin — ya da programı kapalı bırak, 7/24 takip etsin.",
+  "Streamers go live at certain hours, so there is no point tracking an empty channel all week. Give Jolnova a weekly plan and it stays idle outside it — or leave the schedule off and it tracks around the clock.": "Yayıncılar belli saatlerde yayına çıkar; boş bir kanalı bütün hafta takip etmenin anlamı yok. Jolnova'ya haftalık bir plan ver, dışında boşta beklesin — ya da programı kapalı bırak, 7/24 takip etsin.",
   "Ranges that pass midnight, like 20:00 to 02:00": "Gece yarısını aşan aralıklar, örneğin 20:00 – 02:00",
   "A live recording is roughly 5.6 GB per stream per hour, so this is real disk saved": "Canlı kayıt yayın başına saatte yaklaşık 5,6 GB'dir; yani bu gerçekten kazanılan disk demektir",
   "Several streams at once — 1 on Starter, 2 on Creator, 4 on Pro": "Aynı anda birden fazla yayın — Starter'da 1, Creator'da 2, Pro'da 4",
@@ -1160,11 +1160,11 @@ const TR = {
   "Yes. Every subtitle line is listed with its timecode and stays editable: correct a misheard word, rewrite the sentence, or delete a line you do not want on screen. Timings stay exactly as transcribed. Saving re-renders the clip once from a clean master, so correcting it twice does not stack quality loss.": "Evet. Her altyazı satırı zaman koduyla listelenir ve düzenlenebilir kalır: yanlış anlaşılmış bir kelimeyi düzelt, cümleyi yeniden yaz ya da ekranda istemediğin satırı sil. Zamanlamalar yazıya döküldüğü gibi kalır. Kaydetmek klibi temiz bir asıl kopyadan bir kez yeniden işler; iki kez düzeltmek kalite kaybını üst üste bindirmez.",
   "Fixing the wording is never a paid upgrade. Changing how the subtitles look — font, size, colour, outline, placement, background box — is part of Creator and Pro.": "İfadeyi düzeltmek asla ücretli bir yükseltme değildir. Altyazının görünümünü değiştirmek — yazı tipi, boyut, renk, kontur, yerleşim, arka plan kutusu — Creator ve Pro'nun parçasıdır.",
   "What is the run schedule?": "Çalışma programı nedir?",
-  "It decides the days and hours Jolnova is allowed to track your streamers. Outside them it stays idle instead of burning disk and bandwidth on a channel that is not live. You can add weekly ranges, ranges that pass midnight, and one-off exceptions for a single date. It is a local timer — it only runs while your computer is on and the app is open. Available on every plan.": "Jolnova'un yayıncılarını hangi gün ve saatlerde takip edebileceğine karar verir. Dışında, yayında olmayan bir kanal için disk ve bant genişliği harcamak yerine boşta bekler. Haftalık aralıklar, gece yarısını aşan aralıklar ve tek bir güne özel istisnalar ekleyebilirsin. Bu yerel bir zamanlayıcıdır — yalnızca bilgisayarın açıkken ve uygulama açıkken çalışır. Her pakette vardır.",
+  "It decides the days and hours Jolnova is allowed to track your streamers. Outside them it stays idle instead of burning disk and bandwidth on a channel that is not live. You can add weekly ranges, ranges that pass midnight, and one-off exceptions for a single date. It is a local timer — it only runs while your computer is on and the app is open. Available on every plan.": "Jolnova'nın yayıncılarını hangi gün ve saatlerde takip edebileceğine karar verir. Dışında, yayında olmayan bir kanal için disk ve bant genişliği harcamak yerine boşta bekler. Haftalık aralıklar, gece yarısını aşan aralıklar ve tek bir güne özel istisnalar ekleyebilirsin. Bu yerel bir zamanlayıcıdır — yalnızca bilgisayarın açıkken ve uygulama açıkken çalışır. Her pakette vardır.",
   "What is a clip preset?": "Klip ön ayarı nedir?",
   "A named bundle of settings you already use: layout, camera box, maximum clips per stream, and your subtitle, watermark, clip context and platform badge preferences. Apply it to a streamer in one click instead of repeating the same setup by hand. Presets are on every plan, including the trial — and a preset never bypasses a plan limit: a setting your plan does not include is stored as a preference but stays inactive.": "Zaten kullandığın ayarların adlandırılmış bir demeti: yerleşim, kamera kutusu, yayın başına en fazla klip ve altyazı, filigran, klip bağlamı ile platform rozeti tercihlerin. Aynı kurulumu elle tekrarlamak yerine tek tıkla bir yayıncıya uygula. Ön ayarlar deneme dahil her pakette vardır — ve bir ön ayar paket sınırını asla aşmaz: paketinde olmayan bir ayar tercih olarak saklanır ama etkin olmaz.",
   "What is the platform badge?": "Platform rozeti nedir?",
-  "The platform name and channel line Jolnova draws on the clip, such as the platform name and the channel handle. Creator and Pro can hide it. Because Jolnova draws it rather than the source, removing it leaves the picture untouched.": "Jolnova'un klip üzerine çizdiği platform adı ve kanal satırı — örneğin platform adı ve kanal kullanıcı adı. Creator ve Pro bunu gizleyebilir. Kaynağın değil Jolnova'un çizdiği bir şey olduğu için kaldırmak görüntüye dokunmaz.",
+  "The platform name and channel line Jolnova draws on the clip, such as the platform name and the channel handle. Creator and Pro can hide it. Because Jolnova draws it rather than the source, removing it leaves the picture untouched.": "Jolnova'nın klip üzerine çizdiği platform adı ve kanal satırı — örneğin platform adı ve kanal kullanıcı adı. Creator ve Pro bunu gizleyebilir. Kaynağın değil Jolnova'nın çizdiği bir şey olduğu için kaldırmak görüntüye dokunmaz.",
   "How many streams can I record at the same time?": "Aynı anda kaç yayın kaydedebilirim?",
   "One on Starter, two on Creator, four on Pro. That is a separate limit from how many creators you track: you can follow sixteen channels and have four of them recording at once. The reason it is capped is disk — a live recording is roughly 5.6 GB per stream per hour.": "Starter'da bir, Creator'da iki, Pro'da dört. Bu, kaç yayıncı takip ettiğinden ayrı bir limittir: on altı kanal takip edip dördünü aynı anda kaydedebilirsin. Sınırın sebebi disk — canlı kayıt yayın başına saatte yaklaşık 5,6 GB'dir.",
   "Yes — 3 days, up to 50 clips in total and 2 YouTube links in total, at 720p and with the Jolnova watermark on. It tracks 2 creators and records one stream at a time. It exists so you can see real output from your own sources before paying anything.": "Evet — 3 gün, toplam en fazla 50 klip ve toplam 2 YouTube linki; 720p ve Jolnova filigranı açık. 2 yayıncı takip eder ve aynı anda bir yayın kaydeder. Hiçbir ödeme yapmadan kendi kaynaklarından gerçek çıktı görebilmen için var.",
@@ -1182,8 +1182,8 @@ const TR = {
   "How many streams can Jolnova record at the same time?": "Jolnova aynı anda kaç yayın kaydedebilir?",
   "One on Starter, two on Creator and four on Pro. This is not the same as the creator limit: you can track sixteen channels and have four of them recording at once.": "Starter'da bir, Creator'da iki, Pro'da dört. Bu, yayıncı limitiyle aynı şey değildir: on altı kanal takip edip dördünü aynı anda kaydedebilirsin.",
   "The cap exists because of disk. A live recording is roughly 5.6 GB per stream per hour, so four at once is about 22 GB an hour.": "Sınırın sebebi disk. Canlı kayıt yayın başına saatte yaklaşık 5,6 GB'dir; dolayısıyla dördü birden saatte yaklaşık 22 GB eder.",
-  "Can I make Jolnova work only at certain hours?": "Jolnova'u yalnızca belirli saatlerde çalıştırabilir miyim?",
-  "Yes. The run schedule decides which days and hours Jolnova is allowed to track your streamers; outside them it stays idle instead of recording an empty channel.": "Evet. Çalışma programı, Jolnova'un yayıncılarını hangi gün ve saatlerde takip edebileceğine karar verir; dışında boş bir kanalı kaydetmek yerine boşta bekler.",
+  "Can I make Jolnova work only at certain hours?": "Jolnova'yı yalnızca belirli saatlerde çalıştırabilir miyim?",
+  "Yes. The run schedule decides which days and hours Jolnova is allowed to track your streamers; outside them it stays idle instead of recording an empty channel.": "Evet. Çalışma programı, Jolnova'nın yayıncılarını hangi gün ve saatlerde takip edebileceğine karar verir; dışında boş bir kanalı kaydetmek yerine boşta bekler.",
   "You can add weekly time ranges over several days, ranges that pass midnight such as 20:00 to 02:00, and one-off exceptions for a single date — either stay idle all day, or run only between two hours. Times follow your computer's local clock, so daylight saving takes care of itself.": "Birden fazla güne yayılan haftalık saat aralıkları, 20:00 – 02:00 gibi gece yarısını aşan aralıklar ve tek bir güne özel istisnalar ekleyebilirsin — ya bütün gün boşta kal ya da yalnızca iki saat arasında çalış. Saatler bilgisayarının yerel saatini izler; yaz saati kendiliğinden doğru çalışır.",
   "It is a local timer: Jolnova can only follow the schedule while your computer is on and the application is running. Turn the schedule off and it tracks around the clock again. Available on every plan.": "Bu yerel bir zamanlayıcıdır: Jolnova programı yalnızca bilgisayarın açıkken ve uygulama çalışırken uygulayabilir. Programı kapatırsan yeniden 7/24 takip eder. Her pakette vardır.",
   "Three signals in the recording: how dense the chat gets compared with its calm baseline, where the audio spikes, and what is being said in the transcript. Where those line up, a candidate is cut and sent to the review queue. You approve or reject every one of them, and detection sensitivity is a setting you control — Few, Balanced or Many.": "Kayıttaki üç sinyal: chat'in sakin seviyesine göre ne kadar yoğunlaştığı, sesin nerede patladığı ve transkriptte ne söylendiği. Bunlar aynı yere denk geldiğinde bir aday kesilir ve inceleme kuyruğuna gönderilir. Her birini sen onaylar ya da reddedersin; tespit hassasiyeti de senin kontrolündedir — Az, Normal ya da Çok.",
@@ -1206,7 +1206,7 @@ const TR = {
   "Yes, on Creator and Pro. The platform name and channel line are drawn by Jolnova rather than by the source, so hiding them leaves the picture untouched.": "Evet, Creator ve Pro'da. Platform adını ve kanal satırını kaynak değil Jolnova çizer; bu yüzden gizlemek görüntüye dokunmaz.",
   "Is there an AI score on the clips?": "Kliplerde AI puanı var mı?",
   "No. Clips carry no score and no quality grade, and no model decides whether a moment is good enough. Detection is a signal-based cut — chat density, audio spikes and speech content — and the decision at the review queue is yours.": "Hayır. Klipler puan ya da kalite notu taşımaz ve bir anın yeterince iyi olup olmadığına hiçbir model karar vermez. Tespit sinyale dayalı bir kesimdir — chat yoğunluğu, ses patlamaları ve konuşma içeriği — ve inceleme kuyruğundaki karar senindir.",
-  "The AI does one job in Jolnova: it writes the title, description and hashtags of a clip you already approved.": "Jolnova'ta AI tek bir iş yapar: onayladığın klibin başlığını, açıklamasını ve hashtag'lerini yazar.",
+  "The AI does one job in Jolnova: it writes the title, description and hashtags of a clip you already approved.": "Jolnova'da AI tek bir iş yapar: onayladığın klibin başlığını, açıklamasını ve hashtag'lerini yazar.",
   "Can Jolnova combine several clips into one longer video?": "Jolnova birden fazla klibi tek bir uzun videoda birleştirebilir mi?",
   "No. Clips are produced one at a time and there is no montage or compilation feature.": "Hayır. Klipler tek tek üretilir ve montaj ya da derleme özelliği yoktur.",
   "No. Jolnova produces the clip file and you post it yourself. It does not connect to a posting account and never uploads anything on your behalf.": "Hayır. Jolnova klip dosyasını üretir, paylaşımı sen yaparsın. Bir paylaşım hesabına bağlanmaz ve senin adına hiçbir şey yüklemez.",
@@ -1267,7 +1267,53 @@ const TR = {
   "Yes, on Creator and Pro. Every subtitle line is listed with its timecode and stays editable: correct a misheard word, rewrite the whole sentence, or delete a line you do not want on screen. Timings stay exactly as transcribed — only the words change.": "Evet, Creator ve Pro'da. Her altyazı satırı zaman koduyla listelenir ve düzenlenebilir kalır: yanlış duyulan bir kelimeyi düzelt, cümlenin tamamını yeniden yaz ya da ekranda istemediğin bir satırı sil. Zamanlamalar yazıya döküldüğü gibi kalır — yalnızca kelimeler değişir.",
   "Saving re-renders the clip once from a clean master, so correcting the text twice does not stack quality loss. Starter clips carry subtitles too, produced exactly as transcribed; the editor itself is part of Creator and Pro.": "Kaydetmek klibi temiz bir kaynaktan bir kez yeniden işler; metni iki kez düzeltmek kalite kaybını üst üste bindirmez. Starter klipleri de altyazı taşır, tam olarak yazıya döküldüğü hâliyle üretilir; düzenleyicinin kendisi Creator ve Pro'nun parçasıdır.",
   "Yes — 3 days and up to 50 clips in total, with 2 YouTube links in total, 2 tracked creators, one recording at a time and 720p export, subtitles included. The Jolnova watermark stays on for the duration.": "Evet — 3 gün ve toplamda en fazla 50 klip; toplam 2 YouTube linki, 2 takip edilen yayıncı, aynı anda tek kayıt ve 720p dışa aktarım, altyazı dahil. Jolnova filigranı süre boyunca açık kalır.",
-  "The free trial lasts 3 days from account creation and allows up to 50 clips in total, with 2 tracked creators, one recording at a time, 720p export and 2 YouTube links in total. Subtitles are included. The Jolnova watermark cannot be switched off during the trial.": "Ücretsiz deneme hesap oluşturmadan itibaren 3 gün sürer ve toplamda en fazla 50 klibe izin verir; 2 takip edilen yayıncı, aynı anda tek kayıt, 720p dışa aktarım ve toplam 2 YouTube linki ile. Altyazı dahildir. Deneme süresince Jolnova filigranı kapatılamaz."
+  "The free trial lasts 3 days from account creation and allows up to 50 clips in total, with 2 tracked creators, one recording at a time, 720p export and 2 YouTube links in total. Subtitles are included. The Jolnova watermark cannot be switched off during the trial.": "Ücretsiz deneme hesap oluşturmadan itibaren 3 gün sürer ve toplamda en fazla 50 klibe izin verir; 2 takip edilen yayıncı, aynı anda tek kayıt, 720p dışa aktarım ve toplam 2 YouTube linki ile. Altyazı dahildir. Deneme süresince Jolnova filigranı kapatılamaz.",
+
+  // ---- SAYFA BASLIKLARI VE META ACIKLAMALARI ----
+  // BUNLAR EKSIKTI. _rjKafa() <title> ve <meta description>'i bu sozlukten
+  // cevirir; DE/FR/ES dosyalarinda karsiliklari VARDI, TR'de YOKTU -> Turkce
+  // gezen ziyaretcinin sekme basligi ve (dizine girerse) arama sonucu
+  // Ingilizce kaliyordu. Asil pazarin dili oldugu icin en cok burada onemli.
+  "Jolnova — Add the creators. Wake up to clips.":
+    "Jolnova — Yayıncıları ekle. Sabah kliplerle uyan.",
+  "Jolnova tracks your Kick, Twitch and TikTok sources, records them when they go live and prepares vertical clips with editable burned-in subtitles. Review and export what is worth posting.":
+    "Jolnova; Kick, Twitch ve TikTok kaynaklarını takip eder, yayına geçince kaydeder ve düzenlenebilir altyazılı dikey klipler hazırlar. İncele, paylaşmaya değeni dışa aktar.",
+
+  "How Jolnova Turns Streams Into Vertical Clips":
+    "Jolnova Yayınları Dikey Kliplere Nasıl Çevirir?",
+  "Add a source, set the hours it may work, and Jolnova records, finds candidate moments, captions them and hands you a review queue. Here is each step.":
+    "Bir kaynak ekle, çalışabileceği saatleri belirle; Jolnova kaydeder, aday anları bulur, altyazılar ve sana bir inceleme kuyruğu verir. Her adım burada.",
+
+  "Jolnova Features — Tracking, Subtitles, Schedule and Export":
+    "Jolnova Özellikleri — Takip, Altyazı, Zamanlama ve Aktarım",
+  "Live tracking for Kick, Twitch and TikTok, YouTube links, subtitle text editing and styling, a run schedule, clip presets, watermark and platform badge control — every Jolnova feature explained.":
+    "Kick, Twitch ve TikTok canlı takibi, YouTube linkleri, altyazı düzenleme ve biçimlendirme, çalışma takvimi, klip şablonları, filigran ve platform rozeti — tüm Jolnova özellikleri.",
+
+  "Jolnova Pricing": "Jolnova Fiyatlandırma",
+  "Starter, Creator and Pro — from $2.99 a month for one platform, or $6.99 for all four. Free trial: 3 days or 50 clips. Checkout is not connected yet.":
+    "Starter, Creator ve Pro — tek platform için ayda 2,99 $, dördü birden 6,99 $. Ücretsiz deneme: 3 gün veya 50 klip. Ödeme henüz bağlı değil.",
+
+  "Download — Jolnova": "İndir — Jolnova",
+  "Download the Jolnova Windows app. Install it, sign in and start making clips.":
+    "Jolnova Windows uygulamasını indir. Kur, giriş yap ve klip üretmeye başla.",
+
+  "Jolnova FAQ — Sources, Clips, Files and Billing":
+    "Jolnova SSS — Kaynaklar, Klipler, Dosyalar ve Ödeme",
+  "Answers about supported platforms, the run schedule, subtitle editing, how clips are produced, what happens to local files and how the free trial works.":
+    "Desteklenen platformlar, çalışma takvimi, altyazı düzenleme, kliplerin nasıl üretildiği, yerel dosyalara ne olduğu ve ücretsiz deneme hakkında yanıtlar.",
+
+  "Jolnova Support — Report a Problem or Send an Idea":
+    "Jolnova Destek — Sorun Bildir veya Fikir Gönder",
+  "Report a problem with Jolnova or send us an idea. Every message reaches the people who build it.":
+    "Jolnova ile ilgili bir sorunu bildir ya da bize bir fikir gönder. Her mesaj, onu yapan kişilere ulaşır.",
+
+  "Privacy Policy — Jolnova": "Gizlilik Politikası — Jolnova",
+  "Jolnova privacy policy: what data we process, why a hashed device identifier and numeric usage statistics are collected, and how we store and delete information.":
+    "Jolnova gizlilik politikası: hangi veriler işleniyor, karma cihaz kimliği ve kullanım istatistikleri neden toplanıyor, bilgiler nasıl saklanıp siliniyor.",
+
+  "Terms of Service — Jolnova": "Kullanım Koşulları — Jolnova",
+  "Jolnova terms of service: subscriptions, responsibilities, content rights and cancellation.":
+    "Jolnova kullanım koşulları: abonelikler, sorumluluklar, içerik hakları ve iptal."
 };
 
 /* DE / FR / ES sozlukleri ayri dosyalardan gelir (lang-de.js vb.).
@@ -1328,6 +1374,23 @@ let _lang = (function () {
     }
   } catch (e) {}
   return 'en';
+})();
+
+/* ONCEDEN URETILMIS DIL SAYFASI (build-i18n.py -> tr/ de/ fr/ es/):
+   dil ADRESTEN gelir, tarayici/localStorage tercihinden DEGIL.
+   Aksi halde Google'dan /tr/ adresine gelen ve daha once 'de' secmis bir
+   ziyaretci, Turkce adreste Almanca metin gorurdu - hem sasirtici hem de
+   <head>'de arama motoruna verdigimiz hreflang sozune aykiri.
+
+   Tercih ayrica KAYDEDILIR. Kimlik sayfalari (login/signup/account/reset)
+   bilerek tek kopya ve kokte duruyor; oraya giden ziyaretci bu kayit
+   sayesinde orada da kendi dilini gorur. */
+(function () {
+  var st = document.documentElement.getAttribute('data-static-lang');
+  if (st && _CODES.indexOf(st) >= 0) {
+    _lang = st;
+    try { localStorage.setItem('rj_lang', st); } catch (e) {}
+  }
 })();
 
 function _rjWalk(root) {
@@ -1412,7 +1475,29 @@ function _rjLangYuz() {
   });
 }
 
+/* ---- ONCEDEN URETILMIS DIL SAYFALARI (build-i18n.py -> tr/ de/ fr/ es/) ----
+   Arama motoru icin her dilin AYRI adresi var; Ingilizce kokte durur.
+   Uretilen sayfalar <html data-static-lang="tr"> tasir.
+
+   Boyle bir sayfada dil degistirmek YERINDE CEVIRI olamaz: kullanici
+   /tr/ adresinde Almanca metin gorurdu, paylastigi link yanlis dili acardi
+   ve <head>'de arama motoruna verdigimiz hreflang sozu tutulmazdi.
+   Dil degistirmek = ADRES degistirmek.
+
+   ⚠️ SADECE SUNUCUDA. file:// ile acilan yerel kopyada /tr/ gibi mutlak
+   yollar coker; orada eski davranis (yerinde ceviri) surer. */
+const _rjSunucuda = (location.protocol === 'http:' || location.protocol === 'https:');
+
+function rjStatikUrl(l) {
+  let yol = location.pathname;
+  const m = yol.match(/^\/(tr|de|fr|es)(\/|$)/);
+  if (m) yol = yol.slice(m[1].length + 1) || '/';   // mevcut dil onekini at
+  if (l !== 'en') yol = '/' + l + (yol === '/' ? '/' : yol);
+  return yol + location.hash;                        // ?lang= BILEREK dusuruluyor
+}
+
 function rjSetLang(l) {
+  if (_rjSunucuda) { location.href = rjStatikUrl(l); return; }
   _lang = l;
   try { localStorage.setItem('rj_lang', l); } catch (e) {}
   document.documentElement.lang = l;
@@ -1434,5 +1519,8 @@ document.addEventListener('DOMContentLoaded', () => {
   /* <html lang> secili dili yansitmali: ekran okuyucu TR metni EN telaffuzuyla
      okumasin. Sayfa EN yazildigi icin isaret yalnizca TR'ye gecerken degisir. */
   document.documentElement.lang = _lang;
-  if (_lang !== 'en') rjApplyLang();
+  /* Statik dil sayfasi ZATEN o dilde uretildi; yeniden cevirmek bos is
+     (ceviri, ters tablodan Ingilizce'yi bulup ayni sonuca varirdi). */
+  if (_lang !== 'en' && !document.documentElement.hasAttribute('data-static-lang'))
+    rjApplyLang();
 });
