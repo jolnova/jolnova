@@ -1313,7 +1313,14 @@ const TR = {
 
   "Terms of Service — Jolnova": "Kullanım Koşulları — Jolnova",
   "Jolnova terms of service: subscriptions, responsibilities, content rights and cancellation.":
-    "Jolnova kullanım koşulları: abonelikler, sorumluluklar, içerik hakları ve iptal."
+    "Jolnova kullanım koşulları: abonelikler, sorumluluklar, içerik hakları ve iptal.",
+  "Plans are on the way.": "Planlar yolda.",
+  "We are still shaping the plans. Jolnova is usable today and nothing is behind a paywall yet — download it and start making clips.": "Planları hâlâ şekillendiriyoruz. Jolnova bugün kullanılabilir durumda ve henüz hiçbir şey ücretli duvarın arkasında değil — indir ve klip üretmeye başla.",
+  "When pricing opens we will announce it here first.": "Fiyatlar açıldığında ilk buradan duyuracağız.",
+  "Pricing — Jolnova": "Fiyatlar — Jolnova",
+  "Jolnova pricing is not open yet. The app is free to use in the meantime — download it and start making clips.": "Jolnova fiyatlandırması henüz açılmadı. Bu arada uygulama ücretsiz kullanılabiliyor — indir ve klip üretmeye başla.",
+  "Plans (coming soon)": "Planlar (yakında)",
+  "Pricing is not open yet — the app is free to use in the meantime. Your own video files will be included on every plan and never count as a platform.": "Fiyatlar henüz açılmadı — bu arada uygulama ücretsiz. Kendi video dosyaların her plana dahil olacak ve hiçbir zaman platform sayılmayacak."
 };
 
 /* DE / FR / ES sozlukleri ayri dosyalardan gelir (lang-de.js vb.).

@@ -58,6 +58,20 @@ SAYFALAR = [
     "download.html", "faq.html", "support.html", "privacy.html", "terms.html",
 ]
 
+# URETILIR ama SITE HARITASINA ve HREFLANG kumesine GIRMEZ.
+#
+# pricing.html su an "yakinda" sayfasi (odeme altyapisi bagli degil) ve
+# <meta name="robots" content="noindex"> tasiyor.
+#   - Site haritasina noindex adres koymak Search Console'da
+#     "Gonderilen URL noindex olarak isaretlenmis" hatasi uretir.
+#   - noindex bir sayfaya hreflang yazmak da anlamsiz; Google zaten
+#     indekslemedigi sayfa icin kumeyi degerlendirmez.
+# Ama sayfa URETILMEYE devam eder: 13 sayfanin gezinme menusunde linki var,
+# uretilmezse /tr/pricing.html gibi adresler 404 verir.
+# Fiyatlar acildiginda bu kumeden cikarilacak ve pricing.html'deki noindex
+# satiri silinecek.
+SITEMAP_DISI = {"pricing.html"}
+
 DAMGA = "<!-- kaynak-sha1: %s -->"
 DAMGA_DESEN = re.compile(r"<!-- kaynak-sha1: ([0-9a-f]{40}) -->")
 
@@ -117,6 +131,11 @@ def yollari_duzelt(html):
     return html
 
 
+def _damgala(html, kaynak_sha):
+    """kaynak-sha1 damgasini gomer. Erken donen dallar da bunu kullanir."""
+    return html.replace("</head>", DAMGA % kaynak_sha + "\n</head>", 1)
+
+
 def kafayi_duzelt(html, dil, sayfa, kaynak_sha):
     kend = adres(dil, sayfa)
     en = adres(None, sayfa)
@@ -130,6 +149,8 @@ def kafayi_duzelt(html, dil, sayfa, kaynak_sha):
     # Eski hreflang satirlarini TAMAMEN sil, kumeyi yeniden yaz. Kumede HER
     # dil HER dili gostermeli (kendisi dahil), yoksa Google kumeyi kabul etmez.
     html = re.sub(r'\s*<link rel="alternate" hreflang="[^"]*"[^>]*>', "", html)
+    if sayfa in SITEMAP_DISI:          # noindex -> hreflang anlamsiz
+        return _damgala(html, kaynak_sha)
     kume = ['<link rel="alternate" hreflang="en" href="%s">' % en]
     kume += ['<link rel="alternate" hreflang="%s" href="%s">' % (d, adres(d, sayfa))
              for d in DILLER]
@@ -154,7 +175,7 @@ def kafayi_duzelt(html, dil, sayfa, kaynak_sha):
                   lambda m: '<html%s data-static-lang="%s">' % (m.group(1), dil),
                   html, count=1)
 
-    return html.replace("</head>", DAMGA % kaynak_sha + "\n</head>", 1)
+    return _damgala(html, kaynak_sha)
 
 
 def kokleri_duzelt():
@@ -174,6 +195,9 @@ def kokleri_duzelt():
         if 'rel="canonical"' not in t:
             print("  ! canonical yok, atlandi: " + sayfa); continue
         t = re.sub(r'\s*<link rel="alternate" hreflang="[^"]*"[^>]*>', "", t)
+        if sayfa in SITEMAP_DISI:      # noindex -> hreflang anlamsiz
+            io.open(p, "w", encoding="utf-8", newline="").write(t)
+            continue
         kume = ['<link rel="alternate" hreflang="en" href="%s">' % adres(None, sayfa)]
         kume += ['<link rel="alternate" hreflang="%s" href="%s">' % (d, adres(d, sayfa))
                  for d in DILLER]
@@ -211,6 +235,8 @@ def sitemap_yaz():
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
            '        xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for sayfa in SAYFALAR:
+        if sayfa in SITEMAP_DISI:
+            continue
         alt = ['    <xhtml:link rel="alternate" hreflang="en" href="%s"/>' % adres(None, sayfa)]
         alt += ['    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>' % (d, adres(d, sayfa))
                 for d in DILLER]
@@ -226,7 +252,7 @@ def sitemap_yaz():
     sat.append("</urlset>")
     io.open(os.path.join(KOK, "sitemap.xml"), "w", encoding="utf-8",
             newline="\n").write("\n".join(sat) + "\n")
-    print("  sitemap.xml uretildi (%d adres)" % (len(SAYFALAR) * (len(DILLER) + 1)))
+    print("  sitemap.xml uretildi (%d adres)" % ((len(SAYFALAR) - len(SITEMAP_DISI)) * (len(DILLER) + 1)))
 
 
 def uret():

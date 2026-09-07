@@ -1071,5 +1071,12 @@ var RJ_ES = {
  "Set or reset the password for your Jolnova account.":"Crea o restablece la contraseña de tu cuenta de Jolnova.",
  "Create a Jolnova account and start making clips.":"Crea una cuenta de Jolnova y empieza a hacer clips.",
  "Report a problem with Jolnova or send us an idea. Every message reaches the people who build it.":"Informa de un problema con Jolnova o mándanos una idea. Todos los mensajes llegan a las personas que lo construyen.",
- "Jolnova terms of service: subscriptions, responsibilities, content rights and cancellation.":"Términos del servicio de Jolnova: suscripciones, responsabilidades, derechos sobre el contenido y cancelación."
+ "Jolnova terms of service: subscriptions, responsibilities, content rights and cancellation.":"Términos del servicio de Jolnova: suscripciones, responsabilidades, derechos sobre el contenido y cancelación.",
+  "Plans are on the way.":"Los planes están en camino.",
+  "We are still shaping the plans. Jolnova is usable today and nothing is behind a paywall yet — download it and start making clips.":"Todavía estamos definiendo los planes. Jolnova ya se puede usar y nada está detrás de un muro de pago — descárgalo y empieza a hacer clips.",
+  "When pricing opens we will announce it here first.":"Cuando se abran los precios, lo anunciaremos aquí primero.",
+  "Pricing — Jolnova":"Precios — Jolnova",
+  "Jolnova pricing is not open yet. The app is free to use in the meantime — download it and start making clips.":"Los precios de Jolnova aún no están abiertos. Mientras tanto, la app es gratuita — descárgala y empieza.",
+  "Plans (coming soon)":"Planes (próximamente)",
+  "Pricing is not open yet — the app is free to use in the meantime. Your own video files will be included on every plan and never count as a platform.":"Los precios aún no están abiertos — mientras tanto la app es gratuita. Tus propios archivos de vídeo estarán incluidos en cada plan y nunca contarán como plataforma."
 };
