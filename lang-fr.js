@@ -1045,11 +1045,11 @@ var RJ_FR = {
 
  // --- sayfa basliklari (<title>) ---
  "My Account — Jolnova":"Mon compte — Jolnova",
- "Download — Jolnova":"Télécharger — Jolnova",
- "Jolnova FAQ — Sources, Clips, Files and Billing":"FAQ Jolnova — Sources, clips, fichiers et facturation",
- "Jolnova Features — Tracking, Subtitles, Schedule and Export":"Fonctionnalités Jolnova — Suivi, sous-titres, planning et export",
- "How Jolnova Turns Streams Into Vertical Clips":"Comment Jolnova transforme les streams en clips verticaux",
- "Jolnova — Add the creators. Wake up to clips.":"Jolnova — Ajoute les créateurs. Réveille-toi avec des clips.",
+ "Download Jolnova — Clip Maker for Windows":"Télécharger Jolnova — Logiciel de clips pour Windows",
+ "Jolnova FAQ — Auto Clipping, Sources and Billing":"FAQ Jolnova — Clips automatiques, sources et facturation",
+ "Jolnova Features — Auto Clipping, Subtitles and Scheduling":"Fonctionnalités Jolnova — Clips automatiques, sous-titres et planification",
+ "How to Auto Clip Twitch and Kick Streams — Jolnova":"Créer des clips automatiquement depuis Twitch et Kick — Jolnova",
+ "Jolnova — Auto Clip Maker for Twitch, Kick & YouTube":"Jolnova — Créateur de clips automatique pour Twitch, Kick et YouTube",
  "Sign In — Jolnova":"Se connecter — Jolnova",
  "Jolnova Pricing":"Tarifs Jolnova",
  "Privacy Policy — Jolnova":"Politique de confidentialité — Jolnova",
@@ -1060,11 +1060,11 @@ var RJ_FR = {
 
  // --- meta aciklamalar (arama sonucu metni) ---
  "Your Jolnova account: subscription status, app download and settings.":"Ton compte Jolnova : état de l'abonnement, téléchargement de l'application et paramètres.",
- "Download the Jolnova Windows app. Install it, sign in and start making clips.":"Télécharge l'application Jolnova pour Windows. Installe-la, connecte-toi et commence à faire des clips.",
+ "Download the Jolnova Windows app and start turning Twitch, Kick, YouTube and TikTok streams into vertical clips. Free to try.":"Télécharge l'application Windows Jolnova et transforme les streams Twitch, Kick, YouTube et TikTok en clips verticaux. Essai gratuit.",
  "Answers about supported platforms, the run schedule, subtitle editing, how clips are produced, what happens to local files and how the free trial works.":"Des réponses sur les plateformes prises en charge, le planning, l'édition des sous-titres, la façon dont les clips sont produits, ce qu'il advient des fichiers locaux et le fonctionnement de l'essai gratuit.",
  "Live tracking for Kick, Twitch and TikTok, YouTube links, subtitle text editing and styling, a run schedule, clip presets, watermark and platform badge control — every Jolnova feature explained.":"Suivi en direct de Kick, Twitch et TikTok, liens YouTube, édition et mise en forme des sous-titres, planning, préréglages de clip, contrôle du filigrane et du badge de plateforme — toutes les fonctionnalités de Jolnova expliquées.",
  "Add a source, set the hours it may work, and Jolnova records, finds candidate moments, captions them and hands you a review queue. Here is each step.":"Ajoute une source, définis ses heures de travail, et Jolnova enregistre, repère les moments candidats, les sous-titre et te remet une file de relecture. Voici chaque étape.",
- "Jolnova tracks your Kick, Twitch and TikTok sources, records them when they go live and prepares vertical clips with editable burned-in subtitles. Review and export what is worth posting.":"Jolnova suit tes sources Kick, Twitch et TikTok, les enregistre quand elles passent en direct et prépare des clips verticaux avec des sous-titres incrustés et modifiables. Relis et exporte ce qui mérite d'être publié.",
+ "Jolnova is a Windows clip maker: it records Twitch, Kick, YouTube and TikTok streams, finds the best moments and turns them into vertical clips with subtitles.":"Jolnova est un logiciel Windows de création de clips : il enregistre les streams Twitch, Kick, YouTube et TikTok, repère les meilleurs moments et en fait des clips verticaux sous-titrés.",
  "Sign in to your Jolnova account.":"Connecte-toi à ton compte Jolnova.",
  "Starter, Creator and Pro — from $2.99 a month for one platform, or $6.99 for all four. Free trial: 3 days or 50 clips. Checkout is not connected yet.":"Starter, Creator et Pro — à partir de 2,99 $ par mois pour une plateforme, ou 6,99 $ pour les quatre. Essai gratuit : 3 jours ou 50 clips. Le paiement n'est pas encore branché.",
  "Jolnova privacy policy: what data we process, why a hashed device identifier and numeric usage statistics are collected, and how we store and delete information.":"Politique de confidentialité de Jolnova : quelles données nous traitons, pourquoi un identifiant d'appareil haché et des statistiques d'utilisation chiffrées sont collectés, et comment nous stockons et supprimons les informations.",
@@ -1078,5 +1078,12 @@ var RJ_FR = {
   "Pricing — Jolnova":"Tarifs — Jolnova",
   "Jolnova pricing is not open yet. The app is free to use in the meantime — download it and start making clips.":"Les tarifs de Jolnova ne sont pas encore ouverts. En attendant, l'application est gratuite — télécharge-la et commence.",
   "Plans (coming soon)":"Formules (bientôt)",
-  "Pricing is not open yet — the app is free to use in the meantime. Your own video files will be included on every plan and never count as a platform.":"Les tarifs ne sont pas encore ouverts — l'application est gratuite en attendant. Tes propres fichiers vidéo seront inclus dans chaque formule et ne compteront jamais comme une plateforme."
+  "Pricing is not open yet — the app is free to use in the meantime. Your own video files will be included on every plan and never count as a platform.":"Les tarifs ne sont pas encore ouverts — l'application est gratuite en attendant. Tes propres fichiers vidéo seront inclus dans chaque formule et ne compteront jamais comme une plateforme.",
+  "Page not found — Jolnova":"Page introuvable — Jolnova",
+  "This Jolnova page could not be found.":"Cette page Jolnova est introuvable.",
+  "This page moved on.":"Cette page n'existe plus.",
+  "The link is broken or the page no longer exists. Everything else is where you left it.":"Le lien est cassé ou la page n'existe plus. Tout le reste est là où tu l'as laissé.",
+  "Back to home":"Retour à l'accueil",
+  "Report a problem":"Signaler un problème",
+  "Download the app":"Télécharger l'application"
 };

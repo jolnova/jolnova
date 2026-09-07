@@ -1274,18 +1274,18 @@ const TR = {
   // cevirir; DE/FR/ES dosyalarinda karsiliklari VARDI, TR'de YOKTU -> Turkce
   // gezen ziyaretcinin sekme basligi ve (dizine girerse) arama sonucu
   // Ingilizce kaliyordu. Asil pazarin dili oldugu icin en cok burada onemli.
-  "Jolnova — Add the creators. Wake up to clips.":
-    "Jolnova — Yayıncıları ekle. Sabah kliplerle uyan.",
-  "Jolnova tracks your Kick, Twitch and TikTok sources, records them when they go live and prepares vertical clips with editable burned-in subtitles. Review and export what is worth posting.":
-    "Jolnova; Kick, Twitch ve TikTok kaynaklarını takip eder, yayına geçince kaydeder ve düzenlenebilir altyazılı dikey klipler hazırlar. İncele, paylaşmaya değeni dışa aktar.",
+  "Jolnova — Auto Clip Maker for Twitch, Kick & YouTube":
+    "Jolnova — Twitch, Kick ve YouTube için Otomatik Klip Programı",
+  "Jolnova is a Windows clip maker: it records Twitch, Kick, YouTube and TikTok streams, finds the best moments and turns them into vertical clips with subtitles.":
+    "Jolnova bir Windows klip programıdır: Twitch, Kick, YouTube ve TikTok yayınlarını kaydeder, en iyi anları bulur ve altyazılı dikey kliplere çevirir.",
 
-  "How Jolnova Turns Streams Into Vertical Clips":
-    "Jolnova Yayınları Dikey Kliplere Nasıl Çevirir?",
+  "How to Auto Clip Twitch and Kick Streams — Jolnova":
+    "Twitch ve Kick Yayınlarından Otomatik Klip Nasıl Çıkarılır — Jolnova",
   "Add a source, set the hours it may work, and Jolnova records, finds candidate moments, captions them and hands you a review queue. Here is each step.":
     "Bir kaynak ekle, çalışabileceği saatleri belirle; Jolnova kaydeder, aday anları bulur, altyazılar ve sana bir inceleme kuyruğu verir. Her adım burada.",
 
-  "Jolnova Features — Tracking, Subtitles, Schedule and Export":
-    "Jolnova Özellikleri — Takip, Altyazı, Zamanlama ve Aktarım",
+  "Jolnova Features — Auto Clipping, Subtitles and Scheduling":
+    "Jolnova Özellikleri — Otomatik Klip, Altyazı ve Zamanlama",
   "Live tracking for Kick, Twitch and TikTok, YouTube links, subtitle text editing and styling, a run schedule, clip presets, watermark and platform badge control — every Jolnova feature explained.":
     "Kick, Twitch ve TikTok canlı takibi, YouTube linkleri, altyazı düzenleme ve biçimlendirme, çalışma takvimi, klip şablonları, filigran ve platform rozeti — tüm Jolnova özellikleri.",
 
@@ -1293,12 +1293,12 @@ const TR = {
   "Starter, Creator and Pro — from $2.99 a month for one platform, or $6.99 for all four. Free trial: 3 days or 50 clips. Checkout is not connected yet.":
     "Starter, Creator ve Pro — tek platform için ayda 2,99 $, dördü birden 6,99 $. Ücretsiz deneme: 3 gün veya 50 klip. Ödeme henüz bağlı değil.",
 
-  "Download — Jolnova": "İndir — Jolnova",
-  "Download the Jolnova Windows app. Install it, sign in and start making clips.":
-    "Jolnova Windows uygulamasını indir. Kur, giriş yap ve klip üretmeye başla.",
+  "Download Jolnova — Clip Maker for Windows": "Jolnova İndir — Windows için Klip Programı",
+  "Download the Jolnova Windows app and start turning Twitch, Kick, YouTube and TikTok streams into vertical clips. Free to try.":
+    "Jolnova Windows uygulamasını indir; Twitch, Kick, YouTube ve TikTok yayınlarını dikey kliplere çevirmeye başla. Denemesi ücretsiz.",
 
-  "Jolnova FAQ — Sources, Clips, Files and Billing":
-    "Jolnova SSS — Kaynaklar, Klipler, Dosyalar ve Ödeme",
+  "Jolnova FAQ — Auto Clipping, Sources and Billing":
+    "Jolnova SSS — Otomatik Klip, Kaynaklar ve Ödeme",
   "Answers about supported platforms, the run schedule, subtitle editing, how clips are produced, what happens to local files and how the free trial works.":
     "Desteklenen platformlar, çalışma takvimi, altyazı düzenleme, kliplerin nasıl üretildiği, yerel dosyalara ne olduğu ve ücretsiz deneme hakkında yanıtlar.",
 
@@ -1320,7 +1320,14 @@ const TR = {
   "Pricing — Jolnova": "Fiyatlar — Jolnova",
   "Jolnova pricing is not open yet. The app is free to use in the meantime — download it and start making clips.": "Jolnova fiyatlandırması henüz açılmadı. Bu arada uygulama ücretsiz kullanılabiliyor — indir ve klip üretmeye başla.",
   "Plans (coming soon)": "Planlar (yakında)",
-  "Pricing is not open yet — the app is free to use in the meantime. Your own video files will be included on every plan and never count as a platform.": "Fiyatlar henüz açılmadı — bu arada uygulama ücretsiz. Kendi video dosyaların her plana dahil olacak ve hiçbir zaman platform sayılmayacak."
+  "Pricing is not open yet — the app is free to use in the meantime. Your own video files will be included on every plan and never count as a platform.": "Fiyatlar henüz açılmadı — bu arada uygulama ücretsiz. Kendi video dosyaların her plana dahil olacak ve hiçbir zaman platform sayılmayacak.",
+  "Page not found — Jolnova": "Sayfa bulunamadı — Jolnova",
+  "This Jolnova page could not be found.": "Bu Jolnova sayfası bulunamadı.",
+  "This page moved on.": "Bu sayfa artık burada değil.",
+  "The link is broken or the page no longer exists. Everything else is where you left it.": "Bağlantı kırık ya da sayfa artık yok. Geri kalan her şey bıraktığın yerde.",
+  "Back to home": "Ana sayfaya dön",
+  "Report a problem": "Sorun bildir",
+  "Download the app": "Uygulamayı indir"
 };
 
 /* DE / FR / ES sozlukleri ayri dosyalardan gelir (lang-de.js vb.).

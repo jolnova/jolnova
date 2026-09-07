@@ -1045,11 +1045,11 @@ var RJ_DE = {
 
  // --- sayfa basliklari (<title>) ---
  "My Account — Jolnova":"Mein Konto — Jolnova",
- "Download — Jolnova":"Herunterladen — Jolnova",
- "Jolnova FAQ — Sources, Clips, Files and Billing":"Jolnova FAQ — Quellen, Clips, Dateien und Abrechnung",
- "Jolnova Features — Tracking, Subtitles, Schedule and Export":"Jolnova Funktionen — Verfolgung, Untertitel, Zeitplan und Export",
- "How Jolnova Turns Streams Into Vertical Clips":"Wie Jolnova aus Streams hochkante Clips macht",
- "Jolnova — Add the creators. Wake up to clips.":"Jolnova — Füg die Creator hinzu. Wach mit Clips auf.",
+ "Download Jolnova — Clip Maker for Windows":"Jolnova herunterladen — Clip-Tool für Windows",
+ "Jolnova FAQ — Auto Clipping, Sources and Billing":"Jolnova FAQ — Automatische Clips, Quellen und Abrechnung",
+ "Jolnova Features — Auto Clipping, Subtitles and Scheduling":"Jolnova Funktionen — Automatische Clips, Untertitel und Zeitplan",
+ "How to Auto Clip Twitch and Kick Streams — Jolnova":"Twitch- und Kick-Streams automatisch clippen — Jolnova",
+ "Jolnova — Auto Clip Maker for Twitch, Kick & YouTube":"Jolnova — Automatischer Clip-Maker für Twitch, Kick & YouTube",
  "Sign In — Jolnova":"Anmelden — Jolnova",
  "Jolnova Pricing":"Jolnova Preise",
  "Privacy Policy — Jolnova":"Datenschutzerklärung — Jolnova",
@@ -1060,11 +1060,11 @@ var RJ_DE = {
 
  // --- meta aciklamalar (arama sonucu metni) ---
  "Your Jolnova account: subscription status, app download and settings.":"Dein Jolnova-Konto: Abo-Status, App-Download und Einstellungen.",
- "Download the Jolnova Windows app. Install it, sign in and start making clips.":"Lade die Jolnova-App für Windows herunter. Installieren, anmelden und Clips machen.",
+ "Download the Jolnova Windows app and start turning Twitch, Kick, YouTube and TikTok streams into vertical clips. Free to try.":"Lade die Jolnova-Windows-App herunter und mach aus Twitch-, Kick-, YouTube- und TikTok-Streams vertikale Clips. Kostenlos testen.",
  "Answers about supported platforms, the run schedule, subtitle editing, how clips are produced, what happens to local files and how the free trial works.":"Antworten zu unterstützten Plattformen, zum Laufzeitplan, zur Untertitelbearbeitung, zur Entstehung der Clips, dazu, was mit lokalen Dateien passiert, und dazu, wie die kostenlose Testphase funktioniert.",
  "Live tracking for Kick, Twitch and TikTok, YouTube links, subtitle text editing and styling, a run schedule, clip presets, watermark and platform badge control — every Jolnova feature explained.":"Live-Verfolgung für Kick, Twitch und TikTok, YouTube-Links, Bearbeitung und Gestaltung der Untertitel, ein Laufzeitplan, Clip-Vorlagen, Steuerung von Wasserzeichen und Plattform-Abzeichen — jede Jolnova-Funktion erklärt.",
  "Add a source, set the hours it may work, and Jolnova records, finds candidate moments, captions them and hands you a review queue. Here is each step.":"Füge eine Quelle hinzu, leg die Arbeitszeiten fest — und Jolnova nimmt auf, findet mögliche Momente, untertitelt sie und legt dir eine Prüfliste vor. Hier ist jeder Schritt.",
- "Jolnova tracks your Kick, Twitch and TikTok sources, records them when they go live and prepares vertical clips with editable burned-in subtitles. Review and export what is worth posting.":"Jolnova verfolgt deine Kick-, Twitch- und TikTok-Quellen, nimmt sie auf, sobald sie live gehen, und bereitet hochkante Clips mit bearbeitbaren, eingebrannten Untertiteln vor. Prüf und exportier, was sich zu posten lohnt.",
+ "Jolnova is a Windows clip maker: it records Twitch, Kick, YouTube and TikTok streams, finds the best moments and turns them into vertical clips with subtitles.":"Jolnova ist ein Windows-Clip-Tool: Es nimmt Twitch-, Kick-, YouTube- und TikTok-Streams auf, findet die besten Momente und macht daraus vertikale Clips mit Untertiteln.",
  "Sign in to your Jolnova account.":"Melde dich in deinem Jolnova-Konto an.",
  "Starter, Creator and Pro — from $2.99 a month for one platform, or $6.99 for all four. Free trial: 3 days or 50 clips. Checkout is not connected yet.":"Starter, Creator und Pro — ab 2,99 $ im Monat für eine Plattform oder 6,99 $ für alle vier. Kostenlose Testphase: 3 Tage oder 50 Clips. Die Kasse ist noch nicht angebunden.",
  "Jolnova privacy policy: what data we process, why a hashed device identifier and numeric usage statistics are collected, and how we store and delete information.":"Jolnova-Datenschutzerklärung: welche Daten wir verarbeiten, warum eine gehashte Gerätekennung und Zahlen zur Nutzung erhoben werden und wie wir Informationen speichern und löschen.",
@@ -1078,5 +1078,12 @@ var RJ_DE = {
   "Pricing — Jolnova":"Preise — Jolnova",
   "Jolnova pricing is not open yet. The app is free to use in the meantime — download it and start making clips.":"Die Jolnova-Preise stehen noch nicht fest. In der Zwischenzeit ist die App kostenlos nutzbar — herunterladen und loslegen.",
   "Plans (coming soon)":"Tarife (demnächst)",
-  "Pricing is not open yet — the app is free to use in the meantime. Your own video files will be included on every plan and never count as a platform.":"Die Preise sind noch nicht offen — die App ist derweil kostenlos. Deine eigenen Videodateien sind in jedem Tarif enthalten und zählen nie als Plattform."
+  "Pricing is not open yet — the app is free to use in the meantime. Your own video files will be included on every plan and never count as a platform.":"Die Preise sind noch nicht offen — die App ist derweil kostenlos. Deine eigenen Videodateien sind in jedem Tarif enthalten und zählen nie als Plattform.",
+  "Page not found — Jolnova":"Seite nicht gefunden — Jolnova",
+  "This Jolnova page could not be found.":"Diese Jolnova-Seite wurde nicht gefunden.",
+  "This page moved on.":"Diese Seite gibt es nicht mehr.",
+  "The link is broken or the page no longer exists. Everything else is where you left it.":"Der Link ist defekt oder die Seite existiert nicht mehr. Alles andere ist da, wo du es verlassen hast.",
+  "Back to home":"Zurück zur Startseite",
+  "Report a problem":"Problem melden",
+  "Download the app":"App herunterladen"
 };
