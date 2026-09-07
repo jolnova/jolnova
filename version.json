@@ -1,9 +1,9 @@
 {
-  "version": "1.67.4",
+  "version": "1.67.5",
   "url": "https://github.com/jolnova/jolnova/releases/latest/download/Jolnova-Setup.exe",
   "notes": "The app is now called Jolnova. Everything carries over: your clips, channels, settings and sign-in move with the update, and nothing needs to be set up again.\n\nSports broadcasts now work on full matches as well as highlight reels, across every discipline rather than football alone, and a match link posted on X can be used the same way. The commentary is transcribed against sports vocabulary, so names and terms come back written properly instead of guessed at, and the scoreboard is framed tighter.\n\nClips keep the streamer in frame: when the camera sits high in the shot the crop reaches up for it instead of cutting the top of their head, measured per clip rather than once per recording.\n\nThe review queue opens one streamer at a time and pages through long lists fifteen at a time, so a busy night no longer arrives as one endless column. Past broadcasts show an estimated processing time before they start. There are thirteen caption templates.\n\nRecording a live broadcast is no longer cut short at the earlier limit, so a full match is captured from start to finish.",
   "size_mb": 179,
-  "sha256": "41fa452c2e00287527b5a979b11068f2cc432ed301b59d1dc833183c0252fc6e",
-  "released": "2026-09-07",
+  "sha256": "8456ab79c87f1fded085cea5828e014fda408d852bb96136e2211555223fbdbe",
+  "released": "2026-09-08",
   "min": "1.0.0"
 }
