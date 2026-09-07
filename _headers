@@ -1,28 +1,27 @@
 # Cloudflare Pages basliklar dosyasi
 # ---------------------------------------------------------------
-# SORUN: site guncellendikten sonra ziyaretci (ve biz) eski surumu
-# goruyor, Ctrl+F5 gerekiyordu.
+# SORUN: site guncellendikten sonra eski surum goruluyordu, Ctrl+F5
+# gerekiyordu. CSS/JS adreslerinde icerik damgasi (?v=...) zaten vardi
+# ama HTML'IN KENDISI onbellekteydi; eski HTML eski damgayi istiyor,
+# yeni dosyalar hic indirilmiyordu. Damgayi TASIYAN belge taze olmali.
 #
-# NEDEN: CSS/JS adreslerinde zaten icerik damgasi var (?v=442c6ac9af)
-# ama HTML'IN KENDISI onbellege aliniyordu. Tarayici eski HTML'i
-# sunuyor, o HTML de ESKI damgayi istiyor -> yeni dosyalar hic
-# indirilmiyor. Yani damgalama tek basina yetmiyor; damgayi TASIYAN
-# belgenin taze olmasi sart.
-#
-# COZUM: HTML her seferinde dogrulanir (ucuz: degismediyse 304 doner,
-# icerik tekrar inmez), damgali varliklar ise sonsuza kadar saklanir.
+# ⚠️ KURALLAR BIRIKIR, EZMEZ.
+# Ilk surumde /* altina Cache-Control yazilmisti ve varlik kurallariyla
+# BIRLESIP celisen direktifler uretiyordu:
+#     site.css -> "max-age=31536000, must-revalidate, immutable"
+#     version.json -> "max-age=0, ..., max-age=60, ..."
+# Ayni baslikta iki max-age tanimsiz davranistir. Bu yuzden /* altinda
+# ARTIK Cache-Control YOK; oraya yalnizca guvenlik basliklari kaldi.
+# HTML icin Cloudflare Pages'in kendi varsayilani (revalidate) gecerli.
 # ---------------------------------------------------------------
 
-# Varsayilan: her istekte sunucuya sor. 304 yaniti bant genisligi
-# harcamaz, ama guncelleme ANINDA gorunur.
 /*
-  Cache-Control: public, max-age=0, must-revalidate
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
-# Damgali varliklar: adres ?v=<icerik-ozeti> tasiyor. Icerik degisince
-# damga degisir, adres degisir, tarayici yeniden indirir. Bu yuzden
-# dosyanin kendisi bir yil saklanabilir.
+# Damgali varliklar: adres ?v=<icerik-ozeti> tasir. Icerik degisince
+# damga degisir, adres degisir, tarayici yeniden indirir. Dosyanin
+# kendisi bu yuzden bir yil saklanabilir.
 /site.css
   Cache-Control: public, max-age=31536000, immutable
 /lang.js
@@ -39,13 +38,11 @@
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
-# ⚠️ version.json UZUN SAKLANAMAZ: guncelleyici bunu okuyor.
-# Onbellekte kalirsa yeni surum cikmis olsa bile kullanicinin
-# uygulamasi gunlerce "guncel" der. Kisa tutuluyor.
+# ⚠️ version.json UZUN SAKLANAMAZ: guncelleyici bunu okuyor. Onbellekte
+# kalirsa yeni surum ciksa bile kullanicinin uygulamasi "guncel" der.
 /version.json
-  Cache-Control: public, max-age=60, must-revalidate
+  Cache-Control: public, max-age=60
 
-# Site haritasi ve robots: arama motoru zaten seyrek okur.
 /sitemap.xml
   Cache-Control: public, max-age=3600
 /robots.txt
