@@ -329,9 +329,16 @@ async function pfSavePw(){
     const {error:e1}=await sb.auth.signInWithPassword({email:_me.email,password:eski});
     if(e1)return{ok:false,msg:'Current password is wrong.',pw:true};
   }
-  const {error}=await sb.auth.updateUser({password:yeni});
+  /* has_password AYNI CAGRIDA yaziliyor: sifre degisip isaret yazilamazsa
+     hesap "sifresi yok" gorunmeye devam eder ve bir dahaki degisiklikte
+     mevcut sifre SORULMAZDI. Tek cagri, iki islemin ayrilmasini engelliyor. */
+  const {error}=await sb.auth.updateUser({password:yeni,data:{has_password:true}});
   if(error)return{ok:false,msg:String(error.message||error).slice(0,140),pw:true};
   cur.value='';n1.value='';n2.value='';
+  /* Bundan sonrasi icin: artik sifresi VAR. Sayfa yenilenmeden ikinci kez
+     degistirmeye kalkarsa mevcut sifre sorulsun. */
+  _sifresiVar=true;
+  document.getElementById('pf-curwrap').hidden=false;
   return{ok:true};
 }
 
@@ -382,15 +389,28 @@ async function pfSaveAll(){
      - yalnizca Google ile acilmis hesap -> henuz sifresi YOK, ilk kez
        BELIRLIYOR; soracak eski sifre olmadigi icin o alan gizleniyor
        (bos birakilamaz bir alan gostermek kullaniciyi kilitlerdi). */
-  /* Hangi saglayicilarla acilmis? identities birincil kaynak; bazi
-     yanitlarda gelmiyor, o zaman app_metadata.providers'a bakiyoruz.
-     IKISI DE YOKSA "sifresi var" kabul ediyoruz - yanlis tarafa dusmek
-     kullaniciya fazladan bir alan doldurtur; TERSI, sifreyi dogrulamadan
-     degistirmeye izin verirdi. */
+  /* -------------------------------------------------- SIFRESI VAR MI?
+     Bu karar GUVENLIK kararidir: "var" ise sifreyi degistirmeden once
+     mevcut sifreyi soruyoruz, "yok" ise soracak bir sey olmadigi icin
+     sormuyoruz. Yanlis tarafa dusmek, acik birakilmis bir bilgisayarda
+     hesabin ele gecirilmesine yeter.
+
+     Supabase'in kendi isaretlerine TEK BASINA guvenilmiyor: Google ile
+     acilmis bir hesaba updateUser({password}) ile sifre eklendiginde
+     app_metadata.providers / identities listesine 'email' EKLENMESI
+     GARANTI DEGIL (GoTrue surumune gore degisiyor). O yuzden sifreyi
+     BIZ her belirledigimizde user_metadata.has_password isaretini de
+     yaziyoruz ve burada once ona bakiyoruz. Uygulama da ayni isareti
+     yaziyor/okuyor (src/panel.py: pfDoldur / pfSavePw).
+
+     Hicbir isaret yoksa "sifresi var" kabul ediliyor: en kotu ihtimalle
+     kullanici bir alan fazla doldurur; tersi sessiz bir acik olurdu. */
+  const _md=_me.user_metadata||{};
   const _kimlik=_me.identities, _sag=(_me.app_metadata||{}).providers;
-  _sifresiVar = Array.isArray(_kimlik) && _kimlik.length
-    ? _kimlik.some(i=>i.provider==='email')
-    : (Array.isArray(_sag) && _sag.length ? _sag.indexOf('email')>=0 : true);
+  _sifresiVar = _md.has_password === true
+    || (Array.isArray(_kimlik) && _kimlik.length
+          ? _kimlik.some(i=>i.provider==='email')
+          : (Array.isArray(_sag) && _sag.length ? _sag.indexOf('email')>=0 : true));
   document.getElementById('pf-curwrap').hidden=!_sifresiVar;
   const _ip=document.getElementById('pf-pwhint');
   _ip.textContent=_sifresiVar
