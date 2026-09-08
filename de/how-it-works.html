@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Twitch- und Kick-Streams automatisch clippen — Jolnova</title>
-<meta name="description" content="Füge eine Quelle hinzu, leg die Arbeitszeiten fest — und Jolnova nimmt auf, findet mögliche Momente, untertitelt sie und legt dir eine Prüfliste vor. Hier ist jeder Schritt.">
+<meta name="description" content="Add a source and Jolnova records it, finds the candidate moments, captions them and hands you a review queue. Here is each step.">
 <link rel="canonical" href="https://jolnova.com/de/how-it-works.html">
 <link rel="alternate" hreflang="en" href="https://jolnova.com/how-it-works.html">
 <link rel="alternate" hreflang="tr" href="https://jolnova.com/tr/how-it-works.html">
@@ -14,19 +14,19 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jolnova">
 <meta property="og:title" content="How to Auto Clip Twitch and Kick Streams — Jolnova">
-<meta property="og:description" content="Add a source, set the hours it may work, and Jolnova records, finds candidate moments, captions them and hands you a review queue. Here is each step.">
+<meta property="og:description" content="Add a source and Jolnova records it, finds the candidate moments, captions them and hands you a review queue. Here is each step.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:url" content="https://jolnova.com/de/how-it-works.html">
 <meta property="og:image" content="https://jolnova.com/images/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How to Auto Clip Twitch and Kick Streams — Jolnova">
-<meta name="twitter:description" content="Add a source, set the hours it may work, and Jolnova records, finds candidate moments, captions them and hands you a review queue. Here is each step.">
+<meta name="twitter:description" content="Add a source and Jolnova records it, finds the candidate moments, captions them and hands you a review queue. Here is each step.">
 <meta name="twitter:image" content="https://jolnova.com/images/og-cover.png">
 <meta name="theme-color" content="#05070B">
-<link rel="icon" type="image/png" href="../images/favicon.png?v=19f9cf0521">
-<link rel="preload" as="image" href="../images/mock/de/dashboard.png">
-<link rel="stylesheet" href="../site.css?v=19f9cf0521">
-<!-- kaynak-sha1: 09e774d939ea98d204979198940123b481d31d53 -->
+<link rel="icon" type="image/png" href="../images/favicon.png?v=2b035a6813">
+<link rel="preload" as="image" href="../images/mock/de/dashboard.png?v=2b035a6813">
+<link rel="stylesheet" href="../site.css?v=2b035a6813">
+<!-- kaynak-sha1: 0ed7b375ee72491c564e9f4a393757d0be6b3ae5 -->
 </head>
 <body>
 <script type="application/ld+json">
@@ -35,7 +35,7 @@
 <a class="skip" href="#main">Zum Inhalt springen</a>
 <header class="site-header">
  <div class="wrap">
-  <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=19f9cf0521" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=2b035a6813" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
   <nav class="nav" aria-label="Main"><a href="index.html">Start</a><a href="how-it-works.html" class="on">So funktioniert es</a><a href="features.html">Funktionen</a><a href="pricing.html">Preise</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
   <div class="head-cta">
    <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span id="langName">Deutsch</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"></rect><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"></path><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"></path><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"></path><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"></path></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"></rect><circle cx="24" cy="22.5" r="10" fill="#fff"></circle><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"></circle><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"></path></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="true"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"></rect><rect x="20" width="20" height="45" fill="#fff"></rect><rect x="40" width="20" height="45" fill="#EF4135"></rect></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"></rect><rect y="11.25" width="60" height="22.5" fill="#F1BF00"></rect></svg></i><span>Español</span></button></div></div>
@@ -58,7 +58,7 @@
    <p class="body-lg">Livequellen werden im Hintergrund verfolgt, Links und lokale Dateien auf Anforderung verarbeitet — und alles landet in einer Prüfliste.</p>
   </div>
   <div class="strip" style="justify-content:flex-start">
-   <span class="strip-i">Quelle</span><span class="strip-i">Zeitplan</span><span class="strip-i">Aufnahme</span><span class="strip-i">Erkennen</span>
+   <span class="strip-i">Quelle</span><span class="strip-i">Aufnahme</span><span class="strip-i">Erkennen</span>
    <span class="strip-i">Formatieren</span><span class="strip-i">Prüfen</span><span class="strip-i">Exportieren</span>
   </div>
  </div>
@@ -74,55 +74,44 @@
     <li>YouTube-, Kick-VOD- und Twitch-VOD-Links</li><li>Lokale MP4-, MKV-, MOV- und WEBM-Dateien</li></ul>
    <div class="story-note">Lokale Dateien werden an Ort und Stelle gelesen. Jolnova verschiebt oder löscht deine Originale nie.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Automatisierung</span></div>
-   <img src="../images/mock/de/automation.png?v=19f9cf0521" alt="Automation page with the three-step source setup" loading="lazy" width="1360" height="720"></div>
+   <img src="../images/mock/de/automation.png?v=2b035a6813" alt="Automation page with the three-step source setup" loading="lazy" width="1360" height="720"></div>
  </article>
 
- <article class="story rev">
-  <div class="story-copy"><span class="eyebrow">SCHRITT 02</span><h2 class="h-md">Leg die Stunden fest, in denen es arbeiten darf</h2>
-   <p class="body">Streamer gehen zu bestimmten Zeiten live, es bringt also nichts, die ganze Woche einen leeren Kanal zu verfolgen. Gib Jolnova einen Wochenplan und es bleibt außerhalb davon im Leerlauf — oder lass den Zeitplan aus und es verfolgt rund um die Uhr.</p>
-   <ul><li>Wöchentliche Zeiträume, mehrere Tage pro Zeitraum</li>
-    <li>Zeiträume über Mitternacht hinaus, etwa 20:00 bis 02:00</li>
-    <li>Einmalige Ausnahmen für ein einzelnes Datum</li>
-    <li>Eine Liveaufnahme sind etwa 5,6 GB pro Stream und Stunde — hier wird also echter Speicherplatz gespart</li></ul>
-   <div class="story-note">Es ist ein lokaler Zeitgeber. Jolnova folgt dem Zeitplan, solange dein Computer läuft und die App geöffnet ist — nichts läuft in der Cloud.</div></div>
-  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Laufzeitplan</span></div>
-   <img src="../images/mock/de/schedule.png?v=19f9cf0521" alt="Run schedule with a weekly plan and one-off exceptions" loading="lazy" width="1360" height="620"></div>
- </article>
 
  <article class="story">
-  <div class="story-copy"><span class="eyebrow">SCHRITT 03</span><h2 class="h-md">Das Video aufnehmen oder verarbeiten</h2>
+  <div class="story-copy"><span class="eyebrow">SCHRITT 02</span><h2 class="h-md">Das Video aufnehmen oder verarbeiten</h2>
    <p class="body">Verfolgte Kanäle werden regelmäßig geprüft. Geht einer live, startet Jolnova die Aufnahme ohne Nachfrage. Links und Dateien überspringen diesen Schritt und gehen direkt in die Verarbeitung.</p>
    <ul><li>Bei Livequellen startet die Aufnahme automatisch</li>
     <li>Mehrere Streams gleichzeitig — 1 bei Starter, 2 bei Creator, 4 bei Pro</li>
     <li>Links werden heruntergeladen und dann verarbeitet</li>
     <li>Lokale Dateien werden direkt von der Festplatte gelesen</li></ul></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Live-Verfolgung</span></div>
-   <img src="../images/mock/de/live.png?v=19f9cf0521" alt="Live tracking view showing tracked sources and recording state" loading="lazy" width="1360" height="620"></div>
+   <img src="../images/mock/de/live.png?v=2b035a6813" alt="Live tracking view showing tracked sources and recording state" loading="lazy" width="1360" height="620"></div>
  </article>
 
  <article class="story rev">
-  <div class="story-copy"><span class="eyebrow">SCHRITT 04</span><h2 class="h-md">Die möglichen Momente finden</h2>
+  <div class="story-copy"><span class="eyebrow">SCHRITT 03</span><h2 class="h-md">Die möglichen Momente finden</h2>
    <p class="body">Jolnova liest drei Signale aus der Aufnahme — wie dicht der Chat wird, wo der Ton springt und was tatsächlich gesagt wird — und schneidet dort einen Kandidaten, wo sie zusammentreffen. Alle drei laufen auf deinem eigenen Rechner und kosten pro Clip nichts.</p>
    <ul><li>Chat-Dichte gegenüber dem ruhigen Normalwert</li><li>Lautstärkespitzen: Lachen, Schreien, plötzliche Lautheit</li><li>Sprachinhalt aus dem Transkript</li>
     <li>Die Empfindlichkeit ist eine Einstellung: Wenige, Ausgewogen oder Viele</li></ul>
    <div class="story-note">Kein Clip trägt eine KI-Punktzahl oder Qualitätsnote. Jeder Kandidat geht in die Prüfliste, und du entscheidest, was sie verlässt.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Prüfliste</span></div>
-   <img src="../images/mock/de/review.png?v=19f9cf0521" alt="Review queue with generated clips ready for approval" loading="lazy" width="1360" height="640"></div>
+   <img src="../images/mock/de/review.png?v=2b035a6813" alt="Review queue with generated clips ready for approval" loading="lazy" width="1360" height="640"></div>
  </article>
 
  <article class="story">
-  <div class="story-copy"><span class="eyebrow">SCHRITT 05</span><h2 class="h-md">Die hochkante Ausgabe vorbereiten</h2>
-   <p class="body">Jeder Moment wird geschnitten und auf 9:16 neu gerahmt, mit dem Layout, das du für diesen Streamer gewählt hast — oder dem, das in einer Clip-Vorlage gespeichert ist.</p>
+  <div class="story-copy"><span class="eyebrow">SCHRITT 04</span><h2 class="h-md">Die hochkante Ausgabe vorbereiten</h2>
+   <p class="body">Each moment is cut and reframed to 9:16 using the layout you picked for that streamer.</p>
    <ul><li>Automatisch — pro Stream entscheiden</li><li>Spiel — Kamera oben, Gameplay unten</li>
     <li>IRL — ganzes Bild auf unscharfem Hintergrund</li>
     <li>Kamera-Ecke — großer Inhalt, Kamera in der Ecke</li>
     <li>Vollbild — die Quelle so nutzen, wie sie ist</li></ul></div>
-  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip-Vorlagen</span></div>
-   <img src="../images/mock/de/presets.png?v=19f9cf0521" alt="Clip presets with layout options and saved preset cards" loading="lazy" width="1360" height="700"></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Vertical output</span></div>
+   <img src="../images/mock/de/vertical.png?v=2b035a6813" alt="Vertical output preview showing a clip reframed to 9:16" loading="lazy" width="1360" height="640"></div>
  </article>
 
  <article class="story rev">
-  <div class="story-copy"><span class="eyebrow">SCHRITT 06</span><h2 class="h-md">Untertiteln — und korrigieren, was falsch verstanden wurde</h2>
+  <div class="story-copy"><span class="eyebrow">SCHRITT 05</span><h2 class="h-md">Untertiteln — und korrigieren, was falsch verstanden wurde</h2>
    <p class="body">Gesprochenes wird transkribiert und im selben Kodiervorgang ins Video eingebrannt. Eine Transkription ist nie perfekt, deshalb bleibt jede Zeile bearbeitbar: korrigier den Wortlaut oder lösch eine Zeile, die du nicht auf dem Bild haben willst.</p>
    <ul><li>Transkribierte, eingebrannte Untertitel</li>
     <li>Jede Untertitelzeile bearbeiten oder löschen — in jedem Tarif</li>
@@ -130,22 +119,22 @@
     <li>Schrift, Größe, Farbe, Kontur, Position und Hintergrundbox bei Creator und Pro</li></ul>
    <div class="story-note">Beim Speichern wird der Clip einmal aus einem sauberen Master neu gerendert — den Text zweimal zu korrigieren summiert also keinen Qualitätsverlust.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Untertiteltext</span></div>
-   <img src="../images/mock/de/captions.png?v=19f9cf0521" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1000" height="640"></div>
+   <img src="../images/mock/de/captions.png?v=2b035a6813" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1000" height="640"></div>
  </article>
 
  <article class="story">
-  <div class="story-copy"><span class="eyebrow">SCHRITT 07</span><h2 class="h-md">Die Clip-Angaben schreiben</h2>
+  <div class="story-copy"><span class="eyebrow">SCHRITT 06</span><h2 class="h-md">Die Clip-Angaben schreiben</h2>
    <p class="body">Wenn du einen Clip freigibst, entsteht der Titel aus dem, was darin tatsächlich passiert — du benennst also keine Dateien von Hand um. Beschreibung und Hashtags kommen gleich mit.</p>
    <ul><li>Titel entstehen bei der Freigabe</li>
     <li>Vorschläge für Beschreibung und Hashtags</li>
     <li>Optionales Text- oder Bild-Overlay, das du selbst hinzufügen kannst</li></ul>
    <div class="story-note">Das Transkript und eine kurze Chat-Zusammenfassung sind das Einzige, was deinen Computer verlässt. Dein Video wird nie hochgeladen.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip-Details</span></div>
-   <img src="../images/mock/de/player.png?v=19f9cf0521" alt="Clip detail with generated title, description and hashtags" loading="lazy" width="1000" height="640"></div>
+   <img src="../images/mock/de/player.png?v=2b035a6813" alt="Clip detail with generated title, description and hashtags" loading="lazy" width="1000" height="640"></div>
  </article>
 
  <article class="story rev">
-  <div class="story-copy"><span class="eyebrow">SCHRITT 08</span><h2 class="h-md">Den Clip selbst feinjustieren</h2>
+  <div class="story-copy"><span class="eyebrow">SCHRITT 07</span><h2 class="h-md">Den Clip selbst feinjustieren</h2>
    <p class="body">Bevor du etwas freigibst, kannst du die Enden schneiden, ein Logo ins Bild setzen oder eine Zeile über das Video schreiben. Jede Änderung wird auf den Originalclip angewendet — Bearbeiten kostet dich also nie Qualität.</p>
    <ul><li>Anfang und Ende mit zwei Griffen zuschneiden</li>
     <li>Bei Creator und Pro bis zu sieben zusätzliche Sekunden aus der Aufnahme zurückholen</li>
@@ -153,18 +142,18 @@
     <li>Text mit Position, Größe, Farbe und Hintergrund hinzufügen</li>
     <li>Jeden Effekt entfernen und den sauberen Clip zurückbekommen</li></ul></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip zuschneiden</span></div>
-   <img src="../images/mock/de/trim.png?v=19f9cf0521" alt="Trim editor with start and end handles over the clip timeline" loading="lazy" width="900" height="640"></div>
+   <img src="../images/mock/de/trim.png?v=2b035a6813" alt="Trim editor with start and end handles over the clip timeline" loading="lazy" width="900" height="640"></div>
  </article>
 
  <article class="story">
-  <div class="story-copy"><span class="eyebrow">SCHRITT 09</span><h2 class="h-md">Prüfen und exportieren</h2>
+  <div class="story-copy"><span class="eyebrow">SCHRITT 08</span><h2 class="h-md">Prüfen und exportieren</h2>
    <p class="body">Öffne die Prüfliste, arbeite dich durch die Kandidaten und gib die frei, die es wert sind. Freigegebene Clips werden in HD in den Ordner deiner Wahl heruntergeladen.</p>
    <ul><li>Mit einem Klick freigeben oder ablehnen</li><li>Eine Ablehnung jederzeit rückgängig machen</li>
     <li>Wasserzeichen an oder aus in jedem bezahlten Tarif</li>
     <li>Einen Clip oder eine ganze Auswahl herunterladen</li><li>Den Zielordner selbst wählen</li></ul>
    <div class="story-note">Download the finished clip, or connect a YouTube account and schedule it on the calendar. Nothing goes out that you did not approve yourself.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip-Bibliothek</span></div>
-   <img src="../images/mock/de/clips.png?v=19f9cf0521" alt="Clips library with approved, published and rejected tabs" loading="lazy" width="1360" height="620"></div>
+   <img src="../images/mock/de/clips.png?v=2b035a6813" alt="Clips library with approved, published and rejected tabs" loading="lazy" width="1360" height="620"></div>
  </article>
 
 </div></section>
@@ -174,23 +163,23 @@
   <p class="body-lg">Sie sitzen direkt am Clip — Clip öffnen, ändern, freigeben. Es gibt kein eigenes Schnittprojekt zu verwalten.</p></div>
  <div class="grid-2">
   <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Untertiteltext</span></div>
-    <img src="../images/mock/de/captions.png?v=19f9cf0521" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1000" height="640"></div>
+    <img src="../images/mock/de/captions.png?v=2b035a6813" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1000" height="640"></div>
    <div class="h-row mt-m"><h3 class="h-sm">Untertiteltext</h3><span class="badge badge-lime">JEDER TARIF</span></div>
    <p>Korrigier ein falsch verstandenes Wort oder lösch eine Zeile. Die Zeiten bleiben genau wie transkribiert.</p></article>
   <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Untertitel-Stil</span></div>
-    <img src="../images/mock/de/capstyle.png?v=19f9cf0521" alt="Subtitle style panel with font, size, colour, outline and placement controls" loading="lazy" width="1000" height="640"></div>
+    <img src="../images/mock/de/capstyle.png?v=2b035a6813" alt="Subtitle style panel with font, size, colour, outline and placement controls" loading="lazy" width="1000" height="640"></div>
    <div class="h-row mt-m"><h3 class="h-sm">Untertitel-Stil</h3><span class="badge badge-plan">CREATOR &amp; PRO</span></div>
    <p>Schrift, Größe, Farbe, Kontur, Position und optional eine Hintergrundbox.</p></article>
  </div>
  <div class="grid-3" style="margin-top:22px">
   <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Zuschneiden</span></div>
-    <img src="../images/mock/de/trim.png?v=19f9cf0521" alt="Trim editor with start and end handles" loading="lazy" width="900" height="640"></div>
+    <img src="../images/mock/de/trim.png?v=2b035a6813" alt="Trim editor with start and end handles" loading="lazy" width="900" height="640"></div>
    <h3 class="mt-s">Zuschneiden</h3><p>Zieh die beiden Griffe, bis der Clip genau dort beginnt und endet, wo der Moment es tut.</p></article>
   <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Bild</span></div>
-    <img src="../images/mock/de/image.png?v=19f9cf0521" alt="Image overlay being dragged and resized on the video" loading="lazy" width="900" height="640"></div>
+    <img src="../images/mock/de/image.png?v=2b035a6813" alt="Image overlay being dragged and resized on the video" loading="lazy" width="900" height="640"></div>
    <h3 class="mt-s">Bild-Overlay</h3><p>Zieh ein Logo oder Abzeichen ins Bild, ändere die Größe an der Ecke, anwenden.</p></article>
   <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Text</span></div>
-    <img src="../images/mock/de/text.png?v=19f9cf0521" alt="Text overlay editor with position, size and colour controls" loading="lazy" width="900" height="640"></div>
+    <img src="../images/mock/de/text.png?v=2b035a6813" alt="Text overlay editor with position, size and colour controls" loading="lazy" width="900" height="640"></div>
    <h3 class="mt-s">Text-Overlay</h3><p>Schreib einen Aufhänger, bestimm, wo er sitzt und ob er eine Box dahinter bekommt.</p></article>
  </div>
  <div class="story-note" style="margin-top:26px">Effekte werden immer neu vom unberührten Original angewendet, sodass Hinzufügen und Entfernen das Video nie verschlechtert.</div>
@@ -207,7 +196,7 @@
  <div class="wrap">
   <div class="foot-grid">
    <div class="foot-brand">
-    <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=19f9cf0521" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=2b035a6813" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
     <p>Automatisches Stream-Clipping für Windows. Verfolge deine Quellen, lass Jolnova hochkante Clips vorbereiten und prüf, was sich zu posten lohnt.</p>
     <div class="foot-os"><span class="badge badge-neutral">Windows-Desktop-App</span></div>
    </div>
@@ -225,7 +214,7 @@
   </div>
  </div>
 </footer>
-<script src="../user.js?v=19f9cf0521"></script><script src="../lang-de.js?v=19f9cf0521"></script><script src="../lang-fr.js?v=19f9cf0521"></script><script src="../lang-es.js?v=19f9cf0521"></script><script src="../lang.js?v=19f9cf0521"></script>
+<script src="../user.js?v=2b035a6813"></script><script src="../lang-de.js?v=2b035a6813"></script><script src="../lang-fr.js?v=2b035a6813"></script><script src="../lang-es.js?v=2b035a6813"></script><script src="../lang.js?v=2b035a6813"></script>
 <script>
 function rjMenu(){var m=document.getElementById('mobnav'),b=document.querySelector('.burger');
  var on=m.classList.toggle('on');document.body.classList.toggle('navopen',on);

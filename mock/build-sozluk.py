@@ -136,13 +136,17 @@ def turet(metin, tablo, dil, sade=None):
     "🎥 Camera setup" <-> "🎥 Camera setup —"); tek yonlu kirpma bunlari
     kaciriyordu.
     """
+    # Sayi kalibi ZAMAN degerlerini de kapsar (0:17, 1:04.5): uygulama
+    # "selected: " + sure seklinde yaziyor ve sozlukte "selected:" duruyor.
+    SAY = r"[\d][\d.,:]*"
+
     # 1) bastaki sayi:  "2 live now" / "38 clips waiting for review"
-    m = re.match(r"^([\d][\d.,]*\s+)(.+)$", metin)
+    m = re.match(r"^(%s\s+)(.+)$" % SAY, metin)
     if m and m.group(2) in tablo:
         return m.group(1) + tablo[m.group(2)]
 
-    # 2) sondaki sayi:  "Kick 18" / "All 42"
-    m = re.match(r"^(.+?)(\s+[\d][\d.,]*)$", metin)
+    # 2) sondaki sayi:  "Kick 18" / "All 42" / "selected: 0:17"
+    m = re.match(r"^(.+?)(\s+%s)$" % SAY, metin)
     if m and m.group(1) in tablo:
         return tablo[m.group(1)] + m.group(2)
 

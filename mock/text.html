@@ -1,41 +1,113 @@
 <!doctype html><html><head><meta charset=utf-8>
 <link rel=stylesheet href="_base.css"><style>
-html,body{width:900px;height:640px;overflow:hidden}
-body{display:flex;align-items:center;justify-content:center;
- background:radial-gradient(700px 400px at 50% 0%,rgba(157,108,255,.06),transparent 60%),#080C12;padding:26px}
-.modal{background:linear-gradient(180deg,#161E2B,#101621);border:1px solid rgba(176,192,220,.26);
- border-radius:20px;box-shadow:0 26px 80px rgba(0,0,0,.5);width:100%;max-width:700px;padding:26px}
-.modal h3{font-size:19px;font-weight:750;letter-spacing:-.025em;margin-bottom:6px}
-.modal .s{color:#A8B2C3;font-size:13px;line-height:1.55;margin-bottom:20px}
-.foot{display:flex;gap:10px;margin-top:22px}
-.foot .g{flex:1}
+/* ============================================================
+   YAZI EKLEME PENCERESI — uygulamadaki gercek modalin kopyasi
+   Kaynak: Kick-Reels-Bot/src/panel.py  (#txtmodal)
+   Stiller: .modal / .txtarea / .txtrow / .seg / .sw / .txtstage
 
-</style></head><body><div class=modal><h3>🔤 Add text to clip</h3>
-<div class=s>Write the text, pick where it sits, and it is burned into the video. Quality never drops — effects are always re-applied from the untouched original.</div>
-<div style="background:#070B11;border:1px solid rgba(146,163,190,.16);border-radius:12px;padding:13px 15px;
- font-size:14px;font-weight:650">HE ACTUALLY PULLED IT OFF</div>
-<div style="display:flex;align-items:center;gap:12px;margin-top:16px">
- <span style="color:#A8B2C3;font-size:12.5px;font-weight:650;width:82px">Position</span>
- <div style="display:flex;background:#0F1621;border:1px solid rgba(146,163,190,.13);border-radius:11px;padding:3px;gap:2px">
-  <span style="color:#8B95A9;padding:7px 14px;font-size:12.5px;font-weight:650">↑ Top</span>
-  <span style="color:#8B95A9;padding:7px 14px;font-size:12.5px;font-weight:650">↔ Middle</span>
-  <span style="background:var(--acc);color:var(--acc-ink);border-radius:8px;padding:7px 14px;font-size:12.5px;font-weight:750">↓ Bottom</span></div></div>
-<div style="display:flex;align-items:center;gap:12px;margin-top:14px">
- <span style="color:#A8B2C3;font-size:12.5px;font-weight:650;width:82px">Size</span>
- <div style="flex:1;height:6px;border-radius:4px;background:#1B2431;position:relative">
-  <span style="position:absolute;left:0;width:55%;height:100%;border-radius:4px;background:var(--acc)"></span>
-  <span style="position:absolute;left:55%;top:-5px;width:16px;height:16px;border-radius:50%;background:var(--acc);transform:translateX(-50%)"></span></div>
- <span style="color:#747F92;font-size:12px;width:20px">M</span></div>
-<div style="display:flex;align-items:center;gap:12px;margin-top:14px">
- <span style="color:#A8B2C3;font-size:12.5px;font-weight:650;width:82px">Colour</span>
- <div style="display:flex;gap:8px"><span style="width:26px;height:26px;border-radius:50%;background:#ffffff;border:2px solid #2A3244"></span><span style="width:26px;height:26px;border-radius:50%;background:var(--acc);border:2px solid #fff"></span><span style="width:26px;height:26px;border-radius:50%;background:#9D6CFF;border:2px solid #2A3244"></span><span style="width:26px;height:26px;border-radius:50%;background:#FF5D68;border:2px solid #2A3244"></span><span style="width:26px;height:26px;border-radius:50%;background:var(--warn);border:2px solid #2A3244"></span><span style="width:26px;height:26px;border-radius:50%;background:#000000;border:2px solid #2A3244"></span></div></div>
-<div style="display:flex;align-items:center;gap:12px;margin-top:14px">
- <span style="color:#A8B2C3;font-size:12.5px;font-weight:650;width:82px">Background</span>
- <div style="display:flex;background:#0F1621;border:1px solid rgba(146,163,190,.13);border-radius:11px;padding:3px;gap:2px">
-  <span style="background:var(--acc);color:var(--acc-ink);border-radius:8px;padding:7px 14px;font-size:12.5px;font-weight:750">Shadow only</span>
-  <span style="color:#8B95A9;padding:7px 14px;font-size:12.5px;font-weight:650">Solid box</span></div></div>
-<div style="margin-top:16px;border:1px solid rgba(146,163,190,.13);border-radius:12px;min-height:104px;
- background:repeating-conic-gradient(#1A1F2B 0% 25%,#141822 0% 50%) 50%/22px 22px;
- display:flex;align-items:flex-end;justify-content:center;padding:18px">
- <span style="font-weight:800;font-size:19px;color:var(--acc);text-shadow:0 2px 6px rgba(0,0,0,.9)">HE ACTUALLY PULLED IT OFF</span></div>
-<div class=foot><span class=btns>Cancel</span><button class=btnp style="flex:1;padding:11px">Apply</button></div></div><script src="_sozluk.js"></script><script src="_i18n.js"></script></body></html>
+   Uygulamadaki gercek denetimler (onceki mockup baskalarini
+   gosteriyordu):
+     Position  -> ↑ Top / ↔ Middle / ↓ Bottom      (varsayilan: Bottom)
+     Size      -> kaydirac + tek harfli deger (M)
+     Colour    -> 6 renk: #ffffff #ffe600 #9DFF00 #FF4B55 #9B6CFF #000000
+     Background-> Shadow only / Solid box          (varsayilan: Shadow only)
+   Altta yazi klibin GERCEK karesi uzerinde surukleniyor; onceki
+   surumdeki sabit onizleme kutusu (.txtprev) uygulamada artik yok.
+   ============================================================ */
+html,body{width:900px;height:860px;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center;
+ background:radial-gradient(700px 420px at 50% 0%,rgba(157,108,255,.06),transparent 60%),#080C12;padding:26px}
+
+.modal{position:relative;background:linear-gradient(180deg,#161A23,#111722);
+ border:1px solid rgba(146,163,190,.16);border-radius:18px;padding:26px;
+ width:560px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+.modal h3{font-size:19px;font-weight:750;letter-spacing:-.2px;margin-bottom:6px}
+.modal p.s{color:#8B95A9;font-size:13px;line-height:1.5;margin-bottom:16px}
+.mx{position:absolute;top:14px;right:14px;width:32px;height:32px;display:flex;
+ align-items:center;justify-content:center;border:1px solid rgba(146,163,190,.18);
+ background:rgba(146,163,190,.07);color:#8B95A9;border-radius:9px;font-size:17px;line-height:1}
+
+/* panel.py .txtarea */
+.txtarea{width:100%;background:#0A0E14;border:1px solid rgba(145,164,195,.14);border-radius:12px;
+ padding:13px 14px;color:#F7F9FC;font:15px inherit;line-height:1.5;min-height:74px}
+.txtarea .ph{color:#5C6678}
+
+/* panel.py .txtrow */
+.txtrow{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.txtrow>label{color:#8B95A9;font-size:12.5px;font-weight:600;min-width:82px}
+
+/* panel.py .seg */
+.seg{display:flex;background:#1B2431;border:1px solid rgba(146,163,190,.13);
+ border-radius:13px;padding:4px;gap:3px}
+.seg b{color:#8B95A9;padding:9px 15px;font-size:13.5px;font-weight:600;border-radius:9px;white-space:nowrap}
+.seg b.on{background:var(--acc);color:#000;box-shadow:0 2px 10px var(--acc-a30)}
+
+/* kaydirac */
+.rng{flex:1;min-width:130px;height:4px;border-radius:3px;background:#232D3D;position:relative}
+.rng span{position:absolute;left:0;top:0;bottom:0;width:34%;background:var(--acc);border-radius:3px}
+.rng i{position:absolute;left:34%;top:50%;transform:translate(-50%,-50%);width:15px;height:15px;
+ border-radius:50%;background:var(--acc);box-shadow:0 1px 5px rgba(0,0,0,.55)}
+.txtval{color:#A5AEC0;font-size:12px;font-family:ui-monospace,monospace;min-width:22px;text-align:center}
+
+/* panel.py .swatches / .sw */
+.swatches{display:flex;gap:8px}
+.sw{width:26px;height:26px;border-radius:50%;border:2px solid #2a3244;display:block}
+.sw.on{border-color:#fff;transform:scale(1.12)}
+
+/* panel.py .txtstage — klibin gercek karesi, yazi surukleniyor */
+.txtstage{position:relative;margin:14px auto 0;height:250px;aspect-ratio:9/16;
+ background:#0a0c10;border-radius:12px;overflow:hidden;border:1px solid rgba(146,163,190,.14)}
+.txtstage .kare{position:absolute;inset:0;background:linear-gradient(155deg,#26203A,#3E316A 55%,#1A1727)}
+.txtdrag{position:absolute;left:50%;top:82%;transform:translate(-50%,-50%);
+ outline:1.5px dashed var(--acc-a60);outline-offset:3px;padding:2px 6px}
+.txtdrag span{font-weight:800;font-size:15px;text-align:center;line-height:1.25;
+ text-shadow:0 2px 4px rgba(0,0,0,.8);display:block}
+.st-hint{color:#8B95A9;font-size:12.5px;margin-top:10px;text-align:center}
+
+.modal-foot{display:flex;gap:10px;margin-top:20px}
+.modal-foot .cancel{flex:1;background:#1B2431;border:1px solid rgba(176,192,220,.22);
+ color:#F7F9FC;border-radius:10px;padding:12px;font:inherit;font-weight:700}
+.modal-foot .btn{flex:1;background:var(--acc);color:var(--acc-ink);border:0;
+ border-radius:10px;padding:12px;font:inherit;font-weight:750}
+</style></head><body>
+
+<div class=modal>
+ <button class=mx>✕</button>
+ <h3>🔤 Add text to clip</h3>
+ <p class=s>Write the text, pick where it sits, and it is burned into the video. Quality never drops — effects are always re-applied from the untouched original.</p>
+
+ <div class=txtarea>WAIT — WATCH THIS</div>
+
+ <div class=txtrow><label>Position</label>
+  <div class=seg><b>↑ Top</b><b>↔ Middle</b><b class=on>↓ Bottom</b></div>
+ </div>
+ <div class=txtrow><label>Size</label>
+  <span class=rng><span></span><i></i></span><span class=txtval>M</span>
+ </div>
+ <div class=txtrow><label>Colour</label>
+  <div class=swatches>
+   <span class="sw on" style="background:#ffffff"></span>
+   <span class=sw style="background:#ffe600"></span>
+   <span class=sw style="background:#9DFF00"></span>
+   <span class=sw style="background:#FF4B55"></span>
+   <span class=sw style="background:#9B6CFF"></span>
+   <span class=sw style="background:#000000"></span>
+  </div>
+ </div>
+ <div class=txtrow><label>Background</label>
+  <div class=seg><b class=on>Shadow only</b><b>Solid box</b></div>
+ </div>
+
+ <div class=txtstage>
+  <span class=kare></span>
+  <div class=txtdrag><span>WAIT — WATCH THIS</span></div>
+ </div>
+ <div class=st-hint>Drag the text where you want it.</div>
+
+ <div class=modal-foot>
+  <button class=cancel>Cancel</button>
+  <button class=btn>Apply</button>
+ </div>
+</div>
+
+<script src="_sozluk.js"></script><script src="_i18n.js"></script></body></html>

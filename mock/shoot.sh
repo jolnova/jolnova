@@ -48,23 +48,24 @@ files:1360:700:1
 vertical:1360:640:1
 clips:1360:620:1
 analytics:1360:620:1
-schedule:1360:620:1
-presets:1360:700:1
 camera:860:540:2
 player:1000:640:2
 captions:1000:640:2
 capstyle:1000:640:2
 settings:1000:520:2
 brand:1000:520:2
-trim:900:640:2
-image:900:640:2
-text:900:640:2
+trim:900:860:2
+image:900:860:2
+text:900:860:2
 "
 # esli tuvaller (site kartlari yan yana):
 #   captions + capstyle   -> 1000x640 @2
 #   settings + brand      -> 1000x520 @2
-#   (schedule ve presets ayri bolumlerde durur, esli degil)
-#   trim + image + text   ->  900x640 @2
+#   (schedule ve presets KALDIRILDI: uygulamada takip zamanlamasi hic yoktu,
+#    hazir stiller ise arayuzden cikarilmisti - bkz. panel.py:11962. Kaynak
+#    HTML dosyalari da silindi; geri gerekirse git gecmisinde duruyor.)
+#   trim + image + text   ->  900x860 @2  (uygulamanin modallari DIKEY:
+#     9:16 video/sahne + denetimler; 640 tuvale sigmiyordu)
 
 mkdir -p "$OUT" "$PROFILE"
 only="${1:-}"

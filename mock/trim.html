@@ -1,39 +1,113 @@
 <!doctype html><html><head><meta charset=utf-8>
 <link rel=stylesheet href="_base.css"><style>
-html,body{width:900px;height:640px;overflow:hidden}
-body{display:flex;align-items:center;justify-content:center;
- background:radial-gradient(700px 400px at 50% 0%,rgba(157,108,255,.06),transparent 60%),#080C12;padding:26px}
-.modal{background:linear-gradient(180deg,#161E2B,#101621);border:1px solid rgba(176,192,220,.26);
- border-radius:20px;box-shadow:0 26px 80px rgba(0,0,0,.5);width:100%;max-width:780px;padding:26px}
-.modal h3{font-size:19px;font-weight:750;letter-spacing:-.025em;margin-bottom:6px}
-.modal .s{color:#A8B2C3;font-size:13px;line-height:1.55;margin-bottom:20px}
-.foot{display:flex;gap:10px;margin-top:22px}
-.foot .g{flex:1}
+/* ============================================================
+   KIRPMA PENCERESI — uygulamadaki gercek modalin birebir kopyasi
+   Kaynak: Kick-Reels-Bot/src/panel.py  (#trim, satir ~8810)
+   Stiller: panel.py .modal / .trimbar / .trim-sel / .trim-h /
+            .trim-times / .trim-ext / .modal-foot
 
-</style></head><body><div class=modal><h3>✂️ Trim clip</h3>
-<div class=s>Drag the handles to cut the start and the end. The rest of the clip is untouched.</div>
-<div class="g4" style="height:150px;border-radius:12px;position:relative;overflow:hidden;
- border:1px solid rgba(146,163,190,.16)">
- <span style="position:absolute;inset:0;background:rgba(5,7,11,.55)"></span>
- <span style="position:absolute;left:16%;right:12%;top:0;bottom:0;border-left:3px solid var(--acc);
-  border-right:3px solid var(--acc);background:color-mix(in srgb,var(--acc) 8%,transparent);box-shadow:0 0 24px color-mix(in srgb,var(--acc) 20%,transparent) inset"></span>
- <span style="position:absolute;left:16%;top:50%;transform:translate(-50%,-50%);width:12px;height:44px;
-  border-radius:5px;background:var(--acc);box-shadow:0 0 12px color-mix(in srgb,var(--acc) 60%,transparent)"></span>
- <span style="position:absolute;left:88%;top:50%;transform:translate(-50%,-50%);width:12px;height:44px;
-  border-radius:5px;background:var(--acc);box-shadow:0 0 12px color-mix(in srgb,var(--acc) 60%,transparent)"></span>
- <span style="position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:rgba(6,9,13,.82);
-  border:1px solid color-mix(in srgb,var(--acc) 30%,transparent);color:var(--acc);border-radius:8px;padding:4px 12px;font-size:12px;font-weight:750">17.4s selected</span>
+   ⚠️ ONCEKI SURUM UYDURMAYDI. Sunlari gosteriyordu ve hicbiri
+   uygulamada YOKTU:
+     - "TRIM FROM START" / "TRIM FROM END" adinda iki surgu
+     - "Apply trim" yazan bir dugme (uygulamada yalnizca "Trim")
+     - dort parcali zaman satiri (uygulamada UC parca)
+   Uygulamada GERCEKTEN olup mockup'ta hic gorunmeyen sey ise
+   klibin disina cikma satiriydi ("+7 sn oncesi/sonrasi").
+   ============================================================ */
+html,body{width:900px;height:860px;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center;
+ background:radial-gradient(700px 420px at 50% 0%,rgba(157,108,255,.06),transparent 60%),#080C12;padding:26px}
+
+/* panel.py .modal */
+.modal{position:relative;background:linear-gradient(180deg,#161A23,#111722);
+ border:1px solid rgba(146,163,190,.16);border-radius:18px;padding:26px;
+ width:560px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+.modal h3{font-size:19px;font-weight:750;letter-spacing:-.2px;margin-bottom:6px}
+.modal p.s{color:#8B95A9;font-size:13px;line-height:1.5;margin-bottom:16px}
+/* panel.py .mx — kapatma dugmesi */
+.mx{position:absolute;top:14px;right:14px;width:32px;height:32px;display:flex;
+ align-items:center;justify-content:center;border:1px solid rgba(146,163,190,.18);
+ background:rgba(146,163,190,.07);color:#8B95A9;border-radius:9px;font-size:17px;line-height:1}
+
+/* Uygulamadaki <video>: width:100% (modalin TAM genisligi), max-height 50vh,
+   object-fit:contain, siyah zemin.
+   ⚠️ Eleman 9:16 DEGIL - modal kadar genis. 9:16 goruntu onun ICINDE
+   ortalanir ve iki yana SIYAH BANT duser; o bantlar videonun kendisidir.
+   Ilk denemede elemani 9:16 yapmistim, o zaman modalin iki yani bos
+   kaliyordu - uygulamada oyle gorunmuyor. */
+.vid{width:100%;height:340px;background:#000;border-radius:12px;
+ position:relative;overflow:hidden;border:1px solid rgba(146,163,190,.14)}
+.vid .kare{position:absolute;top:0;bottom:30px;left:50%;transform:translateX(-50%);
+ aspect-ratio:9/16;background:linear-gradient(150deg,#243046,#3A2A46 52%,#161C28)}
+/* Denetim seridi 30px; oynat dugmesi GORUNTU alaninin ortasinda dursun,
+   elemanin degil - yoksa serit yuzunden asagi kacik gorunuyor. */
+.vid .oynat{position:absolute;left:50%;top:155px;transform:translate(-50%,-50%);
+ width:46px;height:46px;border-radius:50%;background:rgba(10,14,20,.62);
+ border:1.5px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center}
+.vid .oynat::after{content:'';border-left:13px solid #fff;border-top:8px solid transparent;
+ border-bottom:8px solid transparent;margin-left:4px}
+/* tarayicinin kendi denetim seridi */
+.vid .ctrl{position:absolute;left:0;right:0;bottom:0;height:30px;background:rgba(8,10,14,.82);
+ display:flex;align-items:center;gap:7px;padding:0 8px}
+.vid .ctrl i{width:9px;height:9px;border-left:7px solid #E6EAF2;border-top:5px solid transparent;
+ border-bottom:5px solid transparent;flex:0 0 auto}
+.vid .ctrl .cbar{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.28);position:relative}
+.vid .ctrl .cbar span{position:absolute;left:0;top:0;bottom:0;width:38%;background:#E6EAF2;border-radius:2px}
+.vid .ctrl .ct{font-size:9.5px;color:#E6EAF2;font-variant-numeric:tabular-nums}
+
+/* panel.py .trimbar / .trim-sel / .trim-h */
+.trimbar{position:relative;height:44px;margin-top:16px;background:rgba(145,164,195,.14);border-radius:10px}
+.trim-sel{position:absolute;top:0;bottom:0;left:17%;right:12%;
+ background:var(--acc-a22);border:2px solid var(--acc);border-radius:8px;box-sizing:border-box}
+.trim-h{position:absolute;top:-4px;bottom:-4px;width:16px;margin-left:-8px;background:var(--acc);
+ border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.trim-h::after{content:'';position:absolute;left:6.5px;top:50%;transform:translateY(-50%);
+ width:3px;height:16px;background:#07090D;border-radius:2px}
+
+/* panel.py .trim-times — UC parca, ortadaki vurgu renginde */
+.trim-times{display:flex;justify-content:space-between;align-items:center;
+ margin-top:10px;color:#8B95A9;font-size:13px;font-variant-numeric:tabular-nums}
+.trim-times b{color:var(--acc);font-size:14px;font-weight:750}
+
+/* panel.py .trim-ext — klibin disina cikma */
+.trim-ext{margin-top:12px;padding-top:12px;border-top:1px solid rgba(146,163,190,.13)}
+.trim-extl{font-size:12.5px;color:#8B95A9;margin-bottom:8px;line-height:1.5}
+.trim-extb{display:flex;gap:8px;flex-wrap:wrap}
+.trim-extb .st-btn{background:#1B2431;color:#CDD5E4;border:1px solid rgba(176,192,220,.22);
+ border-radius:10px;padding:8px 12px;font:inherit;font-size:12.5px;font-weight:700}
+
+/* panel.py .modal-foot — iki dugme de flex:1 */
+.modal-foot{display:flex;gap:10px;margin-top:20px}
+.modal-foot .cancel{flex:1;background:#1B2431;border:1px solid rgba(176,192,220,.22);
+ color:#F7F9FC;border-radius:10px;padding:12px;font:inherit;font-weight:700}
+.modal-foot .btn{flex:1;background:var(--acc);color:var(--acc-ink);border:0;
+ border-radius:10px;padding:12px;font:inherit;font-weight:750}
+</style></head><body>
+
+<div class=modal>
+ <button class=mx>✕</button>
+ <h3>✂️ Trim clip</h3>
+ <p class=s>Drag the handles at both ends — the green part is kept. The video follows as you drag.</p>
+
+ <div class=vid>
+  <span class=kare></span>
+  <span class=oynat></span>
+  <div class=ctrl><i></i><span class=cbar><span></span></span><span class=ct>0:09 / 0:24</span></div>
+ </div>
+
+ <div class=trimbar>
+  <div class=trim-sel></div>
+  <div class=trim-h style="left:17%"></div>
+  <div class=trim-h style="left:88%"></div>
+ </div>
+ <div class=trim-times><span>0:00</span><b>selected: 0:17</b><span>0:24</span></div>
+
+ <div class=trim-ext>
+  <div class=trim-extl>The clip ends too early? Look at what comes before and after it in the recording.</div>
+  <div class=trim-extb><button class="st-btn">👁 Show 7s before &amp; after</button></div>
+ </div>
+
+ <div class=modal-foot><button class=cancel>Cancel</button><button class=btn>Trim</button></div>
 </div>
-<div style="display:flex;justify-content:space-between;color:#747F92;font-size:11.5px;margin-top:9px;font-variant-numeric:tabular-nums">
- <span>00:00</span><span>Start 00:04.1</span><span>End 00:21.5</span><span>00:24</span></div>
-<div style="display:flex;gap:16px;margin-top:20px">
- <div style="flex:1"><div style="color:#747F92;font-size:10.5px;font-weight:750;letter-spacing:.1em;margin-bottom:8px">TRIM FROM START</div>
-  <div style="height:6px;border-radius:4px;background:#1B2431;position:relative">
-   <span style="position:absolute;left:0;width:18%;height:100%;border-radius:4px;background:var(--acc)"></span>
-   <span style="position:absolute;left:18%;top:-5px;width:16px;height:16px;border-radius:50%;background:var(--acc);transform:translateX(-50%)"></span></div></div>
- <div style="flex:1"><div style="color:#747F92;font-size:10.5px;font-weight:750;letter-spacing:.1em;margin-bottom:8px">TRIM FROM END</div>
-  <div style="height:6px;border-radius:4px;background:#1B2431;position:relative">
-   <span style="position:absolute;left:0;width:11%;height:100%;border-radius:4px;background:var(--acc)"></span>
-   <span style="position:absolute;left:11%;top:-5px;width:16px;height:16px;border-radius:50%;background:var(--acc);transform:translateX(-50%)"></span></div></div>
-</div>
-<div class=foot><span class=btns>Cancel</span><span class=g></span><button class=btnp style="padding:11px 26px">Apply trim</button></div></div><script src="_sozluk.js"></script><script src="_i18n.js"></script></body></html>
+
+<script src="_sozluk.js"></script><script src="_i18n.js"></script></body></html>

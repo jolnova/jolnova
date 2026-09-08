@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Twitch ve Kick Yayınlarından Otomatik Klip Nasıl Çıkarılır — Jolnova</title>
-<meta name="description" content="Bir kaynak ekle, çalışabileceği saatleri belirle; Jolnova kaydeder, aday anları bulur, altyazılar ve sana bir inceleme kuyruğu verir. Her adım burada.">
+<meta name="description" content="Add a source and Jolnova records it, finds the candidate moments, captions them and hands you a review queue. Here is each step.">
 <link rel="canonical" href="https://jolnova.com/tr/how-it-works.html">
 <link rel="alternate" hreflang="en" href="https://jolnova.com/how-it-works.html">
 <link rel="alternate" hreflang="tr" href="https://jolnova.com/tr/how-it-works.html">
@@ -14,19 +14,19 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jolnova">
 <meta property="og:title" content="How to Auto Clip Twitch and Kick Streams — Jolnova">
-<meta property="og:description" content="Add a source, set the hours it may work, and Jolnova records, finds candidate moments, captions them and hands you a review queue. Here is each step.">
+<meta property="og:description" content="Add a source and Jolnova records it, finds the candidate moments, captions them and hands you a review queue. Here is each step.">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="https://jolnova.com/tr/how-it-works.html">
 <meta property="og:image" content="https://jolnova.com/images/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How to Auto Clip Twitch and Kick Streams — Jolnova">
-<meta name="twitter:description" content="Add a source, set the hours it may work, and Jolnova records, finds candidate moments, captions them and hands you a review queue. Here is each step.">
+<meta name="twitter:description" content="Add a source and Jolnova records it, finds the candidate moments, captions them and hands you a review queue. Here is each step.">
 <meta name="twitter:image" content="https://jolnova.com/images/og-cover.png">
 <meta name="theme-color" content="#05070B">
-<link rel="icon" type="image/png" href="../images/favicon.png?v=19f9cf0521">
-<link rel="preload" as="image" href="../images/mock/tr/dashboard.png">
-<link rel="stylesheet" href="../site.css?v=19f9cf0521">
-<!-- kaynak-sha1: 09e774d939ea98d204979198940123b481d31d53 -->
+<link rel="icon" type="image/png" href="../images/favicon.png?v=2b035a6813">
+<link rel="preload" as="image" href="../images/mock/tr/dashboard.png?v=2b035a6813">
+<link rel="stylesheet" href="../site.css?v=2b035a6813">
+<!-- kaynak-sha1: 0ed7b375ee72491c564e9f4a393757d0be6b3ae5 -->
 </head>
 <body>
 <script type="application/ld+json">
@@ -35,7 +35,7 @@
 <a class="skip" href="#main">İçeriğe geç</a>
 <header class="site-header">
  <div class="wrap">
-  <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=19f9cf0521" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=2b035a6813" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
   <nav class="nav" aria-label="Main"><a href="index.html">Ana Sayfa</a><a href="how-it-works.html" class="on">Nasıl Çalışır</a><a href="features.html">Özellikler</a><a href="pricing.html">Fiyatlar</a><a href="faq.html">SSS</a><a href="support.html">Destek</a></nav>
   <div class="head-cta">
    <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"></rect><circle cx="24" cy="22.5" r="10" fill="#fff"></circle><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"></circle><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"></path></svg></i><span id="langName">Türkçe</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"></rect><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"></path><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"></path><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"></path><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"></path></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="true"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"></rect><circle cx="24" cy="22.5" r="10" fill="#fff"></circle><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"></circle><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"></path></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"></rect><rect x="20" width="20" height="45" fill="#fff"></rect><rect x="40" width="20" height="45" fill="#EF4135"></rect></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"></rect><rect y="11.25" width="60" height="22.5" fill="#F1BF00"></rect></svg></i><span>Español</span></button></div></div>
@@ -58,7 +58,7 @@
    <p class="body-lg">Canlı kaynaklar arka planda takip edilir, link ve yerel dosyalar istendiğinde işlenir, hepsi tek inceleme kuyruğunda toplanır.</p>
   </div>
   <div class="strip" style="justify-content:flex-start">
-   <span class="strip-i">Kaynak</span><span class="strip-i">Program</span><span class="strip-i">Yakala</span><span class="strip-i">Algıla</span>
+   <span class="strip-i">Kaynak</span><span class="strip-i">Yakala</span><span class="strip-i">Algıla</span>
    <span class="strip-i">Biçimlendir</span><span class="strip-i">İncele</span><span class="strip-i">Dışa aktar</span>
   </div>
  </div>
@@ -74,55 +74,44 @@
     <li>YouTube, Kick VOD ve Twitch VOD linkleri</li><li>Yerel MP4, MKV, MOV ve WEBM dosyaları</li></ul>
    <div class="story-note">Yerel dosyalar yerinde okunur. Jolnova orijinallerini taşımaz ya da silmez.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Otomasyon</span></div>
-   <img src="../images/mock/tr/automation.png?v=19f9cf0521" alt="Automation page with the three-step source setup" loading="lazy" width="1360" height="720"></div>
+   <img src="../images/mock/tr/automation.png?v=2b035a6813" alt="Automation page with the three-step source setup" loading="lazy" width="1360" height="720"></div>
  </article>
 
- <article class="story rev">
-  <div class="story-copy"><span class="eyebrow">ADIM 02</span><h2 class="h-md">Çalışabileceği saatleri belirle</h2>
-   <p class="body">Yayıncılar belli saatlerde yayına çıkar; boş bir kanalı bütün hafta takip etmenin anlamı yok. Jolnova'ya haftalık bir plan ver, dışında boşta beklesin — ya da programı kapalı bırak, 7/24 takip etsin.</p>
-   <ul><li>Haftalık saat aralıkları, aralık başına birden fazla gün</li>
-    <li>Gece yarısını aşan aralıklar, örneğin 20:00 – 02:00</li>
-    <li>Tek bir güne özel istisnalar</li>
-    <li>Canlı kayıt yayın başına saatte yaklaşık 5,6 GB'dir; yani bu gerçekten kazanılan disk demektir</li></ul>
-   <div class="story-note">Bu yerel bir zamanlayıcıdır. Jolnova programı, bilgisayarın açıkken ve uygulama çalışırken uygular — bulutta hiçbir şey çalışmaz.</div></div>
-  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Çalışma programı</span></div>
-   <img src="../images/mock/tr/schedule.png?v=19f9cf0521" alt="Run schedule with a weekly plan and one-off exceptions" loading="lazy" width="1360" height="620"></div>
- </article>
 
  <article class="story">
-  <div class="story-copy"><span class="eyebrow">ADIM 03</span><h2 class="h-md">Videoyu yakala ya da işle</h2>
+  <div class="story-copy"><span class="eyebrow">ADIM 02</span><h2 class="h-md">Videoyu yakala ya da işle</h2>
    <p class="body">Takip edilen kanallar düzenli kontrol edilir. Biri canlıya geçtiğinde Jolnova sormadan kayda başlar. Link ve dosyalar bu adımı atlayıp doğrudan işleme girer.</p>
    <ul><li>Canlı kaynaklarda kayıt otomatik başlar</li>
     <li>Aynı anda birden fazla yayın — Starter'da 1, Creator'da 2, Pro'da 4</li>
     <li>Linkler indirilir, sonra işlenir</li>
     <li>Yerel dosyalar doğrudan diskten okunur</li></ul></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Canlı Takip</span></div>
-   <img src="../images/mock/tr/live.png?v=19f9cf0521" alt="Live tracking view showing tracked sources and recording state" loading="lazy" width="1360" height="620"></div>
+   <img src="../images/mock/tr/live.png?v=2b035a6813" alt="Live tracking view showing tracked sources and recording state" loading="lazy" width="1360" height="620"></div>
  </article>
 
  <article class="story rev">
-  <div class="story-copy"><span class="eyebrow">ADIM 04</span><h2 class="h-md">Aday anları bul</h2>
+  <div class="story-copy"><span class="eyebrow">ADIM 03</span><h2 class="h-md">Aday anları bul</h2>
    <p class="body">Jolnova kayıttan üç sinyal okur — chat'in ne kadar yoğunlaştığı, sesin nerede sıçradığı ve gerçekte ne söylendiği — ve bunlar aynı yere denk geldiğinde bir aday keser. Üçü de senin makinende çalışır ve klip başına hiçbir maliyeti yoktur.</p>
    <ul><li>Sakin seviyeye karşı chat yoğunluğu</li><li>Ses patlamaları: kahkaha, bağırma, ani yükselme</li><li>Transkriptten konuşma içeriği</li>
     <li>Hassasiyet bir ayardır: Az, Normal ya da Çok</li></ul>
    <div class="story-note">Hiçbir klip AI puanı ya da kalite notu taşımaz. Her aday inceleme kuyruğuna gider ve oradan neyin çıkacağına sen karar verirsin.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">İnceleme Kuyruğu</span></div>
-   <img src="../images/mock/tr/review.png?v=19f9cf0521" alt="Review queue with generated clips ready for approval" loading="lazy" width="1360" height="640"></div>
+   <img src="../images/mock/tr/review.png?v=2b035a6813" alt="Review queue with generated clips ready for approval" loading="lazy" width="1360" height="640"></div>
  </article>
 
  <article class="story">
-  <div class="story-copy"><span class="eyebrow">ADIM 05</span><h2 class="h-md">Dikey çıktıyı hazırla</h2>
-   <p class="body">Her an kesilir ve o yayıncı için seçtiğin yerleşimle — ya da bir klip ön ayarında kayıtlı olanla — 9:16'ya yeniden kadrajlanır.</p>
+  <div class="story-copy"><span class="eyebrow">ADIM 04</span><h2 class="h-md">Dikey çıktıyı hazırla</h2>
+   <p class="body">Each moment is cut and reframed to 9:16 using the layout you picked for that streamer.</p>
    <ul><li>Auto — her yayına göre karar ver</li><li>Oyun — üstte kamera, altta oynanış</li>
     <li>IRL — bulanık zemin üzerinde tam kare</li>
     <li>Köşede kamera — büyük içerik, köşede kamera</li>
     <li>Tam ekran — kaynağı olduğu gibi kullan</li></ul></div>
-  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Klip ön ayarları</span></div>
-   <img src="../images/mock/tr/presets.png?v=19f9cf0521" alt="Clip presets with layout options and saved preset cards" loading="lazy" width="1360" height="700"></div>
+  <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Vertical output</span></div>
+   <img src="../images/mock/tr/vertical.png?v=2b035a6813" alt="Vertical output preview showing a clip reframed to 9:16" loading="lazy" width="1360" height="640"></div>
  </article>
 
  <article class="story rev">
-  <div class="story-copy"><span class="eyebrow">ADIM 06</span><h2 class="h-md">Altyazıla — ve yanlış anlaşılanı düzelt</h2>
+  <div class="story-copy"><span class="eyebrow">ADIM 05</span><h2 class="h-md">Altyazıla — ve yanlış anlaşılanı düzelt</h2>
    <p class="body">Konuşma yazıya dökülür ve aynı kodlamada videoya gömülür. Yazıya dökme hiçbir zaman kusursuz değildir; bu yüzden her satır düzenlenebilir kalır: ifadeyi düzelt ya da ekranda istemediğin satırı sil.</p>
    <ul><li>Yazıya dökülmüş, gömülü altyazı</li>
     <li>Herhangi bir altyazı satırını düzenle ya da sil — her pakette</li>
@@ -130,22 +119,22 @@
     <li>Creator ve Pro'da yazı tipi, boyut, renk, kontur, yerleşim ve arka plan kutusu</li></ul>
    <div class="story-note">Kaydetmek klibi temiz bir asıl kopyadan bir kez yeniden işler; metni iki kez düzeltmek kalite kaybını üst üste bindirmez.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Altyazı metni</span></div>
-   <img src="../images/mock/tr/captions.png?v=19f9cf0521" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1000" height="640"></div>
+   <img src="../images/mock/tr/captions.png?v=2b035a6813" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1000" height="640"></div>
  </article>
 
  <article class="story">
-  <div class="story-copy"><span class="eyebrow">ADIM 07</span><h2 class="h-md">Klip bilgilerini yaz</h2>
+  <div class="story-copy"><span class="eyebrow">ADIM 06</span><h2 class="h-md">Klip bilgilerini yaz</h2>
    <p class="body">Bir klibi onayladığında, başlığı klipte gerçekten olan şeyden yazılır — böylece dosyaları elle yeniden adlandırmazsın. Yanında açıklama ve hashtag de gelir.</p>
    <ul><li>Onayda yazılan başlıklar</li>
     <li>Açıklama ve hashtag önerileri</li>
     <li>İstersen kendin ekleyebileceğin yazı ya da görsel katmanı</li></ul>
    <div class="story-note">Bilgisayarından çıkan tek şey döküm ve kısa bir chat özetidir. Videon hiçbir zaman yüklenmez.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Klip detayı</span></div>
-   <img src="../images/mock/tr/player.png?v=19f9cf0521" alt="Clip detail with generated title, description and hashtags" loading="lazy" width="1000" height="640"></div>
+   <img src="../images/mock/tr/player.png?v=2b035a6813" alt="Clip detail with generated title, description and hashtags" loading="lazy" width="1000" height="640"></div>
  </article>
 
  <article class="story rev">
-  <div class="story-copy"><span class="eyebrow">ADIM 08</span><h2 class="h-md">Klibe son dokunuşu sen yap</h2>
+  <div class="story-copy"><span class="eyebrow">ADIM 07</span><h2 class="h-md">Klibe son dokunuşu sen yap</h2>
    <p class="body">Onaylamadan önce uçları kesebilir, kareye logo bırakabilir ya da videonun üstüne bir satır yazabilirsin. Her değişiklik orijinal klibe uygulanır; düzenleme sana asla kalite kaybettirmez.</p>
    <ul><li>Başı ve sonu iki tutamakla kırp</li>
     <li>Creator ve Pro'da kayıttan yedi saniyeye kadar fazladan süre geri çek</li>
@@ -153,18 +142,18 @@
     <li>Konum, boyut, renk ve arka planla yazı ekle</li>
     <li>Efekti kaldır, temiz klibe geri dön</li></ul></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Klibi kırp</span></div>
-   <img src="../images/mock/tr/trim.png?v=19f9cf0521" alt="Trim editor with start and end handles over the clip timeline" loading="lazy" width="900" height="640"></div>
+   <img src="../images/mock/tr/trim.png?v=2b035a6813" alt="Trim editor with start and end handles over the clip timeline" loading="lazy" width="900" height="640"></div>
  </article>
 
  <article class="story">
-  <div class="story-copy"><span class="eyebrow">ADIM 09</span><h2 class="h-md">İncele ve dışa aktar</h2>
+  <div class="story-copy"><span class="eyebrow">ADIM 08</span><h2 class="h-md">İncele ve dışa aktar</h2>
    <p class="body">İnceleme kuyruğunu aç, adayları gözden geçir, paylaşmaya değenleri onayla. Onaylananlar seçtiğin klasöre HD iner.</p>
    <ul><li>Tek tıkla onayla ya da reddet</li><li>Reddetmeyi istediğin an geri al</li>
     <li>Her ücretli pakette filigran açık ya da kapalı</li>
     <li>Tek klip ya da bütün bir seçim indir</li><li>Hedef klasörü kendin seç</li></ul>
    <div class="story-note">Download the finished clip, or connect a YouTube account and schedule it on the calendar. Nothing goes out that you did not approve yourself.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Klip kütüphanesi</span></div>
-   <img src="../images/mock/tr/clips.png?v=19f9cf0521" alt="Clips library with approved, published and rejected tabs" loading="lazy" width="1360" height="620"></div>
+   <img src="../images/mock/tr/clips.png?v=2b035a6813" alt="Clips library with approved, published and rejected tabs" loading="lazy" width="1360" height="620"></div>
  </article>
 
 </div></section>
@@ -174,23 +163,23 @@
   <p class="body-lg">Araçlar klibin üstünde duruyor — klibi aç, değiştir, onayla. Yönetilecek ayrı bir kurgu projesi yok.</p></div>
  <div class="grid-2">
   <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Altyazı metni</span></div>
-    <img src="../images/mock/tr/captions.png?v=19f9cf0521" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1000" height="640"></div>
+    <img src="../images/mock/tr/captions.png?v=2b035a6813" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1000" height="640"></div>
    <div class="h-row mt-m"><h3 class="h-sm">Altyazı metni</h3><span class="badge badge-lime">HER PAKET</span></div>
    <p>Yanlış anlaşılmış bir kelimeyi düzelt ya da bir satırı çıkar. Zamanlamalar yazıya döküldüğü gibi kalır.</p></article>
   <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Altyazı stili</span></div>
-    <img src="../images/mock/tr/capstyle.png?v=19f9cf0521" alt="Subtitle style panel with font, size, colour, outline and placement controls" loading="lazy" width="1000" height="640"></div>
+    <img src="../images/mock/tr/capstyle.png?v=2b035a6813" alt="Subtitle style panel with font, size, colour, outline and placement controls" loading="lazy" width="1000" height="640"></div>
    <div class="h-row mt-m"><h3 class="h-sm">Altyazı stili</h3><span class="badge badge-plan">CREATOR VE PRO</span></div>
    <p>Yazı tipi, boyut, renk, kontur, yerleşim ve isteğe bağlı arka plan kutusu.</p></article>
  </div>
  <div class="grid-3" style="margin-top:22px">
   <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Kırpma</span></div>
-    <img src="../images/mock/tr/trim.png?v=19f9cf0521" alt="Trim editor with start and end handles" loading="lazy" width="900" height="640"></div>
+    <img src="../images/mock/tr/trim.png?v=2b035a6813" alt="Trim editor with start and end handles" loading="lazy" width="900" height="640"></div>
    <h3 class="mt-s">Kırpma</h3><p>Klip tam anın başladığı ve bittiği yerde başlayıp bitene kadar iki tutamağı sürükle.</p></article>
   <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Görsel</span></div>
-    <img src="../images/mock/tr/image.png?v=19f9cf0521" alt="Image overlay being dragged and resized on the video" loading="lazy" width="900" height="640"></div>
+    <img src="../images/mock/tr/image.png?v=2b035a6813" alt="Image overlay being dragged and resized on the video" loading="lazy" width="900" height="640"></div>
    <h3 class="mt-s">Görsel bindirme</h3><p>Kareye logo veya rozet sürükle, köşesinden boyutlandır, uygula.</p></article>
   <article class="card"><div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Yazı</span></div>
-    <img src="../images/mock/tr/text.png?v=19f9cf0521" alt="Text overlay editor with position, size and colour controls" loading="lazy" width="900" height="640"></div>
+    <img src="../images/mock/tr/text.png?v=2b035a6813" alt="Text overlay editor with position, size and colour controls" loading="lazy" width="900" height="640"></div>
    <h3 class="mt-s">Yazı bindirme</h3><p>Bir kanca yaz, nerede duracağını ve arkasına kutu gelip gelmeyeceğini seç.</p></article>
  </div>
  <div class="story-note" style="margin-top:26px">Efektler her zaman el değmemiş orijinalden yeniden uygulanır; eklemek ve kaldırmak videoyu asla bozmaz.</div>
@@ -207,7 +196,7 @@
  <div class="wrap">
   <div class="foot-grid">
    <div class="foot-brand">
-    <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=19f9cf0521" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=2b035a6813" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
     <p>Windows için otomatik yayın kliplemesi. Kaynaklarını takip et, Jolnova dikey klipleri hazırlasın, sen paylaşmaya değeni seç.</p>
     <div class="foot-os"><span class="badge badge-neutral">Windows masaüstü uygulaması</span></div>
    </div>
@@ -225,7 +214,7 @@
   </div>
  </div>
 </footer>
-<script src="../user.js?v=19f9cf0521"></script><script src="../lang-de.js?v=19f9cf0521"></script><script src="../lang-fr.js?v=19f9cf0521"></script><script src="../lang-es.js?v=19f9cf0521"></script><script src="../lang.js?v=19f9cf0521"></script>
+<script src="../user.js?v=2b035a6813"></script><script src="../lang-de.js?v=2b035a6813"></script><script src="../lang-fr.js?v=2b035a6813"></script><script src="../lang-es.js?v=2b035a6813"></script><script src="../lang.js?v=2b035a6813"></script>
 <script>
 function rjMenu(){var m=document.getElementById('mobnav'),b=document.querySelector('.burger');
  var on=m.classList.toggle('on');document.body.classList.toggle('navopen',on);

@@ -1,36 +1,71 @@
 <!doctype html><html><head><meta charset=utf-8>
 <link rel=stylesheet href="_base.css"><style>
-html,body{width:900px;height:640px;overflow:hidden}
-body{display:flex;align-items:center;justify-content:center;
- background:radial-gradient(700px 400px at 50% 0%,rgba(157,108,255,.06),transparent 60%),#080C12;padding:26px}
-.modal{background:linear-gradient(180deg,#161E2B,#101621);border:1px solid rgba(176,192,220,.26);
- border-radius:20px;box-shadow:0 26px 80px rgba(0,0,0,.5);width:100%;max-width:660px;padding:26px}
-.modal h3{font-size:19px;font-weight:750;letter-spacing:-.025em;margin-bottom:6px}
-.modal .s{color:#A8B2C3;font-size:13px;line-height:1.55;margin-bottom:20px}
-.foot{display:flex;gap:10px;margin-top:22px}
-.foot .g{flex:1}
+/* ============================================================
+   GORSEL EKLEME PENCERESI — uygulamadaki gercek modalin kopyasi
+   Kaynak: Kick-Reels-Bot/src/panel.py  (#imgmodal)
+   Stiller: .modal / .imgstage / .imgov / .ihandle / .modal-foot
 
-</style></head><body><div class=modal><h3>🖼️ Add image to clip</h3>
-<div class=s>Pick an image, drag it anywhere on the video, resize from the corner. "Apply" burns it in.</div>
-<div class="g8" style="aspect-ratio:16/9;border-radius:13px;position:relative;overflow:hidden;
- border:1px solid rgba(146,163,190,.16)">
- <span style="position:absolute;left:9%;top:12%;width:110px;height:110px;border:2px solid var(--acc);
-  border-radius:10px;background:color-mix(in srgb,var(--acc) 10%,transparent);box-shadow:0 0 20px color-mix(in srgb,var(--acc) 25%,transparent)">
-  <span style="position:absolute;inset:14px;border-radius:7px;background:linear-gradient(135deg,var(--acc),var(--acc-dark));opacity:.85"></span>
-  <span style="position:absolute;right:-7px;bottom:-7px;width:14px;height:14px;border-radius:4px;background:var(--acc);
-   border:2px solid #0B1018"></span></span>
- <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;
-  border-radius:50%;border:2px solid rgba(255,255,255,.8);background:rgba(0,0,0,.28)"></span>
+   Uygulamada alt sirada UC dugme var (Cancel | Gorsel sec | Apply);
+   onceki mockup ikisini gosteriyordu. Sahne 9:16 DIKEY - klibin
+   gercek karesi uzerinde surukleniyor.
+   ============================================================ */
+html,body{width:900px;height:860px;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center;
+ background:radial-gradient(700px 420px at 50% 0%,rgba(157,108,255,.06),transparent 60%),#080C12;padding:26px}
+
+.modal{position:relative;background:linear-gradient(180deg,#161A23,#111722);
+ border:1px solid rgba(146,163,190,.16);border-radius:18px;padding:26px;
+ width:560px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+.modal h3{font-size:19px;font-weight:750;letter-spacing:-.2px;margin-bottom:6px}
+.modal p.s{color:#8B95A9;font-size:13px;line-height:1.5;margin-bottom:16px}
+.mx{position:absolute;top:14px;right:14px;width:32px;height:32px;display:flex;
+ align-items:center;justify-content:center;border:1px solid rgba(146,163,190,.18);
+ background:rgba(146,163,190,.07);color:#8B95A9;border-radius:9px;font-size:17px;line-height:1}
+
+/* panel.py .imgstage — 9:16, koyu zemin, klibin karesi */
+.imgstage{position:relative;margin:14px auto 0;height:520px;aspect-ratio:9/16;
+ background:#0a0c10;border-radius:12px;overflow:hidden;border:1px solid rgba(146,163,190,.14)}
+.imgstage .kare{position:absolute;inset:0;background:linear-gradient(155deg,#1E2B3F,#3E2B46 55%,#141A26)}
+/* altyazi seridi — klip karesinde zaten var */
+.imgstage .as{position:absolute;left:12px;right:12px;bottom:34px;text-align:center;
+ font-size:15px;font-weight:800;letter-spacing:-.01em;text-shadow:0 2px 5px rgba(0,0,0,.85)}
+
+/* panel.py .imgov — kesikli vurgu cercevesi + kose tutamaci */
+.imgov{position:absolute;left:16px;top:16px;width:104px;height:104px;
+ outline:1.5px dashed var(--acc-a60);outline-offset:1px}
+.imgov .logo-k{width:100%;height:100%;border-radius:16px;
+ background:linear-gradient(135deg,var(--acc),var(--acc-dark));
+ display:flex;align-items:center;justify-content:center;
+ color:var(--acc-ink);font-size:34px;font-weight:900;letter-spacing:-.04em}
+.ihandle{position:absolute;right:-10px;bottom:-10px;width:20px;height:20px;background:var(--acc);
+ border:2px solid #0a0c10;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.5)}
+
+.modal-foot{display:flex;gap:10px;margin-top:20px}
+.modal-foot .cancel{flex:1;background:#1B2431;border:1px solid rgba(176,192,220,.22);
+ color:#F7F9FC;border-radius:10px;padding:12px;font:inherit;font-weight:700}
+.modal-foot .btn{flex:1;background:var(--acc);color:var(--acc-ink);border:0;
+ border-radius:10px;padding:12px;font:inherit;font-weight:750}
+</style></head><body>
+
+<div class=modal>
+ <button class=mx>✕</button>
+ <h3>🖼️ Add image to clip</h3>
+ <p class=s>Pick an image, drag it anywhere on the video, resize from the corner. "Apply" burns it in.</p>
+
+ <div class=imgstage>
+  <span class=kare></span>
+  <div class=imgov>
+   <span class=logo-k>N</span>
+   <span class=ihandle></span>
+  </div>
+  <div class=as>he pulled it back in the last second</div>
+ </div>
+
+ <div class=modal-foot>
+  <button class=cancel>Cancel</button>
+  <button class=cancel>🖼️ Choose image</button>
+  <button class=btn>Apply</button>
+ </div>
 </div>
-<div style="display:flex;gap:10px;margin-top:16px">
- <div style="flex:1;background:#0D131C;border:1px solid rgba(146,163,190,.13);border-radius:11px;padding:12px 14px">
-  <div style="color:#747F92;font-size:10.5px;font-weight:750;letter-spacing:.1em">FILE</div>
-  <div style="font-size:12.5px;font-weight:650;margin-top:4px">channel-logo.png</div></div>
- <div style="flex:1;background:#0D131C;border:1px solid rgba(146,163,190,.13);border-radius:11px;padding:12px 14px">
-  <div style="color:#747F92;font-size:10.5px;font-weight:750;letter-spacing:.1em">SIZE</div>
-  <div style="font-size:12.5px;font-weight:650;margin-top:4px">22% of width</div></div>
- <div style="flex:1;background:#0D131C;border:1px solid rgba(146,163,190,.13);border-radius:11px;padding:12px 14px">
-  <div style="color:#747F92;font-size:10.5px;font-weight:750;letter-spacing:.1em">POSITION</div>
-  <div style="font-size:12.5px;font-weight:650;margin-top:4px">Top left</div></div></div>
-<div class=foot><span class=btns>Cancel</span><span class=btns style="flex:1">🖼️ Choose image</span>
- <button class=btnp style="padding:11px 26px">Apply</button></div></div><script src="_sozluk.js"></script><script src="_i18n.js"></script></body></html>
+
+<script src="_sozluk.js"></script><script src="_i18n.js"></script></body></html>
