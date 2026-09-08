@@ -98,12 +98,15 @@ def render(sayfa, dil):
     return subprocess.run(komut, capture_output=True, timeout=180).stdout.decode("utf-8", "replace")
 
 
-def yollari_duzelt(html):
+def yollari_duzelt(html, dil=None):
     """Sayfa ALT KLASORDE oldugu icin ortak varlik yollari bir seviye yukari.
 
     HTML sayfa linkleri (features.html gibi) BILEREK dokunulmaz: goreli
     kaldiklari icin tr/features.html'e cozulurler - yani ziyaretci gezinirken
     kendi dilinde KALIR.
+
+    `dil` verilirse UYGULAMA EKRAN GORUNTULERI de o dilin klasorune baglanir
+    (bkz. asagida).
     """
     for varlik in ("images/", "dl/"):
         html = html.replace('src="' + varlik, 'src="../' + varlik)
@@ -132,6 +135,17 @@ def yollari_duzelt(html):
     # okuyup istemci tarafinda cevirir. Bu sayfalar zaten noindex.
     for kimlik in ("login.html", "signup.html", "account.html", "reset.html"):
         html = html.replace('href="' + kimlik, 'href="../' + kimlik)
+
+    # ---------------------------------------------- UYGULAMA EKRAN GORUNTULERI
+    # Mockup'lar PNG; icindeki yazi sayfa cevrilse de cevrilmez. Turkce
+    # sayfada Ingilizce ekran goruntusu cikiyordu (kullanici yakaladi).
+    # Artik her dil icin ayri cekiliyor:
+    #     images/mock/<ad>.png        -> Ingilizce (kok sayfalar)
+    #     images/mock/<dil>/<ad>.png  -> tr / de / fr / es
+    # Ustteki dongu yolu zaten "../images/..." yapmis oluyor; burada yalnizca
+    # dil klasorunu araya sokuyoruz.
+    if dil:
+        html = html.replace("../images/mock/", "../images/mock/%s/" % dil)
     return html
 
 
@@ -270,7 +284,7 @@ def uret():
             h = render(sayfa, dil)
             if "<html" not in h:
                 print("  HATA render bos: %s/%s" % (dil, sayfa)); continue
-            h = kafayi_duzelt(yollari_duzelt(h), dil, sayfa, sha(os.path.join(KOK, sayfa)))
+            h = kafayi_duzelt(yollari_duzelt(h, dil), dil, sayfa, sha(os.path.join(KOK, sayfa)))
             io.open(os.path.join(hedef, sayfa), "w", encoding="utf-8", newline="").write(h)
             n += 1
         print("  %s/  -> %d sayfa" % (dil, len(SAYFALAR)))

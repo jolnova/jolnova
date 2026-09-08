@@ -11,11 +11,30 @@
 #   Sitede YAN YANA duran mockup'lar AYNI tuval olcusunde uretilir; yoksa
 #   kartlar hizasiz durur. Esli olanlar asagida yorum satirinda isaretli.
 #
-# Kullanim:  bash mock/shoot.sh            (hepsi)
-#            bash mock/shoot.sh schedule   (tek dosya)
+# DIL
+#   Her mockup BES DIL icin ayri cekilir. Sayfa dili degisince gorseldeki
+#   yazi PNG oldugu icin cevrilemiyordu; Turkce sayfada Ingilizce ekran
+#   goruntusu cikiyordu. Artik:
+#       images/mock/<ad>.png          -> Ingilizce (kok sayfalar kullanir)
+#       images/mock/<dil>/<ad>.png    -> tr / de / fr / es
+#   Ceviri mock/_i18n.js + mock/_sozluk.js ile CEKIMDEN ONCE uygulanir;
+#   sozluk uygulamanin kendi cevirilerinden uretilir (bkz. build-sozluk.py).
+#
+# Kullanim:  bash mock/shoot.sh                 (hepsi x 5 dil)
+#            bash mock/shoot.sh schedule        (tek mockup, 5 dil)
+#            bash mock/shoot.sh schedule tr     (tek mockup, tek dil)
+#            LANGS="en tr" bash mock/shoot.sh   (dil kumesini daralt)
 set -u
 HERE="$(cd "$(dirname "$0")" && pwd)"
 OUT="$HERE/../images/mock"
+LANGS="${LANGS:-en tr de fr es}"
+
+# Sozluk cekimden once TAZELENIR: uygulamanin metinleri degistiginde
+# gorsellerin sessizce eski ceviriyle uretilmesini engeller.
+if command -v python >/dev/null 2>&1; then
+  python "$HERE/build-sozluk.py" || echo "  UYARI: sozluk uretilemedi, ceviri eksik olabilir"
+  echo
+fi
 CHROME="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 PROFILE="${TMPDIR:-/tmp}/rj-shoot-profile"
 
@@ -49,18 +68,44 @@ text:900:640:2
 
 mkdir -p "$OUT" "$PROFILE"
 only="${1:-}"
-for row in $SHOTS; do
-  name="${row%%:*}"; rest="${row#*:}"
-  w="${rest%%:*}"; rest="${rest#*:}"
-  h="${rest%%:*}"; s="${rest#*:}"
-  [ -n "$only" ] && [ "$only" != "$name" ] && continue
-  src="$HERE/$name.html"
-  [ -f "$src" ] || { echo "atlandi (yok): $name"; continue; }
-  win="$src"
-  case "$win" in /c/*) win="C:${win#/c}";; esac
-  "$CHROME" --headless=new --disable-gpu --no-first-run --no-default-browser-check \
-    --user-data-dir="$PROFILE" --hide-scrollbars \
-    --force-device-scale-factor="$s" --window-size="$w,$h" \
-    --screenshot="$OUT/$name.png" "file:///$win" >/dev/null 2>&1
-  if [ -f "$OUT/$name.png" ]; then echo "✓ $name.png  ${w}x${h} @${s}x"; else echo "✗ $name"; fi
+onlylang="${2:-}"
+[ -n "$onlylang" ] && LANGS="$onlylang"
+
+toplam=0; hata=0
+for lang in $LANGS; do
+  # Ingilizce KOKTE kalir: kok sayfalar (jolnova.com/index.html) onu kullanir
+  # ve mevcut <img src="images/mock/x.png"> yollari degismeden calisir.
+  if [ "$lang" = "en" ]; then dir="$OUT"; else dir="$OUT/$lang"; fi
+  mkdir -p "$dir"
+
+  # ⚠️ HER DILE AYRI PROFIL.
+  # Tek profili art arda kullanmak, bir onceki headless Chrome ornegi tam
+  # cikmadiginda kilidi tutuyor ve SONRAKI cagri SESSIZCE ASILI KALIYOR
+  # (olculdu: ayni profille ikinci dil hic donmedi; temiz profille ayni
+  # cekim 1 saniye). Profil basina dizin ucuz, asili kalan cekim degil.
+  lprof="$PROFILE-$lang"
+  rm -rf "$lprof" 2>/dev/null
+  mkdir -p "$lprof"
+
+  for row in $SHOTS; do
+    name="${row%%:*}"; rest="${row#*:}"
+    w="${rest%%:*}"; rest="${rest#*:}"
+    h="${rest%%:*}"; s="${rest#*:}"
+    [ -n "$only" ] && [ "$only" != "$name" ] && continue
+    src="$HERE/$name.html"
+    [ -f "$src" ] || { echo "atlandi (yok): $name"; continue; }
+    win="$src"
+    case "$win" in /c/*) win="C:${win#/c}";; esac
+    # ?lang= sorgusu _i18n.js'e gider; file:// adreslerinde de calisir.
+    # timeout: yine de asili kalirsa tum cekim durmasin, o kare atlansin.
+    timeout 60 "$CHROME" --headless=new --disable-gpu --no-first-run \
+      --no-default-browser-check --user-data-dir="$lprof" --hide-scrollbars \
+      --force-device-scale-factor="$s" --window-size="$w,$h" \
+      --screenshot="$dir/$name.png" "file:///$win?lang=$lang" >/dev/null 2>&1
+    if [ -f "$dir/$name.png" ]; then toplam=$((toplam+1)); else
+      echo "  X $lang/$name"; hata=$((hata+1)); fi
+  done
+  echo "  $lang -> $(ls "$dir"/*.png 2>/dev/null | wc -l) gorsel"
 done
+echo
+echo "  toplam $toplam gorsel uretildi${hata:+, $hata hata}"

@@ -21,3 +21,9 @@ node_modules/
 
 # Yerel onizleme sunucusu ayari - yayina gitmesi gereken bir sey degil.
 .claude/
+
+# mock/ tani ciktilari - her uretimde yeniden olusur, depoda durmasi gerekmez.
+# (_sozluk.js URETILMIS ama shoot.sh onu kullandigi icin depoda DURUR.)
+mock/_eksik.json
+mock/_ceviri-gerekli.json
+mock/_kaymis.json
