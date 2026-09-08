@@ -711,3 +711,44 @@ html[data-scope="single"] .s-all,html[data-scope="all"] .s-single{display:none}
 
 /* Mobil menude tam genislik (oradaki digerleri de oyle). */
 .mobnav .userchip{width:100%;justify-content:center;padding:11px 14px}
+
+/* hidden NITELIGI HER ZAMAN KAZANSIN.
+   Tarayicinin kendi `[hidden]{display:none}` kurali en dusuk oncelikte;
+   `.btn{display:inline-flex}` gibi bir SINIF kurali onu yeniyor. Bu yuzden
+   `el.hidden = true` yapilan bir dugme ekranda kalmaya devam ediyordu
+   (profil kutusundaki "Remove" boyle gorunuyordu). */
+[hidden]{display:none!important}
+
+/* ---------------------------------------------------------------- PROFIL
+   Hesap sayfasindaki profil kutusu. Buradaki alanlar .field sarmalayicisi
+   ICINDE DEGIL, dolayisiyla `.field input` kurallari onlara islemiyordu ve
+   koyu sayfanin ortasinda tarayicinin ham beyaz kutulari cikiyordu. Ayni
+   gorunumu tek tek alan adlarina degil, kutunun tamamina bagliyoruz. */
+.pfcard input[type=text],
+.pfcard input[type=password]{width:100%;height:46px;padding:0 14px;
+  border-radius:12px;background:var(--surface-1);color:var(--text-primary);
+  border:1px solid var(--border-default);font-size:15px;
+  transition:border-color .18s,box-shadow .18s}
+.pfcard input[type=text]:focus,
+.pfcard input[type=password]:focus{outline:none;border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(255,197,61,.14)}
+
+/* Buyuk avatar: rozetteki .userchip-av ile ayni gorunum, daha buyuk olcu. */
+.pf-big{width:76px;height:76px;font-size:25px}
+
+/* Yukleme sirasinda avatarin uzerinde donen halka. Avatari GIZLEMIYOR;
+   yukleme basarisiz olursa kullanici eski fotografini gormeye devam eder. */
+.pf-spin{position:absolute;inset:0;border-radius:50%;
+  border:2px solid rgba(255,197,61,.25);border-top-color:var(--accent);
+  animation:pfsp .7s linear infinite}
+@keyframes pfsp{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.pf-spin{animation-duration:2.4s}}
+
+.pf-sep{height:1px;background:var(--border-default);margin:26px 0 22px}
+
+/* Durum metni. Renk JS'ten degil siniftan geliyor ki basarili/hatali
+   ayrimi tek yerde tanimli olsun. */
+.pf-msg{display:block;font-size:13.5px;margin-top:10px;color:var(--dim);
+  min-height:1.2em}
+.pf-msg.ok{color:#5FD08A}
+.pf-msg.err{color:#FF7A6B}

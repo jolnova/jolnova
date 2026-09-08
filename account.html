@@ -6,14 +6,14 @@
 <title>My Account — Jolnova</title>
 <meta name="description" content="Your Jolnova account: subscription status, app download and settings.">
 <meta name="robots" content="noindex,follow">
-<link rel="icon" type="image/png" href="images/favicon.png?v=442c6ac9af">
-<link rel="stylesheet" href="site.css?v=442c6ac9af">
+<link rel="icon" type="image/png" href="images/favicon.png?v=a079d9ef56">
+<link rel="stylesheet" href="site.css?v=a079d9ef56">
 </head>
 <body>
 
 <header class="site-header">
  <div class="wrap">
-  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=442c6ac9af" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=a079d9ef56" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
   <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
   <div class="head-cta">
    <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span id="langName">English</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"/><circle cx="24" cy="22.5" r="10" fill="#fff"/><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"/><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"/></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"/><rect y="15" width="60" height="15" fill="#DD0000"/><rect y="30" width="60" height="15" fill="#FFCE00"/></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"/><rect x="20" width="20" height="45" fill="#fff"/><rect x="40" width="20" height="45" fill="#EF4135"/></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"/><rect y="11.25" width="60" height="22.5" fill="#F1BF00"/></svg></i><span>Español</span></button></div></div>
@@ -27,7 +27,11 @@
 <main class="wrap" style="max-width:820px">
   <div class="pagehead" style="text-align:left;margin:0">
     <span class="eyebrow">My Account</span>
-    <h1 style="font-size:32px" id="hello">Welcome 👋</h1>
+    <!-- Ad AYRI dugumde: "Welcome" statik metin olarak kaliyor ve ceviri
+         gezgini onu normal sekilde ceviriyor. Tek parca yazsaydik
+         ("Welcome, Berke 👋") sozlukte boyle bir anahtar olmadigi icin
+         cumle Turkce sayfada Ingilizce kalirdi. -->
+    <h1 style="font-size:32px" id="hello"><span>Welcome</span><span id="hello-ad"></span> 👋</h1>
     <p id="mailrow" style="font-size:15px"></p>
   </div>
 
@@ -35,8 +39,13 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
       <div class="ch" style="border-radius:16px">
         <div class="eyebrow">Subscription</div>
-        <div id="sub-state" style="font-size:22px;font-weight:800;margin:12px 0 6px">— loading…</div>
-        <div id="sub-note" style="color:var(--dim);font-size:14px;line-height:1.5">Subscription system is being connected.</div>
+        <!-- Bu iki metin ONCEDEN JS'ten yaziliyordu; ceviri gezgini sayfa
+             yuklenirken bir kez calistigi icin sonradan yazilan metin her
+             dilde Ingilizce kaliyordu. Statik yazilinca normal cevriliyor.
+             Gercek abonelik verisi baglandiginda JS yine ustune yazacak;
+             o zaman pfCevir() ile cevrilmeleri gerekecek. -->
+        <div id="sub-state" style="font-size:22px;font-weight:800;margin:12px 0 6px">No subscription</div>
+        <div id="sub-note" style="color:var(--dim);font-size:14px;line-height:1.5">You do not have an active subscription yet. Starter, Creator and Pro each come in a Single Platform and an All Platforms version — see the pricing page for what each one includes.</div>
         <div style="margin-top:16px"><a href="pricing.html" class="btn btn-primary" style="padding:11px 18px">Plans &amp; pricing</a></div>
       </div>
       <div class="ch" style="border-radius:16px">
@@ -48,28 +57,71 @@
     </div>
   </section>
 
-  <!-- ---------------- PROFIL ----------------
-       Ad ve fotograf Supabase'in user_metadata alaninda tutuluyor.
-       AYNI ALANI UYGULAMA DA OKUYOR (src/panel.py -> full_name / avatar_url),
-       yani burada degistirilen ad uygulamada da gorunur; ayri bir
-       "profil tablosu" acmadik ki iki kaynak birbirinden sapmasin. -->
+  <!-- ---------------- PROFIL AYARLARI ----------------
+       TEK KAYNAK: ad, fotograf ve sifre Supabase'in user_metadata / auth
+       alanlarinda tutuluyor. AYNI ALANLARI UYGULAMA DA OKUYUP YAZIYOR
+       (src/panel.py: pfUpload / pfSaveName / pfSavePw), yani burada yapilan
+       degisiklik uygulamada, uygulamada yapilan degisiklik burada gorunur.
+       Ayri bir "profil tablosu" acmadik ki iki kaynak birbirinden sapmasin.
+
+       Alan adlari uygulamayla BIREBIR ayni olmak zorunda:
+         full_name + name  -> ikisi birden yazilir (bazi yerler digerini okuyor)
+         avatar_url        -> avatars kovasindaki herkese acik adres
+       Avatar yolu <kullanici_id>/a.<uzanti> — Storage politikasi tam olarak
+       buna bakiyor (sql/avatars_bucket.sql), baskasinin klasorune yazilamaz. -->
   <section style="padding:0 0 34px">
-    <div class="ch" style="border-radius:16px">
+    <div class="ch pfcard" style="border-radius:16px">
       <div class="eyebrow">Profile</div>
-      <div style="display:flex;align-items:center;gap:18px;margin-top:14px;flex-wrap:wrap">
-        <span id="pf-av" class="userchip-av" style="width:64px;height:64px;font-size:22px"></span>
-        <div style="flex:1;min-width:240px">
-          <label for="pf-name" style="display:block;font-size:13px;color:var(--dim);margin-bottom:6px">Display name</label>
-          <input id="pf-name" type="text" maxlength="60" autocomplete="name"
-                 style="width:100%;max-width:360px">
+
+      <!-- fotograf + ad -->
+      <div style="display:flex;align-items:center;gap:20px;margin-top:16px;flex-wrap:wrap">
+        <div style="position:relative">
+          <span id="pf-av" class="userchip-av pf-big"></span>
+          <span id="pf-spin" class="pf-spin" hidden></span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;gap:9px;flex-wrap:wrap">
+            <button type="button" id="pf-pick" class="btn btn-secondary btn-sm">Change photo</button>
+            <button type="button" id="pf-rm" class="btn btn-ghost btn-sm">Remove</button>
+          </div>
+          <div style="color:var(--dim2);font-size:12px">PNG, JPG or WEBP · up to 3 MB</div>
+        </div>
+        <input id="pf-file" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+      </div>
+
+      <div style="margin-top:22px;max-width:380px">
+        <label for="pf-name" style="display:block;font-size:13px;color:var(--dim);margin-bottom:6px">Display name</label>
+        <input id="pf-name" type="text" maxlength="60" autocomplete="name" style="width:100%">
+      </div>
+
+      <!-- sifre -->
+      <div class="pf-sep"></div>
+      <div class="eyebrow">Password</div>
+      <p id="pf-pwhint" style="color:var(--dim);font-size:13.5px;margin:10px 0 0;line-height:1.55"></p>
+      <div id="pf-pwbox" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:14px;max-width:620px">
+        <div id="pf-curwrap">
+          <label for="pf-cur" style="display:block;font-size:13px;color:var(--dim);margin-bottom:6px">Current password</label>
+          <input id="pf-cur" type="password" autocomplete="current-password" style="width:100%">
+        </div>
+        <div>
+          <label for="pf-new" style="display:block;font-size:13px;color:var(--dim);margin-bottom:6px">New password</label>
+          <input id="pf-new" type="password" autocomplete="new-password" style="width:100%">
+        </div>
+        <div>
+          <label for="pf-new2" style="display:block;font-size:13px;color:var(--dim);margin-bottom:6px">Repeat new password</label>
+          <input id="pf-new2" type="password" autocomplete="new-password" style="width:100%">
         </div>
       </div>
-      <div style="display:flex;align-items:center;gap:12px;margin-top:16px;flex-wrap:wrap">
-        <button id="pf-save" class="btn btn-primary" style="padding:11px 18px">Save</button>
-        <span id="pf-msg" style="font-size:13.5px;color:var(--dim)"></span>
+      <div id="pf-pwmsg" class="pf-msg"></div>
+
+      <!-- tek kaydet -->
+      <div style="display:flex;align-items:center;gap:14px;margin-top:22px;flex-wrap:wrap">
+        <button type="button" id="pf-saveall" class="btn btn-primary" style="padding:11px 20px">Save changes</button>
+        <span id="pf-msg" class="pf-msg" style="margin:0"></span>
       </div>
-      <div style="color:var(--dim2);font-size:12.5px;margin-top:14px;line-height:1.6">
-        The photo comes from the account you signed in with. Changing the name here also changes it in the Windows app.
+
+      <div style="color:var(--dim2);font-size:12.5px;margin-top:16px;line-height:1.6">
+        Your name and photo are shared with the Windows app — change them here or there, they stay in sync.
       </div>
     </div>
   </section>
@@ -81,7 +133,7 @@
  <div class="wrap">
   <div class="foot-grid">
    <div class="foot-brand">
-    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=442c6ac9af" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=a079d9ef56" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
     <p>Automatic stream clipping for Windows. Track your sources, let Jolnova prepare vertical clips, and review what is worth posting.</p>
     <div class="foot-os"><span class="badge badge-neutral">Windows desktop app</span></div>
    </div>
@@ -114,62 +166,246 @@ async function logout(){
   location.href='login.html';
 }
 
-/* Profil ipucunu yaz: baslik rozeti (user.js) bunu okur.
-   Supabase'in kendi 'sb-...' kaydini okumuyoruz - bicimi surume gore
-   degisiyor ve kutuphane guncellenince rozet sessizce bosalirdi. */
+/* Basliktaki rozet (user.js) bu kaydi okur. user.js oturumu kendisi de
+   cozebiliyor ama burasi ANA kaynak: adi/fotografi degistirdigimiz anda
+   rozet sayfa yenilenmeden guncellensin diye her kaydetmeden sonra
+   cagriliyor. */
 function profilYaz(u){
   const md=u.user_metadata||{};
   if(window.jolnovaProfilYaz)
     jolnovaProfilYaz(md.full_name||md.name||'', u.email||'',
                      md.avatar_url||md.picture||'');
+  if(window.jolnovaRozetTazele) jolnovaRozetTazele();
+}
+
+/* ---------------------------------------------------------------- profil
+   Bu bolum uygulamadaki profil ekraninin (src/panel.py: pfUpload /
+   pfSaveName / pfSavePw) AYNISI. Ayni Storage kovasina, ayni yola ve ayni
+   metadata alanlarina yaziyor; bu yuzden iki taraf birbirini otomatik
+   goruyor, senkron icin ayrica bir sey yapmiyoruz.
+   Alan adlari degistirilirse UYGULAMA TARAFI DA degismek zorunda. */
+
+let _me=null;                 // ekranda gosterilen kullanici (tazelenir)
+let _sifresiVar=false;        // e-posta+sifre kimligi var mi
+
+/* JS'ten yazilan metni cevirir.
+   lang.js sayfa yuklenirken BIR KEZ yuruyor ve MutationObserver'i yok;
+   sonradan yazilan her metin oldugu gibi kalirdi. _rjWalk disari acik bir
+   islev, tek bir dugumu de cevirebiliyor - textContent atamasi TAZE bir
+   metin dugumu yarattigi icin eski __en degeri de tasinmiyor. */
+function pfCevir(el){ if(window._rjWalk && el) try{_rjWalk(el);}catch(e){} }
+
+function pfMsg(id,metin,iyi){
+  const e=document.getElementById(id); if(!e)return;
+  e.textContent=metin||'';
+  e.className='pf-msg'+(metin?(iyi?' ok':' err'):'');
+  pfCevir(e);
+}
+
+function pfBasHarf(){
+  const md=_me.user_metadata||{};
+  const ad=(md.full_name||md.name||_me.email||'?').trim();
+  return (ad[0]||'?').toUpperCase();
+}
+
+/* Avatari cizer. innerHTML KULLANILMIYOR: avatar adresi metadata'dan
+   geliyor ve orayi kullanici yaziyor; metin olarak eklemek XSS'i bastan
+   imkansiz kiliyor. */
+function pfAvatarCiz(){
+  const av=document.getElementById('pf-av');
+  while(av.firstChild) av.removeChild(av.firstChild);
+  const md=_me.user_metadata||{};
+  const foto=md.avatar_url||md.picture||'';
+  if(foto){
+    const im=new Image();
+    im.src=foto; im.alt='';
+    im.style.cssText='width:100%;height:100%;object-fit:cover;display:block';
+    /* Google fotograf adresi zamanla gecersizlesir; kirik gorsel yerine
+       bas harfe don. */
+    im.onerror=()=>{ while(av.firstChild) av.removeChild(av.firstChild);
+                     av.textContent=pfBasHarf(); };
+    av.appendChild(im);
+  } else {
+    av.textContent=pfBasHarf();
+  }
+  document.getElementById('pf-rm').hidden=!foto;
+}
+
+function pfDoldur(){
+  const md=_me.user_metadata||{};
+  const ad=(md.full_name||md.name||'').trim();
+  pfAvatarCiz();
+  document.getElementById('pf-name').value=ad;
+  /* Yalnizca ADI yaziyoruz; "Welcome" HTML'de statik duruyor ve cevrilmis
+     halini koruyor (bkz. #hello). */
+  document.getElementById('hello-ad').textContent=ad?', '+ad:'';
+  profilYaz(_me);
+}
+
+async function pfTazele(){
+  const {data}=await sb.auth.getUser();
+  if(data&&data.user){_me=data.user; pfDoldur();}
+}
+
+function pfMesgul(a){ document.getElementById('pf-spin').hidden=!a; }
+
+async function pfUpload(dosya){
+  if(!dosya)return;
+  if(dosya.size>3*1024*1024){pfMsg('pf-msg','Picture is too large (max 3 MB).',false);return;}
+  if(!/^image\/(png|jpe?g|webp)$/.test(dosya.type||'')){
+    pfMsg('pf-msg','Only PNG, JPG or WEBP.',false);return;}
+  pfMesgul(true); pfMsg('pf-msg','',true);
+  try{
+    const s=await sb.auth.getSession();
+    const jeton=s&&s.data&&s.data.session&&s.data.session.access_token;
+    if(!jeton||!_me)throw new Error('no-session');
+    const uz=(dosya.type||'').indexOf('png')>=0?'png'
+            :((dosya.type||'').indexOf('webp')>=0?'webp':'jpg');
+    /* Yol kullanici id'siyle BASLAMAK ZORUNDA: Storage politikasi
+       (sql/avatars_bucket.sql) tam olarak buna bakiyor. */
+    const yol=_me.id+'/a.'+uz;
+    /* x-upsert -> hep ayni yola yazar, eski dosyalar birikmez. */
+    const r=await fetch(SUPABASE_URL+'/storage/v1/object/avatars/'+yol,{
+      method:'POST',
+      headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+jeton,
+               'Content-Type':dosya.type,'x-upsert':'true'},
+      body:dosya});
+    if(!r.ok){let g='';try{g=(await r.text()||'').slice(0,160);}catch(e){}
+      throw new Error('HTTP '+r.status+' '+g);}
+    /* ONBELLEK KIRMA: ayni adrese yazdik, tarayici eskisini gosterirdi. */
+    const url=SUPABASE_URL+'/storage/v1/object/public/avatars/'+yol+'?v='+Date.now();
+    const {error}=await sb.auth.updateUser({data:{avatar_url:url}});
+    if(error)throw error;
+    await pfTazele();
+    pfMsg('pf-msg','Picture updated.',true);
+  }catch(e){
+    pfMsg('pf-msg','Could not upload the picture: '+String((e&&e.message)||e).slice(0,120),false);
+  }finally{
+    pfMesgul(false);
+    document.getElementById('pf-file').value='';
+  }
+}
+
+async function pfRemove(){
+  pfMesgul(true);
+  try{
+    /* Yalnizca metadata temizleniyor. Dosyayi silmek SART DEGIL ve silme
+       hatasi kullaniciyi avatarsiz birakmamali; ayni yola tekrar
+       yazilacagi icin cop de birikmiyor. */
+    const {error}=await sb.auth.updateUser({data:{avatar_url:null,picture:null}});
+    if(error)throw error;
+    await pfTazele();
+    pfMsg('pf-msg','Picture removed.',true);
+  }catch(e){pfMsg('pf-msg',String((e&&e.message)||e).slice(0,140),false);}
+  finally{pfMesgul(false);}
+}
+
+async function pfSaveName(){
+  const ad=(document.getElementById('pf-name').value||'').trim().slice(0,60);
+  if(ad.length<2)return{ok:false,msg:'Name must be at least 2 characters.'};
+  /* name DE yaziliyor: bazi yerler full_name, bazilari name okuyor
+     (Google full_name gonderiyor, e-posta kaydi name). Ikisini birden
+     yazmak "adimi degistirdim ama bir yerde eskisi duruyor" durumunu
+     bastan engelliyor. Uygulama da ayni ikiliyi yaziyor. */
+  const {error}=await sb.auth.updateUser({data:{full_name:ad,name:ad}});
+  if(error)return{ok:false,msg:String(error.message||error).slice(0,140)};
+  return{ok:true};
+}
+
+async function pfSavePw(){
+  const cur=document.getElementById('pf-cur'),
+        n1=document.getElementById('pf-new'),
+        n2=document.getElementById('pf-new2');
+  const yeni=n1.value||'', yeni2=n2.value||'';
+  if(yeni.length<8)return{ok:false,msg:'New password must be at least 8 characters.',pw:true};
+  if(yeni!==yeni2)return{ok:false,msg:'The two passwords do not match.',pw:true};
+  /* YENIDEN DOGRULAMA. Supabase gecerli oturumla mevcut sifreyi SORMADAN
+     degistirmeye izin veriyor; acik birakilmis bir bilgisayarda bu, hesabi
+     ele gecirmeye yeter. Sifresi olan hesapta once eskisini dogruluyoruz.
+     Henuz sifresi olmayan (yalnizca Google) hesapta sorulacak bir sey yok. */
+  if(_sifresiVar){
+    const eski=cur.value||'';
+    if(!eski)return{ok:false,msg:'Enter your current password.',pw:true};
+    const {error:e1}=await sb.auth.signInWithPassword({email:_me.email,password:eski});
+    if(e1)return{ok:false,msg:'Current password is wrong.',pw:true};
+  }
+  const {error}=await sb.auth.updateUser({password:yeni});
+  if(error)return{ok:false,msg:String(error.message||error).slice(0,140),pw:true};
+  cur.value='';n1.value='';n2.value='';
+  return{ok:true};
+}
+
+/* TEK KAYDET: yalnizca DEGISENI isler. Sadece adini degistirecek kullanici
+   sifre alanlarini doldurmak zorunda kalmasin diye bos bolum atlaniyor. */
+async function pfSaveAll(){
+  const b=document.getElementById('pf-saveall');
+  const md=_me.user_metadata||{};
+  const adEski=(md.full_name||md.name||'').trim();
+  const adYeni=(document.getElementById('pf-name').value||'').trim().slice(0,60);
+  const adDegisti=adYeni!==adEski;
+  const sifreVar=!!(document.getElementById('pf-new').value||'');
+  if(!adDegisti&&!sifreVar){pfMsg('pf-msg','Nothing to save.',true);return;}
+
+  /* Dugmenin YAZISI degistirilmiyor, yalnizca pasiflestiriliyor. Yaziyi
+     degistirmek cevrilmis metnin uzerine Ingilizce yazip geri koymak
+     demekti; durum bilgisi zaten pf-msg'de gosteriliyor. */
+  b.disabled=true;
+  pfMsg('pf-msg','Saving…',true); pfMsg('pf-pwmsg','',true);
+  let ad=false, sifre=false, hata=null;
+  try{
+    if(adDegisti){const r=await pfSaveName(); r.ok?ad=true:hata=r;}
+    if(!hata&&sifreVar){const r=await pfSavePw(); r.ok?sifre=true:hata=r;}
+  }catch(e){hata={msg:String((e&&e.message)||e).slice(0,140)};}
+  b.disabled=false;
+
+  if(hata){pfMsg(hata.pw?'pf-pwmsg':'pf-msg',hata.msg,false);
+           if(ad)await pfTazele(); return;}
+  await pfTazele();
+  /* SABIT cumleler: "Saved: name, password" gibi parcali metin sozlukte
+     karsiligi olmadigi icin cevrilemezdi. */
+  pfMsg('pf-msg', ad&&sifre ? 'Name and password updated.'
+                : sifre     ? 'Password updated.'
+                :             'Name updated.', true);
+  setTimeout(()=>{pfMsg('pf-msg','',true);},3000);
 }
 
 (async()=>{
   const {data}=await sb.auth.getSession();
   if(!data.session){location.href='login.html';return;}
-  const u=data.session.user;
-  const md=u.user_metadata||{};
-  const name=md.full_name||md.name||'';
-  document.getElementById('hello').textContent='Welcome'+(name?', '+name:'')+' 👋';
-  document.getElementById('mailrow').textContent=u.email;
-  document.getElementById('uid').textContent=u.id;
-  profilYaz(u);
+  _me=data.session.user;
+  document.getElementById('mailrow').textContent=_me.email;
+  document.getElementById('uid').textContent=_me.id;
 
-  // ---- profil kutusu ----
-  const av=document.getElementById('pf-av');
-  const foto=md.avatar_url||md.picture||'';
-  if(foto){
-    const im=new Image(); im.src=foto; im.alt='';
-    im.style.cssText='width:100%;height:100%;object-fit:cover;display:block';
-    im.onerror=()=>{av.textContent=(name||u.email||'?').trim()[0].toUpperCase();};
-    av.appendChild(im);
-  } else {
-    av.textContent=(name||u.email||'?').trim()[0].toUpperCase();
-  }
-  const inp=document.getElementById('pf-name');
-  const msg=document.getElementById('pf-msg');
-  const btn=document.getElementById('pf-save');
-  inp.value=name;
-  btn.onclick=async()=>{
-    const yeni=inp.value.trim().slice(0,60);
-    btn.disabled=true; msg.textContent='Saving…';
-    // full_name YAZILIYOR cunku uygulama da o alani okuyor
-    // (src/panel.py: md.get("full_name") or md.get("name")).
-    const {data:d2,error}=await sb.auth.updateUser({data:{full_name:yeni}});
-    btn.disabled=false;
-    if(error){ msg.textContent='Could not save. Try again.'; return; }
-    msg.textContent='Saved.';
-    document.getElementById('hello').textContent='Welcome'+(yeni?', '+yeni:'')+' 👋';
-    if(d2&&d2.user) profilYaz(d2.user);
-    // Rozeti aninda tazele (sayfa yenilenmeden gorunsun)
-    document.querySelectorAll('.userchip-ad').forEach(e=>{e.textContent=yeni;});
-    setTimeout(()=>{msg.textContent='';},2500);
-  };
-  // subscription: real status once the table is connected
-  document.getElementById('sub-state').textContent='No subscription';
-  document.getElementById('sub-note').textContent="You do not have an active subscription yet. Starter, Creator and Pro each come in a Single Platform and an All Platforms version — see the pricing page for what each one includes.";
+  /* SIFRE BOLUMUNUN IKI HALI
+     - e-posta+sifre kimligi olan hesap  -> sifreyi DEGISTIRIYOR,
+       once mevcut sifresini soruyoruz.
+     - yalnizca Google ile acilmis hesap -> henuz sifresi YOK, ilk kez
+       BELIRLIYOR; soracak eski sifre olmadigi icin o alan gizleniyor
+       (bos birakilamaz bir alan gostermek kullaniciyi kilitlerdi). */
+  /* Hangi saglayicilarla acilmis? identities birincil kaynak; bazi
+     yanitlarda gelmiyor, o zaman app_metadata.providers'a bakiyoruz.
+     IKISI DE YOKSA "sifresi var" kabul ediyoruz - yanlis tarafa dusmek
+     kullaniciya fazladan bir alan doldurtur; TERSI, sifreyi dogrulamadan
+     degistirmeye izin verirdi. */
+  const _kimlik=_me.identities, _sag=(_me.app_metadata||{}).providers;
+  _sifresiVar = Array.isArray(_kimlik) && _kimlik.length
+    ? _kimlik.some(i=>i.provider==='email')
+    : (Array.isArray(_sag) && _sag.length ? _sag.indexOf('email')>=0 : true);
+  document.getElementById('pf-curwrap').hidden=!_sifresiVar;
+  const _ip=document.getElementById('pf-pwhint');
+  _ip.textContent=_sifresiVar
+    ? 'Leave these empty unless you want a new password. At least 8 characters.'
+    : 'You signed in with Google, so this account has no password yet. Set one here to also be able to sign in with your email. At least 8 characters.';
+  pfCevir(_ip);
+
+  pfDoldur();
+
+  document.getElementById('pf-pick').onclick=()=>document.getElementById('pf-file').click();
+  document.getElementById('pf-file').onchange=e=>pfUpload(e.target.files&&e.target.files[0]);
+  document.getElementById('pf-rm').onclick=pfRemove;
+  document.getElementById('pf-saveall').onclick=pfSaveAll;
 })();
 </script>
-<script src="user.js?v=442c6ac9af"></script><script src="lang-de.js?v=442c6ac9af"></script><script src="lang-fr.js?v=442c6ac9af"></script><script src="lang-es.js?v=442c6ac9af"></script><script src="lang.js?v=442c6ac9af"></script>
+<script src="user.js?v=a079d9ef56"></script><script src="lang-de.js?v=a079d9ef56"></script><script src="lang-fr.js?v=a079d9ef56"></script><script src="lang-es.js?v=a079d9ef56"></script><script src="lang.js?v=a079d9ef56"></script>
 </body>
 </html>

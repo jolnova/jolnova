@@ -1327,7 +1327,36 @@ const TR = {
   "The link is broken or the page no longer exists. Everything else is where you left it.": "Bağlantı kırık ya da sayfa artık yok. Geri kalan her şey bıraktığın yerde.",
   "Back to home": "Ana sayfaya dön",
   "Report a problem": "Sorun bildir",
-  "Download the app": "Uygulamayı indir"
+  "Download the app": "Uygulamayı indir",
+
+  /* --- hesap / profil ekrani --- */
+  "Change photo": "Fotoğrafı değiştir",
+  "Remove": "Kaldır",
+  "PNG, JPG or WEBP · up to 3 MB": "PNG, JPG veya WEBP · en fazla 3 MB",
+  "Display name": "Görünen ad",
+  "Current password": "Mevcut şifre",
+  "Repeat new password": "Yeni şifreyi tekrarla",
+  "Save changes": "Değişiklikleri kaydet",
+  "Your name and photo are shared with the Windows app — change them here or there, they stay in sync.": "Adın ve fotoğrafın Windows uygulamasıyla ortak — hangisinden değiştirirsen değiştir, ikisi de güncellenir.",
+  "Welcome": "Hoş geldin",
+  "My account": "Hesabım",
+  "Profile": "Profil",
+  "Account:": "Hesap:",
+  "You do not have an active subscription yet. Starter, Creator and Pro each come in a Single Platform and an All Platforms version — see the pricing page for what each one includes.": "Henüz etkin bir aboneliğin yok. Starter, Creator ve Pro paketlerinin her biri Tek Platform ve Tüm Platformlar sürümüyle geliyor — hangisinde ne olduğunu fiyatlar sayfasında görebilirsin.",
+  "Leave these empty unless you want a new password. At least 8 characters.": "Yeni şifre istemiyorsan bu alanları boş bırak. En az 8 karakter.",
+  "You signed in with Google, so this account has no password yet. Set one here to also be able to sign in with your email. At least 8 characters.": "Google ile giriş yaptın, bu yüzden hesabının henüz şifresi yok. Buradan bir şifre belirlersen e-postanla da giriş yapabilirsin. En az 8 karakter.",
+  "Nothing to save.": "Kaydedilecek bir şey yok.",
+  "Name updated.": "Ad güncellendi.",
+  "Password updated.": "Şifre güncellendi.",
+  "Name and password updated.": "Ad ve şifre güncellendi.",
+  "Picture updated.": "Fotoğraf güncellendi.",
+  "Picture removed.": "Fotoğraf kaldırıldı.",
+  "Picture is too large (max 3 MB).": "Fotoğraf çok büyük (en fazla 3 MB).",
+  "Only PNG, JPG or WEBP.": "Yalnızca PNG, JPG veya WEBP.",
+  "Name must be at least 2 characters.": "Ad en az 2 karakter olmalı.",
+  "New password must be at least 8 characters.": "Yeni şifre en az 8 karakter olmalı.",
+  "Enter your current password.": "Mevcut şifreni gir.",
+  "Current password is wrong.": "Mevcut şifre yanlış."
 };
 
 /* DE / FR / ES sozlukleri ayri dosyalardan gelir (lang-de.js vb.).

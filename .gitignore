@@ -18,3 +18,6 @@ desktop.ini
 .vscode/
 .idea/
 node_modules/
+
+# Yerel onizleme sunucusu ayari - yayina gitmesi gereken bir sey degil.
+.claude/
