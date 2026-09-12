@@ -60,17 +60,16 @@ SAYFALAR = [
 
 # URETILIR ama SITE HARITASINA ve HREFLANG kumesine GIRMEZ.
 #
-# pricing.html su an "yakinda" sayfasi (odeme altyapisi bagli degil) ve
-# <meta name="robots" content="noindex"> tasiyor.
-#   - Site haritasina noindex adres koymak Search Console'da
-#     "Gonderilen URL noindex olarak isaretlenmis" hatasi uretir.
-#   - noindex bir sayfaya hreflang yazmak da anlamsiz; Google zaten
-#     indekslemedigi sayfa icin kumeyi degerlendirmez.
-# Ama sayfa URETILMEYE devam eder: 13 sayfanin gezinme menusunde linki var,
-# uretilmezse /tr/pricing.html gibi adresler 404 verir.
-# Fiyatlar acildiginda bu kumeden cikarilacak ve pricing.html'deki noindex
-# satiri silinecek.
-SITEMAP_DISI = {"pricing.html"}
+# ✅ 2026-09: FIYAT SAYFASI GERI GELDI - kume BOSALDI.
+# pricing.html bir sure "yakinda" placeholder'iydi ve noindex tasiyordu;
+# noindex bir adresi site haritasina koymak Search Console'da
+# "Gonderilen URL noindex olarak isaretlenmis" hatasi uretiyordu, bu yuzden
+# harita disi tutulmustu. Sayfa artik gercek icerik tasiyor (uc paket,
+# karsilastirma tablosu, SSS) ve noindex'i yok - dolayisiyla haritaya ve
+# hreflang kumesine geri giriyor.
+# NOT: odeme hala bagli degil; sayfadaki "checkout not available yet"
+# uyarisi bunu soyluyor. Indekslemeye engel degil - fiyat bilgisi gercek.
+SITEMAP_DISI = set()
 
 DAMGA = "<!-- kaynak-sha1: %s -->"
 DAMGA_DESEN = re.compile(r"<!-- kaynak-sha1: ([0-9a-f]{40}) -->")
