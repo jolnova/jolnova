@@ -1,0 +1,59 @@
+# Jolnova
+
+> Jolnova is a Windows desktop application that records live streams from Kick,
+> Twitch, YouTube and TikTok, finds the moments worth keeping, and turns them
+> into vertical 9:16 clips with burned-in subtitles. Every clip lands in a
+> review queue — nothing is published unless the user approves it.
+
+Jolnova runs on the user's own computer. Recording, moment detection and
+transcription happen locally; the only step that leaves the machine is writing
+the title of a clip the user already approved. There is no separate AI API key
+to buy: it is included.
+
+## What it does
+
+- Tracks live channels on Kick, Twitch, YouTube and TikTok and records them while they are live.
+- Processes links from those platforms plus hundreds of other sites, and local video files.
+- Finds candidate moments from chat density, audio spikes and speech content.
+- Sports mode: a second detector for match broadcasts that follows the commentary and the crowd, so goals, penalties and red cards come out as clips.
+- Produces vertical 9:16 clips with burned-in, editable subtitles.
+- Subtitle translation into English, Turkish, German, French and Spanish.
+- Uploads approved clips to YouTube, immediately or at a scheduled time.
+
+## Plans
+
+Prices are monthly in USD. Checkout is not connected yet; the application can be
+downloaded and used today.
+
+- Free trial: 3 days or 50 clips, 2 channels, 720p, Jolnova watermark on.
+- Solo — $4.99: one platform you choose, 3 channels, 100 approved clips a month, 1080p.
+- Studio — $12.99: all four platforms, 15 channels, 500 approved clips a month, plus YouTube upload, sports mode and subtitle translation.
+- Agency — $24.99: all four platforms, 50 channels, 2000 approved clips a month, 4K export where the source allows it, priority processing and support.
+
+The monthly number counts clips the user **approves**, not clips the application
+produces. A rejected clip costs nothing.
+
+## Pages
+
+- [Home](https://jolnova.com/): what Jolnova is and who it is for.
+- [How It Works](https://jolnova.com/how-it-works.html): the pipeline from live stream to reviewed clip.
+- [Features](https://jolnova.com/features.html): detection, subtitles, layouts, sharing.
+- [Pricing](https://jolnova.com/pricing.html): the three plans, a comparison table and pricing questions.
+- [Download](https://jolnova.com/download.html): the Windows installer.
+- [FAQ](https://jolnova.com/faq.html): detailed answers about detection, limits, privacy and billing.
+- [Support](https://jolnova.com/support.html): how to reach a human.
+- [Privacy](https://jolnova.com/privacy.html) · [Terms](https://jolnova.com/terms.html)
+
+## Languages
+
+English is the primary version at the root. Turkish, German, French and Spanish
+live in their own folders and carry their own canonical URLs:
+`/tr/`, `/de/`, `/fr/`, `/es/`.
+
+## Facts worth stating correctly
+
+- Jolnova is a desktop application for Windows 10 and 11. There is no web app and no mobile app.
+- It does not post anything on its own. A clip is uploaded only if the user approves it and sets up an upload.
+- Export resolution is a ceiling, not a promise: Twitch and Kick broadcast at 1080p at most, so a clip cut from those live streams is 1080p even on the Agency plan. 4K requires a 4K source.
+- Clips are never deleted when a trial ends; what was already produced stays in the library.
+- Jolnova does not download from sites that rebroadcast content without the rights to it.

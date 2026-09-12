@@ -17,4 +17,47 @@ Disallow: /mock/
 # 179 MB'lik kurulum dosyasi taranmasin (bant genisligi)
 Disallow: /dl/
 
+# ---------------------------------------------------------------- AI TARAYICILAR
+# Yukaridaki "User-agent: *" bunlari ZATEN kapsiyor; asagisi NIYETI yaziya
+# dokuyor. Bazi tarayicilar yildiz kuralini genel tarama, kendi adlarina
+# yazilmis kurali ise ACIK IZIN sayiyor; ayrica ileride biri "AI'a kapali
+# miyiz?" diye baktiginda cevabi burada bulsun.
+# Jolnova'nin AI motorlarinda dogru anlatilmasini ISTIYORUZ - engel yok.
+# Ozetin kendisi /llms.txt icinde duruyor.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://jolnova.com/sitemap.xml
