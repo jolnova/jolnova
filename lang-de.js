@@ -461,7 +461,7 @@ var RJ_DE = {
  "The file is read where it is":"Die Datei wird dort gelesen, wo sie liegt",
  "Your original is never moved or deleted":"Dein Original wird nie verschoben oder gelöscht",
  "Titles derived from the file name plus what is said":"Titel aus dem Dateinamen und dem Gesagten",
- "Processing happens on your machine; only the AI text step contacts a service.":"Die Verarbeitung läuft auf deinem Rechner; nur der KI-Textschritt kontaktiert einen Dienst.",
+ "Processing happens on your machine; only the AI titles step contacts a service.":"Die Verarbeitung läuft auf deinem Rechner; nur der Schritt für KI-Titel kontaktiert einen Dienst.",
  "VERTICAL LAYOUT":"HOCHFORMAT-LAYOUT",
 "Framed for vertical, not just cropped":"Für Hochformat gerahmt, nicht bloß beschnitten",
  "Game mode stacks the streamer camera above the gameplay. IRL mode fills the frame vertically. Auto picks between them based on the source.":"Der Spielmodus setzt die Kamera des Streamers über das Gameplay. Der IRL-Modus füllt das Bild in der Höhe. Automatisch wählt anhand der Quelle zwischen beiden.",

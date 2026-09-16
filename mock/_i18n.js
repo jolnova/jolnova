@@ -43,6 +43,37 @@
     }
   }
 
+  /* AYARLAR'DAKI DIL SECICI (.lgpick). Ayni gerekce: Turkce cekilmis karede
+     "English" yazmasi goruntuyu kendi kendisiyle celisik kilardi. Uygulamadaki
+     ile ayni bicim - bayrak + dilin KENDI adi (bkz. panel.py LANGS/FLAG).
+     Ceviri tablosundan BAGIMSIZ calisir: dilin kendi adi bir "ceviri" degil,
+     ayri bir degerdir ve sozlukte aranmasi yanlis olurdu. */
+  var ADLAR = {en: "English", tr: "Türkçe", de: "Deutsch",
+               fr: "Français", es: "Español"};
+  var BAYRAK = {
+    en: '<svg viewBox="0 0 60 45"><rect width="60" height="45" fill="#012169"/>'
+      + '<path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/>'
+      + '<path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/>'
+      + '<path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/>'
+      + '<path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg>',
+    tr: '<svg viewBox="0 0 60 45"><rect width="60" height="45" fill="#E30A17"/>'
+      + '<circle cx="24" cy="22.5" r="10" fill="#fff"/>'
+      + '<circle cx="27.5" cy="22.5" r="8" fill="#E30A17"/>'
+      + '<path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"/></svg>',
+    de: '<svg viewBox="0 0 60 45"><rect width="60" height="15" fill="#000"/>'
+      + '<rect y="15" width="60" height="15" fill="#DD0000"/>'
+      + '<rect y="30" width="60" height="15" fill="#FFCE00"/></svg>',
+    fr: '<svg viewBox="0 0 60 45"><rect width="20" height="45" fill="#0055A4"/>'
+      + '<rect x="20" width="20" height="45" fill="#fff"/>'
+      + '<rect x="40" width="20" height="45" fill="#EF4135"/></svg>',
+    es: '<svg viewBox="0 0 60 45"><rect width="60" height="45" fill="#AA151B"/>'
+      + '<rect y="11.25" width="60" height="22.5" fill="#F1BF00"/></svg>'
+  };
+  var ad = document.querySelector(".lgpick-n");
+  if (ad && ADLAR[dil]) ad.textContent = ADLAR[dil];
+  var bayrak = document.querySelector(".lgpick-f");
+  if (bayrak && BAYRAK[dil]) bayrak.innerHTML = BAYRAK[dil];
+
   if (dil === "en") return;
   var tablo = window.MOCK_SOZLUK && window.MOCK_SOZLUK[dil];
   if (!tablo) return;

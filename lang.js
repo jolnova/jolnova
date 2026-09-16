@@ -613,7 +613,7 @@ const TR = {
   "The file is read where it is": "Dosya bulunduğu yerde okunur",
   "Your original is never moved or deleted": "Orijinalin asla taşınmaz ya da silinmez",
   "Titles derived from the file name plus what is said": "Başlıklar dosya adından ve söylenenlerden üretilir",
-  "Processing happens on your machine; only the AI text step contacts a service.": "İşlem senin makinende olur; yalnızca AI metin adımı bir servise bağlanır.",
+  "Processing happens on your machine; only the AI titles step contacts a service.": "İşlem senin makinende olur; yalnızca AI başlıkları adımı bir servise bağlanır.",
   "VERTICAL LAYOUT": "DİKEY YERLEŞİM",
   "Framed for vertical, not just cropped": "Sadece kırpılmaz — dikey için kadrajlanır",
   "Game mode stacks the streamer camera above the gameplay. IRL mode fills the frame vertically. Auto picks between them based on the source.": "Oyun modu yayıncı kamerasını oyunun üstüne yerleştirir. IRL modu kareyi dikey doldurur. Auto, kaynağa göre ikisi arasında seçim yapar.",
