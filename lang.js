@@ -2,6 +2,18 @@
    Site ana dili İNGİLİZCE. TR seçilince metin düğümleri sözlükten çevrilir.
    Orijinal İngilizce düğümde saklanır (node.__en) -> TR<->EN kayıpsız geçiş. */
 const TR = {
+  "Free trial": "Ücretsiz deneme",
+  "No card required": "Kart gerekmez",
+  "/3 days": "/3 gün",
+  "3 days, then the trial ends": "3 gün, sonra deneme biter",
+  "2 link or file imports in total": "Toplam 2 link veya dosya içe aktarma",
+  "approved clips in total": "onaylanan klip (toplam)",
+  "Daily ceiling:": "Günlük tavan:",
+  "Review queue — you approve every clip": "İnceleme kuyruğu — her klibi sen onaylarsın",
+  "The Jolnova watermark stays on during the trial.": "Deneme boyunca Jolnova filigranı açık kalır.",
+  "Upload to YouTube": "YouTube'a yükle",
+  "Sports mode": "Spor modu",
+  "Start free": "Ücretsiz başla",
   "Three plans. One question.": "Üç paket. Tek soru.",
   "How many channels do you follow? That is the only thing that changes between plans. Your own video files and link imports are unlimited on every paid plan.": "Kaç kanal takip ediyorsun? Paketler arasında değişen tek şey bu. Kendi video dosyaların ve link ile içe aktarma her ücretli pakette sınırsız.",
   "approved clips a month": "onaylanan klip / ay",

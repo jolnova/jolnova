@@ -379,11 +379,20 @@ body.navopen{overflow:hidden}
 @media(max-width:760px){.matrix{min-width:640px}}
 
 /* ============ fiyatlandirma ============ */
-.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
-@media(max-width:980px){.plans{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+/* DORT PAKET. Ucretsiz deneme eskiden kartlarin ALTINDA ince bir serit olarak
+   duruyordu; kullanici onu bir secenek olarak gormuyordu. Artik diger ucuyle
+   ayni dilde, yan yana bir kart. Dort sutun 22px bosluklu dar kaldigi icin ic
+   dolgu 32 -> 24 indi; iki ve tek sutuna dusunce geri aciliyor. */
+.plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}
+@media(max-width:1180px){.plans{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:760px;margin:0 auto}}
+@media(max-width:700px){.plans{grid-template-columns:1fr;max-width:520px}}
 .plan{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent 40%),var(--surface-1);
-  border:1px solid var(--border-subtle);border-radius:var(--r-2xl);padding:32px;
+  border:1px solid var(--border-subtle);border-radius:var(--r-2xl);padding:24px;
   display:flex;flex-direction:column}
+@media(max-width:1180px){.plan{padding:32px}}
+/* Ucretsiz kart: dikkati odemeli paketlerden calmasin diye sessiz durur. */
+.plan.free{background:var(--surface-1);border-style:dashed}
+.plan.free .plan-p{font-size:40px}
 .plan.pop{border-color:var(--lime-border);box-shadow:var(--shadow-lime)}
 .plan-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%)}
 .plan-n{font-size:17px;font-weight:700;letter-spacing:-.02em}

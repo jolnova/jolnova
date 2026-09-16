@@ -63,6 +63,34 @@
   </div>
 
   <div class="plans" id="plans">
+   <article class="plan free">
+    <div class="plan-n">Free trial</div>
+    <div class="plan-p">$<span data-price="free">0</span><sub>/3 days</sub></div>
+    <div class="plan-eff">No card required</div>
+    <div class="plan-q">
+     <b>One platform</b>
+     <span>Twitch, Kick, YouTube or TikTok — you pick which one</span>
+    </div>
+    <ul>
+     <li><span>Up to <span data-creators="free">2</span> creators tracked</span></li>
+     <li><span><span data-clips="free">50</span> approved clips in total</span></li>
+     <li>3 days, then the trial ends</li>
+     <li>2 link or file imports in total</li>
+     <li>Automatic clip detection</li>
+     <li>Burned-in subtitles</li>
+     <li>Review queue — you approve every clip</li>
+     <li class="no">Subtitle text editing and styling</li>
+     <li class="no"><span>Watermark on or off<span class="li-note">The Jolnova watermark stays on during the trial.</span></span></li>
+     <li>720p maximum export</li>
+     <li>±3 sec Clip Context</li>
+     <li class="no">Upload to YouTube</li>
+     <li class="no">Sports mode</li>
+     <li class="no">Subtitle translation</li>
+     <li class="no">Hide the platform badge</li>
+    </ul>
+    <a href="download.html" class="btn btn-secondary">↓ Start free</a>
+   </article>
+
    <article class="plan">
     <div class="plan-n">Solo</div>
     <div class="plan-p">$<span data-price="solo">4.99</span><sub>/month</sub></div>
@@ -74,11 +102,13 @@
     <ul>
      <li><span>Up to <span data-creators="solo">3</span> creators tracked</span></li>
      <li><span><span data-clips="solo">100</span> approved clips a month</span></li>
+     <li><span>Daily ceiling: <span data-daily="solo">8</span></span></li>
      <li>My Files and link imports — unlimited</li>
      <li>Automatic clip detection</li>
      <li>Burned-in subtitles</li>
-     <li>Subtitle text editing and styling</li>
-     <li>Watermark on or off</li>
+     <li>Review queue — you approve every clip</li>
+     <li class="up"><span>Subtitle text editing and styling<span class="li-tag">SOLO</span></span></li>
+     <li class="up"><span>Watermark on or off<span class="li-tag">SOLO</span></span></li>
      <li>1080p maximum export</li>
      <li>±5 sec Clip Context</li>
      <li class="no">Upload to YouTube</li>
@@ -101,13 +131,19 @@
     <ul>
      <li><span>Up to <span data-creators="studio">15</span> creators tracked</span></li>
      <li><span><span data-clips="studio">500</span> approved clips a month</span></li>
-     <li>Everything in Solo</li>
+     <li><span>Daily ceiling: <span data-daily="studio">30</span></span></li>
+     <li>My Files and link imports — unlimited</li>
+     <li>Automatic clip detection</li>
+     <li>Burned-in subtitles</li>
+     <li>Review queue — you approve every clip</li>
+     <li>Subtitle text editing and styling</li>
+     <li>Watermark on or off</li>
+     <li>1080p maximum export</li>
+     <li>±10 sec Clip Context</li>
      <li class="up"><span>Upload to YouTube — now or scheduled<span class="li-tag">STUDIO</span></span></li>
      <li class="up"><span>Sports mode — goals and key moments<span class="li-tag">STUDIO</span></span></li>
      <li class="up"><span>Subtitle translation — 5 languages<span class="li-tag">STUDIO</span></span></li>
      <li class="up"><span>Hide the platform badge<span class="li-tag">STUDIO</span></span></li>
-     <li>±10 sec Clip Context</li>
-     <li>1080p maximum export</li>
     </ul>
     <button class="btn btn-primary" disabled>Checkout not available yet</button>
    </article>
@@ -123,21 +159,26 @@
     <ul>
      <li class="up"><span>Up to <span data-creators="agency">50</span> creators tracked<span class="li-tag">AGENCY</span></span></li>
      <li class="up"><span><span data-clips="agency">2000</span> approved clips a month<span class="li-tag">AGENCY</span></span></li>
-     <li>Everything in Studio</li>
+     <li><span>Daily ceiling: <span data-daily="agency">100</span></span></li>
+     <li>My Files and link imports — unlimited</li>
+     <li>Automatic clip detection</li>
+     <li>Burned-in subtitles</li>
+     <li>Review queue — you approve every clip</li>
+     <li>Subtitle text editing and styling</li>
+     <li>Watermark on or off</li>
+     <li>±10 sec Clip Context</li>
+     <li>Upload to YouTube — now or scheduled</li>
+     <li>Sports mode — goals and key moments</li>
+     <li>Subtitle translation — 5 languages</li>
+     <li>Hide the platform badge</li>
      <li class="up"><span>4K maximum export<span class="li-tag">AGENCY</span><span class="li-note">Only when the source is 4K — Twitch and Kick broadcast at 1080p.</span></span></li>
      <li class="up"><span>Priority processing<span class="li-tag">AGENCY</span></span></li>
      <li class="up"><span>Priority support<span class="li-tag">AGENCY</span></span></li>
-     <li>±10 sec Clip Context</li>
     </ul>
     <button class="btn btn-secondary" disabled>Checkout not available yet</button>
    </article>
   </div>
 
-  <div class="freetier">
-   <div class="ft-head"><span class="badge badge-neutral">FREE TRIAL</span><b>Try it before you pay</b></div>
-   <p class="ft-line"><b>Free for 3 days.</b> <a href="faq.html#pricing">What's included →</a></p>
-   <a href="download.html" class="btn btn-secondary btn-sm">↓ Start free</a>
-  </div>
   <p class="caption center mt-m" style="max-width:740px">Nothing is deleted when the trial ends: the clips you already produced stay in your library, ready to export.</p>
 
   <p class="caption center mt-l" style="max-width:740px">Export resolution is a ceiling, not a promise. Twitch and Kick broadcast at 1080p at most, so a clip taken from a live stream comes out at 1080p even on Agency. 4K is reachable when the source itself is 4K — a YouTube video or one of your own recordings.</p>
@@ -289,7 +330,7 @@
   </div>
  </div>
 </footer>
-<script src="lang-de.js?v=2b035a6813"></script><script src="lang-fr.js?v=2b035a6813"></script><script src="lang-es.js?v=2b035a6813"></script><script src="lang.js?v=2b035a6813"></script>
+<script src="user.js?v=2b035a6813"></script><script src="lang-de.js?v=2b035a6813"></script><script src="lang-fr.js?v=2b035a6813"></script><script src="lang-es.js?v=2b035a6813"></script><script src="lang.js?v=2b035a6813"></script>
 <script>
 function rjMenu(){var m=document.getElementById('mobnav'),b=document.querySelector('.burger');
  var on=m.classList.toggle('on');document.body.classList.toggle('navopen',on);
@@ -309,9 +350,10 @@ document.addEventListener('keydown',function(e){
    Eski "tek platform / tum platformlar" anahtari KALDIRILDI: platform
    sayisi artik kademeye gomulu (Solo 1, Studio ve Agency 4). */
 var RJ_PLANS = {
- solo  :{price:'4.99', creators:3,  clips:100},
- studio:{price:'12.99',creators:15, clips:500},
- agency:{price:'24.99',creators:50, clips:2000}
+ free  :{price:'0',    creators:2,  clips:50,   daily:0},
+ solo  :{price:'4.99', creators:3,  clips:100,  daily:8},
+ studio:{price:'12.99',creators:15, clips:500,  daily:30},
+ agency:{price:'24.99',creators:50, clips:2000, daily:100}
 };
 function rjRender(){
  var k,cfg,els,i;
@@ -324,6 +366,8 @@ function rjRender(){
   for(i=0;i<els.length;i++)els[i].textContent=String(cfg.creators);
   els=document.querySelectorAll('[data-clips="'+k+'"]');
   for(i=0;i<els.length;i++)els[i].textContent=String(cfg.clips);
+  els=document.querySelectorAll('[data-daily="'+k+'"]');
+  for(i=0;i<els.length;i++)els[i].textContent=String(cfg.daily);
  }
 }
 

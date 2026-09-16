@@ -2,6 +2,18 @@
    lang.js bu dosyayi RJ_ES olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_ES = {
+  "Free trial": "Prueba gratuita",
+  "No card required": "Sin tarjeta",
+  "/3 days": "/3 días",
+  "3 days, then the trial ends": "3 días, luego termina la prueba",
+  "2 link or file imports in total": "2 importaciones de enlace o archivo en total",
+  "approved clips in total": "clips aprobados en total",
+  "Daily ceiling:": "Tope diario:",
+  "Review queue — you approve every clip": "Cola de revisión — tú apruebas cada clip",
+  "The Jolnova watermark stays on during the trial.": "La marca de agua de Jolnova permanece activa durante la prueba.",
+  "Upload to YouTube": "Subir a YouTube",
+  "Sports mode": "Modo deportes",
+  "Start free": "Empieza gratis",
   "Three plans. One question.": "Tres planes. Una pregunta.",
   "How many channels do you follow? That is the only thing that changes between plans. Your own video files and link imports are unlimited on every paid plan.": "¿A cuántos canales sigues? Es lo único que cambia entre planes. Tus propios archivos de vídeo y las importaciones por enlace son ilimitadas en todos los planes de pago.",
   "approved clips a month": "clips aprobados al mes",
