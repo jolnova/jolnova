@@ -81,9 +81,27 @@ def sha(yol):
 
 
 def adres(dil, sayfa):
-    """dil None ise Ingilizce KOK adres. Ana sayfa her zaman klasor adresidir."""
+    """dil None ise Ingilizce KOK adres. Ana sayfa her zaman klasor adresidir.
+
+    🔴 UZANTI YAZILMAZ. Cloudflare Pages ".html" adreslerini uzantisiz surume
+    308 ILE YONLENDIRIYOR. Burasi canonical, hreflang ve site haritasinin TEK
+    kaynagi oldugu icin ".html" yazmak su cemberi kuruyordu:
+
+      site haritasi -> /pricing.html -> 308 -> /pricing
+      /pricing sayfasinin canonical'i -> /pricing.html -> 308 -> /pricing
+
+    Yani Google'a "bu sayfanin asil adresi /pricing.html" deniyor, oraya
+    gidiyor, yonlendirme buluyor ve GONDERILEN ADRESI DIZINE EKLEMIYOR.
+    Search Console bunu "site haritasindaki sayfalarin dizine eklenmesini
+    engelleyen yeni nedenler" diye iki kez bildirdi (2026-09-16).
+
+    Olculdu: /pricing ve /tr/pricing DOGRUDAN 200 donuyor (0 yonlendirme),
+    yani uzantisiz adres gercek adres; .html olan ara adres.
+    Dosyalar diskte .html olarak KALIYOR - degisen yalnizca ilan edilen adres."""
     on = SITE if dil is None else "%s/%s" % (SITE, dil)
-    return on + "/" if sayfa == "index.html" else "%s/%s" % (on, sayfa)
+    if sayfa == "index.html":
+        return on + "/"
+    return "%s/%s" % (on, sayfa[:-5] if sayfa.endswith(".html") else sayfa)
 
 
 def render(sayfa, dil):
@@ -207,6 +225,7 @@ def kokleri_duzelt():
     Ingilizce KOKTE durur ve x-default odur: site uluslararasi, tek bir
     ulkenin dili one cikmaz.
     """
+    guncellenen = 0
     for sayfa in SAYFALAR:
         p = os.path.join(KOK, sayfa)
         t = io.open(p, encoding="utf-8").read()
@@ -220,16 +239,29 @@ def kokleri_duzelt():
         kume += ['<link rel="alternate" hreflang="%s" href="%s">' % (d, adres(d, sayfa))
                  for d in DILLER]
         kume.append('<link rel="alternate" hreflang="x-default" href="%s">' % adres(None, sayfa))
+        # 🔴 CANONICAL ARTIK KONTROL EDILMIYOR, YAZILIYOR.
+        # Eskiden beklenen dizge kurulup "dosyada var mi" diye bakiliyor, yoksa
+        # sayfa ATLANIYORDU. adres() uzantisiz hale getirilince dosyalardaki
+        # ".html"li canonical ile eslesme bozuldu ve sekiz sayfanin HEPSI
+        # sessizce atlandi - ustelik fonksiyon sonunda kosulsuz "9 sayfa
+        # guncellendi" yazdigi icin cikti bunu GIZLEDI. Dogru davranis kontrol
+        # degil duzeltme: canonical neyse onu bul ve dogrusuyla degistir.
         kan = '<link rel="canonical" href="%s">' % adres(None, sayfa)
-        if kan not in t:
-            print("  ! canonical beklenen adres degil, atlandi: " + sayfa); continue
+        yeni = re.subn(r'<link rel="canonical" href="[^"]*">', kan, t, count=1)
+        if not yeni[1]:
+            print("  ! canonical yazilamadi, atlandi: " + sayfa); continue
+        t = yeni[0]
         t = t.replace(kan, kan + "\n" + "\n".join(kume), 1)
+        guncellenen += 1
         if "og:locale" not in t and "og:url" in t:
             t = t.replace('<meta property="og:url"',
                           '<meta property="og:locale" content="en_US">\n'
                           '<meta property="og:url"', 1)
         io.open(p, "w", encoding="utf-8", newline="").write(t)
-    print("  kok sayfalarin hreflang kumesi guncellendi (%d sayfa)" % len(SAYFALAR))
+    # GERCEK sayi yazilir. Eskiden len(SAYFALAR) yaziliyordu: atlanan sayfalar
+    # olsa bile "9 sayfa guncellendi" diyordu ve hata gorunmez kaliyordu.
+    print("  kok sayfalar: canonical + hreflang yazildi (%d/%d sayfa)"
+          % (guncellenen, len(SAYFALAR)))
 
 
 def sitemap_yaz():
