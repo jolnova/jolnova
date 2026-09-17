@@ -384,12 +384,25 @@ body.navopen{overflow:hidden}
    ayni dilde, yan yana bir kart. Dort sutun 22px bosluklu dar kaldigi icin ic
    dolgu 32 -> 24 indi; iki ve tek sutuna dusunce geri aciliyor. */
 .plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}
-@media(max-width:1180px){.plans{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:760px;margin:0 auto}}
-@media(max-width:700px){.plans{grid-template-columns:1fr;max-width:520px}}
+/* DORT KART MUMKUN OLDUGUNCA YAN YANA KALIR. Ilk denemede 4->2 kirilmasi
+   1180px'teydi ve 1130px'lik bir pencerede kartlar 2x2 diziliyordu; paketleri
+   yan yana karsilastirmak mumkun olmuyordu (kullanici bildirdi). .wrap iki
+   yanda 40px birakiyor, yani 1130px ekranda ice 1050px kaliyor -> kart basina
+   ~250px. Yeterli; bu yuzden kirilma 940px'e indirildi ve arada dolgu/punto
+   kisiliyor, sutun sayisi degil. */
+@media(max-width:1060px){
+  .plans{gap:14px}
+  .plan{padding:17px}
+  .plan-p{font-size:38px}
+  .plan li{font-size:13.5px;gap:9px}
+  .plan-q{padding:13px 14px}
+}
+@media(max-width:940px){.plans{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:760px;margin:0 auto}
+  .plan{padding:28px}.plan-p{font-size:46px}.plan li{font-size:14.5px;gap:11px}}
+@media(max-width:620px){.plans{grid-template-columns:1fr;max-width:520px}}
 .plan{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent 40%),var(--surface-1);
   border:1px solid var(--border-subtle);border-radius:var(--r-2xl);padding:24px;
   display:flex;flex-direction:column}
-@media(max-width:1180px){.plan{padding:32px}}
 /* Ucretsiz kart: dikkati odemeli paketlerden calmasin diye sessiz durur. */
 .plan.free{background:var(--surface-1);border-style:dashed}
 .plan.free .plan-p{font-size:40px}
