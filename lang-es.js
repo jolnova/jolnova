@@ -2,6 +2,20 @@
    lang.js bu dosyayi RJ_ES olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_ES = {
+  "How this data is protected": "Cómo se protegen estos datos",
+  "Jolnova is a desktop application, so the strongest protection is structural: your Google and YouTube data is not collected by us in the first place.": "Jolnova es una aplicación de escritorio, así que la protección más fuerte es estructural: tus datos de Google y YouTube no los recopilamos en absoluto.",
+  "Nothing is stored on our servers.": "No se almacena nada en nuestros servidores.",
+  "We operate no database, log or backup containing your YouTube data. Your access and refresh tokens, your channel name and your clips exist only on your own computer.": "No tenemos ninguna base de datos, registro ni copia de seguridad con tus datos de YouTube. Tus tokens de acceso y actualización, el nombre de tu canal y tus clips solo existen en tu propio equipo.",
+  "Encrypted in transit.": "Cifrado en tránsito.",
+  "Every request to Google and YouTube is sent over HTTPS (TLS). The application makes no unencrypted network calls with this data.": "Cada solicitud a Google y YouTube se envía por HTTPS (TLS). La aplicación no realiza ninguna llamada de red sin cifrar con estos datos.",
+  "Stored under your operating system account.": "Almacenado bajo tu cuenta del sistema operativo.",
+  "Least privilege.": "Privilegio mínimo.",
+  "We request only the two scopes listed above. We do not request permission to read, edit or delete any other video, and the application contains no code that could do so.": "Solo solicitamos los dos permisos indicados arriba. No pedimos permiso para leer, editar ni eliminar ningún otro vídeo, y la aplicación no contiene código que pueda hacerlo.",
+  "You hold the off switch.": "El interruptor está en tus manos.",
+  "No onward transfer.": "Sin transferencia posterior.",
+  "This data is never sold, rented or shared with third parties, and is never used for advertising or for training any model.": "Estos datos nunca se venden, alquilan ni comparten con terceros, y nunca se usan para publicidad ni para entrenar ningún modelo.",
+  "Limited human access.": "Acceso humano limitado.",
+  "Because the data never reaches our systems, no Jolnova employee or contractor can access your YouTube data at all.": "Como los datos nunca llegan a nuestros sistemas, ningún empleado o contratista de Jolnova puede acceder a tus datos de YouTube.",
   "Free trial": "Prueba gratuita",
   "No card required": "Sin tarjeta",
   "/3 days": "/3 días",

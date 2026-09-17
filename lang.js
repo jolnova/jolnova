@@ -2,6 +2,20 @@
    Site ana dili İNGİLİZCE. TR seçilince metin düğümleri sözlükten çevrilir.
    Orijinal İngilizce düğümde saklanır (node.__en) -> TR<->EN kayıpsız geçiş. */
 const TR = {
+  "How this data is protected": "Bu veri nasıl korunuyor",
+  "Jolnova is a desktop application, so the strongest protection is structural: your Google and YouTube data is not collected by us in the first place.": "Jolnova bir masaüstü uygulamasıdır; bu yüzden en güçlü koruma yapısaldır: Google ve YouTube verilerin en baştan bizim tarafımızdan toplanmaz.",
+  "Nothing is stored on our servers.": "Sunucularımızda hiçbir şey saklanmaz.",
+  "We operate no database, log or backup containing your YouTube data. Your access and refresh tokens, your channel name and your clips exist only on your own computer.": "YouTube verilerini içeren hiçbir veritabanı, günlük kaydı ya da yedeğimiz yok. Erişim ve yenileme jetonların, kanal adın ve kliplerin yalnızca kendi bilgisayarında bulunur.",
+  "Encrypted in transit.": "Aktarım sırasında şifrelenir.",
+  "Every request to Google and YouTube is sent over HTTPS (TLS). The application makes no unencrypted network calls with this data.": "Google ve YouTube'a giden her istek HTTPS (TLS) üzerinden gönderilir. Uygulama bu veriyle şifresiz hiçbir ağ çağrısı yapmaz.",
+  "Stored under your operating system account.": "İşletim sistemi hesabının altında saklanır.",
+  "Least privilege.": "En az yetki.",
+  "We request only the two scopes listed above. We do not request permission to read, edit or delete any other video, and the application contains no code that could do so.": "Yalnızca yukarıdaki iki kapsamı isteriz. Başka bir videoyu okuma, düzenleme veya silme izni istemeyiz ve uygulamada bunu yapabilecek hiçbir kod yoktur.",
+  "You hold the off switch.": "Kapatma düğmesi sende.",
+  "No onward transfer.": "İleri aktarım yok.",
+  "This data is never sold, rented or shared with third parties, and is never used for advertising or for training any model.": "Bu veri asla satılmaz, kiralanmaz, üçüncü taraflarla paylaşılmaz; reklam için ya da herhangi bir model eğitimi için kullanılmaz.",
+  "Limited human access.": "Sınırlı insan erişimi.",
+  "Because the data never reaches our systems, no Jolnova employee or contractor can access your YouTube data at all.": "Veri sistemlerimize hiç ulaşmadığı için hiçbir Jolnova çalışanı ya da yüklenicisi YouTube verine erişemez.",
   "Free trial": "Ücretsiz deneme",
   "No card required": "Kart gerekmez",
   "/3 days": "/3 gün",
