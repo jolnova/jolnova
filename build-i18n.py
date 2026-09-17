@@ -37,6 +37,7 @@ KULLANIM
     python build-i18n.py            uret
     python build-i18n.py --check    tazelik denetimi (uretim yapmaz)
 """
+import glob
 import hashlib
 import io
 import os
@@ -272,7 +273,53 @@ def sitemap_yaz():
     print("  sitemap.xml uretildi (%d adres)" % ((len(SAYFALAR) - len(SITEMAP_DISI)) * (len(DILLER) + 1)))
 
 
+# --------------------------------------------------------------- VARLIK DAMGASI
+# HTML'de "site.css?v=xxxx" diye gecen onbellek damgasi. ELLE yazilmisti ve
+# hicbir betik guncellemiyordu.
+#
+# 🔴 SONUCU: damga konduktan sonra yapilan HER CSS/JS degisikligi, GERI GELEN
+# ziyaretciye HIC ULASMIYORDU - tarayici eski dosyayi onbellekten veriyordu.
+# Kullanici bunu yasadi: fiyat kartlari 4 sutuna cikarildigi halde ekraninda
+# 3'lu diziliyor ve yeni eklenen ceviriler Ingilizce kaliyordu; ikisi de
+# yayindaki DOGRU dosyalarin okunmamasindan kaynaklaniyordu.
+#
+# Artik damga VARLIKLARIN ICERIGINDEN turetiliyor: dosyalar degismediyse damga
+# da degismez (gereksiz onbellek bosaltmasi olmaz), degistiyse kendiliginden
+# tazelenir. uret()'in ILK isi bu - dil sayfalari yeni damgayla uretilsin.
+VARLIKLAR = ("site.css", "user.js", "supabase.js",
+             "lang.js", "lang-de.js", "lang-fr.js", "lang-es.js")
+V_DESEN = re.compile(r"\?v=[0-9a-f]{6,40}")
+
+
+def varlik_damgasi():
+    h = hashlib.sha1()
+    for ad in VARLIKLAR:
+        y = os.path.join(KOK, ad)
+        if os.path.exists(y):
+            h.update(io.open(y, "rb").read())
+    return h.hexdigest()[:10]
+
+
+def damgayi_tazele():
+    """Kokteki TUM html dosyalarinda ?v=... degerini gunceller.
+
+    SAYFALAR listesi degil, glob kullaniliyor: login/signup/reset/account ve
+    404 gibi kimlik sayfalari o listede YOK ama ayni css/js'i yukluyorlar ve
+    onlarin da onbellegi tazelenmeli."""
+    yeni = varlik_damgasi()
+    degisen = 0
+    for y in sorted(glob.glob(os.path.join(KOK, "*.html"))):
+        s = io.open(y, encoding="utf-8").read()
+        s2 = V_DESEN.sub("?v=" + yeni, s)
+        if s2 != s:
+            io.open(y, "w", encoding="utf-8", newline="").write(s2)
+            degisen += 1
+    print("  varlik damgasi: %s  (%d kok sayfa guncellendi)" % (yeni, degisen))
+    return yeni
+
+
 def uret():
+    damgayi_tazele()
     kokleri_duzelt()
     n = 0
     for dil in DILLER:
