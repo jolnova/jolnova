@@ -2,6 +2,20 @@
    lang.js bu dosyayi RJ_DE olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_DE = {
+"PAYMENT COMPLETE": "ZAHLUNG ABGESCHLOSSEN",
+"Thank you. Your plan is active.": "Danke. Dein Paket ist aktiv.",
+"The payment went through and your subscription is on your account right now.": "Die Zahlung ist eingegangen und dein Abo liegt bereits auf deinem Konto.",
+"Open Jolnova and sign in with the same email.": "Öffne Jolnova und melde dich mit derselben E-Mail an.",
+"Your plan is attached to this account, so there is nothing to enter in the application — it will be there when you sign in.": "Dein Paket hängt an diesem Konto — in der Anwendung musst du nichts eingeben, es ist nach der Anmeldung da.",
+"↓ Download the app": "↓ App herunterladen",
+"Stripe has emailed your receipt.": "Stripe hat dir die Rechnung per E-Mail geschickt.",
+"Something not right? Write to us.": "Stimmt etwas nicht? Schreib uns.",
+"Subscribe": "Abonnieren",
+"Apply": "Anwenden",
+"Discount code": "Rabattcode",
+"2 months free": "2 Monate gratis",
+"Billing period": "Abrechnungszeitraum",
+"Cancel anytime.": "Jederzeit kündbar.",
   "How this data is protected": "Wie diese Daten geschützt werden",
   "Jolnova is a desktop application, so the strongest protection is structural: your Google and YouTube data is not collected by us in the first place.": "Jolnova ist eine Desktop-Anwendung, daher ist der stärkste Schutz struktureller Art: Deine Google- und YouTube-Daten werden von uns gar nicht erst erfasst.",
   "Nothing is stored on our servers.": "Auf unseren Servern wird nichts gespeichert.",

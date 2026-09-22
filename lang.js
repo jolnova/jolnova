@@ -2,6 +2,20 @@
    Site ana dili İNGİLİZCE. TR seçilince metin düğümleri sözlükten çevrilir.
    Orijinal İngilizce düğümde saklanır (node.__en) -> TR<->EN kayıpsız geçiş. */
 const TR = {
+"PAYMENT COMPLETE": "ÖDEME TAMAMLANDI",
+"Thank you. Your plan is active.": "Teşekkürler. Paketin aktif.",
+"The payment went through and your subscription is on your account right now.": "Ödeme alındı ve aboneliğin şu anda hesabında.",
+"Open Jolnova and sign in with the same email.": "Jolnova'yı aç ve aynı e-postayla giriş yap.",
+"Your plan is attached to this account, so there is nothing to enter in the application — it will be there when you sign in.": "Paketin bu hesaba bağlı; uygulamada girmen gereken bir şey yok, giriş yaptığında orada olacak.",
+"↓ Download the app": "↓ Uygulamayı indir",
+"Stripe has emailed your receipt.": "Stripe makbuzunu e-postayla gönderdi.",
+"Something not right? Write to us.": "Bir şey ters mi gitti? Bize yaz.",
+"Subscribe": "Abone ol",
+"Apply": "Uygula",
+"Discount code": "İndirim kodu",
+"2 months free": "2 ay bedava",
+"Billing period": "Faturalama dönemi",
+"Cancel anytime.": "İstediğin zaman iptal et.",
   "How this data is protected": "Bu veri nasıl korunuyor",
   "Jolnova is a desktop application, so the strongest protection is structural: your Google and YouTube data is not collected by us in the first place.": "Jolnova bir masaüstü uygulamasıdır; bu yüzden en güçlü koruma yapısaldır: Google ve YouTube verilerin en baştan bizim tarafımızdan toplanmaz.",
   "Nothing is stored on our servers.": "Sunucularımızda hiçbir şey saklanmaz.",
