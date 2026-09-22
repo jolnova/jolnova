@@ -13,6 +13,15 @@
      --text-disabled BILGI TASIYAN metinde KULLANILMAZ (matris "n/a", plan "X"
      satirlari artik --text-muted kullanir); yalnizca dekoratif oge icindir. */
   --text-primary:#F7F9FC; --text-secondary:#A8B2C3; --text-muted:#7B8598; --text-disabled:#4F5969;
+  /* ESKI ADLAR — hala kullanimda oldugu icin duruyorlar.
+     --dim / --dim2 site.css'te HIC TANIMLI DEGILDI ama .pf-msg, account.html
+     ve download.html bunlari kullaniyordu. Tanimsiz bir ozel ozellik
+     `color:var(--dim)` bildirimini HESAPLANMIS-DEGERDE-GECERSIZ yapar; color
+     kalitsal oldugu icin bildirim "inherit"e duser. Yani "soluk" olmasi
+     gereken metinler ANA METIN PARLAKLIGINDA cikiyordu ve gorsel hiyerarsi
+     hicbir yerde hata vermeden sessizce kayboluyordu. Yeni kod --text-*
+     kullanmali; bu iki satir eski kullanimlari onarmak icin var. */
+  --dim:var(--text-secondary); --dim2:var(--text-muted);
   /* ============================================================
      VURGU RENGI — TEK KAYNAK
      Uygulamanin vurgu rengi degisince YALNIZCA bu blok degisir.
@@ -821,3 +830,224 @@ html[data-scope="single"] .s-all,html[data-scope="all"] .s-single{display:none}
   min-height:1.2em}
 .pf-msg.ok{color:#5FD08A}
 .pf-msg.err{color:#FF7A6B}
+
+/* ============================================================
+   HESAP SAYFASI (account.html)
+   ------------------------------------------------------------
+   NEDEN AYRI BIR BOLUM: hesap sayfasi bir PANEL, tanitim sayfasi
+   degil. Tanitim kartlari (.card, .plan) ikna etmek icin genis
+   nefesli; burada kullanici "paketim ne, ne zaman yenilenecek,
+   adimi nasil degistiririm" sorularinin cevabini TEK BAKISTA
+   istiyor. Bu yuzden daha sik bir ritim, daha kucuk basliklar ve
+   sayilari one cikaran kutucuklar var.
+
+   GENISLIK: sayfa .wrap kullanir (--w-std), yani sitenin DIGER
+   sayfalariyla ayni sutun. Eskiden main'e style="max-width:820px"
+   yazilmisti; .wrap zaten margin:0 auto tasidigi icin blok
+   ortalaniyordu ama basliktan (--w-wide, 1320px) ~250px iceride
+   basliyordu ve sayfa "sola kaymis / ortalanmamis" goruntusu
+   veriyordu.
+   ============================================================ */
+.acc{padding:34px 0 80px;display:flex;flex-direction:column;gap:22px}
+
+/* ---- kimlik seridi ---------------------------------------- */
+/* Sayfanin "sen kimsin" satiri. Kart degil SERIT: profil kutusuyla
+   ayni bilgiyi tekrar ettigi icin gorsel agirligi bilerek dusuk. */
+.acc-hero{display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+  padding:24px 28px;border-radius:var(--r-xl);
+  background:linear-gradient(120deg,var(--accent-wash),transparent 46%),var(--surface-1);
+  border:1px solid var(--border-default)}
+.acc-hero .eyebrow{margin-bottom:8px}
+/* Yukleme halkasi avatarin TAM uzerine otursun diye konumlandirma capasi. */
+.acc-hero-avwrap{position:relative;display:block;flex:0 0 auto;width:62px;height:62px}
+.acc-hero-av{width:62px;height:62px;border-radius:50%;flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  background:linear-gradient(135deg,var(--accent-bright),var(--accent-dark));
+  color:var(--accent-ink);font-size:22px;font-weight:800;letter-spacing:.5px}
+.acc-hero-av img{width:100%;height:100%;object-fit:cover;display:block}
+.acc-hero-txt{flex:1 1 240px;min-width:0}
+.acc-hero h1{font-size:clamp(23px,2.6vw,30px);font-weight:760;letter-spacing:-.03em;
+  line-height:1.15;color:var(--text-primary)}
+/* E-posta uzun olabiliyor; serit tasmasin. */
+.acc-hero-mail{margin-top:6px;font-size:14.5px;color:var(--text-secondary);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* Fotograf denetimleri BURADA, profil kutusunda degil. Sebep dogruluk:
+   fotograf secildigi anda yukleniyor, "Degisiklikleri kaydet" dugmesini
+   beklemiyor. Kaydet cubugunun ustunde durmasi ona bagliymis izlenimi
+   veriyordu. Kimligin yanindaki yeri hem dogru hem daha okunakli. */
+.acc-hero-act{display:flex;flex-direction:column;align-items:flex-end;gap:8px;
+  margin-left:auto;text-align:right}
+.acc-photo{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.acc-hint{font-size:12px;color:var(--text-muted)}
+.acc-hero-act .pf-msg{margin-top:0;min-height:0}
+
+/* ---- iki sutun -------------------------------------------- */
+/* Abonelik SOLDA ve genis: sayfanin cevapladigi asil soru o.
+   Indirme ve destek sagda dar sutunda, yardimci eylemler. */
+/* align-items:start — kartlar KENDI boylarinda kalir.
+   "stretch" denendi ve GERI ALINDI: abonelik karti yan sutun kadar uzayinca
+   kutucuklarla dugme arasinda 200 px'lik bos bir alan aciliyor ve bu,
+   "burada bir sey eksik" gibi okunuyor. Sutunlarin farkli boylarda bitmesi
+   bir panelde normal; kartin ICINDE aciklanamayan bosluk degil. */
+.acc-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:start}
+.acc-side{display:flex;flex-direction:column;gap:22px}
+@media(max-width:1000px){.acc-grid{grid-template-columns:1fr}}
+
+/* ---- ortak kart ------------------------------------------- */
+.acc-card{display:flex;flex-direction:column;
+  background:linear-gradient(180deg,rgba(255,255,255,.028),transparent 44%),var(--surface-1);
+  border:1px solid var(--border-default);border-radius:var(--r-xl);padding:26px 28px}
+.acc-card h2{font-size:19px;font-weight:740;letter-spacing:-.02em;color:var(--text-primary)}
+.acc-card p{color:var(--text-secondary);font-size:14.5px;line-height:1.62}
+/* Dipnot. `.acc-card p` element+sinif oldugu icin tek sinifli bir
+   yardimciyi (ornegin .caption) ozgulluk bakimindan yener; bu yuzden
+   dipnot kurali da kartin icinden yaziliyor. */
+.acc-card p.acc-note{font-size:12.5px;line-height:1.55;color:var(--text-muted);
+  margin-top:13px}
+/* .eyebrow alt boslugu tanitim bolumleri icin ayarlanmis (18px);
+   kart icinde fazla geliyor. */
+.acc-card .eyebrow{margin-bottom:14px}
+
+/* Abonelik kartinin ACIK hali: sayfanin tek vurgulu ogesi.
+   .plan.pop ile ayni dil (sari kenarlik + hafif isima) - kullanici
+   fiyat sayfasinda gordugu isareti burada taniyor. */
+.acc-card.is-live{border-color:var(--lime-border);box-shadow:var(--shadow-lime)}
+
+/* ---- abonelik basligi ------------------------------------- */
+.acc-head{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.acc-plan{font-size:31px;font-weight:790;letter-spacing:-.035em;line-height:1.05;
+  color:var(--text-primary)}
+.acc-plan-sub{margin-top:7px;font-size:14px;color:var(--text-secondary)}
+/* Fiyat sagda ve tabular: rakamlar hizali dursun. */
+.acc-price{margin-left:auto;text-align:right;font-variant-numeric:tabular-nums;
+  font-size:25px;font-weight:780;letter-spacing:-.03em;color:var(--text-primary);
+  white-space:nowrap}
+.acc-price small{display:block;margin-top:3px;font-size:12.5px;font-weight:600;
+  letter-spacing:0;color:var(--text-muted)}
+
+/* Yenileme satiri: tarih kalin, etiket soluk - goz once tarihe gitsin. */
+.acc-renew{margin-top:18px;padding:13px 16px;border-radius:var(--r-md);
+  background:var(--surface-2);border:1px solid var(--border-subtle);
+  font-size:14px;color:var(--text-secondary);display:flex;gap:9px;
+  align-items:baseline;flex-wrap:wrap}
+.acc-renew b{color:var(--text-primary);font-weight:700}
+
+/* ---- hak kutucuklari -------------------------------------- */
+/* Pakette NE OLDUGU tek satir cumle yerine sayiyla anlatiliyor:
+   "3 yayinci / 100 klip / 1 platform / 1080p" bir bakista okunur,
+   cumle okunmaz. auto-fit: dar ekranda 2'ye, genis ekranda 4'e dizilir. */
+.acc-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));
+  gap:12px;margin-top:18px}
+.acc-tile{padding:14px 15px;border-radius:var(--r-md);background:var(--surface-2);
+  border:1px solid var(--border-subtle)}
+.acc-tile-n{font-size:23px;font-weight:790;letter-spacing:-.03em;
+  font-variant-numeric:tabular-nums;color:var(--text-primary);line-height:1.1}
+.acc-tile-l{margin-top:5px;font-size:12px;line-height:1.35;color:var(--text-muted)}
+
+/* ---- deneme sayaci ---------------------------------------- */
+.acc-meter{margin-top:16px}
+.acc-meter-bar{height:7px;border-radius:999px;background:var(--surface-3);
+  overflow:hidden;border:1px solid var(--border-subtle)}
+/* display:block SART: dolgu bir <span>; inline kalirsa width/height
+   yok sayilir ve cubuk hep bos gorunur (ilk cizimde boyle cikti). */
+.acc-meter-fill{display:block;height:100%;width:0;border-radius:999px;
+  background:linear-gradient(90deg,var(--accent-strong),var(--accent-bright));
+  transition:width .5s ease}
+.acc-meter-t{margin-top:8px;font-size:13px;color:var(--text-secondary)}
+
+/* ---- abonelik yok hali ------------------------------------ */
+/* Satilan uc paketi burada TEKRAR anlatmiyoruz; hangisi ne kadar,
+   o kadar. Detay fiyat sayfasinin isi - iki yerde anlatilan bir
+   sey iki yerde bayatlar. */
+.acc-plans{margin-top:18px;display:flex;flex-direction:column;gap:9px}
+.acc-plans li{list-style:none;display:flex;align-items:baseline;gap:10px;
+  padding:11px 15px;border-radius:var(--r-sm);background:var(--surface-2);
+  border:1px solid var(--border-subtle);font-size:14.5px;color:var(--text-secondary)}
+.acc-plans b{font-weight:730;color:var(--text-primary)}
+/* em yalnizca ANLAM icin; egik yazi koyu zeminde okunurlugu dusuruyor. */
+.acc-plans em{font-style:normal;font-size:13.5px;color:var(--text-muted)}
+.acc-plans span{margin-left:auto;font-variant-numeric:tabular-nums;
+  color:var(--accent);font-weight:700;white-space:nowrap}
+/* "/month" fiyatin parcasi ama vurgusu degil. */
+.acc-plans .acc-permo{color:var(--text-muted);font-weight:600;font-size:12.5px}
+@media(max-width:520px){.acc-plans em{display:none}}
+
+.acc-cta{margin-top:20px;display:flex;gap:11px;flex-wrap:wrap}
+/* Kartin DOGRUDAN cocugu olan eylem satiri her zaman kartin DIBINDE durur.
+   Kart kendi boyundayken bu 20 px'lik normal bir bosluk; kart baska bir
+   sebeple uzarsa (ileride bir sutun esitlemesi gelirse) dugme yukarida
+   asili kalmaz. Ic iceki (.acc-err icindeki) satir blok akisinda oldugu
+   icin bu kuraldan etkilenmiyor. */
+.acc-card>.acc-cta{margin-top:auto;padding-top:20px}
+
+/* ---- yukleniyor iskeleti ---------------------------------- */
+/* Veri gelmeden once bos kart gostermek "abonelik yok" gibi okunur.
+   Iskelet, "daha gelmedi" demenin yalan soylemeyen yolu. */
+.acc-sk{border-radius:var(--r-sm);
+  background:linear-gradient(90deg,var(--surface-2) 25%,var(--surface-3) 50%,var(--surface-2) 75%);
+  background-size:220% 100%;animation:accsk 1.25s linear infinite}
+@keyframes accsk{to{background-position:-220% 0}}
+.acc-sk-1{height:31px;width:46%}
+.acc-sk-2{height:15px;width:64%;margin-top:13px}
+.acc-sk-3{height:58px;margin-top:20px}
+
+/* ---- hata hali -------------------------------------------- */
+/* Ag hatasinda "abonelik yok" DEMIYORUZ: yanlis bilgi vermek bilgi
+   vermemekten kotudur. Turuncu uyari tonu = "bilinmiyor", kirmizi
+   degil - kullanicinin hesabinda bozuk bir sey yok, hat kopuk. */
+.acc-err{padding:15px 17px;border-radius:var(--r-md);
+  background:var(--warning-a07);border:1px solid var(--warning-a30)}
+.acc-err b{color:var(--warning)}
+.acc-err p{margin-top:5px;font-size:13.5px}
+
+/* ---- yan kartlar ------------------------------------------ */
+.acc-ico{width:42px;height:42px;border-radius:13px;display:flex;
+  align-items:center;justify-content:center;font-size:19px;margin-bottom:14px;
+  background:var(--accent-a10);border:1px solid var(--accent-a24);color:var(--accent)}
+.acc-ico.blue{background:var(--files-a10);border-color:var(--files-a26);color:var(--files-text)}
+
+/* ---- profil: ayar satirlari -------------------------------- */
+/* 1200 px genisligindeki sutunda tek kolon form, uc metre uzunlugunda
+   inputlar demekti. Solda "ne ayari" + aciklama, sagda alanlar: goz
+   sol sutunu tarayip aradigi ayari buluyor. */
+.acc-prof{padding:0}
+/* Kart basligi. Ayri bir satir olarak duruyor cunku asagidaki iki ayari
+   (ad, sifre) birden kapsiyor: "bu kutuda profil var, ve degisiklikler
+   uygulamayla ortak" bilgisi ikisi icin de gecerli. */
+.acc-prof-h{padding:24px 28px 20px}
+.acc-prof-h .eyebrow{margin-bottom:10px}
+.acc-prof-h p{color:var(--text-muted);font-size:13.5px;line-height:1.6;max-width:720px}
+.acc-row{display:grid;grid-template-columns:280px minmax(0,1fr);gap:28px;
+  padding:26px 28px;border-top:1px solid var(--border-subtle)}
+.acc-row:first-of-type{border-top:0}
+.acc-row h3{font-size:15.5px;font-weight:700;letter-spacing:-.01em;color:var(--text-primary)}
+.acc-row-d{margin-top:7px;font-size:13.5px;line-height:1.6;color:var(--text-muted)}
+.acc-fields{max-width:560px}
+.acc-fields label{display:block;font-size:13px;color:var(--text-secondary);margin-bottom:6px}
+.acc-pw{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+/* Kaydet cubugu: kartin dibinde, hafif koyu zeminde - "burada bir
+   eylem var" isareti kaydirmadan gorunsun. */
+.acc-save{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  padding:18px 28px;border-top:1px solid var(--border-subtle);
+  background:var(--surface-2);border-radius:0 0 var(--r-xl) var(--r-xl)}
+.acc-save .pf-msg{margin-top:0}
+@media(max-width:860px){
+  .acc-row{grid-template-columns:1fr;gap:16px;padding:22px}
+  .acc-prof-h{padding:22px 22px 16px}
+  .acc-save{padding:16px 22px}
+  .acc-hero{padding:20px}
+  .acc-card{padding:22px}
+  /* Tek sutuna dusunce saga yaslama anlamini yitiriyor: her sey sola
+     hizali oldugu icin dugmeler de sola gelmeli. */
+  .acc-hero-act{margin-left:0;width:100%;align-items:flex-start;text-align:left}
+  .acc-photo{justify-content:flex-start}
+}
+
+/* Sayfanin dibi: hesap kimligi + cikis.
+   CIKIS BURADA, basligin yaninda degil: "Fotografi kaldir" dugmesinin
+   bitisiginde duran bir "Cikis yap" yanlis tiklama uretiyor. Sayfadan
+   ayrilma eylemi sayfanin sonunda durur. */
+.acc-foot{display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;padding:2px 4px}
+/* Hesap kimligi: destek talebinde istenen tek teknik deger. */
+.acc-uid{font-size:12.5px;color:var(--text-muted)}

@@ -1199,5 +1199,32 @@ var RJ_DE = {
   "Name must be at least 2 characters.": "Der Name muss mindestens 2 Zeichen haben.",
   "New password must be at least 8 characters.": "Das neue Passwort muss mindestens 8 Zeichen haben.",
   "Enter your current password.": "Gib dein aktuelles Passwort ein.",
-  "Current password is wrong.": "Das aktuelle Passwort ist falsch."
+  "Current password is wrong.": "Das aktuelle Passwort ist falsch.",
+
+  /* --- hesap sayfasi (account.html) --- */
+  "Checking your subscription…": "Dein Abo wird geprüft…",
+  "We could not read your subscription status": "Wir konnten deinen Abo-Status nicht lesen",
+  "The server did not answer, so we are not showing a plan rather than showing the wrong one. Your subscription itself is not affected.": "Der Server hat nicht geantwortet. Statt das falsche Paket zu zeigen, zeigen wir lieber keines. Dein Abo selbst ist nicht betroffen.",
+  "Try again": "Erneut versuchen",
+  "One platform you choose": "Eine Plattform deiner Wahl",
+  "Admin account — no plan limits apply": "Admin-Konto — es gelten keine Paketgrenzen",
+  "Admin": "Admin",
+  "Billed every year": "Jährliche Abrechnung",
+  "Next renewal": "Nächste Verlängerung",
+  "Your plan stays active until": "Dein Paket bleibt aktiv bis",
+  "Free trial ends on": "Die kostenlose Testphase endet am",
+  "The last payment did not go through. Please update your card.": "Die letzte Zahlung ist fehlgeschlagen. Bitte aktualisiere deine Karte.",
+  "Days left in the trial": "Verbleibende Testtage",
+  "Approved clips in total": "Freigegebene Clips insgesamt",
+  "Platforms": "Plattformen",
+  "No active subscription": "Kein aktives Abo",
+  "You can download the application and start the free trial today. Pick a plan whenever you are ready.": "Du kannst die Anwendung heute herunterladen und die kostenlose Testphase starten. Ein Paket wählst du, wann du willst.",
+  "3 creators, one platform": "3 Creator, eine Plattform",
+  "15 creators, all four platforms": "15 Creator, alle vier Plattformen",
+  "50 creators, 4K where the source allows": "50 Creator, 4K wenn die Quelle es hergibt",
+  "Paying yearly costs ten months instead of twelve: $49.90, $129.90 and $249.90.": "Jährlich zahlen kostet zehn statt zwölf Monate: 49,90 $, 129,90 $ und 249,90 $.",
+  "Download it, sign in with this account and your plan is already there — there is nothing to enter in the application.": "Herunterladen, mit diesem Konto anmelden — dein Paket ist schon da, in der Anwendung musst du nichts eingeben.",
+  "Need a hand?": "Brauchst du Hilfe?",
+  "Something not adding up on this page, or a question about your plan? Write to us with the account id below and we will look it up.": "Stimmt auf dieser Seite etwas nicht oder hast du eine Frage zu deinem Paket? Schreib uns mit der Konto-ID unten, wir sehen nach.",
+  "Shown in the application and on this page. The Windows app reads the same field, so changing it here changes it there.": "Wird in der Anwendung und auf dieser Seite angezeigt. Die Windows-App liest dasselbe Feld — änderst du es hier, ändert es sich dort."
 };

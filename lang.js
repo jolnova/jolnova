@@ -1441,7 +1441,34 @@ const TR = {
   "Name must be at least 2 characters.": "Ad en az 2 karakter olmalı.",
   "New password must be at least 8 characters.": "Yeni şifre en az 8 karakter olmalı.",
   "Enter your current password.": "Mevcut şifreni gir.",
-  "Current password is wrong.": "Mevcut şifre yanlış."
+  "Current password is wrong.": "Mevcut şifre yanlış.",
+
+  /* --- hesap sayfasi (account.html) --- */
+  "Checking your subscription…": "Aboneliğin kontrol ediliyor…",
+  "We could not read your subscription status": "Abonelik durumun okunamadı",
+  "The server did not answer, so we are not showing a plan rather than showing the wrong one. Your subscription itself is not affected.": "Sunucu yanıt vermedi. Yanlış bir paket göstermektense hiç göstermemeyi seçtik; aboneliğinde bir değişiklik yok.",
+  "Try again": "Tekrar dene",
+  "One platform you choose": "Seçtiğin tek platform",
+  "Admin account — no plan limits apply": "Yönetici hesabı — paket sınırları uygulanmaz",
+  "Admin": "Yönetici",
+  "Billed every year": "Her yıl faturalanır",
+  "Next renewal": "Sonraki yenileme",
+  "Your plan stays active until": "Paketin şu tarihe kadar açık",
+  "Free trial ends on": "Ücretsiz deneme şu tarihte bitiyor",
+  "The last payment did not go through. Please update your card.": "Son ödeme alınamadı. Lütfen kartını güncelle.",
+  "Days left in the trial": "Denemede kalan gün",
+  "Approved clips in total": "Onaylanan klip (toplam)",
+  "Platforms": "Platform",
+  "No active subscription": "Etkin abonelik yok",
+  "You can download the application and start the free trial today. Pick a plan whenever you are ready.": "Uygulamayı bugün indirip ücretsiz denemeye başlayabilirsin. Paketi hazır olduğunda seçersin.",
+  "3 creators, one platform": "3 yayıncı, tek platform",
+  "15 creators, all four platforms": "15 yayıncı, dört platformun tamamı",
+  "50 creators, 4K where the source allows": "50 yayıncı, kaynak elverdiğinde 4K",
+  "Paying yearly costs ten months instead of twelve: $49.90, $129.90 and $249.90.": "Yıllık ödemek on iki ay yerine on aya mal olur: $49.90, $129.90 ve $249.90.",
+  "Download it, sign in with this account and your plan is already there — there is nothing to enter in the application.": "İndir, bu hesapla giriş yap; paketin zaten orada — uygulamada girmen gereken bir şey yok.",
+  "Need a hand?": "Yardım ister misin?",
+  "Something not adding up on this page, or a question about your plan? Write to us with the account id below and we will look it up.": "Bu sayfada bir şey tutmuyor mu ya da paketinle ilgili bir sorun mu var? Aşağıdaki hesap kimliğiyle bize yaz, bakalım.",
+  "Shown in the application and on this page. The Windows app reads the same field, so changing it here changes it there.": "Uygulamada ve bu sayfada görünür. Windows uygulaması aynı alanı okuduğu için burada değiştirdiğin orada da değişir."
 };
 
 /* DE / FR / ES sozlukleri ayri dosyalardan gelir (lang-de.js vb.).

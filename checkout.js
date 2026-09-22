@@ -169,7 +169,50 @@
   }
 
   /* ------------------------------------------------------------- baglama */
+  /* ODEME ACIK MI: #ck-i18n uzerindeki data-live.
+     "0" iken satin alma dugmeleri PASIF cizilir ve indirim kodu kutusu
+     gizlenir. Sebep: anahtarlar hala sandbox; gercek bir ziyaretci
+     "Abone ol" dese Stripe'in TEST sayfasina duser ve kendi karti
+     reddedilir. Calismayan bir odeme akisini halka acmaktansa "henuz
+     acik degil" demek durustur.
+     Aylik/yillik secici ACIK KALIR: kimlik dogrulama istemiyor, fiyati
+     yerel olarak hesapliyor ve ziyaretciye gercek bilgi veriyor.
+     CANLIYA GECISTE TEK DEGISIKLIK: data-live="1". */
+  function odemeAcikMi() {
+    var k = document.getElementById("ck-i18n");
+    return !!k && k.getAttribute("data-live") === "1";
+  }
+
+  function kapaliGorunum() {
+    var b = document.querySelectorAll("[data-buy]");
+    for (var i = 0; i < b.length; i++) {
+      b[i].disabled = true;
+      b[i].textContent = yazi("soon", "Checkout not available yet");
+    }
+    var kutu = document.querySelector(".ck-code");
+    if (kutu) kutu.style.display = "none";
+    var msg = document.getElementById("ck-code-msg");
+    if (msg) msg.style.display = "none";
+  }
+
   function bagla() {
+    if (!odemeAcikMi()) {
+      kapaliGorunum();
+      /* Donem secici yine de calissin - fiyat gostermek icin oturum
+         gerekmiyor ve yillik fiyati gormek ziyaretciye yarar. */
+      var p0 = document.querySelectorAll("[data-period]");
+      for (var q0 = 0; q0 < p0.length; q0++) {
+        (function (el) {
+          el.addEventListener("click", function () {
+            for (var z = 0; z < p0.length; z++) p0[z].classList.remove("on");
+            el.classList.add("on");
+            fiyatlariCiz();
+          });
+        })(p0[q0]);
+      }
+      fiyatlariCiz();
+      return;
+    }
     var b = document.querySelectorAll("[data-buy]");
     for (var i = 0; i < b.length; i++) {
       (function (el) {

@@ -1199,5 +1199,32 @@ var RJ_FR = {
   "Name must be at least 2 characters.": "Le nom doit faire au moins 2 caractères.",
   "New password must be at least 8 characters.": "Le nouveau mot de passe doit faire au moins 8 caractères.",
   "Enter your current password.": "Saisis ton mot de passe actuel.",
-  "Current password is wrong.": "Le mot de passe actuel est incorrect."
+  "Current password is wrong.": "Le mot de passe actuel est incorrect.",
+
+  /* --- hesap sayfasi (account.html) --- */
+  "Checking your subscription…": "Vérification de ton abonnement…",
+  "We could not read your subscription status": "Nous n'avons pas pu lire l'état de ton abonnement",
+  "The server did not answer, so we are not showing a plan rather than showing the wrong one. Your subscription itself is not affected.": "Le serveur n'a pas répondu. Plutôt que d'afficher le mauvais forfait, nous n'en affichons aucun. Ton abonnement n'est pas affecté.",
+  "Try again": "Réessayer",
+  "One platform you choose": "Une plateforme de ton choix",
+  "Admin account — no plan limits apply": "Compte admin — aucune limite de forfait",
+  "Admin": "Admin",
+  "Billed every year": "Facturé chaque année",
+  "Next renewal": "Prochain renouvellement",
+  "Your plan stays active until": "Ton forfait reste actif jusqu'au",
+  "Free trial ends on": "L'essai gratuit se termine le",
+  "The last payment did not go through. Please update your card.": "Le dernier paiement a échoué. Merci de mettre à jour ta carte.",
+  "Days left in the trial": "Jours restants d'essai",
+  "Approved clips in total": "Clips validés au total",
+  "Platforms": "Plateformes",
+  "No active subscription": "Aucun abonnement actif",
+  "You can download the application and start the free trial today. Pick a plan whenever you are ready.": "Tu peux télécharger l'application aujourd'hui et lancer l'essai gratuit. Tu choisiras un forfait quand tu seras prêt.",
+  "3 creators, one platform": "3 créateurs, une plateforme",
+  "15 creators, all four platforms": "15 créateurs, les quatre plateformes",
+  "50 creators, 4K where the source allows": "50 créateurs, 4K quand la source le permet",
+  "Paying yearly costs ten months instead of twelve: $49.90, $129.90 and $249.90.": "Payer à l'année coûte dix mois au lieu de douze : 49,90 $, 129,90 $ et 249,90 $.",
+  "Download it, sign in with this account and your plan is already there — there is nothing to enter in the application.": "Télécharge-la, connecte-toi avec ce compte : ton forfait y est déjà, rien à saisir dans l'application.",
+  "Need a hand?": "Besoin d'un coup de main ?",
+  "Something not adding up on this page, or a question about your plan? Write to us with the account id below and we will look it up.": "Quelque chose ne colle pas sur cette page, ou une question sur ton forfait ? Écris-nous avec l'identifiant de compte ci-dessous.",
+  "Shown in the application and on this page. The Windows app reads the same field, so changing it here changes it there.": "Affiché dans l'application et sur cette page. L'app Windows lit le même champ : le modifier ici le modifie là-bas."
 };
