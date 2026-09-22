@@ -492,6 +492,11 @@ body.navopen{overflow:hidden}
 .ck-msg{margin-bottom:20px;padding:12px 16px;border-radius:var(--r-md);
   background:var(--warning-a07);border:1px solid var(--warning-a24);
   color:var(--text-secondary);font-size:14px}
+/* Basilan dugmenin ALTINDAKI hata. Ayni mesaj ustteki .ck-msg'e de yazilir,
+   ama ziyaretci karttaki dugmeye basiyor ve sayfanin tepesini gormuyor. */
+.ck-err{margin-top:10px;padding:10px 12px;border-radius:var(--r-md);
+  background:var(--warning-a07);border:1px solid var(--warning-a24);
+  color:var(--text-secondary);font-size:13px;line-height:1.45;text-align:left}
 /* Kayittan donen ziyaretci: sectigi kart bir an belirginlesir ki
    "nereye basmistim" diye aramasin. */
 .ck-focus{box-shadow:0 0 0 2px var(--accent)}

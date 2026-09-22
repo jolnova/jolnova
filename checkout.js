@@ -69,11 +69,30 @@
     location.href = (tanidik ? "/login.html?next=" : "/signup.html?next=") + next;
   }
 
-  function uyari(mesaj) {
+  /* HATA BASILAN DUGMENIN ALTINA DA YAZILIR.
+     #ck-msg sayfanin EN USTUNDE duruyor; ziyaretci ise asagidaki paket
+     kartinda "Abone ol"a basiyor. Sunucu hata dondurdugunde mesaj gorus
+     alaninin disinda kaliyor ve ekranda HICBIR SEY olmamis gibi gorunuyordu -
+     kullanici sorunu tam olarak boyle bildirdi ("basiyorum, yonlendirmiyor").
+     Sessiz basarisizlik, yanlis bildirilen hatanin ta kendisiydi. */
+  function uyari(mesaj, yaninda) {
     var e = document.getElementById("ck-msg");
-    if (!e) { alert(mesaj); return; }
-    e.textContent = mesaj;
-    e.style.display = mesaj ? "" : "none";
+    if (e) {
+      e.textContent = mesaj;
+      e.style.display = mesaj ? "" : "none";
+    }
+    if (yaninda && yaninda.parentNode) {
+      var y = yaninda.parentNode.querySelector(".ck-err");
+      if (!y) {
+        y = document.createElement("div");
+        y.className = "ck-err";
+        y.setAttribute("role", "alert");
+        yaninda.parentNode.insertBefore(y, yaninda.nextSibling);
+      }
+      y.textContent = mesaj;
+      y.style.display = mesaj ? "" : "none";
+    }
+    if (!e && !yaninda) alert(mesaj);
   }
 
   function cagir(jeton, govde) {
@@ -97,7 +116,7 @@
       ? document.querySelector('[data-period].on').getAttribute("data-period")
       : "month";
 
-    uyari("");
+    uyari("", dugme);
     dugme.disabled = true;
     var eskiYazi = dugme.textContent;
     dugme.textContent = yazi("wait", "Opening checkout…");
@@ -106,8 +125,13 @@
       if (!s) { girisSayfasi(paket); return null; }
       return cagir(s.access_token, {
         op: "checkout_subscription",
-        plan: paket,
-        interval: aralik
+        /* SUNUCU SOZLESMESI: argumanlar `payload` ICINDE gider.
+           ai-proxy/index.ts: `const payload = (parsed.payload ?? {})`.
+           Duz gonderildiginde sunucu payload'i BOS goruyor, plan "" oluyor ve
+           400 "Unknown plan: (empty)" donuyordu - yani site uzerinden abone
+           olmak HIC calismadi. Masaustu uygulamasi bastan beri dogru sariyor
+           (aiproxy.call_ex(op, payload)); ayrisan yalnizca siteydi. */
+        payload: { plan: paket, interval: aralik }
       });
     }).then(function (c) {
       if (!c) return;
@@ -116,7 +140,7 @@
       var g = c.govde || {};
       if (c.durum === 401) { girisSayfasi(paket); return; }
       if (!g.ok || !g.data || !g.data.url) {
-        uyari(g.message || yazi("failed", "Checkout could not be opened."));
+        uyari(g.message || yazi("failed", "Checkout could not be opened."), dugme);
         return;
       }
       /* Stripe'in kendi sayfasina gidiyoruz; 3D Secure orada calisir. */
@@ -124,7 +148,7 @@
     }).catch(function () {
       dugme.disabled = false;
       dugme.textContent = eskiYazi;
-      uyari(yazi("failed", "Checkout could not be opened."));
+      uyari(yazi("failed", "Checkout could not be opened."), dugme);
     });
   }
 
@@ -170,7 +194,10 @@
         if (not) not.textContent = yazi("codelogin", "Sign in to use a discount code.");
         return null;
       }
-      return cagir(s.access_token, { op: "promo_check", code: kod });
+      /* Ayni sozlesme: kod da `payload` icinde gider. Duz gonderildigi icin
+         sunucu bos kod goruyor ve 400 "Enter a code." donuyordu - indirim
+         kodu sitede bu yuzden "calismiyor"du. */
+      return cagir(s.access_token, { op: "promo_check", payload: { code: kod } });
     }).then(function (c) {
       if (!c) return;
       var d = (c.govde && c.govde.data) || {};
