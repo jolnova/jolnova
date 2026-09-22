@@ -318,7 +318,7 @@ def sitemap_yaz():
 # Artik damga VARLIKLARIN ICERIGINDEN turetiliyor: dosyalar degismediyse damga
 # da degismez (gereksiz onbellek bosaltmasi olmaz), degistiyse kendiliginden
 # tazelenir. uret()'in ILK isi bu - dil sayfalari yeni damgayla uretilsin.
-VARLIKLAR = ("site.css", "user.js", "supabase.js",
+VARLIKLAR = ("site.css", "user.js", "supabase.js", "checkout.js",
              "lang.js", "lang-de.js", "lang-fr.js", "lang-es.js")
 V_DESEN = re.compile(r"\?v=[0-9a-f]{6,40}")
 
@@ -332,12 +332,41 @@ def varlik_damgasi():
     return h.hexdigest()[:10]
 
 
+_DAMGALI_DESEN = re.compile(r'(?:src|href)="([^"]+?)\?v=[0-9a-f]{6,40}"')
+
+
+def damga_listesini_dogrula():
+    """?v= ile damgalanan her js/css, VARLIKLAR listesinde mi?
+
+    NEDEN VAR: liste ELLE tutuluyor ve damga YALNIZCA listedeki dosyalarin
+    icerigiden turetiliyor. Listeye yazilmayan bir dosya degistiginde damga
+    DEGISMEZ; geri gelen ziyaretcinin tarayicisi eski kopyayi onbellekten
+    verir ve duzeltme ona HIC ULASMAZ. Hicbir yerde hata gorunmez.
+    Bu tuzak bu depoda uc kez isirdi: once css/ceviri (kullanici 3'lu
+    dizilim ve Ingilizce metin gordu), sonra checkout.js. Yorumla uyarmak
+    yetmedi - artik derleme DURUYOR."""
+    eksik = set()
+    for y in sorted(glob.glob(os.path.join(KOK, "*.html"))):
+        s = io.open(y, encoding="utf-8").read()
+        for yol in _DAMGALI_DESEN.findall(s):
+            ad = yol.split("/")[-1]
+            if (ad.endswith(".js") or ad.endswith(".css")) and ad not in VARLIKLAR:
+                eksik.add((os.path.basename(y), ad))
+    if eksik:
+        satir = ", ".join("%s -> %s" % (a, b) for a, b in sorted(eksik))
+        raise SystemExit(
+            "DURDURULDU: damgalanan ama VARLIKLAR listesinde olmayan dosya(lar): "
+            "%s. Listeye ekle; yoksa o dosya degistiginde damga tazelenmez ve "
+            "ziyaretci eski kopyayi onbellekten alir." % satir)
+
+
 def damgayi_tazele():
     """Kokteki TUM html dosyalarinda ?v=... degerini gunceller.
 
     SAYFALAR listesi degil, glob kullaniliyor: login/signup/reset/account ve
     404 gibi kimlik sayfalari o listede YOK ama ayni css/js'i yukluyorlar ve
     onlarin da onbellegi tazelenmeli."""
+    damga_listesini_dogrula()
     yeni = varlik_damgasi()
     degisen = 0
     for y in sorted(glob.glob(os.path.join(KOK, "*.html"))):
