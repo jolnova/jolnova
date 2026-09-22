@@ -2,6 +2,19 @@
    lang.js bu dosyayi RJ_DE olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_DE = {
+  /* Platform kisiti kaldirildi (2026-09-22) */
+  "All four platforms, on every plan.": "Alle vier Plattformen, in jedem Tarif.",
+  "Twitch, Kick, YouTube and TikTok are open on every plan, including the free trial. What your plan sets is how many creators you follow.": "Twitch, Kick, YouTube und TikTok sind in jedem Tarif freigeschaltet — auch in der kostenlosen Testphase. Ihr Tarif legt nur fest, wie vielen Creators Sie folgen.",
+  "Nothing to choose": "Nichts auszuwählen",
+  "There is no platform setting to pick or change. Add a Twitch channel and a Kick channel side by side on the same plan.": "Es gibt keine Plattform-Einstellung zum Auswählen oder Ändern. Fügen Sie im selben Tarif einen Twitch-Kanal und einen Kick-Kanal nebeneinander hinzu.",
+  "Follow anyone, anywhere": "Folgen Sie jedem, überall",
+  "If a creator you follow moves to another platform, just add the new channel. No setting to change and no waiting a month.": "Wechselt ein Creator, dem Sie folgen, die Plattform, fügen Sie einfach den neuen Kanal hinzu. Keine Einstellung zu ändern und kein Monat Wartezeit.",
+  "One pooled creator limit": "Ein gemeinsames Creator-Limit",
+  "Your creator limit is a single total across all four platforms, so you can spend it however you like — all of it on one or a handful on each.": "Ihr Creator-Limit ist eine einzige Summe über alle vier Plattformen — verteilen Sie es, wie Sie möchten: alles auf einer oder ein paar auf jeder.",
+  "Processing a video already on your computer is not a platform and never counts against your creator limit — on Solo, Studio, Agency and during the free trial alike.": "Ein Video, das bereits auf Ihrem Rechner liegt, ist keine Plattform und zählt nie gegen Ihr Creator-Limit — bei Solo, Studio, Agency und in der kostenlosen Testphase gleichermaßen.",
+  "Solo — 3 creators across all four platforms": "Solo — 3 Creators über alle vier Plattformen",
+  "Every plan covers all four platforms. Solo follows 3 creators and gives you 100 approved clips a month. Studio raises that to 15 creators and 500 clips, and adds the three things a clip page actually needs: uploading to YouTube, sports mode and subtitle translation. Agency is the same product at volume — 50 creators, 2000 clips, 4K export where the source allows it, and priority processing and support.": "Jeder Tarif deckt alle vier Plattformen ab. Solo verfolgt 3 Creators und gibt Ihnen 100 freigegebene Clips im Monat. Studio erhöht das auf 15 Creators und 500 Clips und ergänzt die drei Dinge, die eine Clip-Seite wirklich braucht: Upload zu YouTube, Sportmodus und Untertitelübersetzung. Agency ist dasselbe Produkt in größerem Umfang — 50 Creators, 2000 Clips, 4K-Export sofern die Quelle es zulässt, vorrangige Verarbeitung und vorrangiger Support.",
+  "No. My Files is included with every plan, including the free trial. Processing a video sitting on your computer never counts against your creator limit.": "Nein. Meine Dateien ist in jedem Tarif enthalten, auch in der kostenlosen Testphase. Ein Video von Ihrem Rechner zu verarbeiten zählt nie gegen Ihr Creator-Limit.",
 "PAYMENT COMPLETE": "ZAHLUNG ABGESCHLOSSEN",
 "Thank you. Your plan is active.": "Danke. Dein Paket ist aktiv.",
 "The payment went through and your subscription is on your account right now.": "Die Zahlung ist eingegangen und dein Abo liegt bereits auf deinem Konto.",

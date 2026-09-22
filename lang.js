@@ -2,6 +2,19 @@
    Site ana dili İNGİLİZCE. TR seçilince metin düğümleri sözlükten çevrilir.
    Orijinal İngilizce düğümde saklanır (node.__en) -> TR<->EN kayıpsız geçiş. */
 const TR = {
+  /* Platform kisiti kaldirildi (2026-09-22) */
+  "All four platforms, on every plan.": "Her pakette dört platform da açık.",
+  "Twitch, Kick, YouTube and TikTok are open on every plan, including the free trial. What your plan sets is how many creators you follow.": "Twitch, Kick, YouTube ve TikTok her pakette açıktır — ücretsiz deneme dahil. Paketinin belirlediği şey kaç yayıncı takip ettiğindir.",
+  "Nothing to choose": "Seçilecek bir şey yok",
+  "There is no platform setting to pick or change. Add a Twitch channel and a Kick channel side by side on the same plan.": "Seçilecek ya da değiştirilecek bir platform ayarı yok. Aynı pakette bir Twitch kanalını ve bir Kick kanalını yan yana ekleyebilirsin.",
+  "Follow anyone, anywhere": "Kimi istersen, nerede olursa",
+  "If a creator you follow moves to another platform, just add the new channel. No setting to change and no waiting a month.": "Takip ettiğin bir yayıncı başka platforma geçerse yeni kanalı eklemen yeter. Değiştirilecek ayar da yok, bir ay beklemek de.",
+  "One pooled creator limit": "Tek havuzda yayıncı hakkı",
+  "Your creator limit is a single total across all four platforms, so you can spend it however you like — all of it on one or a handful on each.": "Yayıncı hakkın dört platform için tek bir toplamdır; istediğin gibi harcarsın — hepsini tek platformda ya da birkaçını her birinde.",
+  "Processing a video already on your computer is not a platform and never counts against your creator limit — on Solo, Studio, Agency and during the free trial alike.": "Bilgisayarında duran bir videoyu işlemek platform sayılmaz ve yayıncı hakkından düşmez — Solo, Studio, Agency ve ücretsiz denemede aynı şekilde.",
+  "Solo — 3 creators across all four platforms": "Solo — dört platformda toplam 3 yayıncı",
+  "Every plan covers all four platforms. Solo follows 3 creators and gives you 100 approved clips a month. Studio raises that to 15 creators and 500 clips, and adds the three things a clip page actually needs: uploading to YouTube, sports mode and subtitle translation. Agency is the same product at volume — 50 creators, 2000 clips, 4K export where the source allows it, and priority processing and support.": "Her pakette dört platform da açıktır. Solo 3 yayıncı takip eder ve ayda 100 onaylanan klip verir. Studio bunu 15 yayıncı ve 500 klibe çıkarır; ayrıca bir klip sayfasının gerçekten ihtiyaç duyduğu üç şeyi ekler: YouTube'a yükleme, spor modu ve altyazı çevirisi. Agency aynı ürünün yüksek hacimlisidir — 50 yayıncı, 2000 klip, kaynak izin verdiğinde 4K dışa aktarım, öncelikli işlem ve destek.",
+  "No. My Files is included with every plan, including the free trial. Processing a video sitting on your computer never counts against your creator limit.": "Hayır. Kendi dosyaların ücretsiz deneme dahil her pakette var. Bilgisayarında duran bir videoyu işlemek yayıncı hakkından düşmez.",
 "PAYMENT COMPLETE": "ÖDEME TAMAMLANDI",
 "Thank you. Your plan is active.": "Teşekkürler. Paketin aktif.",
 "The payment went through and your subscription is on your account right now.": "Ödeme alındı ve aboneliğin şu anda hesabında.",
