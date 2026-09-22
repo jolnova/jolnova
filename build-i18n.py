@@ -134,8 +134,8 @@ def yollari_duzelt(html, dil=None):
     # Unutulursa alt klasordeki sayfa dosyayi KENDI klasorunde arar
     # (/tr/user.js) ve 404 alir; sayfa acilir ama o betik calismaz -
     # sessiz bir bozulma. (user.js tam olarak boyle atlanmisti.)
-    for dosya in ("site.css", "supabase.js", "user.js", "lang.js",
-                  "lang-de.js", "lang-fr.js", "lang-es.js"):
+    for dosya in ("site.css", "supabase.js", "user.js", "checkout.js",
+                  "lang.js", "lang-de.js", "lang-fr.js", "lang-es.js"):
         html = html.replace('href="' + dosya, 'href="../' + dosya)
         html = html.replace('src="' + dosya, 'src="../' + dosya)
 
@@ -350,6 +350,29 @@ def damgayi_tazele():
     return yeni
 
 
+# --------------------------------------------------------------- VARLIK DENETIMI
+_VARLIK_DESEN = re.compile(r'(?:src|href)="(?!\.\./|/|https?:|data:|#|mailto:)([^"?#]+\.(?:js|css))')
+
+
+def varlik_dogrula(html, dil, sayfa):
+    """Uretilen dil sayfasindaki GORELI js/css yollari gercekten var mi?
+
+    NEDEN VAR: yollari_duzelt() icindeki liste ELLE tutuluyor. Yeni bir ortak
+    dosya eklenip listeye yazilmazsa alt klasordeki sayfa onu KENDI klasorunde
+    arar (/tr/checkout.js), 404 alir ve tarayici betigi CALISTIRMAZ. Sayfa
+    normal acilir, hicbir yerde hata gorunmez - yalnizca o betigin isi sessizce
+    yapilmaz. Bu tuzak iki kez isirdi: once user.js, sonra checkout.js.
+    Yorumla uyarmak yetmedi; artik derleme DURUYOR."""
+    hedef_klasor = os.path.join(KOK, dil)
+    for yol in _VARLIK_DESEN.findall(html):
+        if not os.path.exists(os.path.join(hedef_klasor, yol)):
+            raise SystemExit(
+                "DURDURULDU: %s/%s -> '%s' dosyasi %s/ icinde YOK. "
+                "Kokteki ortak bir dosyaysa yollari_duzelt() icindeki listeye "
+                "ekle; yoksa sayfa 404 alir ve betik sessizce calismaz."
+                % (dil, sayfa, yol, dil))
+
+
 def uret():
     damgayi_tazele()
     kokleri_duzelt()
@@ -363,6 +386,7 @@ def uret():
             if "<html" not in h:
                 print("  HATA render bos: %s/%s" % (dil, sayfa)); continue
             h = kafayi_duzelt(yollari_duzelt(h, dil), dil, sayfa, sha(os.path.join(KOK, sayfa)))
+            varlik_dogrula(h, dil, sayfa)
             io.open(os.path.join(hedef, sayfa), "w", encoding="utf-8", newline="").write(h)
             n += 1
         print("  %s/  -> %d sayfa" % (dil, len(SAYFALAR)))
