@@ -80,6 +80,35 @@ def sha(yol):
     return hashlib.sha1(io.open(yol, "rb").read()).hexdigest()
 
 
+def sozlukler(dil):
+    """O dilin uretimini etkileyen sozluk dosyalari.
+
+    lang.js HER dile girer: icinde yalnizca Turkce sozluk degil, ceviriyi
+    uygulayan MOTOR de var (_rjWalk, REVS). Motor degisirse her dilin
+    ciktisi degisebilir."""
+    return ["lang.js"] if dil == "tr" else ["lang.js", "lang-%s.js" % dil]
+
+
+def kaynak_damgasi(dil, sayfa):
+    """Tazelik damgasi: kok sayfa + O DILIN SOZLUGU.
+
+    NEDEN SOZLUK DE GIRIYOR: dil sayfalari kok HTML'in Chrome'da sozlukle
+    cevrilmis halidir, yani ciktinin kaynagi IKI dosyadir. Damga eskiden
+    yalnizca kok HTML'in sha1'iydi; SADECE sozluk degistiginde (ki ceviri
+    duzeltmeleri tam olarak boyledir) kok HTML ayni kaldigi icin damga da
+    ayni kalip '--check' TAZE diyordu - oysa /tr sayfalari ESKI Turkce
+    metinle yayinda duruyordu. Hicbir yerde hata gorunmez.
+    Ayni sessiz-hata sinifi bu depoda dorduncu kez: bkz. varlik_dogrula()
+    ve damga_listesini_dogrula()."""
+    h = hashlib.sha1()
+    h.update(io.open(os.path.join(KOK, sayfa), "rb").read())
+    for ad in sozlukler(dil):
+        y = os.path.join(KOK, ad)
+        if os.path.exists(y):
+            h.update(io.open(y, "rb").read())
+    return h.hexdigest()
+
+
 def adres(dil, sayfa):
     """dil None ise Ingilizce KOK adres. Ana sayfa her zaman klasor adresidir.
 
@@ -414,7 +443,8 @@ def uret():
             h = render(sayfa, dil)
             if "<html" not in h:
                 print("  HATA render bos: %s/%s" % (dil, sayfa)); continue
-            h = kafayi_duzelt(yollari_duzelt(h, dil), dil, sayfa, sha(os.path.join(KOK, sayfa)))
+            h = kafayi_duzelt(yollari_duzelt(h, dil), dil, sayfa,
+                              kaynak_damgasi(dil, sayfa))
             varlik_dogrula(h, dil, sayfa)
             io.open(os.path.join(hedef, sayfa), "w", encoding="utf-8", newline="").write(h)
             n += 1
@@ -431,7 +461,7 @@ def denetle():
             if not os.path.exists(u):
                 eksik.append("%s/%s" % (dil, sayfa)); continue
             m = DAMGA_DESEN.search(io.open(u, encoding="utf-8").read())
-            if not m or m.group(1) != sha(os.path.join(KOK, sayfa)):
+            if not m or m.group(1) != kaynak_damgasi(dil, sayfa):
                 bayat.append("%s/%s" % (dil, sayfa))
     if not bayat and not eksik:
         print("TAZE: uretilmis dil sayfalari kaynaklarla uyumlu."); return 0
