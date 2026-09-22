@@ -40,10 +40,33 @@
 
   function girisSayfasi(paket) {
     /* Donus adresi: kayit bitince kullanici fiyat sayfasina ve SECTIGI
-       pakete geri gelsin - "nereye basmistim" diye aramasin. */
-    var d = location.pathname.replace(/[^/]+$/, "") || "/";
+       pakete geri gelsin - "nereye basmistim" diye aramasin.
+     *
+     * ADRES KOKTEN KURULUR, BULUNDUGU KLASORDEN DEGIL.
+     * Eskiden `location.pathname`'in son parcasi atilip "signup.html"
+     * ekleniyordu. /tr/pricing sayfasinda bu "/tr/signup.html" veriyordu -
+     * oyle bir dosya YOK (kimlik sayfalari yalnizca kokte tek kopya durur,
+     * build-i18n.py bunu bilerek boyle yapiyor: her dil icin ayri kopya
+     * Supabase OAuth izin listesine 16 adres eklemek demekti).
+     * Sonuc: dort dil surumunde "Abone ol" kullaniciyi 404 sayfasina
+     * goturuyordu. Ingilizce kokte calisiyordu, cunku orada klasor zaten
+     * kokun kendisi. */
     var next = encodeURIComponent(location.pathname + "?plan=" + paket);
-    location.href = d + "signup.html?next=" + next;
+    /* HESABI OLANI KAYIT SAYFASINA GONDERMEYELIM.
+       Oturum suresi dolmus bir musteri de buraya duser; ona "Hesap olustur"
+       gostermek "zaten hesabim var" dedirtir ve akisi kirar. localStorage'da
+       bizim profil kaydimiz ya da Supabase'in kendi oturum anahtari varsa
+       bu kisi DAHA ONCE giris yapmistir -> giris sayfasi.
+       (user.js profili kalici tutuyor; oturum dolsa bile kayit kalir - bu
+       yuzden ust menude adi gorunurken oturum YOK olabiliyor.) */
+    var tanidik = false;
+    try {
+      tanidik = !!localStorage.getItem("jolnova_profil") ||
+        Object.keys(localStorage).some(function (k) {
+          return k.indexOf("sb-") === 0 && k.indexOf("-auth-token") > 0;
+        });
+    } catch (e) { /* ozel sekme: bilinmiyor say */ }
+    location.href = (tanidik ? "/login.html?next=" : "/signup.html?next=") + next;
   }
 
   function uyari(mesaj) {
