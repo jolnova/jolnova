@@ -23,10 +23,41 @@
 <meta name="twitter:description" content="Answers about supported platforms, subtitle editing, how clips are produced, what happens to local files and how the free trial works.">
 <meta name="twitter:image" content="https://jolnova.com/images/og-cover.png">
 <meta name="theme-color" content="#05070B">
-<link rel="icon" type="image/png" href="../images/favicon.png?v=14ca0db142">
+<link rel="icon" type="image/png" href="../images/favicon.png?v=92ac6421db">
 
-<link rel="stylesheet" href="../site.css?v=14ca0db142">
-<!-- kaynak-sha1: c8503994d67e733c5dc9d7645c8598f9d3f382f2 -->
+<script>
+/* ============================================================
+   TEMA — SAYFA BOYANMADAN ONCE UYGULANIR
+   Bu blok BILEREK satir ici ve BILEREK <head> icinde duruyor. Harici
+   bir dosyaya tasinirsa tarayici once koyu temayi boyar, dosya gelince
+   acik temaya gecer: goz alan bir yanip sonme (FOUC) olur.
+   Sira: kullanicinin kayitli secimi > isletim sistemi tercihi > koyu.
+   build-i18n.py bu bolume dokunmaz; urettigi sayfalarda bakilan
+   degerleri temayi_sifirla() geri alir.
+   ============================================================ */
+(function(){var d=document,r=d.documentElement,K='rj_tema',s=null;
+try{s=localStorage.getItem(K)}catch(e){}
+var t=(s==='light'||s==='dark')?s:((window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark');
+r.setAttribute('data-theme',t);
+function renk(){var m=d.querySelector('meta[name="theme-color"]');
+ if(m)m.setAttribute('content',r.getAttribute('data-theme')==='light'?'#F7F8FA':'#05070B');}
+function isaret(){var v=d.querySelectorAll('[data-theme-toggle]'),
+ k=r.getAttribute('data-theme')==='dark',i;
+ for(i=0;i<v.length;i++)v[i].setAttribute('aria-pressed',k?'true':'false');}
+renk();
+window.rjTema=function(){var y=r.getAttribute('data-theme')==='light'?'dark':'light';
+ r.setAttribute('data-theme',y);try{localStorage.setItem(K,y)}catch(e){}renk();isaret();};
+/* Kullanici HENUZ secmediyse isletim sistemi tercihi izlenmeye devam eder.
+   Bir kez sectiginde artik onun secimi kazanir. */
+if(window.matchMedia){var q=matchMedia('(prefers-color-scheme: light)'),f=function(e){var c=null;
+ try{c=localStorage.getItem(K)}catch(x){}
+ if(c==='light'||c==='dark')return;
+ r.setAttribute('data-theme',e.matches?'light':'dark');renk();isaret();};
+ if(q.addEventListener)q.addEventListener('change',f);else if(q.addListener)q.addListener(f);}
+if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else isaret();})();
+</script>
+<link rel="stylesheet" href="../site.css?v=92ac6421db">
+<!-- kaynak-sha1: 8bf521d466c0a3746efdf2a93cd767ce4c50bb81 -->
 </head>
 <body>
 <script type="application/ld+json">
@@ -35,42 +66,43 @@
 <a class="skip" href="#main">Saltar al contenido</a>
 <header class="site-header">
  <div class="wrap">
-  <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=14ca0db142" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=92ac6421db" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
   <nav class="nav" aria-label="Main"><a href="index.html">Inicio</a><a href="how-it-works.html">Cómo funciona</a><a href="features.html">Funciones</a><a href="pricing.html">Precios</a><a href="faq.html">Preguntas</a><a href="support.html" class="on">Soporte</a></nav>
   <div class="head-cta">
-   <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"></rect><rect y="11.25" width="60" height="22.5" fill="#F1BF00"></rect></svg></i><span id="langName">Español</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"></rect><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"></path><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"></path><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"></path><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"></path></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"></rect><circle cx="24" cy="22.5" r="10" fill="#fff"></circle><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"></circle><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"></path></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"></rect><rect x="20" width="20" height="45" fill="#fff"></rect><rect x="40" width="20" height="45" fill="#EF4135"></rect></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="true"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"></rect><rect y="11.25" width="60" height="22.5" fill="#F1BF00"></rect></svg></i><span>Español</span></button></div></div>
+   <div class="langsw" role="group" aria-label="Idioma"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"></rect><rect y="11.25" width="60" height="22.5" fill="#F1BF00"></rect></svg></i><span id="langName">Español</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"></rect><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"></path><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"></path><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"></path><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"></path></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"></rect><circle cx="24" cy="22.5" r="10" fill="#fff"></circle><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"></circle><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"></path></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"></rect><rect x="20" width="20" height="45" fill="#fff"></rect><rect x="40" width="20" height="45" fill="#EF4135"></rect></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="true"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"></rect><rect y="11.25" width="60" height="22.5" fill="#F1BF00"></rect></svg></i><span>Español</span></button></div></div>
+   <button type="button" class="themebtn" data-theme-toggle="" aria-label="Tema oscuro" aria-pressed="true" onclick="rjTema()"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.4 14.5A8.6 8.6 0 0 1 9.5 3.6 8.6 8.6 0 1 0 20.4 14.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.7"></circle><path d="M12 2.7v2.1M12 19.2v2.1M4.8 12H2.7M21.3 12h-2.1M6.7 6.7 5.2 5.2M18.8 18.8l-1.5-1.5M17.3 6.7l1.5-1.5M5.2 18.8l1.5-1.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg><span class="t">Tema oscuro</span></button>
    <a href="../login.html" class="btn btn-secondary btn-sm">Iniciar sesión</a>
    <a href="download.html" class="btn btn-primary btn-sm">↓ Descargar</a>
-   <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="rjMenu()"><span></span></button>
+   <button class="burger" aria-label="Abrir menú" aria-expanded="false" onclick="rjMenu()"><span></span></button>
   </div>
  </div>
 </header>
 <style>
 .wrap.narrow{max-width:720px}
-.supcard{margin-top:28px;background:var(--surface-1);border:1px solid rgba(146,163,190,.16);
+.supcard{margin-top:28px;background:var(--surface-1);border:1px solid var(--border-default);
  border-radius:18px;padding:26px}
 .supseg{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
 .supseg button{flex:1 1 120px;padding:11px 14px;border-radius:10px;cursor:pointer;
- background:rgba(255,255,255,.04);color:var(--text-secondary);
- border:1px solid rgba(146,163,190,.18);font:inherit;font-weight:650}
+ background:var(--surface-2);color:var(--text-secondary);
+ border:1px solid var(--border-default);font:inherit;font-weight:650}
 .supseg button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:800}
 .suplab{display:block;font-weight:700;font-size:14px;margin:16px 0 6px}
-.supin{width:100%;padding:12px 13px;border-radius:11px;background:#0B1018;color:var(--text-primary);
- border:1px solid rgba(146,163,190,.20);font:inherit;line-height:1.55;resize:vertical}
-.supin:focus{outline:none;border-color:var(--accent)}
+.supin{width:100%;padding:12px 13px;border-radius:11px;background:var(--surface-2);color:var(--text-primary);
+ border:1px solid var(--border-default);font:inherit;line-height:1.55;resize:vertical}
+.supin:focus{outline:none;border-color:var(--accent-text)}
 .suphint{font-size:13px;color:var(--text-secondary);margin-top:6px}
 .supopt{font-weight:600;font-size:12.5px;color:var(--text-secondary);opacity:.8}
 .supdrop{display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;
  min-height:96px;padding:14px;border-radius:12px;text-align:center;
- background:rgba(255,255,255,.03);border:1.5px dashed rgba(146,163,190,.30);
+ background:var(--surface-2);border:1.5px dashed var(--border-strong);
  color:var(--text-secondary);font-size:14px;transition:border-color .15s,background .15s}
-.supdrop:hover,.supdrop.drag{border-color:var(--accent);background:rgba(255,197,61,.06)}
+.supdrop:hover,.supdrop.drag{border-color:var(--accent-text);background:var(--accent-a10)}
 .supdrop img{max-width:100%;max-height:230px;border-radius:9px;display:block}
 .supout{margin:14px 0 0;font-size:14.5px;min-height:1.2em}
-.supout.ok{color:var(--accent)}
-.supout.err{color:#FF9AA2}
+.supout.ok{color:var(--accent-text)}
+.supout.err{color:var(--danger-text)}
 .supnote{margin-top:22px;padding:18px 20px;border-radius:14px;
- background:rgba(255,197,61,.06);border:1px solid rgba(255,197,61,.20);
+ background:var(--accent-wash-2);border:1px solid var(--lime-border);
  font-size:14.5px;line-height:1.65;color:var(--text-secondary)}
 .supnote b{color:var(--text-primary)}
 </style>
@@ -118,7 +150,7 @@
  <div class="wrap">
   <div class="foot-grid">
    <div class="foot-brand">
-    <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=14ca0db142" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=92ac6421db" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
     <p>Recorte automático de directos para Windows. Sigue tus fuentes, deja que Jolnova prepare clips verticales y revisa lo que merece publicarse.</p>
     <div class="foot-os"><span class="badge badge-neutral">Aplicación de escritorio para Windows</span></div>
    </div>
@@ -221,7 +253,7 @@ async function rjSupSubmit(e){
  }catch(err){rjSupSay('Could not send — check your connection.','err');}
  btn.disabled=false;return false;}
 </script>
-<script src="../user.js?v=14ca0db142"></script><script src="../lang-de.js?v=14ca0db142"></script><script src="../lang-fr.js?v=14ca0db142"></script><script src="../lang-es.js?v=14ca0db142"></script><script src="../lang.js?v=14ca0db142"></script>
+<script src="../user.js?v=92ac6421db"></script><script src="../lang-de.js?v=92ac6421db"></script><script src="../lang-fr.js?v=92ac6421db"></script><script src="../lang-es.js?v=92ac6421db"></script><script src="../lang.js?v=92ac6421db"></script>
 <script>
 function rjMenu(){var m=document.getElementById('mobnav'),b=document.querySelector('.burger');
  var on=m.classList.toggle('on');document.body.classList.toggle('navopen',on);

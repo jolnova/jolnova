@@ -19,9 +19,40 @@
 <meta property="og:url" content="https://jolnova.com/fr/privacy">
 <meta property="og:image" content="https://jolnova.com/images/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="../images/favicon.png?v=14ca0db142">
-<link rel="stylesheet" href="../site.css?v=14ca0db142">
-<!-- kaynak-sha1: ff0317b2d8e4f4b6ba652bc5641d68deda3a5ee7 -->
+<link rel="icon" type="image/png" href="../images/favicon.png?v=92ac6421db">
+<script>
+/* ============================================================
+   TEMA — SAYFA BOYANMADAN ONCE UYGULANIR
+   Bu blok BILEREK satir ici ve BILEREK <head> icinde duruyor. Harici
+   bir dosyaya tasinirsa tarayici once koyu temayi boyar, dosya gelince
+   acik temaya gecer: goz alan bir yanip sonme (FOUC) olur.
+   Sira: kullanicinin kayitli secimi > isletim sistemi tercihi > koyu.
+   build-i18n.py bu bolume dokunmaz; urettigi sayfalarda bakilan
+   degerleri temayi_sifirla() geri alir.
+   ============================================================ */
+(function(){var d=document,r=d.documentElement,K='rj_tema',s=null;
+try{s=localStorage.getItem(K)}catch(e){}
+var t=(s==='light'||s==='dark')?s:((window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark');
+r.setAttribute('data-theme',t);
+function renk(){var m=d.querySelector('meta[name="theme-color"]');
+ if(m)m.setAttribute('content',r.getAttribute('data-theme')==='light'?'#F7F8FA':'#05070B');}
+function isaret(){var v=d.querySelectorAll('[data-theme-toggle]'),
+ k=r.getAttribute('data-theme')==='dark',i;
+ for(i=0;i<v.length;i++)v[i].setAttribute('aria-pressed',k?'true':'false');}
+renk();
+window.rjTema=function(){var y=r.getAttribute('data-theme')==='light'?'dark':'light';
+ r.setAttribute('data-theme',y);try{localStorage.setItem(K,y)}catch(e){}renk();isaret();};
+/* Kullanici HENUZ secmediyse isletim sistemi tercihi izlenmeye devam eder.
+   Bir kez sectiginde artik onun secimi kazanir. */
+if(window.matchMedia){var q=matchMedia('(prefers-color-scheme: light)'),f=function(e){var c=null;
+ try{c=localStorage.getItem(K)}catch(x){}
+ if(c==='light'||c==='dark')return;
+ r.setAttribute('data-theme',e.matches?'light':'dark');renk();isaret();};
+ if(q.addEventListener)q.addEventListener('change',f);else if(q.addListener)q.addListener(f);}
+if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else isaret();})();
+</script>
+<link rel="stylesheet" href="../site.css?v=92ac6421db">
+<!-- kaynak-sha1: 9aee60350da4cdfd77a91bf1e23bc9ef6babb76e -->
 </head>
 <body>
 <script type="application/ld+json">
@@ -30,13 +61,14 @@
 
 <header class="site-header">
  <div class="wrap">
-  <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=14ca0db142" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=92ac6421db" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
   <nav class="nav" aria-label="Main"><a href="index.html">Accueil</a><a href="how-it-works.html">Comment ça marche</a><a href="features.html">Fonctionnalités</a><a href="pricing.html">Tarifs</a><a href="faq.html">FAQ</a><a href="support.html">Assistance</a></nav>
   <div class="head-cta">
-   <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"></rect><rect x="20" width="20" height="45" fill="#fff"></rect><rect x="40" width="20" height="45" fill="#EF4135"></rect></svg></i><span id="langName">Français</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"></rect><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"></path><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"></path><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"></path><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"></path></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"></rect><circle cx="24" cy="22.5" r="10" fill="#fff"></circle><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"></circle><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"></path></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="true"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"></rect><rect x="20" width="20" height="45" fill="#fff"></rect><rect x="40" width="20" height="45" fill="#EF4135"></rect></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"></rect><rect y="11.25" width="60" height="22.5" fill="#F1BF00"></rect></svg></i><span>Español</span></button></div></div>
+   <div class="langsw" role="group" aria-label="Langue"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"></rect><rect x="20" width="20" height="45" fill="#fff"></rect><rect x="40" width="20" height="45" fill="#EF4135"></rect></svg></i><span id="langName">Français</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"></rect><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"></path><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"></path><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"></path><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"></path></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"></rect><circle cx="24" cy="22.5" r="10" fill="#fff"></circle><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"></circle><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"></path></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="true"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"></rect><rect x="20" width="20" height="45" fill="#fff"></rect><rect x="40" width="20" height="45" fill="#EF4135"></rect></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"></rect><rect y="11.25" width="60" height="22.5" fill="#F1BF00"></rect></svg></i><span>Español</span></button></div></div>
+   <button type="button" class="themebtn" data-theme-toggle="" aria-label="Thème sombre" aria-pressed="true" onclick="rjTema()"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.4 14.5A8.6 8.6 0 0 1 9.5 3.6 8.6 8.6 0 1 0 20.4 14.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.7"></circle><path d="M12 2.7v2.1M12 19.2v2.1M4.8 12H2.7M21.3 12h-2.1M6.7 6.7 5.2 5.2M18.8 18.8l-1.5-1.5M17.3 6.7l1.5-1.5M5.2 18.8l1.5-1.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg><span class="t">Thème sombre</span></button>
    <a href="../login.html" class="btn btn-secondary btn-sm">Se connecter</a>
    <a href="download.html" class="btn btn-primary btn-sm">↓ Télécharger</a>
-   <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="rjMenu()"><span></span></button>
+   <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" onclick="rjMenu()"><span></span></button>
   </div>
  </div>
 </header>
@@ -62,7 +94,7 @@
       <li><b>Traitement par IA :</b> pour rédiger le titre et la description d'un clip, la <b>transcription et un résumé du chat</b> sont envoyés à l'API d'Anthropic (Claude). Ces données ne servent pas à entraîner des modèles.</li>
       <li><b>Identifiant d'appareil :</b> pour qu'un abonnement ne puisse pas tourner sur un nombre illimité de machines, l'application dérive un identifiant de ton ordinateur et l'envoie à la connexion. Sur notre serveur, il est conservé <b>uniquement sous forme de hachage HMAC</b> — l'identifiant brut n'est jamais stocké, et le hachage ne peut pas être reconverti en informations sur ton matériel. Il sert uniquement à compter sur combien de machines un compte est actif.</li>
       <li><b>Statistiques d'utilisation :</b> un petit résumé chiffré de ta propre activité, groupé par jour et par plateforme (kick, twitch, youtube, tiktok, fichier ou autre), avec quatre compteurs : combien de clips ont été créés, approuvés, rejetés et téléchargés. Nous l'utilisons pour comprendre comment le produit est utilisé et vérifier que les limites d'abonnement fonctionnent correctement. Le seul identifiant joint est l'UUID de ton compte, lu depuis ton jeton de connexion et non transporté dans les données elles-mêmes — ni ton adresse e-mail ni l'identifiant d'appareil décrit ci-dessus ne sont envoyés.</li>
-      <li><b>Clip feedback:</b> when you approve or reject a clip, we record that decision together with the numeric signals the app used to pick that moment — its score, what triggered it (chat reaction or a jump in loudness), its length, the layout, the number of chat messages in the window, and a set of measurements such as how much of the clip is speech and how much of the chat looked like laughter. The name of the streamer the clip came from is included, because a football broadcast and a slots stream need different settings and that difference cannot be learned without it. Your account UUID is attached. We use this only to improve which moments the app selects. <b>The clip itself is never sent</b> — not the video, not a preview image, not the title, not the transcript, not the chat text, and not the clip's file name (only a one-way hash of it, used so the same decision is not counted twice).</li>
+      <li><b>Clip feedback:</b> lorsque vous approuvez ou rejetez un clip, nous enregistrons cette décision avec les signaux numériques que l'application a utilisés pour choisir ce moment — sa note, ce qui l'a déclenché (réaction du chat ou hausse soudaine du volume), sa durée, la mise en page, le nombre de messages de chat sur cette fenêtre, ainsi que des mesures telles que la part du clip occupée par la parole et la part du chat qui ressemblait à des rires. Le nom du streameur dont provient le clip est inclus, car une retransmission de football et un stream de machines à sous demandent des réglages différents, et cette différence ne peut pas être apprise sans cette information. Votre UUID de compte est joint. Nous l'utilisons uniquement pour améliorer les moments que l'application sélectionne. <b>The clip itself is never sent</b> — not the video, not a preview image, not the title, not the transcript, not the chat text, and not the clip's file name (only a one-way hash of it, used so the same decision is not counted twice).</li>
     </ul>
     <p><b>None of the data above carries clip content.</b> Video files, preview images, clip titles, subtitle text and chat messages are never sent to our servers. The only place a channel name appears is the clip feedback described above; usage statistics do not contain it.</p>
 
@@ -180,7 +212,7 @@
  <div class="wrap">
   <div class="foot-grid">
    <div class="foot-brand">
-    <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=14ca0db142" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=92ac6421db" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
     <p>Découpage automatique de streams pour Windows. Suis tes sources, laisse Jolnova préparer des clips verticaux et relis ce qui mérite d'être publié.</p>
     <div class="foot-os"><span class="badge badge-neutral">Application de bureau Windows</span></div>
    </div>
@@ -199,7 +231,7 @@
  </div>
 </footer>
 
-<script src="../user.js?v=14ca0db142"></script><script src="../lang-de.js?v=14ca0db142"></script><script src="../lang-fr.js?v=14ca0db142"></script><script src="../lang-es.js?v=14ca0db142"></script><script src="../lang.js?v=14ca0db142"></script>
+<script src="../user.js?v=92ac6421db"></script><script src="../lang-de.js?v=92ac6421db"></script><script src="../lang-fr.js?v=92ac6421db"></script><script src="../lang-es.js?v=92ac6421db"></script><script src="../lang.js?v=92ac6421db"></script>
 
 
 </body></html>

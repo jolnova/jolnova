@@ -2,6 +2,14 @@
    Site ana dili İNGİLİZCE. TR seçilince metin düğümleri sözlükten çevrilir.
    Orijinal İngilizce düğümde saklanır (node.__en) -> TR<->EN kayıpsız geçiş. */
 const TR = {
+  "when you approve or reject a clip, we record that decision together with the numeric signals the app used to pick that moment — its score, what triggered it (chat reaction or a jump in loudness), its length, the layout, the number of chat messages in the window, and a set of measurements such as how much of the clip is speech and how much of the chat looked like laughter. The name of the streamer the clip came from is included, because a football broadcast and a slots stream need different settings and that difference cannot be learned without it. Your account UUID is attached. We use this only to improve which moments the app selects.": "bir klibi onayladığında ya da reddettiğinde, bu kararı uygulamanın o anı seçerken kullandığı sayısal sinyallerle birlikte kaydediyoruz — klibin puanı, neyin tetiklediği (chat tepkisi ya da ani ses yükselmesi), uzunluğu, yerleşimi, o aralıktaki chat mesajı sayısı ve klibin ne kadarının konuşma olduğu, chat'in ne kadarının kahkahaya benzediği gibi ölçümler. Klibin geldiği yayıncının adı da dahildir, çünkü bir futbol yayını ile bir slot yayını farklı ayarlar ister ve bu fark o bilgi olmadan öğrenilemez. Hesap UUID'in eklenir. Bunu yalnızca uygulamanın hangi anları seçtiğini iyileştirmek için kullanıyoruz.",
+  /* Gizlilik: klip geri bildirimi (hukuki metin, ayrintili) */
+    /* --- tema anahtari ve simge dugmelerin aria-label'lari ---
+     Anahtar = INGILIZCE aria-label. Dugmenin gorunen metni yok;
+     ekran okuyucu bu adi okur. */
+  "Dark theme": "Koyu tema",
+  "Open menu": "Menüyü aç",
+  "Language": "Dil",
   /* Odeme kutusu metinleri (#ck-i18n data-*) */
   "Opening checkout…": "Ödeme açılıyor…",
   "Checkout could not be opened.": "Ödeme açılamadı.",
@@ -98,7 +106,7 @@ const TR = {
   "It counts the clips you approve, not the ones Jolnova produces. Everything lands in the review queue first and a clip you reject costs you nothing. There is a daily ceiling as well — 8 on Solo, 30 on Studio, 100 on Agency — so a single day cannot burn the whole month.": "Jolnova'nın ürettiği değil, senin onayladığın klipleri sayar. Her şey önce inceleme kuyruğuna düşer ve reddettiğin bir klip sana hiçbir şeye mal olmaz. Günlük bir tavan da var — Solo'da 8, Studio'da 30, Agency'de 100 — böylece tek bir gün bütün ayı yakamaz.",
   "Yes, on every paid plan. Every subtitle line is listed with its timecode and stays editable: correct a misheard word, rewrite the sentence, or delete a line you do not want on screen. Timings stay exactly as transcribed. Saving re-renders the clip once from a clean master, so correcting it twice does not stack quality loss.": "Evet, her ücretli pakette. Her altyazı satırı zaman koduyla listelenir ve düzenlenebilir kalır: yanlış duyulan bir kelimeyi düzelt, cümleyi yeniden yaz ya da ekranda istemediğin bir satırı sil. Zamanlamalar deşifre edildiği gibi kalır. Kaydettiğinde klip temiz ustadan bir kez yeniden işlenir; iki kez düzeltmek kalite kaybını üst üste bindirmez.",
   "What is sports mode?": "Spor modu nedir?",
-  "A second detector for match broadcasts. Instead of looking for laughter and chat spikes it follows the commentary and the crowd, so goals, penalties and red cards come out as clips. It works on full matches and on the highlight packages leagues publish on their own channels. Studio and Agency.": "Maç yayınları için ikinci bir tespit yolu. Kahkaha ve sohbet yoğunluğu yerine spikeri ve tribünü izler; böylece goller, penaltılar ve kırmızı kartlar klip olarak çıkar. Hem tam maçlarda hem de liglerin kendi kanallarında yayınladığı özetlerde çalışır. Studio ve Agency.",
+  "A second detector built for match broadcasts, so goals, penalties and red cards come out as clips. It works on full matches and on the highlight packages leagues publish on their own channels. Studio and Agency.": "Maç yayınları için yapılmış ikinci bir tespit yolu; goller, penaltılar ve kırmızı kartlar klip olarak çıkar. Hem tam maçlarda hem de liglerin kendi kanallarında yayınladığı özetlerde çalışır. Studio ve Agency.",
   "What does subtitle translation do?": "Altyazı çevirisi ne yapar?",
   "It rewrites the burned-in subtitles of an approved clip in another language — English, Turkish, German, French or Spanish — and re-renders the clip once from the clean master. Useful when the audience you want does not speak the language of the stream. Studio and Agency.": "Onayladığın bir klibin video entegre altyazısını başka bir dilde yeniden yazar — İngilizce, Türkçe, Almanca, Fransızca ya da İspanyolca — ve klibi temiz ustadan bir kez yeniden işler. Ulaşmak istediğin kitle yayının dilini konuşmuyorsa işe yarar. Studio ve Agency.",
   "The platform name and channel line Jolnova draws on the clip, such as the platform name and the channel handle. Studio and Agency can hide it. Because Jolnova draws it rather than the source, removing it leaves the picture untouched.": "Jolnova'nın klibe çizdiği platform adı ve kanal satırı. Studio ve Agency bunu gizleyebilir. Kaynaktan gelmediği, bizim çizdiğimiz bir katman olduğu için kaldırmak görüntüye dokunmaz.",
@@ -273,7 +281,6 @@ const TR = {
   "You paste a link. The app does the rest.": "Sen bir link yapıştır. Gerisini uygulama halleder.",
   "No setup, no editing, no watching streams for hours. The app runs in the background and hands you clips that are ready to post.": "Kurulum, kurgu, saatlerce yayın izleme yok. Uygulama arka planda çalışır; önüne paylaşmaya hazır klipler gelir.",
   "It catches the best moment": "En iyi anı yakalar",
-  "It combines chat spikes, audio peaks and speech analysis. Not just funny — it also catches drama, strong reactions, arguments and standout events.": "Chat patlaması, ses yükselmesi ve konuşma çözümlemesini birlikte değerlendirir. Sadece komik değil; dram, güçlü tepki, tartışma ve çarpıcı olayları da yakalar.",
   "AI filters": "Yapay zekâ eler",
   "It makes the vertical clip": "Dikey klibi üretir",
   "In the right format (camera on top + gameplay below for games, full screen for IRL) with captions burned in — and your own logo if you want.": "Doğru formatta (oyunda üstte kamera + altta oyun, IRL'de tam ekran), video entegre altyazı — istersen kendi logonla.",
@@ -287,7 +294,6 @@ const TR = {
   "Paste a past broadcast (VOD) or YouTube link — it processes the video and pulls clips from the best moments.": "Eski yayın (VOD) ya da YouTube linki yapıştır — videoyu işleyip en iyi anlardan klip çıkarır.",
   "Paste a past broadcast (VOD) or YouTube link — it pulls clips from the best moments.": "Eski yayın (VOD) ya da YouTube linki yapıştır — en iyi anlardan klip çıkarır.",
   "Paste a link — get clips from a past broadcast or YouTube.": "Bir link yapıştır — eski yayından ya da YouTube'dan klip çıksın.",
-  "Downloads → scans loud moments → clips, with": "İndirir → sesli anları tarar → kliplar,",
   "live progress": "ilerleme canlı",
   "an interrupted job never restarts from scratch": "yarıda kesilse baştan indirmez",
   "Automatic": "Otomatik",
@@ -305,7 +311,6 @@ const TR = {
   "Watching, editing, captioning and posting — all in one app. Below we walk through every feature with": "İzleme, kurgu, altyazı ve paylaşım — hepsi tek uygulamada. Aşağıda her özelliği şununla anlattık:",
   "real in-app views": "gerçek uygulama görüntüleri",
   "Not just funny: drama, reactions, arguments, insight": "Sadece komik değil: dram, tepki, tartışma, bilgi",
-  "A short reason under the score — why it's worth watching": "Puanın altında gerekçe — neden izlenir",
   "Title + description + hashtags with the streamer's name, ready to go": "Başlık + açıklama + yayıncı adıyla hashtag, hazır",
   "No need to wait for a live stream. Paste a VOD or YouTube link and the app processes the video and builds clips from the best moments.": "Canlı yayını beklemene gerek yok. VOD ya da YouTube linki yapıştır; uygulama videoyu işleyip en iyi anlardan klip üretir.",
   "Supports Kick and YouTube (Twitch coming soon)": "Kick ve YouTube desteklenir (Twitch yakında)",
@@ -372,7 +377,6 @@ const TR = {
   "Your name": "Adın",
   // --- parca ceviriler ---
   "— an interrupted job never restarts from scratch": "— yarıda kesilse baştan indirmez",
-  "under the score — why it's worth watching": "puanın altında — neden izlenir",
   "drama, reactions, arguments, insight": "dram, tepki, tartışma, bilgi",
   "into the video — watch it right away": "videoya — hemen izle",
   "hashtags with the streamer's name": "yayıncı adıyla hashtag",
@@ -395,7 +399,6 @@ const TR = {
   "timeline": "zaman çubuğu",
   "Live preview": "Anlık önizleme",
   "while dragging": "sürüklerken",
-  "Downloads → scans loud moments → clips, with": "İndirir → sesli anları tarar → kliplar,",
   "Pause / Resume": "Durdur / Devam",
   "Automatic": "Otomatik",
   "on every clip": "her klipte",
@@ -861,7 +864,7 @@ const TR = {
   "Is there a free trial?": "Ücretsiz deneme var mı?",
   "Trial terms will be announced when billing goes live.": "Deneme koşulları faturalandırma açıldığında duyurulacak.",
   "A clip did not get produced from a stream I expected.": "Beklediğim bir yayından klip üretilmedi.",
-  "Detection depends on chat and audio activity. A quiet stretch may not produce candidates. You can lower the detection sensitivity in Settings to catch more moments, at the cost of more weak candidates.": "Algılama sohbet ve ses hareketliliğine bağlıdır. Sessiz bir bölüm aday üretmeyebilir. Daha çok an yakalamak için Ayarlar'dan algılama eşiğini düşürebilirsin; karşılığında daha çok zayıf aday gelir.",
+  "A stretch where little happens may not produce candidates. Set detection sensitivity to Many in Settings to catch more moments, at the cost of more weak candidates.": "Pek bir şey olmayan bir bölüm aday üretmeyebilir. Daha çok an yakalamak için Ayarlar'dan tespit hassasiyetini Çok'a al; karşılığında daha çok zayıf aday gelir.",
   "The application says my session could not be verified.": "Uygulama oturumumun doğrulanamadığını söylüyor.",
   "That means it could not reach the sign-in service. Check your internet connection — the application keeps working for a grace period offline, then asks you to sign in again.": "Bu, giriş servisine ulaşamadığı anlamına gelir. İnternet bağlantını kontrol et — uygulama çevrimdışı bir süre çalışmaya devam eder, sonra tekrar giriş yapmanı ister.",
   "Clips from a Twitch source look like an advert.": "Twitch kaynağından gelen klipler reklam gibi görünüyor.",
@@ -943,10 +946,10 @@ const TR = {
   "The practical ceiling is your own disk space and CPU": "Pratik tavan kendi disk alanın ve işlemcindir",
   "Videos you process from My Files are not creators and are not counted": "Dosyalarım'dan işlediğin videolar yayıncı değildir ve sayılmaz",
   "How a moment is found": "Bir an nasıl bulunur",
-  "Jolnova watches three signals in the recording and cuts where they line up:": "Jolnova kayıtta üç sinyali izler ve bunlar aynı yere denk geldiğinde keser:",
-  "Chat density — how fast messages arrive compared with the calm baseline": "Chat yoğunluğu — mesajların sakin seviyeye göre ne kadar hızlandığı",
-  "Audio spikes — laughter, shouting, a sudden jump in loudness": "Ses patlamaları — kahkaha, bağırma, ani ses yükselmesi",
-  "Speech content — what is actually being said, from the transcript": "Konuşma içeriği — transkriptten, gerçekte ne söylendiği",
+  "Jolnova analyses the whole recording and cuts out the moments worth watching as candidates.": "Jolnova kaydın tamamını inceler ve izlenmeye değer anları aday olarak keser.",
+  "The whole recording is analysed, start to finish": "Kaydın tamamı baştan sona incelenir",
+  "Analysis runs on your computer — your video is never uploaded": "İnceleme senin bilgisayarında çalışır — videon hiçbir zaman yüklenmez",
+  "No API key to buy and no cost per clip": "Satın alınacak API anahtarı ve klip başına ücret yok",
   "Detection sensitivity is a setting you control. Every clip still lands in the review queue and you decide what leaves it.": "Tespit hassasiyeti senin kontrolündeki bir ayardır. Her klip yine inceleme kuyruğuna düşer, oradan neyin çıkacağına sen karar verirsin.",
   // fiyat sayfasi SSS
   "Do my own video files count as a platform?": "Kendi video dosyalarım platform sayılır mı?",
@@ -961,7 +964,7 @@ const TR = {
   "How many creators can I track?": "Kaç yayıncı takip edebilirim?",
   "Can I really export in 4K?": "Gerçekten 4K dışa aktarabilir miyim?",
   "Only when the source is already 4K — a YouTube video or a recording of your own. Twitch and Kick broadcast at 1080p at most, so a clip cut from a live stream comes out at 1080p whatever your plan says. The plan sets a ceiling; it cannot add resolution that was never in the video.": "Yalnızca kaynak zaten 4K ise — bir YouTube videosu ya da kendi kaydın. Twitch ve Kick en fazla 1080p yayınlar; dolayısıyla canlı yayından kesilen bir klip, paketin ne derse desin 1080p çıkar. Paket bir tavan belirler; videoda hiç olmayan çözünürlüğü ekleyemez.",
-  "Chat density, audio spikes and the speech content of the recording. Where those signals line up, Jolnova cuts a candidate and puts it in the review queue. You approve or reject every one of them.": "Chat yoğunluğu, ses patlamaları ve kaydın konuşma içeriği. Bu sinyaller aynı yere denk geldiğinde Jolnova bir aday keser ve inceleme kuyruğuna koyar. Her birini sen onaylar ya da reddedersin.",
+  "Every candidate lands in the review queue — you approve or reject it": "Her aday inceleme kuyruğuna düşer — onaylayan ya da reddeden sensin",
   "Can I turn the watermark off?": "Filigranı kapatabilir miyim?",
   "Yes, on every paid plan. It is a switch in Settings rather than a paid upgrade.": "Evet, her ücretli pakette. Ücretli bir yükseltme değil, Ayarlar'daki bir anahtardır.",
   "Yes. Clip detection, transcription and title generation are part of the product — there is no separate API key to buy or configure.": "Evet. Klip tespiti, transkripsiyon ve başlık üretimi ürünün parçasıdır — ayrıca satın alıp yapılandıracağın bir API anahtarı yok.",
@@ -970,15 +973,15 @@ const TR = {
   "Sort by newest, oldest or duration": "En yeni, en eski ya da süreye göre sırala",
   "Watermark on or off — your choice": "Filigran açık ya da kapalı — seçim senin",
   "Export resolution follows your plan and your source: 720p on Starter, 1080p on Creator, and 4K on Pro when the source is 4K. Twitch and Kick broadcast at 1080p at most.": "Dışa aktarma çözünürlüğü paketini ve kaynağını izler: Starter'da 720p, Creator'da 1080p, kaynak 4K ise Pro'da 4K. Twitch ve Kick en fazla 1080p yayınlar.",
-  "Jolnova reads three signals from the recording — how dense the chat gets, where the audio jumps, and what is actually being said — and cuts a candidate where they line up.": "Jolnova kayıttan üç sinyal okur — chat'in ne kadar yoğunlaştığı, sesin nerede sıçradığı ve gerçekte ne söylendiği — ve bunlar aynı yere denk geldiğinde bir aday keser.",
-  "Chat density against the calm baseline": "Sakin seviyeye karşı chat yoğunluğu",
-  "Audio spikes: laughter, shouting, sudden loudness": "Ses patlamaları: kahkaha, bağırma, ani yükselme",
-  "Speech content from the transcript": "Transkriptten konuşma içeriği",
+  "No AI moment scoring": "An puanlaması yok",
+  "Sports": "Spor",
+  "No clip is graded by a language model, and no model decides whether a moment is good enough. Every candidate goes to the review queue and the decision there stays yours.": "Hiçbir klip bir dil modeli tarafından notlandırılmaz ve bir anın yeterince iyi olup olmadığına hiçbir model karar vermez. Her aday inceleme kuyruğuna gider, oradaki karar senindir.",
+  "Give it a match or a highlights video. Goals and the other key moments come out as clips, each starting far enough back to hold the whole build-up, with the scoreboard placed where a phone can read it.": "Bir maç ya da özet videosu ver. Goller ve diğer önemli anlar klip olarak çıkar; her klip, gelişimin tamamını içine alacak kadar geriden başlar ve skor tabelası telefonda okunacak yere konur.",
+  "when you approve or reject a clip, we record that decision together with the numeric measurements the app used to select that moment, plus the clip's length and layout. The name of the streamer the clip came from is included, because a football broadcast and a slots stream need different settings and that difference cannot be learned without it. Your account UUID is attached. We use this only to improve which moments the app selects.": "bir klibi onayladığında ya da reddettiğinde, bu kararı uygulamanın o anı seçerken kullandığı sayısal ölçümlerle ve klibin süresi ile yerleşimiyle birlikte kaydederiz. Klibin geldiği yayıncının adı da dahildir; çünkü bir futbol yayını ile bir slot yayını farklı ayarlar ister ve bu fark o bilgi olmadan öğrenilemez. Hesap UUID'n eklenir. Bunu yalnızca uygulamanın hangi anları seçtiğini iyileştirmek için kullanırız.",
   "Detection sensitivity is a setting you control. Every candidate still goes to the review queue, and you decide what leaves it.": "Tespit hassasiyeti senin kontrolündeki bir ayardır. Her aday yine inceleme kuyruğuna gider, oradan neyin çıkacağına sen karar verirsin.",
   "You download the finished clip and post it yourself. Jolnova does not publish to any platform on your behalf.": "Biten klibi sen indirir ve sen paylaşırsın. Jolnova senin adına hiçbir platforma paylaşım yapmaz.",
   // ---- SSS sayfasi (faq.html) ----
   "Twitch, Kick, YouTube and TikTok. A Single Platform plan covers one of them, chosen by you in the application; an All Platforms plan covers all four. My Files — videos already on your computer — is included with every plan and is never counted as a platform.": "Twitch, Kick, YouTube ve TikTok. Tek Platform paketi bunlardan birini kapsar — hangisi olduğunu uygulamada sen seçersin; Tüm Platformlar paketi dördünü birden kapsar. Dosyalarım — bilgisayarında zaten duran videolar — her pakete dahildir ve asla platform sayılmaz.",
-  "Three signals in the recording: how dense the chat gets compared with its calm baseline, where the audio spikes, and what is being said in the transcript. Where those line up, a candidate is cut and sent to the review queue. You approve or reject every one of them, and detection sensitivity is a setting you control.": "Kayıttaki üç sinyal: chat'in sakin seviyesine göre ne kadar yoğunlaştığı, sesin nerede patladığı ve transkriptte ne söylendiği. Bunlar aynı yere denk geldiğinde bir aday kesilir ve inceleme kuyruğuna gönderilir. Her birini sen onaylar ya da reddedersin; tespit hassasiyeti de senin kontrolündedir.",
   "Twitch, Kick, YouTube and TikTok. On a Single Platform plan you pick one of them inside the application, so the same plan can be Twitch for one person and TikTok for another. An All Platforms plan gives you all four at once.": "Twitch, Kick, YouTube ve TikTok. Tek Platform paketinde bunlardan birini uygulamanın içinde seçersin; yani aynı paket birinde Twitch, diğerinde TikTok olabilir. Tüm Platformlar paketi dördünü birden verir.",
   "How often can I change my platform?": "Platformumu ne sıklıkta değiştirebilirim?",
   "Once a month, on a Single Platform plan. Open Settings, change the selection and it applies immediately; the next change becomes available a month later.": "Tek Platform paketinde ayda bir. Ayarlar'ı aç, seçimi değiştir; anında geçerli olur. Bir sonraki hakkın bir ay sonra açılır.",
@@ -1083,7 +1086,7 @@ const TR = {
   "Live sources are monitored in the background, within the days and hours you allow.": "Canlı kaynaklar, izin verdiğin gün ve saatler içinde arka planda izlenir.",
   "A run schedule keeps it idle the rest of the time": "Çalışma programı, kalan zamanda boşta bekletir",
   "Moments are found": "Anlar bulunur",
-  "Chat density, audio spikes and speech content are read locally and a candidate is cut where they line up.": "Chat yoğunluğu, ses patlamaları ve konuşma içeriği yerelde okunur; bunlar aynı yere denk geldiğinde bir aday kesilir.",
+  "The recording is analysed on your own computer and the moments worth watching are cut out as candidates.": "Kayıt senin bilgisayarında incelenir ve izlenmeye değer anlar aday olarak kesilir.",
   "No AI score, no quality grade": "AI puanı yok, kalite notu yok",
   "Clips arrive in a queue. Approve what you like, fix the subtitles and download it in HD.": "Klipler kuyruğa düşer. Beğendiğini onayla, altyazısını düzelt ve HD indir.",
   "Jolnova checks your Kick, Twitch and TikTok sources continuously. The moment a channel goes live, recording begins by itself — you do not have to be at the computer when it starts. Starter records one stream at a time, Creator two and Pro four.": "Jolnova, Kick, Twitch ve TikTok kaynaklarını sürekli kontrol eder. Kanal canlıya geçtiği an kayıt kendi başlar — o sırada bilgisayar başında olman gerekmez. Starter aynı anda bir yayın, Creator iki, Pro dört yayın kaydeder.",
@@ -1145,8 +1148,8 @@ const TR = {
   "Record several streams at once — 1 on Starter, 2 on Creator, 4 on Pro": "Aynı anda birden fazla yayın kaydet — Starter'da 1, Creator'da 2, Pro'da 4",
   "A live recording uses roughly 5.6 GB per stream per hour, so the concurrency limit is about your disk, not about the licence.": "Canlı kayıt, yayın başına saatte yaklaşık 5,6 GB kullanır; yani eş zamanlılık sınırı lisansla değil diskinle ilgilidir.",
   "MOMENT DETECTION": "AN TESPİTİ",
-  "Three signals decide what becomes a clip": "Neyin klip olacağına üç sinyal karar verir",
-  "Detection runs on your own machine and costs nothing per clip. Jolnova reads three things from the recording and cuts a candidate where they line up.": "Tespit senin makinende çalışır ve klip başına hiçbir maliyeti yoktur. Jolnova kayıttan üç şey okur ve bunlar aynı yere denk geldiğinde bir aday keser.",
+  "The moments worth posting, found for you": "Paylaşmaya değer anlar, senin yerine bulunmuş",
+  "Jolnova analyses the whole recording and cuts out the moments worth watching as candidates. The analysis runs on your own machine and costs nothing per clip.": "Jolnova kaydın tamamını inceler ve izlenmeye değer anları aday olarak keser. İnceleme senin kendi makinende çalışır ve klip başına hiçbir maliyeti yoktur.",
   "Detection sensitivity is a setting: Few, Balanced or Many": "Tespit hassasiyeti bir ayardır: Az, Normal ya da Çok",
   "There is no AI score and no quality grade on a clip. The AI writes one thing: the title of a clip you approved.": "Klipte AI puanı ya da kalite notu yoktur. AI tek bir şey yazar: onayladığın klibin başlığı.",
   "Filter by Kick, Twitch, TikTok, YouTube or local files": "Kick, Twitch, TikTok, YouTube ya da yerel dosyalara göre filtrele",
@@ -1218,7 +1221,6 @@ const TR = {
   "No automatic publishing": "Otomatik paylaşım yok",
   "Jolnova produces the clip file. It never connects to a posting account and never uploads on your behalf — you download the clip and post it yourself.": "Jolnova klip dosyasını üretir. Hiçbir paylaşım hesabına bağlanmaz ve senin adına yükleme yapmaz — klibi sen indirir, sen paylaşırsın.",
   "No AI scoring": "AI puanlaması yok",
-  "No clip carries a score or a quality grade. Detection is a signal-based cut and the decision at the review queue is yours.": "Hiçbir klip puan ya da kalite notu taşımaz. Tespit sinyale dayalı bir kesimdir; inceleme kuyruğundaki karar senindir.",
   "No montage or compilation": "Montaj ya da derleme yok",
   "Clips are produced one at a time. There is no feature that stitches several moments into a single longer video.": "Klipler tek tek üretilir. Birden fazla anı tek bir uzun videoda birleştiren bir özellik yoktur.",
   "The free trial runs for 3 days or 50 clips, whichever comes first, with the Jolnova watermark and 720p export.": "Ücretsiz deneme 3 gün ya da 50 klip — hangisi önce gelirse; Jolnova filigranı açık ve 720p dışa aktarımla.",
@@ -1228,7 +1230,6 @@ const TR = {
   "Ranges that pass midnight, like 20:00 to 02:00": "Gece yarısını aşan aralıklar, örneğin 20:00 – 02:00",
   "A live recording is roughly 5.6 GB per stream per hour, so this is real disk saved": "Canlı kayıt yayın başına saatte yaklaşık 5,6 GB'dir; yani bu gerçekten kazanılan disk demektir",
   "Several streams at once — 1 on Starter, 2 on Creator, 4 on Pro": "Aynı anda birden fazla yayın — Starter'da 1, Creator'da 2, Pro'da 4",
-  "Jolnova reads three signals from the recording — how dense the chat gets, where the audio jumps, and what is actually being said — and cuts a candidate where they line up. All three run on your own machine and cost nothing per clip.": "Jolnova kayıttan üç sinyal okur — chat'in ne kadar yoğunlaştığı, sesin nerede sıçradığı ve gerçekte ne söylendiği — ve bunlar aynı yere denk geldiğinde bir aday keser. Üçü de senin makinende çalışır ve klip başına hiçbir maliyeti yoktur.",
   "Sensitivity is a setting: Few, Balanced or Many": "Hassasiyet bir ayardır: Az, Normal ya da Çok",
   "No clip carries an AI score or a quality grade. Every candidate goes to the review queue and you decide what leaves it.": "Hiçbir klip AI puanı ya da kalite notu taşımaz. Her aday inceleme kuyruğuna gider ve oradan neyin çıkacağına sen karar verirsin.",
   "Each moment is cut and reframed to 9:16 using the layout you picked for that streamer — or the one saved in a clip preset.": "Her an kesilir ve o yayıncı için seçtiğin yerleşimle — ya da bir klip ön ayarında kayıtlı olanla — 9:16'ya yeniden kadrajlanır.",
@@ -1291,8 +1292,8 @@ const TR = {
   "Yes. The run schedule decides which days and hours Jolnova is allowed to track your streamers; outside them it stays idle instead of recording an empty channel.": "Evet. Çalışma programı, Jolnova'nın yayıncılarını hangi gün ve saatlerde takip edebileceğine karar verir; dışında boş bir kanalı kaydetmek yerine boşta bekler.",
   "You can add weekly time ranges over several days, ranges that pass midnight such as 20:00 to 02:00, and one-off exceptions for a single date — either stay idle all day, or run only between two hours. Times follow your computer's local clock, so daylight saving takes care of itself.": "Birden fazla güne yayılan haftalık saat aralıkları, 20:00 – 02:00 gibi gece yarısını aşan aralıklar ve tek bir güne özel istisnalar ekleyebilirsin — ya bütün gün boşta kal ya da yalnızca iki saat arasında çalış. Saatler bilgisayarının yerel saatini izler; yaz saati kendiliğinden doğru çalışır.",
   "It is a local timer: Jolnova can only follow the schedule while your computer is on and the application is running. Turn the schedule off and it tracks around the clock again. Available on every plan.": "Bu yerel bir zamanlayıcıdır: Jolnova programı yalnızca bilgisayarın açıkken ve uygulama çalışırken uygulayabilir. Programı kapatırsan yeniden 7/24 takip eder. Her pakette vardır.",
-  "Three signals in the recording: how dense the chat gets compared with its calm baseline, where the audio spikes, and what is being said in the transcript. Where those line up, a candidate is cut and sent to the review queue. You approve or reject every one of them, and detection sensitivity is a setting you control — Few, Balanced or Many.": "Kayıttaki üç sinyal: chat'in sakin seviyesine göre ne kadar yoğunlaştığı, sesin nerede patladığı ve transkriptte ne söylendiği. Bunlar aynı yere denk geldiğinde bir aday kesilir ve inceleme kuyruğuna gönderilir. Her birini sen onaylar ya da reddedersin; tespit hassasiyeti de senin kontrolündedir — Az, Normal ya da Çok.",
-  "All three signals are measured on your own computer, so detection costs nothing per clip.": "Üç sinyal de senin bilgisayarında ölçülür; bu yüzden tespitin klip başına hiçbir maliyeti yoktur.",
+  "Jolnova analyses the whole recording and cuts out the moments worth watching as candidates. Each one is sent to the review queue, where you approve or reject it, and detection sensitivity is a setting you control — Few, Balanced or Many.": "Jolnova kaydın tamamını inceler ve izlenmeye değer anları aday olarak keser. Her aday inceleme kuyruğuna gönderilir; onaylayan ya da reddeden sensin. Tespit hassasiyeti de senin kontrolündeki bir ayardır — Az, Normal ya da Çok.",
+  "The analysis runs on your own computer: your video is never uploaded and detection costs nothing per clip.": "İnceleme senin bilgisayarında çalışır: videon hiçbir zaman yüklenmez ve tespitin klip başına hiçbir maliyeti yoktur.",
   "You can trim the start and end, correct the subtitle text, add or remove a text overlay, add or remove an image overlay, and change the thumbnail. Effects are always re-applied from the untouched original, so nothing degrades.": "Başı ve sonu kırpabilir, altyazı metnini düzeltebilir, yazı bindirmesi ekleyip kaldırabilir, görsel bindirmesi ekleyip kaldırabilir ve kapak görselini değiştirebilirsin. Efektler her zaman el değmemiş orijinalden yeniden uygulanır, hiçbir şey bozulmaz.",
   "Yes, they are rendered into the picture in the same encoding pass, so clips stay readable when they autoplay without sound. Starter produces clips without subtitles; Creator and Pro burn them in.": "Evet, aynı kodlama geçişinde görüntünün içine işlenir; böylece klipler sessiz otomatik oynatıldığında da okunur kalır. Starter altyazısız klip üretir; Creator ve Pro altyazıyı gömer.",
   "Vertical 9:16, with the watermark on or off as you prefer on any paid plan. The resolution ceiling follows your plan: 720p on Starter and during the free trial, 1080p on Creator, 4K on Pro. A ceiling is not a promise — Twitch and Kick broadcast at 1080p at most, so 4K is only reachable when the source itself is 4K, such as a YouTube video or one of your own recordings.": "Dikey 9:16; her ücretli pakette filigranı tercihine göre açık ya da kapalı. Çözünürlük tavanı paketini izler: Starter'da ve ücretsiz denemede 720p, Creator'da 1080p, Pro'da 4K. Tavan bir vaat değildir — Twitch ve Kick en fazla 1080p yayınlar; dolayısıyla 4K yalnızca kaynağın kendisi 4K olduğunda, örneğin bir YouTube videosu ya da kendi kayıtlarından biri olduğunda mümkündür.",
@@ -1310,7 +1311,7 @@ const TR = {
   "Can I remove the platform name from the clip?": "Platform adını klipten kaldırabilir miyim?",
   "Yes, on Creator and Pro. The platform name and channel line are drawn by Jolnova rather than by the source, so hiding them leaves the picture untouched.": "Evet, Creator ve Pro'da. Platform adını ve kanal satırını kaynak değil Jolnova çizer; bu yüzden gizlemek görüntüye dokunmaz.",
   "Is there an AI score on the clips?": "Kliplerde AI puanı var mı?",
-  "No. Clips carry no score and no quality grade, and no model decides whether a moment is good enough. Detection is a signal-based cut — chat density, audio spikes and speech content — and the decision at the review queue is yours.": "Hayır. Klipler puan ya da kalite notu taşımaz ve bir anın yeterince iyi olup olmadığına hiçbir model karar vermez. Tespit sinyale dayalı bir kesimdir — chat yoğunluğu, ses patlamaları ve konuşma içeriği — ve inceleme kuyruğundaki karar senindir.",
+  "No. Clips carry no score and no quality grade, and no model decides whether a moment is good enough. Jolnova cuts candidates out of the recording and the decision at the review queue is yours.": "Hayır. Klipler puan ya da kalite notu taşımaz ve bir anın yeterince iyi olup olmadığına hiçbir model karar vermez. Jolnova kayıttan adayları keser; inceleme kuyruğundaki karar senindir.",
   "The AI does one job in Jolnova: it writes the title, description and hashtags of a clip you already approved.": "Jolnova'da AI tek bir iş yapar: onayladığın klibin başlığını, açıklamasını ve hashtag'lerini yazar.",
   "Can Jolnova combine several clips into one longer video?": "Jolnova birden fazla klibi tek bir uzun videoda birleştirebilir mi?",
   "No. Clips are produced one at a time and there is no montage or compilation feature.": "Hayır. Klipler tek tek üretilir ve montaj ya da derleme özelliği yoktur.",
@@ -1674,6 +1675,16 @@ function _rjWalk(root) {
     if (el.__ph === undefined) el.__ph = el.getAttribute('placeholder');
     const ceviri = d ? d[el.__ph] : null;
     el.setAttribute('placeholder', ceviri || el.__ph);
+  });
+  /* aria-label GORUNMEYEN ama OKUNAN metindir: ekran okuyucu kullanicisi
+     icin dugmenin ADI odur. Simgeyle anlatilan dugmelerin (tema anahtari,
+     hamburger menu, dil secici) baska metni yok; cevrilmezlerse sayfa
+     Turkce okunurken dugme adlari Ingilizce kalirdi.
+     Ingilizce asil dugumde saklanir - metin dugumleriyle ayni yol. */
+  root.querySelectorAll('[aria-label]').forEach(el => {
+    if (el.__al === undefined) el.__al = el.getAttribute('aria-label');
+    const ceviri = d ? d[el.__al] : null;
+    el.setAttribute('aria-label', ceviri || el.__al);
   });
   /* ODEME METINLERI data-* ICINDE YASIYOR (#ck-i18n) ve buraya kadar HIC
      cevrilmiyordu: metin dugumu degiller, placeholder da degiller. Sonuc:

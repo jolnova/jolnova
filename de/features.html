@@ -23,10 +23,41 @@
 <meta name="twitter:description" content="Live tracking for Kick, Twitch and TikTok, YouTube links, subtitle text editing and styling, watermark and platform badge control — every Jolnova feature explained.">
 <meta name="twitter:image" content="https://jolnova.com/images/og-cover.png">
 <meta name="theme-color" content="#05070B">
-<link rel="icon" type="image/png" href="../images/favicon.png?v=14ca0db142">
-<link rel="preload" as="image" href="../images/mock/de/dashboard.webp?v=14ca0db142">
-<link rel="stylesheet" href="../site.css?v=14ca0db142">
-<!-- kaynak-sha1: 10235daf95d079269af6f8923ede937067e54474 -->
+<link rel="icon" type="image/png" href="../images/favicon.png?v=92ac6421db">
+<link rel="preload" as="image" href="../images/mock/de/dashboard.webp?v=92ac6421db">
+<script>
+/* ============================================================
+   TEMA — SAYFA BOYANMADAN ONCE UYGULANIR
+   Bu blok BILEREK satir ici ve BILEREK <head> icinde duruyor. Harici
+   bir dosyaya tasinirsa tarayici once koyu temayi boyar, dosya gelince
+   acik temaya gecer: goz alan bir yanip sonme (FOUC) olur.
+   Sira: kullanicinin kayitli secimi > isletim sistemi tercihi > koyu.
+   build-i18n.py bu bolume dokunmaz; urettigi sayfalarda bakilan
+   degerleri temayi_sifirla() geri alir.
+   ============================================================ */
+(function(){var d=document,r=d.documentElement,K='rj_tema',s=null;
+try{s=localStorage.getItem(K)}catch(e){}
+var t=(s==='light'||s==='dark')?s:((window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark');
+r.setAttribute('data-theme',t);
+function renk(){var m=d.querySelector('meta[name="theme-color"]');
+ if(m)m.setAttribute('content',r.getAttribute('data-theme')==='light'?'#F7F8FA':'#05070B');}
+function isaret(){var v=d.querySelectorAll('[data-theme-toggle]'),
+ k=r.getAttribute('data-theme')==='dark',i;
+ for(i=0;i<v.length;i++)v[i].setAttribute('aria-pressed',k?'true':'false');}
+renk();
+window.rjTema=function(){var y=r.getAttribute('data-theme')==='light'?'dark':'light';
+ r.setAttribute('data-theme',y);try{localStorage.setItem(K,y)}catch(e){}renk();isaret();};
+/* Kullanici HENUZ secmediyse isletim sistemi tercihi izlenmeye devam eder.
+   Bir kez sectiginde artik onun secimi kazanir. */
+if(window.matchMedia){var q=matchMedia('(prefers-color-scheme: light)'),f=function(e){var c=null;
+ try{c=localStorage.getItem(K)}catch(x){}
+ if(c==='light'||c==='dark')return;
+ r.setAttribute('data-theme',e.matches?'light':'dark');renk();isaret();};
+ if(q.addEventListener)q.addEventListener('change',f);else if(q.addListener)q.addListener(f);}
+if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else isaret();})();
+</script>
+<link rel="stylesheet" href="../site.css?v=92ac6421db">
+<!-- kaynak-sha1: c7a175749dc54da54f4a38ca5e66d5e80c13bd34 -->
 </head>
 <body>
 <script type="application/ld+json">
@@ -35,17 +66,19 @@
 <a class="skip" href="#main">Zum Inhalt springen</a>
 <header class="site-header">
  <div class="wrap">
-  <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=14ca0db142" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=92ac6421db" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
   <nav class="nav" aria-label="Main"><a href="index.html">Start</a><a href="how-it-works.html">So funktioniert es</a><a href="features.html" class="on">Funktionen</a><a href="pricing.html">Preise</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
   <div class="head-cta">
-   <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span id="langName">Deutsch</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"></rect><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"></path><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"></path><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"></path><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"></path></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"></rect><circle cx="24" cy="22.5" r="10" fill="#fff"></circle><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"></circle><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"></path></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="true"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"></rect><rect x="20" width="20" height="45" fill="#fff"></rect><rect x="40" width="20" height="45" fill="#EF4135"></rect></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"></rect><rect y="11.25" width="60" height="22.5" fill="#F1BF00"></rect></svg></i><span>Español</span></button></div></div>
+   <div class="langsw" role="group" aria-label="Sprache"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span id="langName">Deutsch</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"></rect><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"></path><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"></path><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"></path><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"></path></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"></rect><circle cx="24" cy="22.5" r="10" fill="#fff"></circle><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"></circle><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"></path></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="true"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"></rect><rect y="15" width="60" height="15" fill="#DD0000"></rect><rect y="30" width="60" height="15" fill="#FFCE00"></rect></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"></rect><rect x="20" width="20" height="45" fill="#fff"></rect><rect x="40" width="20" height="45" fill="#EF4135"></rect></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"></rect><rect y="11.25" width="60" height="22.5" fill="#F1BF00"></rect></svg></i><span>Español</span></button></div></div>
+   <button type="button" class="themebtn" data-theme-toggle="" aria-label="Dunkles Design" aria-pressed="true" onclick="rjTema()"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.4 14.5A8.6 8.6 0 0 1 9.5 3.6 8.6 8.6 0 1 0 20.4 14.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.7"></circle><path d="M12 2.7v2.1M12 19.2v2.1M4.8 12H2.7M21.3 12h-2.1M6.7 6.7 5.2 5.2M18.8 18.8l-1.5-1.5M17.3 6.7l1.5-1.5M5.2 18.8l1.5-1.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg><span class="t">Dunkles Design</span></button>
    <a href="../login.html" class="btn btn-secondary btn-sm">Anmelden</a>
    <a href="download.html" class="btn btn-primary btn-sm">↓ Herunterladen</a>
-   <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="rjMenu()"><span></span></button>
+   <button class="burger" aria-label="Menü öffnen" aria-expanded="false" onclick="rjMenu()"><span></span></button>
   </div>
  </div>
 </header>
 <div class="mobnav" id="mobnav"><a href="index.html">Start</a><a href="how-it-works.html">So funktioniert es</a><a href="features.html">Funktionen</a><a href="pricing.html">Preise</a><a href="faq.html">FAQ</a><a href="support.html">Support</a>
+ <button type="button" class="themebtn" data-theme-toggle="" aria-label="Dunkles Design" aria-pressed="true" onclick="rjTema()"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.4 14.5A8.6 8.6 0 0 1 9.5 3.6 8.6 8.6 0 1 0 20.4 14.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.7"></circle><path d="M12 2.7v2.1M12 19.2v2.1M4.8 12H2.7M21.3 12h-2.1M6.7 6.7 5.2 5.2M18.8 18.8l-1.5-1.5M17.3 6.7l1.5-1.5M5.2 18.8l1.5-1.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg><span class="t">Dunkles Design</span></button>
  <a href="../login.html" class="btn btn-secondary">Anmelden</a>
  <a href="download.html" class="btn btn-primary">↓ Für Windows herunterladen</a>
 </div>
@@ -58,11 +91,11 @@
    <p class="body-lg">Von der Quellenverfolgung bis zu prüfbereiten hochkanten Clips — das kann die Anwendung heute tatsächlich. Nichts auf dieser Seite ist geplant, bald verfügbar oder in der Beta.</p>
   </div>
   <div class="strip">
-   <span class="strip-i"><span class="dot" style="color:var(--kick)"></span>Kick — Live-Verfolgung</span>
-   <span class="strip-i"><span class="dot" style="color:var(--twitch)"></span>Twitch — Live-Verfolgung</span>
-   <span class="strip-i"><span class="dot" style="color:var(--tiktok)"></span>TikTok — Live-Verfolgung</span>
-   <span class="strip-i"><span class="dot" style="color:var(--youtube)"></span>YouTube — Live-Verfolgung</span>
-   <span class="strip-i"><span class="dot" style="color:var(--files)"></span>Meine Dateien — deine eigenen Videos</span>
+   <span class="strip-i"><span class="dot" style="color:var(--kick-text)"></span>Kick — Live-Verfolgung</span>
+   <span class="strip-i"><span class="dot" style="color:var(--twitch-text)"></span>Twitch — Live-Verfolgung</span>
+   <span class="strip-i"><span class="dot" style="color:var(--tiktok-text)"></span>TikTok — Live-Verfolgung</span>
+   <span class="strip-i"><span class="dot" style="color:var(--youtube-text)"></span>YouTube — Live-Verfolgung</span>
+   <span class="strip-i"><span class="dot" style="color:var(--files-text)"></span>Meine Dateien — deine eigenen Videos</span>
   </div>
  </div>
 </section>
@@ -77,19 +110,20 @@
     <li>Mehrere Streams gleichzeitig aufnehmen — 1 bei Starter, 2 bei Creator, 4 bei Pro</li></ul>
    <div class="story-note">Eine Liveaufnahme braucht etwa 5,6 GB pro Stream und Stunde — die Gleichzeitigkeitsgrenze hat also mit deiner Festplatte zu tun, nicht mit der Lizenz.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Live-Verfolgung</span></div>
-   <img src="../images/mock/de/live.webp?v=14ca0db142" alt="Live tracking view showing tracked sources and recording state" loading="lazy" width="1360" height="766"></div>
+   <img src="../images/mock/de/live.webp?v=92ac6421db" alt="Live tracking view showing tracked sources and recording state" loading="lazy" width="1360" height="766"></div>
  </article>
 
  <article class="story rev" id="detection">
-  <div class="story-copy"><span class="eyebrow">MOMENTERKENNUNG</span><h2 class="h-md">Drei Signale entscheiden, was zum Clip wird</h2>
-   <p class="body">Die Erkennung läuft auf deinem eigenen Rechner und kostet pro Clip nichts. Jolnova liest drei Dinge aus der Aufnahme und schneidet dort einen Kandidaten, wo sie zusammentreffen.</p>
-   <ul><li>Chat-Dichte — wie schnell Nachrichten eintreffen, verglichen mit dem ruhigen Normalwert</li>
-    <li>Lautstärkespitzen — Lachen, Schreien, ein plötzlicher Sprung in der Lautheit</li>
-    <li>Sprachinhalt — was tatsächlich gesagt wird, aus dem Transkript</li>
-    <li>Die Erkennungsempfindlichkeit ist eine Einstellung: Wenige, Ausgewogen oder Viele</li></ul>
+  <div class="story-copy"><span class="eyebrow">MOMENTERKENNUNG</span><h2 class="h-md">Die Momente, die sich zu posten lohnen — schon gefunden</h2>
+   <p class="body">Jolnova wertet die gesamte Aufnahme aus und schneidet die sehenswerten Momente als Kandidaten heraus. Die Auswertung läuft auf deinem eigenen Rechner und kostet pro Clip nichts.</p>
+   <ul><li>Die gesamte Aufnahme wird von Anfang bis Ende ausgewertet</li>
+    <li>Die Auswertung läuft auf deinem Computer — dein Video wird nie hochgeladen</li>
+    <li>Kein API-Schlüssel zu kaufen und keine Kosten pro Clip</li>
+    <li>Die Erkennungsempfindlichkeit ist eine Einstellung: Wenige, Ausgewogen oder Viele</li>
+    <li>Jeder Kandidat landet in der Prüfliste — du gibst ihn frei oder lehnst ihn ab</li></ul>
    <div class="story-note">Es gibt weder eine KI-Punktzahl noch eine Qualitätsnote auf einem Clip. Die KI schreibt eine einzige Sache: den Titel eines Clips, den du freigegeben hast.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Prüfliste</span></div>
-   <img src="../images/mock/de/review.webp?v=14ca0db142" alt="Review queue with generated clips ready for approval" loading="lazy" width="1360" height="766"></div>
+   <img src="../images/mock/de/review.webp?v=92ac6421db" alt="Review queue with generated clips ready for approval" loading="lazy" width="1360" height="766"></div>
  </article>
 
  <article class="story" id="review-queue">
@@ -99,7 +133,7 @@
     <li>Nach neuesten, ältesten oder Dauer sortieren</li><li>Mehrere Clips auswählen und im Stapel freigeben oder ablehnen</li>
     <li>Alle Clips einer Quelle in einem Schritt löschen</li></ul></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clips</span></div>
-   <img src="../images/mock/de/clips.webp?v=14ca0db142" alt="Clips library with approved, published and rejected tabs" loading="lazy" width="1360" height="766"></div>
+   <img src="../images/mock/de/clips.webp?v=92ac6421db" alt="Clips library with approved, published and rejected tabs" loading="lazy" width="1360" height="766"></div>
  </article>
 
 
@@ -110,7 +144,7 @@
     <li>YouTube-Videos und vergangene Streams</li>
     <li>Heruntergeladen → durchsucht → Clips landen in der Warteschlange</li></ul></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Automatisierung</span></div>
-   <img src="../images/mock/de/automation.webp?v=14ca0db142" alt="Automation page with the three-step source setup" loading="lazy" width="1360" height="766"></div>
+   <img src="../images/mock/de/automation.webp?v=92ac6421db" alt="Automation page with the three-step source setup" loading="lazy" width="1360" height="766"></div>
  </article>
 
  <article class="story rev" id="local-files">
@@ -121,7 +155,7 @@
     <li>In jedem Tarif enthalten — deine eigenen Dateien zählen nie als Plattform</li></ul>
    <div class="story-note">Die Verarbeitung läuft auf deinem Rechner; nur der Schritt für KI-Titel kontaktiert einen Dienst.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Meine Dateien</span></div>
-   <img src="../images/mock/de/files.webp?v=14ca0db142" alt="Add content from a link, a local file or a YouTube video" loading="lazy" width="1360" height="700"></div>
+   <img src="../images/mock/de/files.webp?v=92ac6421db" alt="Add content from a link, a local file or a YouTube video" loading="lazy" width="1360" height="700"></div>
  </article>
 
  <article class="story" id="vertical-layout">
@@ -133,7 +167,7 @@
     <li>Kamera-Ecke — großer Inhalt mit der Kamera in der Ecke</li>
     <li>Vollbild — die Quelle so nutzen, wie sie ist, ideal für TikTok</li></ul></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Aufnahmemodi</span></div>
-   <img src="../images/mock/de/vertical.webp?v=14ca0db142" alt="Vertical 9:16 clip output examples" loading="lazy" width="1360" height="766"></div>
+   <img src="../images/mock/de/vertical.webp?v=92ac6421db" alt="Vertical 9:16 clip output examples" loading="lazy" width="1360" height="766"></div>
  </article>
 
  <article class="story rev" id="camera-region">
@@ -143,7 +177,7 @@
     <li>Ecken-Vorlagen für die vier üblichen Positionen</li>
     <li>Über einem echten Bild aus der Quelle platziert</li><li>Pro Quelle gespeichert und für jeden Clip wiederverwendet</li></ul></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Kameraeinstellung</span></div>
-   <img src="../images/mock/de/camera.webp?v=14ca0db142" alt="Camera region setup with the camera box drawn over a stream frame" loading="lazy" width="860" height="540"></div>
+   <img src="../images/mock/de/camera.webp?v=92ac6421db" alt="Camera region setup with the camera box drawn over a stream frame" loading="lazy" width="860" height="540"></div>
  </article>
 
 
@@ -158,7 +192,7 @@
  <div class="grid-2">
   <article class="card">
    <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Untertiteltext</span></div>
-    <img src="../images/mock/de/captions.webp?v=14ca0db142" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1360" height="766"></div>
+    <img src="../images/mock/de/captions.webp?v=92ac6421db" alt="Subtitle editor with the transcribed lines open for editing" loading="lazy" width="1360" height="766"></div>
    <div class="h-row mt-m"><h3 class="h-sm">Die Wörter korrigieren</h3><span class="badge badge-lime">JEDER TARIF</span></div>
    <p>Korrigier ein falsch verstandenes Wort, schreib eine ganze Zeile neu oder lösch eine Zeile, die du nicht auf dem Bild haben willst. Die Zeiten bleiben genau wie transkribiert — nur die Wörter ändern sich.</p>
    <ul class="ticks mt-s">
@@ -170,7 +204,7 @@
   </article>
   <article class="card">
    <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Untertitel-Stil</span></div>
-    <img src="../images/mock/de/capstyle.webp?v=14ca0db142" alt="Subtitle style panel with font, size, colour, outline and placement controls" loading="lazy" width="1000" height="640"></div>
+    <img src="../images/mock/de/capstyle.webp?v=92ac6421db" alt="Subtitle style panel with font, size, colour, outline and placement controls" loading="lazy" width="1000" height="640"></div>
    <div class="h-row mt-m"><h3 class="h-sm">Das Aussehen ändern</h3><span class="badge badge-plan">CREATOR &amp; PRO</span></div>
    <p>Gib den Untertiteln deinen eigenen Look: Schriftart, Größe, Farbe, Konturstärke und -farbe, wo sie im Bild sitzen und wie weit vom Rand entfernt.</p>
    <ul class="ticks mt-s">
@@ -196,7 +230,7 @@
     <li>Keine KI-Bewertung, keine Qualitätsnote — diese Entscheidung triffst du in der Prüfliste</li></ul>
    <div class="story-note">Jolnova veröffentlicht in deinem Namen auf keiner Plattform. Du lädst den fertigen Clip herunter und postest ihn selbst.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip-Details</span></div>
-   <img src="../images/mock/de/player.webp?v=14ca0db142" alt="Clip detail with generated title, description and hashtags" loading="lazy" width="1360" height="766"></div>
+   <img src="../images/mock/de/player.webp?v=92ac6421db" alt="Clip detail with generated title, description and hashtags" loading="lazy" width="1360" height="766"></div>
  </article>
 
  <article class="story rev" id="branding">
@@ -208,7 +242,7 @@
     </ul>
    <div class="story-note">Während der kostenlosen Testphase bleibt das Jolnova-Wasserzeichen an. Jeder bezahlte Tarif kann es in den Einstellungen abschalten.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip-Branding</span></div>
-   <img src="../images/mock/de/brand.webp?v=14ca0db142" alt="Clip branding settings with watermark and platform badge switches" loading="lazy" width="1000" height="520"></div>
+   <img src="../images/mock/de/brand.webp?v=92ac6421db" alt="Clip branding settings with watermark and platform badge switches" loading="lazy" width="1000" height="520"></div>
  </article>
 
  <article class="story" id="text-overlay">
@@ -219,7 +253,7 @@
     <li>Entferne es später und der Clip kehrt in seinen Originalzustand zurück</li></ul>
    <div class="story-note">Das Text-Overlay gibt es in jedem Tarif, auch in der kostenlosen Testphase.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Text-Overlay</span></div>
-   <img src="../images/mock/de/text.webp?v=14ca0db142" alt="Text overlay editor with position, size, colour and background controls" loading="lazy" width="900" height="860"></div>
+   <img src="../images/mock/de/text.webp?v=92ac6421db" alt="Text overlay editor with position, size, colour and background controls" loading="lazy" width="900" height="860"></div>
  </article>
 
  <article class="story rev" id="image-overlay">
@@ -230,7 +264,7 @@
     <li>Jeder Effekt wird neu vom unberührten Original angewendet — kein Generationsverlust</li></ul>
    <div class="story-note">Nichts wird auf einen bereits komprimierten Export draufgestapelt — ein fünfmal bearbeiteter Clip sieht also aus wie ein einmal bearbeiteter.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Bild-Overlay</span></div>
-   <img src="../images/mock/de/image.webp?v=14ca0db142" alt="Image overlay editor with a logo being dragged and resized on the video" loading="lazy" width="900" height="860"></div>
+   <img src="../images/mock/de/image.webp?v=92ac6421db" alt="Image overlay editor with a logo being dragged and resized on the video" loading="lazy" width="900" height="860"></div>
  </article>
 
  <article class="story" id="trim">
@@ -241,7 +275,7 @@
     <li>Der Clip-Kontext holt zusätzliche Sekunden aus der Originalaufnahme zurück — ±3 Sek. bei Starter, ±7 bei Creator, ±10 bei Pro</li>
     <li>Später erneut zuschneiden — du schneidest immer vom Original</li></ul></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip zuschneiden</span></div>
-   <img src="../images/mock/de/trim.webp?v=14ca0db142" alt="Trim editor with start and end handles over the clip timeline" loading="lazy" width="1360" height="766"></div>
+   <img src="../images/mock/de/trim.webp?v=92ac6421db" alt="Trim editor with start and end handles over the clip timeline" loading="lazy" width="1360" height="766"></div>
  </article>
 
  <article class="story rev" id="export">
@@ -251,7 +285,7 @@
     <li>Einen einzelnen Clip oder einen ganzen Bereich speichern</li><li>Deine Originale bleiben unberührt</li></ul>
    <div class="story-note">Die Exportauflösung richtet sich nach deinem Tarif und deiner Quelle: 720p bei Starter, 1080p bei Creator und 4K bei Pro, wenn die Quelle 4K ist. Twitch und Kick senden höchstens in 1080p.</div></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Clip-Ausgabe</span></div>
-   <img src="../images/mock/de/vertical.webp?v=14ca0db142" alt="Vertical 9:16 clip output examples" loading="lazy" width="1360" height="766"></div>
+   <img src="../images/mock/de/vertical.webp?v=92ac6421db" alt="Vertical 9:16 clip output examples" loading="lazy" width="1360" height="766"></div>
  </article>
 
  <article class="story" id="settings">
@@ -261,7 +295,7 @@
     <li>Aufräumbudget für Aufnahmen, in GB</li>
     <li>Oberfläche auf Englisch oder Türkisch</li><li>Versions- und Updateprüfung</li></ul></div>
   <div class="pwin"><div class="pwin-bar"><i></i><i></i><i></i><span class="t">Einstellungen</span></div>
-   <img src="../images/mock/de/settings.webp?v=14ca0db142" alt="Settings page with detection, storage, language and application options" loading="lazy" width="1000" height="520"></div>
+   <img src="../images/mock/de/settings.webp?v=92ac6421db" alt="Settings page with detection, storage, language and application options" loading="lazy" width="1000" height="520"></div>
  </article>
 
 </div></section>
@@ -287,8 +321,8 @@
  <div class="grid-3">
   <article class="card"><h3>Viewer clips become reels</h3>
    <p>Paste a Kick or Twitch clip link and it is turned into a vertical reel exactly as it was clipped — camera placement, subtitles, audio, export. No moment search: someone already decided that moment was good.</p></article>
-  <article class="card"><h3>Sports</h3>
-   <p>Give it a match or a highlights video. Goals are found from the commentary — including the ones announced only by a new scoreline or a turn of phrase — and each clip starts far enough back to hold the whole build-up, with the scoreboard placed where a phone can read it.</p></article>
+  <article class="card"><h3>Sport</h3>
+   <p>Gib ihm ein Spiel oder ein Highlight-Video. Tore und die anderen Schlüsselmomente kommen als Clips heraus, jeder beginnt früh genug, um den ganzen Aufbau zu fassen, und die Anzeigetafel sitzt dort, wo ein Handy sie lesen kann.</p></article>
   <article class="card"><h3>Scheduled sharing</h3>
    <p>Connect a YouTube account, pick a day and a time on the calendar, and approved clips go out on their own. The file uploaded is the clip as produced — no re-encoding, no quality loss.</p></article>
  </div>
@@ -300,8 +334,8 @@
   <p class="body-lg">Two things people expect from a clipping tool that this one deliberately does not have.</p>
  </div>
  <div class="grid-3">
-  <article class="card"><h3>No AI moment scoring</h3>
-   <p>No clip is graded by a language model. Detection is a signal-based cut and the decision at the review queue stays yours.</p></article>
+  <article class="card"><h3>Keine KI-Bewertung von Momenten</h3>
+   <p>Kein Clip wird von einem Sprachmodell bewertet, und kein Modell entscheidet, ob ein Moment gut genug ist. Jeder Kandidat geht in die Prüfliste, und die Entscheidung dort bleibt deine.</p></article>
   <article class="card"><h3>Nichts geht ohne deine Freigabe hinaus</h3>
    <p>A clip is only uploaded after you approve it and schedule it yourself. Nothing is posted automatically from the review queue.</p></article>
   <article class="card"><h3>Kein Zusammenschnitt, keine Compilation</h3>
@@ -320,7 +354,7 @@
  <div class="wrap">
   <div class="foot-grid">
    <div class="foot-brand">
-    <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=14ca0db142" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <a class="brand" href="index.html"><img src="../images/icon-clean.png?v=92ac6421db" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
     <p>Automatisches Stream-Clipping für Windows. Verfolge deine Quellen, lass Jolnova hochkante Clips vorbereiten und prüf, was sich zu posten lohnt.</p>
     <div class="foot-os"><span class="badge badge-neutral">Windows-Desktop-App</span></div>
    </div>
@@ -338,7 +372,7 @@
   </div>
  </div>
 </footer>
-<script src="../user.js?v=14ca0db142"></script><script src="../lang-de.js?v=14ca0db142"></script><script src="../lang-fr.js?v=14ca0db142"></script><script src="../lang-es.js?v=14ca0db142"></script><script src="../lang.js?v=14ca0db142"></script>
+<script src="../user.js?v=92ac6421db"></script><script src="../lang-de.js?v=92ac6421db"></script><script src="../lang-fr.js?v=92ac6421db"></script><script src="../lang-es.js?v=92ac6421db"></script><script src="../lang.js?v=92ac6421db"></script>
 <script>
 function rjMenu(){var m=document.getElementById('mobnav'),b=document.querySelector('.burger');
  var on=m.classList.toggle('on');document.body.classList.toggle('navopen',on);

@@ -201,7 +201,32 @@ def _damgala(html, kaynak_sha):
     return html.replace("</head>", DAMGA % kaynak_sha + "\n</head>", 1)
 
 
+# --------------------------------------------------------------------- TEMA
+# 🔴 URETIM SIRASINDA TEMA "PISIYOR".
+# Sayfalar <head> icinde satir ici bir betikle tema secimini sayfa
+# boyanmadan uyguluyor (FOUC olmasin diye). render() sayfayi GERCEKTEN
+# Chrome'da calistirip DOM'u doktugu icin o betik burada da calisir ve
+# HEADLESS CHROME'UN tercihi (genelde ACIK) uretilen dosyaya yazilir:
+#     <html data-theme="light">  +  theme-color="#F7F8FA"  +  aria-pressed
+# Yani /tr/index.html diskte "acik tema secilmis" halde durur. Ziyaretcinin
+# tarayicisinda ayni betik dogru degeri yeniden yazdigi icin GORUNURDE bir
+# sey bozulmaz - ama JavaScript kapaliysa ya da kaynak koda bakildiginda
+# yanlis varsayilan gorunur. Bu yuzden uretilen dosyada tema izleri
+# KOK SAYFADAKI HALINE (koyu varsayilan) geri alinir.
+_T_ATTR = re.compile(r'\s+data-theme="(?:light|dark)"')
+_T_META = re.compile(r'(<meta name="theme-color" content=")[^"]*(">)')
+_T_PRESS = re.compile(r'(data-theme-toggle[^>]*?aria-pressed=")(?:true|false)(")')
+
+
+def temayi_sifirla(html):
+    html = _T_ATTR.sub("", html, count=1)
+    html = _T_META.sub(r"\g<1>#05070B\g<2>", html)
+    html = _T_PRESS.sub(r"\g<1>true\g<2>", html)
+    return html
+
+
 def kafayi_duzelt(html, dil, sayfa, kaynak_sha):
+    html = temayi_sifirla(html)
     kend = adres(dil, sayfa)
     en = adres(None, sayfa)
 
