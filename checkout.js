@@ -131,7 +131,10 @@
            400 "Unknown plan: (empty)" donuyordu - yani site uzerinden abone
            olmak HIC calismadi. Masaustu uygulamasi bastan beri dogru sariyor
            (aiproxy.call_ex(op, payload)); ayrisan yalnizca siteydi. */
-        payload: { plan: paket, interval: aralik }
+        /* Kod BURADAN gidiyor. Eskiden gitmiyordu: musteri sitede kodu
+           yazip indirimli tutari goruyor, sonra Stripe sayfasinda TAM
+           tutarla karsilasiyor ve kodu bir kez daha yazmasi gerekiyordu. */
+        payload: { plan: paket, interval: aralik, code: gecerliKod }
       });
     }).then(function (c) {
       if (!c) return;
@@ -156,6 +159,10 @@
   /* Kod YALNIZCA DOGRULANIR, hicbir sey tuketmez. Kullanim sayaci Stripe'ta
      ve ODEME TAMAMLANINCA duser - kodu yazip vazgecen kimse hakki yakmaz. */
   var indirim = 0;
+  /* DOGRULANMIS kod. Odeme oturumuna BU gider; sunucu kodu Stripe'ta
+     kendisi arayip geregliligini YENIDEN dogrular, yani buradaki deger
+     bir yetki degil yalnizca bir istektir. */
+  var gecerliKod = "";
 
   function fiyatlariCiz() {
     if (typeof RJ_PLANS === "undefined") return;
@@ -185,7 +192,7 @@
     var not = document.getElementById("ck-code-msg");
     if (!giris) return;
     var kod = (giris.value || "").trim();
-    if (!kod) { indirim = 0; if (not) not.textContent = ""; fiyatlariCiz(); return; }
+    if (!kod) { indirim = 0; gecerliKod = ""; if (not) not.textContent = ""; fiyatlariCiz(); return; }
 
     oturum().then(function (s) {
       if (!s) {
@@ -203,11 +210,15 @@
       var d = (c.govde && c.govde.data) || {};
       if (!d.valid) {
         indirim = 0;
+        gecerliKod = "";
         if (not) not.textContent = yazi("codebad", "That code is not valid.");
         fiyatlariCiz();
         return;
       }
       indirim = d.percent || 0;
+      /* KODU DA SAKLA: yalnizca yuzdeyi tutmak ekranda fiyati dusurmeye
+         yetiyordu ama odeme oturumuna tasinacak bir sey kalmiyordu. */
+      gecerliKod = d.code || kod;
       if (not) {
         not.textContent = (yazi("codeok", "Code applied: -{p}%") || "")
           .replace("{p}", String(indirim));

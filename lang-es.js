@@ -2,6 +2,13 @@
    lang.js bu dosyayi RJ_ES olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_ES = {
+  /* Odeme kutusu metinleri (#ck-i18n data-*) */
+  "Opening checkout…": "Abriendo el pago…",
+  "Checkout could not be opened.": "No se ha podido abrir el pago.",
+  "/year": "/año",
+  "Sign in to use a discount code.": "Inicia sesión para usar un código de descuento.",
+  "That code is not valid.": "Ese código no es válido.",
+  "Code applied: -{p}%": "Código aplicado: -{p} %",
   /* Platform kisiti kaldirildi (2026-09-22) */
   "All four platforms, on every plan.": "Las cuatro plataformas, en todos los planes.",
   "Twitch, Kick, YouTube and TikTok are open on every plan, including the free trial. What your plan sets is how many creators you follow.": "Twitch, Kick, YouTube y TikTok están disponibles en todos los planes, incluida la prueba gratuita. Lo que define tu plan es a cuántos creadores sigues.",

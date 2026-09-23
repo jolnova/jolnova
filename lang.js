@@ -2,6 +2,13 @@
    Site ana dili İNGİLİZCE. TR seçilince metin düğümleri sözlükten çevrilir.
    Orijinal İngilizce düğümde saklanır (node.__en) -> TR<->EN kayıpsız geçiş. */
 const TR = {
+  /* Odeme kutusu metinleri (#ck-i18n data-*) */
+  "Opening checkout…": "Ödeme açılıyor…",
+  "Checkout could not be opened.": "Ödeme açılamadı.",
+  "/year": "/yıl",
+  "Sign in to use a discount code.": "İndirim kodu kullanmak için giriş yap.",
+  "That code is not valid.": "Bu kod geçerli değil.",
+  "Code applied: -{p}%": "Kod uygulandı: -%{p}",
   /* Platform kisiti kaldirildi (2026-09-22) */
   "All four platforms, on every plan.": "Her pakette dört platform da açık.",
   "Twitch, Kick, YouTube and TikTok are open on every plan, including the free trial. What your plan sets is how many creators you follow.": "Twitch, Kick, YouTube ve TikTok her pakette açıktır — ücretsiz deneme dahil. Paketinin belirlediği şey kaç yayıncı takip ettiğindir.",
@@ -1667,6 +1674,26 @@ function _rjWalk(root) {
     if (el.__ph === undefined) el.__ph = el.getAttribute('placeholder');
     const ceviri = d ? d[el.__ph] : null;
     el.setAttribute('placeholder', ceviri || el.__ph);
+  });
+  /* ODEME METINLERI data-* ICINDE YASIYOR (#ck-i18n) ve buraya kadar HIC
+     cevrilmiyordu: metin dugumu degiller, placeholder da degiller. Sonuc:
+     Turk/Alman/Fransiz/Ispanyol ziyaretci fiyat sayfasinda "Sign in to use a
+     discount code." gibi INGILIZCE cumleler goruyordu. checkout.js bu
+     degerleri yazi() ile okudugu icin ekrana aynen basiliyorlardi. */
+  root.querySelectorAll('#ck-i18n').forEach(el => {
+    if (el.__ck === undefined) {
+      el.__ck = {};
+      for (const a of Array.from(el.attributes)) {
+        if (a.name.indexOf('data-') === 0 && a.name !== 'data-live') {
+          el.__ck[a.name] = a.value;
+        }
+      }
+    }
+    for (const ad in el.__ck) {
+      const en = el.__ck[ad];
+      const ceviri = d ? d[en] : null;
+      el.setAttribute(ad, ceviri || en);
+    }
   });
 }
 
