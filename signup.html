@@ -118,10 +118,20 @@ function showMsg(t,ok){const m=document.getElementById('msg');m.textContent=t;m.
 async function doSignup(e){
   e.preventDefault();
   const btn=document.getElementById('sbtn');btn.disabled=true;btn.textContent='Creating…';
+  /* emailRedirectTo EKSIKTI. Google girisi (asagida) ve sifre sifirlama
+     (reset.html) kendi adreslerini veriyordu, YALNIZCA e-posta kaydi
+     vermiyordu. Supabase o durumda projenin Site URL'ine donuyor: kullanici
+     dogrulama linkine basiyor, hesabi aktif oluyor ama SITEYE HIC GELMIYOR -
+     ekranda "Check your email" yazisiyla kaliyor ve ne yapacagini bilmiyor.
+     Artik dogrulama linki dogrudan hesap sayfasina, OTURUM ACILMIS halde
+     dusuyor (account.html supabase-js'i yukluyor, detectSessionInUrl
+     varsayilan olarak acik ve adresteki jetonu kendisi isliyor). */
+  const base=location.href.replace(/[^/]*$/,'');
   const {data,error}=await sb.auth.signUp({
     email:document.getElementById('email').value,
     password:document.getElementById('pass').value,
-    options:{data:{full_name:document.getElementById('name').value}}
+    options:{data:{full_name:document.getElementById('name').value},
+             emailRedirectTo:base+'account.html'}
   });
   if(error){
     const tr={'User already registered':'That email is already registered. Try signing in.','Password should be at least 6 characters':'Password must be at least 6 characters.'};
