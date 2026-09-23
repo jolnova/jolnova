@@ -20,17 +20,20 @@
 <meta property="og:url" content="https://jolnova.com/download.html">
 <meta property="og:image" content="https://jolnova.com/images/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="images/favicon.png?v=7d32de846c">
-<link rel="stylesheet" href="site.css?v=7d32de846c">
+<meta name="theme-color" content="#05070B">
+<link rel="icon" type="image/png" href="images/favicon.png?v=8e82f600b3">
+<link rel="preload" as="image" href="images/mock/dashboard.png?v=8e82f600b3">
+<link rel="stylesheet" href="site.css?v=8e82f600b3">
 </head>
 <body>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jolnova.com/"},{"@type":"ListItem","position":2,"name":"Download","item":"https://jolnova.com/download.html"}]}
 </script>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
  <div class="wrap">
-  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=7d32de846c" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=8e82f600b3" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
   <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
   <div class="head-cta">
    <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span id="langName">English</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"/><circle cx="24" cy="22.5" r="10" fill="#fff"/><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"/><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"/></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"/><rect y="15" width="60" height="15" fill="#DD0000"/><rect y="30" width="60" height="15" fill="#FFCE00"/></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"/><rect x="20" width="20" height="45" fill="#fff"/><rect x="40" width="20" height="45" fill="#EF4135"/></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"/><rect y="11.25" width="60" height="22.5" fill="#F1BF00"/></svg></i><span>Español</span></button></div></div>
@@ -40,55 +43,232 @@
   </div>
  </div>
 </header>
+<div class="mobnav" id="mobnav"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a>
+ <a href="login.html" class="btn btn-secondary">Sign in</a>
+ <a href="download.html" class="btn btn-primary">↓ Download for Windows</a>
+</div>
 
-<main class="wrap">
-  <div class="pagehead">
-    <span class="eyebrow">Download</span>
-    <h1>Download Jolnova and start in minutes.</h1>
-    <p>A Windows app. Install it, sign in, paste a streamer link — the rest is automatic. Free for 3 days.</p>
-  </div>
+<main id="main">
 
-  <section style="padding-top:34px">
-    <div style="max-width:560px;margin:0 auto">
-      <div class="win">
-        <div class="bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Jolnova Setup</span></div>
-        <div class="body" style="text-align:center;padding:40px 30px">
-          <div style="font-size:46px;margin-bottom:6px">🎬</div>
-          <div style="font-weight:820;font-size:22px;letter-spacing:-.02em">Jolnova for Windows</div>
-          <div id="dl-meta" style="color:var(--dim);font-family:var(--mono);font-size:13px;margin:8px 0 24px">Windows 10/11 (64-bit) · 179 MB</div>
-          <a id="dl-link" href="https://github.com/jolnova/jolnova/releases/latest/download/Jolnova-Setup.exe" class="btn btn-primary btn-block" style="padding:16px;font-size:16px" download>⬇ Download for Windows (.exe)</a>
-          <div class="note" style="margin-top:18px">// Run the setup file and follow the wizard. FFmpeg is set up automatically on first launch.</div>
-        </div>
-      </div>
+<!-- ============================================================
+     HERO — sayfanin tek isi indirmeyi mumkun kilmak.
+     Kutu HERO'NUN ICINDE duruyor, ayri bir bolumde degil: ziyaretci
+     "indir" diye geldi, dugmeyi gormek icin kaydirmasi gerekmemeli.
+     Sagdaki pencere index.html ile ayni kalip (.pwin) - indirdigi
+     seyin ne oldugunu yaziyla degil gostererek soyluyor.
+     ============================================================ -->
+<section class="hero">
+ <div class="wrap">
+  <div class="hero-grid">
+   <div class="hero-copy">
+    <span class="eyebrow">DOWNLOAD</span>
+    <h1 class="display" style="font-size:clamp(32px,4.6vw,56px)">Download Jolnova and start in minutes.</h1>
+    <p class="body-lg">A Windows app. Install it, sign in, paste a streamer link — the rest is automatic. Free for 3 days.</p>
 
-      <div class="steps" style="grid-template-columns:1fr;gap:14px;margin-top:34px">
-        <div class="step"><h3>Download &amp; run</h3><p>Run the setup file and follow the wizard — Jolnova opens when it finishes.</p></div>
-        <div class="step"><h3>Sign in</h3><p>Sign in with the account you created on the site. Your subscription is detected automatically and everything unlocks.</p></div>
-        <div class="step"><h3>Add a streamer</h3><p>Paste a Kick, Twitch or TikTok channel — or a YouTube link, or a video file of your own. Your first clips land in Pending within minutes.</p></div>
-      </div>
+    <!-- 🔴 Asagidaki dl-meta ve dl-link kimlikli iki oge build.py tarafindan
+         DUZENLI IFADEYLE yeniden yazilir. Kurallari:
+           * dl-meta'nin metni DOGRUDAN kendi ilk cocugu olmali (ic ice etiket yok)
+           * dl-link'te href, id'den SONRA gelmeli
+           * download niteligi durmali
+         DIKKAT: bu kimlikler bu dosyada BASKA HICBIR YERDE, yorum icinde bile,
+         tirnakli haliyle yazilmamali. Desen ilk eslesmeyi alir; kimlik yorumda
+         da gecseydi betik gercek ogeyi degil YORUMU yeniden yazardi ve surum
+         satiri sessizce eskimis kalirdi. -->
+    <div class="dlbox">
+     <div class="dlbox-h">
+      <span class="dlbox-logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.4l7.6-1.04v7.33H3zm0 13.2l7.6 1.04v-7.24H3zm8.44 1.15L21.5 21.2v-8.77h-10.06zm0-15.1v7.44H21.5V2.8z"/></svg></span>
+      <span class="dlbox-id">
+       <b>Jolnova for Windows</b>
+       <span id="dl-meta" class="dlbox-meta">Windows 10/11 (64-bit) · 179 MB</span>
+      </span>
+      <span class="badge badge-lime dlbox-tag">LATEST BUILD</span>
+     </div>
+     <a id="dl-link" href="https://github.com/jolnova/jolnova/releases/latest/download/Jolnova-Setup.exe" class="btn btn-primary btn-block" download>⬇ Download for Windows (.exe)</a>
+     <p class="dlbox-note">Run the setup file and follow the wizard. On first launch Jolnova fetches its video toolkit by itself — there is nothing else to install.</p>
+     <div class="dlbox-links">
+      <a class="tlink" href="https://github.com/jolnova/jolnova/releases" target="_blank" rel="noopener noreferrer">Every release on GitHub</a>
+      <a class="tlink" href="#firstrun">What Windows will ask you</a>
+     </div>
     </div>
-  </section>
 
-  <!-- ⚠️ .cta KUTUNUN KENDISIDIR, sarmalayici DEGIL.
-       Burada eskiden <section class="cta"> icine ayrica <div class="ctabox">
-       konmustu; ikisi de kutu (ikisinin de arka plani, kenarligi ve golgesi
-       var), yani IC ICE IKI KART cizilyordu ve distakinin sari radial
-       parildamasi ictekinin cevresinden tasip kotu gorunuyordu.
-       Diger sayfalardaki (faq / features / how-it-works) kalip dogrudur:
-           section.section > div.wrap > div.cta
-       Burasi da ona esitlendi. .ctabox artik hicbir yerde kullanilmiyor. -->
-  <section class="section"><div class="wrap"><div class="cta">
-    <h2 class="h-lg">No subscription yet? Start there.</h2>
-    <p class="body-lg">Download the app, sign in with the same account and your subscription activates.</p>
-    <div class="cta-btns"><a href="pricing.html" class="btn btn-primary">Plans &amp; pricing →</a></div>
-  </div></div></section>
+    <div class="hero-micro">
+     <span>Free for 3 days — no card</span>
+     <span>Recording and clipping run on your PC</span>
+     <span>Uninstall like any Windows program</span>
+    </div>
+   </div>
+
+   <div class="hero-visual">
+    <div class="pwin pwin-glow">
+     <div class="pwin-bar"><i></i><i></i><i></i><span class="t">Jolnova</span></div>
+     <img src="images/mock/dashboard.png?v=8e82f600b3" alt="Jolnova dashboard with pipeline overview and review queue" fetchpriority="high" width="1360" height="700">
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============================================================
+     KURULUM SONRASI — dort adim, ikisi kullanicidan bir sey istiyor.
+     index.html'deki .tl zaman cizelgesiyle AYNI bilesen: ziyaretci
+     ayni isareti ikinci kez gordugunde yeniden ogrenmiyor.
+     ============================================================ -->
+<section class="section section-line">
+ <div class="wrap">
+  <div class="sec-head">
+   <span class="eyebrow">AFTER THE DOWNLOAD</span>
+   <h2 class="h-lg">From installer to first clip.</h2>
+   <p class="body-lg">Four steps, and only two of them need you. The rest is the app setting itself up.</p>
+  </div>
+  <div class="tl">
+   <div class="tl-i"><div class="tl-n">01</div><h3>Run the installer</h3>
+    <p>Run the setup file and follow the wizard — Jolnova opens when it finishes.</p>
+    <ul><li>Windows 10 or 11, 64-bit</li><li>Installed for your own user account</li></ul></div>
+   <div class="tl-i"><div class="tl-n">02</div><h3>The video toolkit installs itself</h3>
+    <p>On first launch Jolnova fetches FFmpeg, the tool it uses to cut and encode video. It happens once and takes about a minute on a normal connection.</p>
+    <ul><li>Nothing to find or configure</li></ul></div>
+   <div class="tl-i"><div class="tl-n">03</div><h3>Sign in</h3>
+    <p>Sign in with the account you created on the site. Your subscription is detected automatically and everything unlocks.</p>
+    <ul><li>An account is required — it is free</li></ul></div>
+   <div class="tl-i"><div class="tl-n">04</div><h3>Add a source</h3>
+    <p>Paste a Kick, Twitch or TikTok channel — or a YouTube link, or a video file of your own. Your first clips land in Pending within minutes.</p>
+    <ul><li>Clips wait for your approval</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<!-- ============================================================
+     SMARTSCREEN — GIZLENMIYOR, ANLATILIYOR.
+     Kurulum imzasiz oldugu icin Windows mavi bir uyari gosteriyor.
+     Ziyaretci bunu bizden once gorecek; once bizden duymasi hem dogru
+     hem de "virus mu bu" diye geri donmesini engelliyor.
+     Diyalog bir EKRAN GORUNTUSU DEGIL, gercek metin: ceviri motoru
+     cevirir, ekran okuyucu okur, hicbir yerde tiklanabilir degil.
+     ============================================================ -->
+<section class="section section-line" id="firstrun">
+ <div class="wrap">
+  <div class="sec-head">
+   <span class="eyebrow">FIRST RUN</span>
+   <h2 class="h-lg">Windows will probably warn you. Here is why.</h2>
+   <p class="body-lg">The installer is not code-signed yet, so Microsoft Defender SmartScreen steps in the first time you run it. The warning means Windows has not seen this file often enough to recognise it — not that it found something in it.</p>
+  </div>
+  <div class="grid-2 dlsplit">
+   <div>
+    <div class="ssdlg">
+     <div class="ssdlg-bar" aria-hidden="true">✕</div>
+     <div class="ssdlg-b">
+      <p class="ssdlg-t">Windows protected your PC</p>
+      <p class="ssdlg-p">Microsoft Defender SmartScreen prevented an unrecognised app from starting. Running this app might put your PC at risk.</p>
+      <span class="ssdlg-more">More info</span>
+     </div>
+     <div class="ssdlg-f">
+      <span class="ssdlg-btn on">Run anyway</span>
+      <span class="ssdlg-btn">Don't run</span>
+     </div>
+    </div>
+    <p class="sscap">This is the Windows dialog, not ours — the wording comes from the operating system.</p>
+   </div>
+   <div>
+    <h3 class="h-sm">Getting past it</h3>
+    <ol class="dlsteps">
+     <li>Choose More info in the dialog. The two buttons appear underneath.</li>
+     <li>Choose Run anyway. Setup then continues exactly as normal.</li>
+     <li>Windows remembers this installer, so the warning does not come back for it.</li>
+    </ol>
+    <div class="notice is-last mt-m">
+     <span class="notice-i">!</span>
+     <p><b>We would rather explain this than hide it.</b> A code-signing certificate is bought yearly and we have not bought one yet, so each new release starts out unrecognised again. If you would rather check the file first, download it straight from the GitHub Releases page and scan it before running.</p>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============================================================
+     GEREKSINIMLER + KURULUMUN MAKINEYE YAPTIGI
+     Iki kart yan yana: solda "calisir mi", sagda "ne birakir".
+     Ikinci soru bir masaustu uygulamasinda birincisi kadar onemli
+     ama cogu indirme sayfasi onu hic cevaplamiyor.
+     ============================================================ -->
+<section class="section section-line">
+ <div class="wrap">
+  <div class="sec-head">
+   <span class="eyebrow">REQUIREMENTS</span>
+   <h2 class="h-lg">What it needs, and what it puts on your machine.</h2>
+  </div>
+  <div class="grid-2">
+   <article class="card card-lg">
+    <div class="card-ico">▣</div>
+    <h3>System requirements</h3>
+    <dl class="dlspec">
+     <div><dt>Operating system</dt><dd>Windows 10 or Windows 11, 64-bit.</dd></div>
+     <div><dt>Other platforms</dt><dd>None. Jolnova is a Windows application — there is no macOS or Linux build.</dd></div>
+     <div><dt>Disk space</dt><dd>Room for recordings. A live stream takes roughly 5.6 GB an hour, and the cleanup budget that caps it is a setting you control.</dd></div>
+     <div><dt>Internet connection</dt><dd>Needed for live tracking, signing in and writing clip titles.</dd></div>
+     <div><dt>Jolnova account</dt><dd>Created free on this site. The app asks for it the first time it opens.</dd></div>
+    </dl>
+   </article>
+   <article class="card card-lg">
+    <div class="card-ico blue">◫</div>
+    <h3>What the installer does</h3>
+    <ul class="ticks">
+     <li>Puts the application on your machine and adds a Start menu entry.</li>
+     <li>Fetches the video toolkit once, on first launch.</li>
+     <li>Creates a folder for recordings and finished clips — you can move it in Settings.</li>
+     <li>Leaves your own videos where they are. My Files reads them in place.</li>
+     <li>Keeps recording, moment detection and subtitles on your machine. Only the title-writing step leaves it.</li>
+    </ul>
+    <p class="caption mt-m">Removing it is the same as any Windows program: Settings, then Apps, then Installed apps.</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<!-- ============================================================
+     DENEME — fiyat sayfasindaki .freetier seridinin aynisi.
+     Hesap zorunlulugu burada duruyor cunku indirdikten sonra
+     karsilasilan ILK sey o.
+     ============================================================ -->
+<section class="section section-line">
+ <div class="wrap">
+  <div class="freetier">
+   <div class="ft-head"><span class="badge badge-neutral">FREE TRIAL</span><b>An account is required</b></div>
+   <p class="ft-line"><b>Free for 3 days or 50 clips, whichever comes first.</b> <a href="pricing.html">See the plans →</a></p>
+   <a href="signup.html" class="btn btn-secondary btn-sm">Create account</a>
+  </div>
+  <p class="caption center mt-m" style="max-width:740px">Nothing is deleted when the trial ends: the clips you already made stay where they are.</p>
+ </div>
+</section>
+
+<!-- ============================================================
+     SORULAR — indirme ANINDA sorulanlar. Genel SSS faq.html'de;
+     burada yalnizca dugmeye basmadan once merak edilen alti soru var.
+     ============================================================ -->
+<section class="section section-line"><div class="wrap wrap-read">
+ <div class="sec-head"><span class="eyebrow">DOWNLOAD QUESTIONS</span><h2 class="h-md">Before you run it</h2></div>
+ <details class="acc"><summary>Do I need an account?</summary><div class="acc-b"><p>Yes. Jolnova signs in to see which plan you are on, so the first screen after installing asks for the account you created here. Creating one is free and takes a minute.</p></div></details>
+ <details class="acc"><summary>Is it really free to try?</summary><div class="acc-b"><p>Three days, or fifty approved clips — whichever comes first, and no card is asked for. When the trial ends new clip production stops, but everything already in your queue and library stays where it is.</p></div></details>
+ <details class="acc"><summary>Why does Windows say the app is unrecognised?</summary><div class="acc-b"><p>Because the installer is not code-signed. SmartScreen warns about files it has not seen many times before, whatever is inside them. Choose More info, then Run anyway.</p></div></details>
+ <details class="acc"><summary>Where does the file actually come from?</summary><div class="acc-b"><p>From our GitHub Releases page. The button above links straight to the newest release asset there, so you can also open the releases page yourself, read what changed and download the file from GitHub directly.</p></div></details>
+ <details class="acc"><summary>How do I update it later?</summary><div class="acc-b"><p>Download the installer from this page again and run it. The link always points at the latest release, so there is no version number to look up.</p></div></details>
+ <details class="acc"><summary>Is there a macOS or Linux version?</summary><div class="acc-b"><p>No. Jolnova is a Windows desktop application and records on the machine it runs on.</p></div></details>
+</div></section>
+
+<section class="section"><div class="wrap"><div class="cta">
+  <h2 class="h-lg">No subscription yet? Start there.</h2>
+  <p class="body-lg">Download the app, sign in with the same account and your subscription activates.</p>
+  <div class="cta-btns">
+   <a href="pricing.html" class="btn btn-primary">Plans &amp; pricing →</a>
+   <a href="faq.html" class="btn btn-secondary">Read the FAQ</a>
+  </div>
+</div></div></section>
 </main>
 
 <footer class="site-footer">
  <div class="wrap">
   <div class="foot-grid">
    <div class="foot-brand">
-    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=7d32de846c" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=8e82f600b3" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
     <p>Automatic stream clipping for Windows. Track your sources, let Jolnova prepare vertical clips, and review what is worth posting.</p>
     <div class="foot-os"><span class="badge badge-neutral">Windows desktop app</span></div>
    </div>
@@ -107,6 +287,15 @@
  </div>
 </footer>
 
-<script src="user.js?v=7d32de846c"></script><script src="lang-de.js?v=7d32de846c"></script><script src="lang-fr.js?v=7d32de846c"></script><script src="lang-es.js?v=7d32de846c"></script><script src="lang.js?v=7d32de846c"></script>
+<script src="user.js?v=8e82f600b3"></script><script src="lang-de.js?v=8e82f600b3"></script><script src="lang-fr.js?v=8e82f600b3"></script><script src="lang-es.js?v=8e82f600b3"></script><script src="lang.js?v=8e82f600b3"></script>
+<script>
+function rjMenu(){var m=document.getElementById('mobnav'),b=document.querySelector('.burger');
+ var on=m.classList.toggle('on');document.body.classList.toggle('navopen',on);
+ b.setAttribute('aria-expanded',on?'true':'false');
+ if(on){var f=m.querySelector('a');if(f)f.focus();}}
+document.addEventListener('keydown',function(e){
+ if(e.key==='Escape'){var m=document.getElementById('mobnav');
+  if(m&&m.classList.contains('on')){rjMenu();document.querySelector('.burger').focus();}}});
+</script>
 </body>
 </html>
