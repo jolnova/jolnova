@@ -1343,6 +1343,22 @@ html[data-scope="single"] .s-all,html[data-scope="all"] .s-single{display:none}
 
 /* Mobil menude tam genislik (oradaki digerleri de oyle). */
 .mobnav .userchip{width:100%;justify-content:center;padding:11px 14px}
+/* Menude yer bol: ad kisaltilmasin. Basliktaki 110-150px tavani o dar
+   seride gerekliydi, burada gereksiz - kullanici adini tam gormeli. */
+.mobnav .userchip-ad{max-width:none}
+
+/* 🔴 PROFIL ROZETI TELEFONDA BASLIKTAN KALKAR.
+   Giris yapmamis kullanicida "Giris yap" dugmesi <=1080px'de zaten
+   gizleniyor (.head-cta .btn-secondary{display:none}) ve o yer hamburger
+   menuye birakiliyor. Ama user.js o baglantiyi rozetle DEGISTIRIYOR ve
+   rozet `btn-secondary` sinifini tasimiyor - yani kural ona islemiyordu.
+   Sonuc tutarsizdi: cikis yapmis kullanicida baslikta 4 oge, giris yapmis
+   kullanicida 5 oge. 375 piksellik bir ekranda bu, indirme dugmesini ve
+   dil secicisini birbirine yapistiriyordu; kullanicinin "menu kismi cok
+   dar" dedigi sey buydu. Ustelik rozetin adi da 110px'e kirpiliyordu.
+   Rozet artik "Giris yap" ile ayni yeri izliyor: hamburger menude, tam
+   genislikte ve adi kirpilmadan duruyor. */
+@media(max-width:1080px){.head-cta .userchip{display:none}}
 
 /* hidden NITELIGI HER ZAMAN KAZANSIN.
    Tarayicinin kendi `[hidden]{display:none}` kurali en dusuk oncelikte;
