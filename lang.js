@@ -1521,7 +1521,7 @@ const TR = {
   "Choose Run anyway. Setup then continues exactly as normal.": "“Yine de çalıştır”ı seç. Kurulum bundan sonra normal şekilde devam eder.",
   "Windows remembers this installer, so the warning does not come back for it.": "Windows bu kurulum dosyasını hatırlar; uyarı bir daha bu dosya için çıkmaz.",
   "We would rather explain this than hide it.": "Bunu gizlemektense anlatmayı tercih ediyoruz.",
-  "A code-signing certificate is bought yearly and we have not bought one yet, so each new release starts out unrecognised again. If you would rather check the file first, download it straight from the GitHub Releases page and scan it before running.": "Kod imzalama sertifikası yıllık alınıyor ve biz henüz almadık; bu yüzden her yeni sürüm baştan tanınmayan olarak başlıyor. Dosyayı önce kendin kontrol etmek istersen doğrudan GitHub Releases sayfasından indir ve çalıştırmadan önce taratabilirsin.",
+  "Code signing is on our list and the warning will disappear once it is in place. Until then every new release starts out unrecognised, whatever is inside it. If you would rather check the file first, download it straight from the GitHub Releases page and scan it before running.":"Kod imzalama listemizde var; tamamlandığında bu uyarı kalkacak. O zamana kadar her yeni sürüm, içinde ne olursa olsun, tanınmayan olarak başlıyor. Dosyayı önce kendin kontrol etmek istersen doğrudan GitHub Releases sayfasından indir ve çalıştırmadan önce taratabilirsin.",
   "REQUIREMENTS": "GEREKSİNİMLER",
   "What it needs, and what it puts on your machine.": "Neye ihtiyacı var ve makinene ne bırakıyor.",
   "System requirements": "Sistem gereksinimleri",

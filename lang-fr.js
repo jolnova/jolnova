@@ -1279,7 +1279,7 @@ var RJ_FR = {
   "Choose Run anyway. Setup then continues exactly as normal.": "Choisis « Exécuter quand même ». L'installation se poursuit ensuite normalement.",
   "Windows remembers this installer, so the warning does not come back for it.": "Windows retient ce fichier : l'avertissement ne réapparaît pas pour lui.",
   "We would rather explain this than hide it.": "Nous préférons l'expliquer plutôt que le cacher.",
-  "A code-signing certificate is bought yearly and we have not bought one yet, so each new release starts out unrecognised again. If you would rather check the file first, download it straight from the GitHub Releases page and scan it before running.": "Un certificat de signature s'achète à l'année et nous n'en avons pas encore, donc chaque nouvelle version repart comme non reconnue. Si tu préfères vérifier le fichier toi-même, télécharge-le directement depuis la page GitHub Releases et analyse-le avant de le lancer.",
+  "Code signing is on our list and the warning will disappear once it is in place. Until then every new release starts out unrecognised, whatever is inside it. If you would rather check the file first, download it straight from the GitHub Releases page and scan it before running.":"La signature de code est prévue et l'avertissement disparaîtra une fois en place. D'ici là, chaque nouvelle version démarre comme non reconnue, quel que soit son contenu. Si vous préférez vérifier le fichier d'abord, téléchargez-le directement depuis la page GitHub Releases et analysez-le avant de l'exécuter.",
   "REQUIREMENTS": "CONFIGURATION REQUISE",
   "What it needs, and what it puts on your machine.": "Ce dont il a besoin, et ce qu'il installe sur ta machine.",
   "System requirements": "Configuration requise",
