@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://jolnova.com/privacy.html">
 <meta property="og:image" content="https://jolnova.com/images/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="images/favicon.png?v=312a013a86">
+<link rel="icon" type="image/png" href="images/favicon.png?v=c9e7c2bb48">
 <script>
 /* ============================================================
    TEMA — SAYFA BOYANMADAN ONCE UYGULANIR
@@ -52,7 +52,7 @@ if(window.matchMedia){var q=matchMedia('(prefers-color-scheme: light)'),f=functi
  if(q.addEventListener)q.addEventListener('change',f);else if(q.addListener)q.addListener(f);}
 if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else isaret();})();
 </script>
-<link rel="stylesheet" href="site.css?v=312a013a86">
+<link rel="stylesheet" href="site.css?v=c9e7c2bb48">
 </head>
 <body>
 <script type="application/ld+json">
@@ -62,7 +62,7 @@ if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else i
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
  <div class="wrap">
-  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=312a013a86" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=c9e7c2bb48" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
   <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
   <div class="head-cta">
    <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span id="langName">English</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"/><circle cx="24" cy="22.5" r="10" fill="#fff"/><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"/><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"/></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"/><rect y="15" width="60" height="15" fill="#DD0000"/><rect y="30" width="60" height="15" fill="#FFCE00"/></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"/><rect x="20" width="20" height="45" fill="#fff"/><rect x="40" width="20" height="45" fill="#EF4135"/></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"/><rect y="11.25" width="60" height="22.5" fill="#F1BF00"/></svg></i><span>Español</span></button></div></div>
@@ -192,19 +192,36 @@ if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else i
     <ul>
       <li>Stream recordings are deleted automatically after <b>6 hours</b> by default so they don't fill your disk.</li>
       <li>You can delete any clip from the app at any time.</li>
+      <li><b>YouTube data.</b> We store no YouTube statistics at all. Subscriber and video counts are requested live only while they are on screen, and are never written to disk. The connected channel's name and picture are cached on your own computer for at most 6 hours — far inside YouTube's 30-day limit — and are fetched again from the API after that. Your access token is deleted from your disk the moment you press “Disconnect”.</li>
       <li>If you want your account and data removed entirely, just write to us.</li>
     </ul>
 
-    <h2>5. Third-party services</h2>
+    <!-- ⚠️ HER CUMLE TEK METIN DUGUMU. lang.js metin dugumu basina cevirir ve
+         anahtar dugumun TAMAMIDIR; cumlenin ortasina <b> ya da <code> koyarsak
+         anahtar parcalanir ("(", "rj_tema", ") — whether...") ve hicbir dilde
+         eslesmez. Kalin etiket yalnizca cumlenin BASINDA, ayri dugum olarak. -->
+    <h2>5. Cookies and browser storage</h2>
+    <p>This website sets no advertising, analytics or tracking cookies, and we allow no third party to profile you here. What the site does keep is a small amount of data in your own browser's local storage, so that it works and remembers what you chose:</p>
+    <ul>
+      <li><b>Theme (rj_tema)</b> — whether you picked the light or the dark look.</li>
+      <li><b>Language (rj_lang)</b> — the language you picked, so the site opens in it next time.</li>
+      <li><b>Sign-in session</b> — when you log in, the session token is kept in local storage so you stay signed in between visits. Signing out deletes it.</li>
+      <li><b>Account name and plan (jolnova_profil)</b> — a copy kept only so the header can show them without asking the server again. Signing out deletes it.</li>
+    </ul>
+    <p>All of this stays inside your browser on your own device. None of it is used for advertising, and clearing your browser data removes every item — you are simply signed out and the site returns to its defaults.</p>
+    <p>Our hosting provider (Cloudflare) may set one strictly necessary cookie of its own to protect the site from automated abuse. It carries no advertising identifier and is not used to track you across other sites.</p>
+    <p>The Jolnova application is not a browser and uses no cookies at all. Your settings and your YouTube token are ordinary files in your own Windows user folder — see sections 1 and 3.</p>
+
+    <h2>6. Third-party services</h2>
     <p>Supabase (authentication and subscriptions), Anthropic (AI text generation) and Google/YouTube (only if you connect your channel on the Sharing page). Jolnova does not connect to any posting account on its own, and uploads only the clips you approved and scheduled yourself.</p>
 
-    <h2>6. Children's privacy</h2>
+    <h2>7. Children's privacy</h2>
     <p>Jolnova is not intended for anyone under 18.</p>
 
-    <h2>7. Changes</h2>
+    <h2>8. Changes</h2>
     <p>This policy may be updated. We'll update the date on this page for any significant change.</p>
 
-    <h2>8. Contact</h2>
+    <h2>9. Contact</h2>
     <p>Questions about this page can be sent through your account area inside the application, or by e-mail to <a href="mailto:support@jolnova.com">support@jolnova.com</a>.</p>
   </section>
 </main>
@@ -213,7 +230,7 @@ if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else i
  <div class="wrap">
   <div class="foot-grid">
    <div class="foot-brand">
-    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=312a013a86" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=c9e7c2bb48" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
     <p>Automatic stream clipping for Windows. Track your sources, let Jolnova prepare vertical clips, and review what is worth posting.</p>
     <div class="foot-os"><span class="badge badge-neutral">Windows desktop app</span></div>
    </div>
@@ -232,6 +249,6 @@ if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else i
  </div>
 </footer>
 
-<script src="user.js?v=312a013a86"></script><script src="lang-de.js?v=312a013a86"></script><script src="lang-fr.js?v=312a013a86"></script><script src="lang-es.js?v=312a013a86"></script><script src="lang.js?v=312a013a86"></script>
+<script src="user.js?v=c9e7c2bb48"></script><script src="lang-de.js?v=c9e7c2bb48"></script><script src="lang-fr.js?v=c9e7c2bb48"></script><script src="lang-es.js?v=c9e7c2bb48"></script><script src="lang.js?v=c9e7c2bb48"></script>
 </body>
 </html>
