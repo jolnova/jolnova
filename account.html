@@ -6,7 +6,7 @@
 <title>My Account — Jolnova</title>
 <meta name="description" content="Your Jolnova account: subscription status, app download and settings.">
 <meta name="robots" content="noindex,follow">
-<link rel="icon" type="image/png" href="images/favicon.png?v=36c8a48f8c">
+<link rel="icon" type="image/png" href="images/favicon.png?v=b8f9da5848">
 <script>
 /* ============================================================
    TEMA — SAYFA BOYANMADAN ONCE UYGULANIR
@@ -38,14 +38,14 @@ if(window.matchMedia){var q=matchMedia('(prefers-color-scheme: light)'),f=functi
  if(q.addEventListener)q.addEventListener('change',f);else if(q.addListener)q.addListener(f);}
 if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else isaret();})();
 </script>
-<link rel="stylesheet" href="site.css?v=36c8a48f8c">
+<link rel="stylesheet" href="site.css?v=b8f9da5848">
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
  <div class="wrap">
-  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=36c8a48f8c" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=b8f9da5848" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
   <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
   <div class="head-cta">
    <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span id="langName">English</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"/><circle cx="24" cy="22.5" r="10" fill="#fff"/><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"/><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"/></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"/><rect y="15" width="60" height="15" fill="#DD0000"/><rect y="30" width="60" height="15" fill="#FFCE00"/></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"/><rect x="20" width="20" height="45" fill="#fff"/><rect x="40" width="20" height="45" fill="#EF4135"/></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"/><rect y="11.25" width="60" height="22.5" fill="#F1BF00"/></svg></i><span>Español</span></button></div></div>
@@ -176,6 +176,26 @@ if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else i
           <div class="acc-tile" id="tile-res">
             <div class="acc-tile-n" id="t-res">—</div>
             <div class="acc-tile-l">Maximum export</div>
+          </div>
+        </div>
+
+        <!-- ============ YONETICIDE: GERCEK KULLANIM ============
+             Yonetici hesabinda paket SINIRLARI anlamsiz (hepsi ∞ / 4 / 4K)
+             ve kart ortasinda kocaman bir bosluk kaliyordu - kullanici
+             bildirdi. Sinirin yerine OLCUM konuyor: butun uyelerin secili
+             aralikta gercekten urettigi. Veri ZATEN cekiliyor (Uyeler
+             bolumunun admin_users cagrisi); yeni istek yok. -->
+        <div class="acc-admin-use" id="sub-adminuse" hidden>
+          <div class="acc-use-h"><span id="sub-use-range">Across all members, last 30 days</span></div>
+          <div class="acc-tiles">
+            <div class="acc-tile"><div class="acc-tile-n" id="au-clips">—</div>
+              <div class="acc-tile-l">Clips produced</div></div>
+            <div class="acc-tile"><div class="acc-tile-n" id="au-appr">—</div>
+              <div class="acc-tile-l">Approved</div></div>
+            <div class="acc-tile"><div class="acc-tile-n" id="au-dl">—</div>
+              <div class="acc-tile-l">Downloaded</div></div>
+            <div class="acc-tile"><div class="acc-tile-n" id="au-active">—</div>
+              <div class="acc-tile-l">Members who produced</div></div>
           </div>
         </div>
 
@@ -349,7 +369,7 @@ if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else i
  <div class="wrap">
   <div class="foot-grid">
    <div class="foot-brand">
-    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=36c8a48f8c" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=b8f9da5848" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
     <p>Automatic stream clipping for Windows. Track your sources, let Jolnova prepare vertical clips, and review what is worth posting.</p>
     <div class="foot-os"><span class="badge badge-neutral">Windows desktop app</span></div>
    </div>
@@ -936,6 +956,12 @@ async function pfSaveAll(){
    TUM UYELER BIR KEREDE CEKILIR. Arama/filtre/siralama istemcide - tipki
    uygulamadaki gibi. Sunucu sayfalasaydi arama yalnizca yuklenmis sayfada
    calisirdi ve kullanici bunu anlamazdi ("aradigim kisi cikmiyor"). */
+/* ELLE ATANABILECEK PAKETLER. Adlar sunucudaki pricing.SALE_TIERS ile
+   birebir (solo/studio/agency) + free. Ad kayarsa satirda paket bulunamaz
+   ve sutun bos gorunur - uygulamada tam olarak bu yasandi, o yuzden adlari
+   burada TEK yerde tutuyoruz. */
+const MEM_PLANLAR = [['free','Free'],['solo','Solo'],
+                     ['studio','Studio'],['agency','Agency']];
 const MEM_SAYFA = 25;          /* ekranda bir sayfa */
 const MEM_CEK   = 200;         /* ucun izin verdigi en buyuk istek */
 const MEM_TAVAN = 4000;        /* sonsuz donguye karsi sert sinir */
@@ -1032,6 +1058,14 @@ function memEsc(s){ return String(s==null?'':s)
 function memPaidVar(){ return _memRows.some(function(u){return 'paid' in u;}); }
 function memPostaVar(){ return _memRows.some(function(u){return !!u.email;}); }
 function memHediye(u){ return ('paid' in u) && !u.paid; }
+/* GERCEKTEN HEDIYE MI? memHediye tek basina yetmiyor: DENEMEDEKI satirda
+   da odeme kaydi yok (paid=false). Uc yerde ayri ayri yazmistim ve
+   ucuncusunde denemeyi hediye gosterdim - artik tek tanim. */
+function memHediyeMi(u){
+  const p=String(u.plan||'');
+  return memHediye(u) && p!=='free' && p!=='admin'
+      && String(u.status||'')!=='trialing' && !u.is_admin;
+}
 function memOduyor(u){
   const p=String(u.plan||'');
   if(String(u.status||'')!=='active' || p==='free' || p==='admin')return false;
@@ -1062,13 +1096,12 @@ function memCiz(){
 
   /* --- istatistik kartlari (uygulamadaki .mstats kalibi) --- */
   const odeyen=_memRows.filter(memOduyor).length;
-  const hediye=_memRows.filter(function(u){
-    const p=String(u.plan||'');
-    return memHediye(u)&&p!=='free'&&p!=='admin'&&String(u.status||'')!=='trialing';}).length;
+  const hediye=_memRows.filter(memHediyeMi).length;
   const bugun=_memRows.filter(function(u){
     try{ return (Date.now()-new Date(u.created_at).getTime())<86400000; }
     catch(e){ return false; }}).length;
   const mrr=_memRows.reduce(function(a,u){return a+memAylik(u);},0);
+  memYoneticiKullanim();
   if(ist){
     ist.hidden=false;
     ist.innerHTML=[['👥',memSayi(_memTotal),'Total members'],
@@ -1100,8 +1133,7 @@ function memCiz(){
   let satir=_memRows.filter(function(u){
     const p=String(u.plan||'');
     if(_memF==='paying' && !memOduyor(u))return false;
-    if(_memF==='gift'   && !(memHediye(u)&&p!=='free'&&p!=='admin'
-                             &&String(u.status||'')!=='trialing'))return false;
+    if(_memF==='gift'   && !memHediyeMi(u))return false;
     if(_memF==='none'   && memAbone(u))return false;
     if(!_memQ)return true;
     return ((u.email||'')+' '+(u.full_name||'')+' '+(u.user_id||''))
@@ -1144,11 +1176,30 @@ function memCiz(){
     /* ETIKET SIRASI ONEMLI. Deneme ONCE bakilir: deneme satirinda da odeme
        kaydi yoktur (paid=false) ve once hediye dalini yazmistim - cizdirince
        "solo · hediye" cikti, oysa o kisi DENEMEDE. */
+    /* ⚠️ YONETICIDE OLCUT plan DEGIL is_admin. Yoneticinin abonelik satiri
+       olmayabilir (ve genelde yoktur): plan alani "free" gelir. Once
+       plan==='admin' yazmistim, canli veride yonetici satiri "free"
+       gorunuyordu - oysa paket sinirlari ona hic uygulanmiyor. */
+    const yonetici=!!u.is_admin||plan==='admin';
     let psinif='', petiket;
-    if(plan==='admin'){ psinif=' admin'; petiket=t2('Full access'); }
+    if(yonetici){ psinif=' admin'; petiket=t2('Full access'); }
     else if(durum==='trialing'){ petiket=plan; }
-    else if(memHediye(u)&&plan!=='free'){ psinif=' hediye'; petiket=plan+' · '+t2('gift'); }
+    else if(memHediyeMi(u)){ psinif=' hediye'; petiket=plan+' · '+t2('gift'); }
     else { petiket=plan; if(memOduyor(u))psinif=' odeyen'; }
+    /* PAKET ATAMA. Yoneticide gosterilmez: admin zaten sinirsiz, ona paket
+       atamak "Studio" yazan ama gercekte sinirsiz calisan CELISKILI bir
+       kayit uretir (uygulamadaki Uyeler paneli de ayni sebeple gostermez). */
+    const paketHucre = yonetici
+      ? '<span class="mempill admin">'+memEsc(petiket)+'</span>'
+      : '<select class=mplan aria-label="'+memEsc(t2('Plan'))+'" '
+        +'data-uid="'+memEsc(u.user_id||'')+'" data-prev="'+memEsc(plan)+'" '
+        +'onchange="memPaketAta(this)">'
+        +MEM_PLANLAR.map(function(p){
+           return '<option value="'+memEsc(p[0])+'"'+(p[0]===plan?' selected':'')
+                 +'>'+memEsc(p[1]===p[0]?p[1]:t2(p[1]))+'</option>';}).join('')
+        +'</select>'
+        +(memHediyeMi(u)
+            ? '<span class="mempill hediye memgift">'+memEsc(t2('gift'))+'</span>' : '');
 
     let h='<div class="mrow'+(u.is_admin||plan==='admin'?' adminrow':'')+'">'
       +'<div class=memwho><span class=mav>'+bas1+'</span>'
@@ -1157,7 +1208,7 @@ function memCiz(){
         +'</span></div>';
     if(postaVar)h+='<div class=memmail title="'+memEsc(u.email||'')+'">'
                   +memEsc(u.email||'—')+'</div>';
-    h+='<div><span class="mempill'+psinif+'">'+memEsc(petiket)+'</span></div>'
+    h+='<div class=mplan-c>'+paketHucre+'</div>'
       +'<div>'+rozet+'</div>'
       +'<div class=memnum>'+memSayi(u.clips_created)+'</div>'
       +'<div class=memdate>'+memEsc(memTarih(u.created_at))+'</div></div>';
@@ -1190,6 +1241,85 @@ function memCiz(){
   pfCevir(document.getElementById('memcard'));
 }
 
+/* Abonelik kartindaki bosluga GERCEK KULLANIM yazar (yalnizca yonetici).
+   Sayilar Uyeler bolumunun zaten cektigi satirlardan toplaniyor; ikinci
+   bir istek acmiyoruz. Aralik secicisi degisince bunlar da degisir -
+   ustteki etiket hangi aralik oldugunu SOYLUYOR, yoksa "4.019 klip"in
+   neyin sayisi oldugu belirsiz kalir. */
+function memYoneticiKullanim(){
+  const k=document.getElementById('sub-adminuse');
+  if(!k)return;
+  if(!_memRows.length){ k.hidden=true; return; }
+  const top=function(alan){ return _memRows.reduce(
+    function(a,u){return a+Number(u[alan]||0);},0); };
+  const uretken=_memRows.filter(function(u){
+    return Number(u.clips_created||0)>0;}).length;
+  const yaz=function(id,v){ const e=document.getElementById(id);
+    if(e)e.textContent=v; };
+  yaz('au-clips', memSayi(top('clips_created')));
+  yaz('au-appr',  memSayi(top('approved')));
+  yaz('au-dl',    memSayi(top('downloaded')));
+  yaz('au-active',memSayi(uretken));
+  const r=document.getElementById('sub-use-range');
+  if(r)r.textContent=t2('Across all members')+' · '
+      +(_memDays===7?t2('7 days'):_memDays===365?t2('1 year'):t2('30 days'));
+  k.hidden=false;
+}
+
+/* ------------------------------------------------------- paket atama
+   YONETICI KENDI OTURUMUYLA YAZIYOR. Gizli anahtar yok, edge function yok:
+   20260824180000 migration'i subscriptions tablosuna RLS politikalari
+   ekledi ("admin grants subscription" / "admin updates subscription") ve
+   yetkinin kaynagi app_metadata.role -- kullanicinin YAZAMADIGI alan.
+   Yani bu cagri normal bir kullanicida veritabani tarafindan reddedilir;
+   arayuzde secici gostermemek tek basina bir kapi degil.
+
+   Alanlar uygulamanin /api/members/<uid>/plan ucuyla BIREBIR ayni olmak
+   zorunda; iki yol ayrisirsa ayni is iki turlu yazilir ve "hediye mi,
+   odeme mi" sorusunun cevabi bozulur. granted_by/granted_at tam da bu
+   ayrimi tasiyor. Stripe alanlarina DOKUNULMUYOR. */
+async function memPaketAta(el){
+  const uid=el.getAttribute('data-uid');
+  const eski=el.getAttribute('data-prev')||'';
+  const yeni=el.value;
+  if(!uid || yeni===eski)return;
+  const msg=document.getElementById('mem-msg');
+  el.disabled=true;
+  if(msg){ msg.textContent=t2('Saving…'); msg.className='mem-note'; }
+  try{
+    const s=await sb.auth.getSession();
+    const ben=s&&s.data&&s.data.session&&s.data.session.user;
+    if(!ben) throw new Error('no-session');
+    const simdi=new Date();
+    const bitis=new Date(simdi.getTime()+365*86400000);
+    const {error}=await sb.from('subscriptions').upsert({
+      user_id: uid,
+      plan: yeni,
+      /* "free" bir ABONELIK degil, aboneligin YOKLUGU: durumu inactive
+         yaziyoruz ki ekranlarda "aktif abone" sayilmasin. */
+      status: yeni==='free' ? 'inactive' : 'active',
+      current_period_start: simdi.toISOString(),
+      current_period_end: bitis.toISOString(),
+      granted_by: ben.id,
+      granted_at: simdi.toISOString()
+    }, {onConflict:'user_id'});
+    if(error) throw error;
+    el.setAttribute('data-prev', yeni);
+    /* SIRA: once listeyi tazele, SONRA mesaji yaz. Tersi olursa memCiz ->
+       memNot alt satiri temizliyor ve "kaydedildi" bir an gorunup
+       kayboluyor - kullanici kaydedilip kaydedilmedigini anlamiyor. */
+    await memYukle();            /* sayilar ve rozetler tazelensin */
+    if(msg)msg.textContent=t2('Plan updated.');
+  }catch(e){
+    /* SECIMI GERI AL: kaydedilmemis bir degisikligi ekranda birakmak
+       "oldu" sanmaya yol acar. */
+    el.value=eski;
+    if(msg){ msg.textContent=t2('Could not change the plan.')
+              +((e&&e.message)?(' ('+e.message+')'):'');
+             msg.className='mem-note hata'; }
+  }finally{ el.disabled=false; }
+}
+
 /* Sunucu guncellemesi bekliyorsa SESSIZ KALMA. */
 function memNot(msg){
   if(!msg)return;
@@ -1197,6 +1327,6 @@ function memNot(msg){
     :t2('Heads-up: the server has not been updated yet, so plans you granted by hand are still counted as revenue.');
 }
 </script>
-<script src="user.js?v=36c8a48f8c"></script><script src="lang-de.js?v=36c8a48f8c"></script><script src="lang-fr.js?v=36c8a48f8c"></script><script src="lang-es.js?v=36c8a48f8c"></script><script src="lang.js?v=36c8a48f8c"></script>
+<script src="user.js?v=b8f9da5848"></script><script src="lang-de.js?v=b8f9da5848"></script><script src="lang-fr.js?v=b8f9da5848"></script><script src="lang-es.js?v=b8f9da5848"></script><script src="lang.js?v=b8f9da5848"></script>
 </body>
 </html>

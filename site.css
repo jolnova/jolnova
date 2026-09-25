@@ -1889,3 +1889,19 @@ details.acc{display:block;padding:0;gap:0}
 .pg-b:disabled{opacity:.4;cursor:default}
 .mem-note{color:var(--text-muted);font-size:12.5px;margin-top:12px;min-height:16px}
 @media(max-width:640px){.mstats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* --- uye satirinda paket secici --- */
+.mplan-c{display:flex;align-items:center;gap:7px;min-width:0}
+.mplan{background:var(--surface-2);border:1px solid var(--border-default);
+  color:var(--text-primary);border-radius:9px;padding:6px 9px;font:600 12.5px/1 inherit;
+  font-family:inherit;cursor:pointer;max-width:118px;transition:.15s}
+.mplan:hover{border-color:var(--border-strong)}
+.mplan:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.mplan:disabled{opacity:.5;cursor:default}
+.memgift{flex:0 0 auto}
+.mem-note.hata{color:#FF9AA0}
+
+/* --- abonelik kartinda yonetici kullanim blogu --- */
+.acc-admin-use{margin-top:18px;padding-top:16px;border-top:1px solid var(--border-subtle)}
+.acc-use-h{font-size:11px;font-weight:700;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:.05em;margin-bottom:11px}

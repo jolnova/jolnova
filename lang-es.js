@@ -2,6 +2,13 @@
    lang.js bu dosyayi RJ_ES olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_ES = {
+ "Free":"Gratis",
+ "Plan updated.":"Plan actualizado.",
+ "Could not change the plan.":"No se pudo cambiar el plan.",
+ "Across all members":"Todos los miembros",
+ "Clips produced":"Clips producidos",
+ "Members who produced":"Miembros que produjeron",
+ "Across all members, last 30 days":"Todos los miembros · últimos 30 días",
  "Total members":"Miembros en total",
  "Paying":"De pago",
  "Gifted":"Regalados",

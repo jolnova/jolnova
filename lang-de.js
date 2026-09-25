@@ -2,6 +2,13 @@
    lang.js bu dosyayi RJ_DE olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_DE = {
+ "Free":"Kostenlos",
+ "Plan updated.":"Tarif aktualisiert.",
+ "Could not change the plan.":"Der Tarif konnte nicht geändert werden.",
+ "Across all members":"Über alle Mitglieder",
+ "Clips produced":"Erstellte Clips",
+ "Members who produced":"Mitglieder mit Clips",
+ "Across all members, last 30 days":"Über alle Mitglieder · letzte 30 Tage",
  "Total members":"Mitglieder gesamt",
  "Paying":"Zahlend",
  "Gifted":"Geschenkt",

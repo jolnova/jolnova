@@ -2,6 +2,13 @@
    Site ana dili İNGİLİZCE. TR seçilince metin düğümleri sözlükten çevrilir.
    Orijinal İngilizce düğümde saklanır (node.__en) -> TR<->EN kayıpsız geçiş. */
 const TR = {
+  "Free": "Ücretsiz",
+  "Plan updated.": "Paket güncellendi.",
+  "Could not change the plan.": "Paket değiştirilemedi.",
+  "Across all members": "Bütün üyeler",
+  "Clips produced": "Üretilen klip",
+  "Members who produced": "Klip üreten üye",
+  "Across all members, last 30 days": "Bütün üyeler · son 30 gün",
   "Total members": "Toplam üye",
   "Paying": "Ödeyen",
   "Gifted": "Hediye",
