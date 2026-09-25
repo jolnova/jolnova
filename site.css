@@ -1818,5 +1818,7 @@ details.acc{display:block;padding:0;gap:0}
 .mempill.odeyen{background:rgba(255,197,61,.14);color:var(--accent)}
 .mempill.deneme{background:rgba(124,198,255,.13);color:#7CC6FF}
 .mempill.admin{background:rgba(140,255,90,.13);color:#8CFF5A}
+/* Hediye paket: para getirmez, rengi de para rengi (kehribar) OLMAZ. */
+.mempill.hediye{background:rgba(146,163,190,.16);color:var(--text-secondary)}
 .mem-note{color:var(--text-muted);font-size:12.5px;margin-top:12px;min-height:16px}
 .mem-more{margin-top:12px;align-self:flex-start}

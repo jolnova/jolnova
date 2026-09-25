@@ -2,6 +2,8 @@
    lang.js bu dosyayi RJ_DE olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_DE = {
+ "gift":"Geschenk",
+ "Heads-up: the server has not been updated yet, so plans you granted by hand are still counted as revenue.":"Hinweis: Der Server ist noch nicht aktualisiert, daher zählen von Hand vergebene Tarife weiterhin als Umsatz.",
   // yonetici: uyeler listesi (account.html)
  "Members":"Mitglieder",
  "Everyone using Jolnova, with their plan and what they produced. Only you see this.":"Alle, die Jolnova nutzen, mit ihrem Tarif und dem, was sie erstellt haben. Das siehst nur du.",

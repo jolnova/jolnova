@@ -2,6 +2,8 @@
    lang.js bu dosyayi RJ_FR olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_FR = {
+ "gift":"offert",
+ "Heads-up: the server has not been updated yet, so plans you granted by hand are still counted as revenue.":"Attention : le serveur n'est pas encore à jour, donc les forfaits accordés à la main comptent toujours comme du revenu.",
   // yonetici: uyeler listesi (account.html)
  "Members":"Membres",
  "Everyone using Jolnova, with their plan and what they produced. Only you see this.":"Tous ceux qui utilisent Jolnova, avec leur forfait et ce qu'ils ont produit. Toi seul vois ceci.",

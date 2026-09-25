@@ -2,6 +2,8 @@
    Site ana dili İNGİLİZCE. TR seçilince metin düğümleri sözlükten çevrilir.
    Orijinal İngilizce düğümde saklanır (node.__en) -> TR<->EN kayıpsız geçiş. */
 const TR = {
+  "gift": "hediye",
+  "Heads-up: the server has not been updated yet, so plans you granted by hand are still counted as revenue.": "Dikkat: sunucu henüz güncellenmedi, bu yüzden elle verdiğin paketler hâlâ gelir sayılıyor.",
   // yonetici: uyeler listesi (account.html)
   "Members": "Üyeler",
   "Everyone using Jolnova, with their plan and what they produced. Only you see this.": "Jolnova'yı kullanan herkes; paketi ve ne ürettiğiyle birlikte. Bunu yalnızca sen görüyorsun.",
