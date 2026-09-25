@@ -2,6 +2,33 @@
    Site ana dili İNGİLİZCE. TR seçilince metin düğümleri sözlükten çevrilir.
    Orijinal İngilizce düğümde saklanır (node.__en) -> TR<->EN kayıpsız geçiş. */
 const TR = {
+  // yonetici: uyeler listesi (account.html)
+  "Members": "Üyeler",
+  "Everyone using Jolnova, with their plan and what they produced. Only you see this.": "Jolnova'yı kullanan herkes; paketi ve ne ürettiğiyle birlikte. Bunu yalnızca sen görüyorsun.",
+  "Sort members": "Üyeleri sırala",
+  "Most clips": "En çok klip",
+  "Newest": "En yeni",
+  "Date range": "Tarih aralığı",
+  "7 days": "7 gün",
+  "30 days": "30 gün",
+  "1 year": "1 yıl",
+  "Show more": "Daha fazla göster",
+  "members": "üye",
+  "on a paid plan": "ücretli pakette",
+  "per month": "aylık",
+  "clips in range": "bu aralıkta klip",
+  "Member": "Üye",
+  "Plan": "Paket",
+  "Approved": "Onaylanan",
+  "Downloaded": "İndirilen",
+  "Per month": "Aylık",
+  "Last active": "Son etkinlik",
+  "Trial": "Deneme",
+  "today": "bugün",
+  "yesterday": "dün",
+  "days ago": "gün önce",
+  "No members yet.": "Henüz üye yok.",
+  "Members could not be loaded. Try again in a moment.": "Üyeler yüklenemedi. Birazdan tekrar dene.",
   "Each plan sets how many streams may be recorded at the same time: one during the free trial and four on Solo; Studio and Agency set no limit in the software. This is separate from the number of creators you may track.": "Her paket aynı anda kaç yayının kaydedilebileceğini belirler: ücretsiz denemede bir, Solo'da dört; Studio ve Agency'de yazılım bir sınır koymaz. Bu, takip edebileceğin yayıncı sayısından ayrıdır.",
   "Each plan sets a maximum export resolution — 720p during the free trial, 1080p on Solo and Studio, 4K on Agency. This is a ceiling and not a guarantee: the output cannot exceed the resolution of the source, and live Twitch and Kick broadcasts are 1080p at most.": "Her paket bir en yüksek dışa aktarma çözünürlüğü belirler — ücretsiz denemede 720p, Solo ve Studio'da 1080p, Agency'de 4K. Bu bir tavandır, garanti değildir: çıktı kaynağın çözünürlüğünü aşamaz ve canlı Twitch ile Kick yayınları en fazla 1080p'dir.",
   "Each plan sets a limit on how many creators you may track: 3 on Solo, 15 on Studio and 50 on Agency, counted as one total across the four platforms. The free trial tracks 2.": "Her paket kaç yayıncı takip edebileceğine bir sınır koyar: Solo'da 3, Studio'da 15, Agency'de 50; dört platform için tek bir toplam olarak sayılır. Ücretsiz deneme 2 yayıncı takip eder.",
@@ -1720,6 +1747,17 @@ function _rjKafa() {
 function rjApplyLang() {
   try { _rjWalk(document.body); } catch (e) {}
   try { _rjKafa(); } catch (e) {}
+}
+
+/* TEK METIN CEVIRISI (JS'ten uretilen icerik icin).
+   _rjWalk metin DUGUMLERINI geziyor; ama bir tablo JS'te dize olarak
+   kuruluyorsa (ornegin account.html'deki uye listesi) o dizenin karsiligina
+   baska turlu ulasilamiyor - DICTS ve _lang modul kapsaminda, `const`
+   olduklari icin window uzerinde YOKLAR. Fonksiyon bildirimi ise global
+   olur, bu yuzden kopru buradan kuruluyor. Ayni sozluk, ayni anahtar. */
+function rjT(s) {
+  const d = DICTS[_lang] || null;
+  return (d && d[s]) || s;
 }
 
 function rjLangMenu(ac) {

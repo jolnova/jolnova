@@ -6,7 +6,7 @@
 <title>My Account — Jolnova</title>
 <meta name="description" content="Your Jolnova account: subscription status, app download and settings.">
 <meta name="robots" content="noindex,follow">
-<link rel="icon" type="image/png" href="images/favicon.png?v=c9e7c2bb48">
+<link rel="icon" type="image/png" href="images/favicon.png?v=2f9cd346f0">
 <script>
 /* ============================================================
    TEMA — SAYFA BOYANMADAN ONCE UYGULANIR
@@ -38,14 +38,14 @@ if(window.matchMedia){var q=matchMedia('(prefers-color-scheme: light)'),f=functi
  if(q.addEventListener)q.addEventListener('change',f);else if(q.addListener)q.addListener(f);}
 if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else isaret();})();
 </script>
-<link rel="stylesheet" href="site.css?v=c9e7c2bb48">
+<link rel="stylesheet" href="site.css?v=2f9cd346f0">
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
  <div class="wrap">
-  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=c9e7c2bb48" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+  <a class="brand" href="index.html"><img src="images/icon-clean.png?v=2f9cd346f0" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
   <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></nav>
   <div class="head-cta">
    <div class="langsw" role="group" aria-label="Language"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" onclick="rjLangMenu()"><i class="flag" id="langFlag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span id="langName">English</span><svg class="cev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button><div class="langmenu" id="langMenu" role="listbox"><button type="button" class="langopt" data-l="en" onclick="rjSetLang('en')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#012169"/><path d="M0 0l60 45M60 0L0 45" stroke="#fff" stroke-width="9"/><path d="M0 0l60 45M60 0L0 45" stroke="#C8102E" stroke-width="5"/><path d="M30 0v45M0 22.5h60" stroke="#fff" stroke-width="15"/><path d="M30 0v45M0 22.5h60" stroke="#C8102E" stroke-width="9"/></svg></i><span>English</span></button><button type="button" class="langopt" data-l="tr" onclick="rjSetLang('tr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#E30A17"/><circle cx="24" cy="22.5" r="10" fill="#fff"/><circle cx="27.5" cy="22.5" r="8" fill="#E30A17"/><path d="M36.5 22.5l7.6-2.5-4.7 6.5v-8l4.7 6.5z" fill="#fff"/></svg></i><span>Türkçe</span></button><button type="button" class="langopt" data-l="de" onclick="rjSetLang('de')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="15" fill="#000"/><rect y="15" width="60" height="15" fill="#DD0000"/><rect y="30" width="60" height="15" fill="#FFCE00"/></svg></i><span>Deutsch</span></button><button type="button" class="langopt" data-l="fr" onclick="rjSetLang('fr')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="20" height="45" fill="#0055A4"/><rect x="20" width="20" height="45" fill="#fff"/><rect x="40" width="20" height="45" fill="#EF4135"/></svg></i><span>Français</span></button><button type="button" class="langopt" data-l="es" onclick="rjSetLang('es')" role="option" aria-selected="false"><i class="flag"><svg viewBox="0 0 60 45" aria-hidden="true"><rect width="60" height="45" fill="#AA151B"/><rect y="11.25" width="60" height="22.5" fill="#F1BF00"/></svg></i><span>Español</span></button></div></div>
@@ -240,6 +240,52 @@ if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else i
          avatar_url        -> avatars kovasindaki herkese acik adres
        Avatar yolu <kullanici_id>/a.<uzanti> — Storage politikasi tam olarak
        buna bakiyor (sql/avatars_bucket.sql), baskasinin klasorune yazilamaz. -->
+  <!-- ================= YONETICI: UYELER =================
+       YALNIZCA yoneticide gorunur ve gizlemek TEK BASINA BIR KAPI DEGILDIR:
+       veriyi getiren uc (ai-proxy op:'admin_users') istegi dogrulanmis
+       JWT'den cozup auth.users.raw_app_meta_data->>'role' ile denetliyor,
+       SQL fonksiyonu da kendi icinde bir kez daha bakiyor. Buradaki
+       [hidden] yalnizca gorsel bir duzen karari.
+
+       ⚠️ E-POSTA YOK, ve bu bilincli. Veritabanindaki admin_users
+       fonksiyonu e-posta DONDURMUYOR ("telemetriyle uygulamadan YENI bir
+       kisisel veri toplanmaz"). Masaustu uygulamada e-posta gorunmesinin
+       sebebi gizli anahtari YERELDE tutmasi; statik bir site o anahtari
+       tasiyamaz - tasisa siteyi acan herkes okur. Kimlikler kisaltilmis
+       uuid olarak gosteriliyor, ayirt etmeye yetiyor. -->
+  <section class="acc-card acc-mem" id="memcard" hidden>
+    <div class="acc-prof-h">
+      <span class="eyebrow">Admin</span>
+      <h2>Members</h2>
+      <p>Everyone using Jolnova, with their plan and what they produced. Only you see this.</p>
+    </div>
+
+    <div class="mem-bar">
+      <div class="seg" id="mem-sort" role="group" aria-label="Sort members">
+        <button type="button" data-s="clips" class="on" onclick="memSirala('clips')">Most clips</button>
+        <button type="button" data-s="recent" onclick="memSirala('recent')">Last active</button>
+        <button type="button" data-s="joined" onclick="memSirala('joined')">Newest</button>
+      </div>
+      <div class="seg" id="mem-days" role="group" aria-label="Date range">
+        <button type="button" data-d="7" onclick="memAralik(7)">7 days</button>
+        <button type="button" data-d="30" class="on" onclick="memAralik(30)">30 days</button>
+        <button type="button" data-d="365" onclick="memAralik(365)">1 year</button>
+      </div>
+    </div>
+
+    <div class="mem-sum" id="mem-sum" hidden>
+      <div><b id="mem-total">0</b><span>members</span></div>
+      <div><b id="mem-paying">0</b><span>on a paid plan</span></div>
+      <div><b id="mem-mrr">$0</b><span>per month</span></div>
+      <div><b id="mem-clips">0</b><span>clips in range</span></div>
+    </div>
+
+    <div class="mem-wrap"><div class="mem-table" id="mem-table"></div></div>
+    <div class="mem-note" id="mem-msg">Loading…</div>
+    <button type="button" class="btn btn-secondary btn-sm mem-more" id="mem-more" hidden
+            onclick="memDaha()">Show more</button>
+  </section>
+
   <section class="acc-card acc-prof pfcard">
     <div class="acc-prof-h">
       <span class="eyebrow">Profile</span>
@@ -302,7 +348,7 @@ if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',isaret);else i
  <div class="wrap">
   <div class="foot-grid">
    <div class="foot-brand">
-    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=c9e7c2bb48" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
+    <a class="brand" href="index.html"><img src="images/icon-clean.png?v=2f9cd346f0" alt="" width="32" height="32"><span>Jol<span class="jolt">nova</span></span></a>
     <p>Automatic stream clipping for Windows. Track your sources, let Jolnova prepare vertical clips, and review what is worth posting.</p>
     <div class="foot-os"><span class="badge badge-neutral">Windows desktop app</span></div>
    </div>
@@ -598,6 +644,10 @@ async function abonelikYukle(){
        ancak butun betikler yurudukten sonra kesinlesiyor (bkz. subDil). */
     await domHazir();
     abonelikCiz(j.data);
+    /* YONETICI ISE UYELER BOLUMUNU AC. Rol ayni cevaptan geliyor; ayri bir
+       istek acmiyoruz. Kart gizli kalsa da veri ucu zaten yetkisiz istegi
+       403'le reddediyor - burasi yalnizca gorsel bir duzen karari. */
+    try{ if(String(j.data.role||'').toLowerCase()==='admin') memAc(); }catch(e){}
     /* Cizimden sonra yalnizca SAYI ve TARIH yazildi; yine de karti ceviri
        gezgininden gecirmek zararsiz ve ileride metin eklenirse kendini
        onarir. */
@@ -857,7 +907,162 @@ async function pfSaveAll(){
      gorunsun, kart kendi iskeletiyle beklesin. */
   abonelikYukle();
 })();
+
+/* ================= YONETICI: UYELER =================
+   Veri: ai-proxy op:'admin_users' — abonelik kartinin kullandigi UCUN AYNISI,
+   yalnizca baska bir islem adiyla. Yeni bir anahtar, yeni bir uc, yeni bir
+   tablo YOK; Supabase tarafinda hicbir sey degismedi.
+
+   ⚠️ GIZLI ANAHTAR TARAYICIYA KONMAZ. Masaustu uygulamasi uye listesini
+   Supabase Auth Admin API'siyle (gizli anahtar, yerelde) cekiyor ve e-postayi
+   da o yuzden gosterebiliyor. Statik bir sitede o anahtar herkese acik olurdu.
+   Bu yuzden site, anahtari KENDI icinde tutan edge function'a soruyor ve o
+   fonksiyonun dondurdugu alanlarla yetiniyor - e-posta dondurmuyor
+   (veritabanindaki bilincli karar: "telemetriyle YENI bir kisisel veri
+   toplanmaz"). Kimlik olarak kisaltilmis uuid gosteriliyor. */
+const MEM_SAYFA = 25;
+let _memSort='clips', _memDays=30, _memOffset=0, _memRows=[], _memTotal=0, _memMesgul=false;
+
+function memAc(){
+  const k=document.getElementById('memcard');
+  if(!k||!k.hidden)return;          /* iki kez acilmasin */
+  k.hidden=false;
+  memYukle(true);
+}
+
+function memSec(kutuId, nitelik, deger){
+  document.querySelectorAll('#'+kutuId+' button').forEach(function(b){
+    b.classList.toggle('on', b.getAttribute(nitelik)===String(deger));});
+}
+function memSirala(s){ if(_memMesgul||s===_memSort)return;
+  _memSort=s; memSec('mem-sort','data-s',s); memYukle(true); }
+function memAralik(d){ if(_memMesgul||d===_memDays)return;
+  _memDays=d; memSec('mem-days','data-d',d); memYukle(true); }
+function memDaha(){ if(!_memMesgul) memYukle(false); }
+
+async function memYukle(bastan){
+  const msg=document.getElementById('mem-msg');
+  const daha=document.getElementById('mem-more');
+  if(bastan){ _memOffset=0; _memRows=[]; }
+  _memMesgul=true;
+  if(msg)msg.textContent=t2('Loading…');
+  if(daha)daha.hidden=true;
+  /* Cevapsiz istek iskeleti sonsuza kadar dondururdu - abonelik kartiyla
+     ayni 12 saniyelik sinir. */
+  const kes=new AbortController();
+  const sayac=setTimeout(function(){kes.abort();},12000);
+  try{
+    const s=await sb.auth.getSession();
+    const jeton=s&&s.data&&s.data.session&&s.data.session.access_token;
+    if(!jeton) throw new Error('no-session');
+    const r=await fetch(AI_UC,{method:'POST',signal:kes.signal,
+      headers:{'content-type':'application/json','Authorization':'Bearer '+jeton},
+      body:JSON.stringify({op:'admin_users',limit:MEM_SAYFA,offset:_memOffset,
+                           sort:_memSort,days:_memDays})});
+    const j=await r.json().catch(function(){return null;});
+    if(!r.ok||!j||j.ok!==true||!j.data) throw new Error('members-'+r.status);
+    const d=j.data;
+    _memRows=_memRows.concat(Array.isArray(d.users)?d.users:[]);
+    _memTotal=Number(d.total||_memRows.length)||_memRows.length;
+    _memOffset=_memRows.length;
+    memCiz();
+    if(msg)msg.textContent='';
+    if(daha)daha.hidden=!(_memOffset<_memTotal);
+  }catch(e){
+    if(msg)msg.textContent=t2('Members could not be loaded. Try again in a moment.');
+  }finally{
+    clearTimeout(sayac);
+    _memMesgul=false;
+  }
+}
+
+/* Sayfadaki ceviri gezgini metin DUGUMLERINI ceviriyor; burada JS'ten
+   uretilen metinler icin ayni sozluge elle bakiyoruz. */
+function t2(s){
+  try{ return (typeof rjT==='function') ? rjT(s) : s; }catch(e){ return s; }
+}
+function memSayi(n){ n=Number(n||0);
+  try{ return n.toLocaleString(); }catch(e){ return String(n); } }
+/* Para: 1000'in altinda KURUSLU ($38.00), ustunde yuvarlak ($1,240).
+   Once n<10 -> 2 hane, 10..100 -> 1 hane yazilmisti ve "$38.0" cikiyordu:
+   ne para gibi duruyor ne de tutarli. */
+function memPara(n){ n=Number(n||0);
+  if(n>=1000){ try{ return '$'+Math.round(n).toLocaleString(); }
+               catch(e){ return '$'+Math.round(n); } }
+  return '$'+n.toFixed(2); }
+function memTarih(v){
+  if(!v)return '—';
+  const d=new Date(v); if(isNaN(d))return '—';
+  const gun=Math.floor((Date.now()-d.getTime())/86400000);
+  if(gun<=0)return t2('today');
+  if(gun===1)return t2('yesterday');
+  if(gun<30)return gun+' '+t2('days ago');
+  try{ return d.toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'}); }
+  catch(e){ return d.toISOString().slice(0,10); }
+}
+function memEsc(s){ return String(s==null?'':s)
+  .replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+function memCiz(){
+  const el=document.getElementById('mem-table');
+  const ozet=document.getElementById('mem-sum');
+  if(!el)return;
+  if(!_memRows.length){
+    el.innerHTML='';
+    const m=document.getElementById('mem-msg');
+    if(m)m.textContent=t2('No members yet.');
+    if(ozet)ozet.hidden=true;
+    return;
+  }
+  /* ÖZET YALNIZCA YÜKLENEN SATIRLARDAN değil, toplamdan: uye sayisi
+     sunucudan geliyor (d.total). Para ve klip ise GORUNEN satirlarin
+     toplami - "Show more" ile buyur. Bunu yazmasak kullanici dort kutuyu da
+     "tumu" saniyordu. */
+  /* "Ucretli pakette" = GERCEKTEN ODEYEN. Deneme (trialing) burada
+     SAYILMAZ - once sayiyordu ve bes kisilik listede ucu odeyor gibi
+     gorunuyordu, oysa ikisi odeyordu. Yonetici de sayilmaz (odemiyor). */
+  const odeyen=_memRows.filter(function(u){
+    const p=String(u.plan||'');
+    return String(u.status||'')==='active' && p!=='free' && p!=='admin'; }).length;
+  const mrr=_memRows.reduce(function(a,u){return a+Number(u.monthly_usd||0);},0);
+  const klip=_memRows.reduce(function(a,u){return a+Number(u.clips_created||0);},0);
+  document.getElementById('mem-total').textContent=memSayi(_memTotal);
+  document.getElementById('mem-paying').textContent=memSayi(odeyen);
+  document.getElementById('mem-mrr').textContent=memPara(mrr);
+  document.getElementById('mem-clips').textContent=memSayi(klip);
+  if(ozet)ozet.hidden=false;
+
+  const bas='<div class="memrow memhead">'
+    +'<div>'+memEsc(t2('Member'))+'</div>'
+    +'<div>'+memEsc(t2('Plan'))+'</div>'
+    +'<div>'+memEsc(t2('Clips'))+'</div>'
+    +'<div>'+memEsc(t2('Approved'))+'</div>'
+    +'<div>'+memEsc(t2('Downloaded'))+'</div>'
+    +'<div>'+memEsc(t2('Per month'))+'</div>'
+    +'<div>'+memEsc(t2('Last active'))+'</div></div>';
+
+  el.innerHTML=bas+_memRows.map(function(u){
+    const plan=String(u.plan||'free');
+    const durum=String(u.status||'');
+    let sinif='';
+    if(plan==='admin')sinif=' admin';
+    else if(durum==='trialing')sinif=' deneme';
+    else if(durum==='active'&&plan!=='free')sinif=' odeyen';
+    const etiket=durum==='trialing'?t2('Trial'):plan;
+    return '<div class=memrow>'
+      +'<div class=memid title="'+memEsc(u.user_id||'')+'">'
+        +memEsc(String(u.user_id||'').slice(0,8))+'</div>'
+      +'<div><span class="mempill'+sinif+'">'+memEsc(etiket)+'</span></div>'
+      +'<div class=memnum>'+memSayi(u.clips_created)+'</div>'
+      +'<div class=memnum>'+memSayi(u.approved)+'</div>'
+      +'<div class=memnum>'+memSayi(u.downloaded)+'</div>'
+      +'<div class=memnum>'+memPara(u.monthly_usd)+'</div>'
+      +'<div class=memdate>'+memEsc(memTarih(u.last_active||u.last_sign_in_at))+'</div>'
+      +'</div>';
+  }).join('');
+  pfCevir(document.getElementById('memcard'));
+}
 </script>
-<script src="user.js?v=c9e7c2bb48"></script><script src="lang-de.js?v=c9e7c2bb48"></script><script src="lang-fr.js?v=c9e7c2bb48"></script><script src="lang-es.js?v=c9e7c2bb48"></script><script src="lang.js?v=c9e7c2bb48"></script>
+<script src="user.js?v=2f9cd346f0"></script><script src="lang-de.js?v=2f9cd346f0"></script><script src="lang-fr.js?v=2f9cd346f0"></script><script src="lang-es.js?v=2f9cd346f0"></script><script src="lang.js?v=2f9cd346f0"></script>
 </body>
 </html>
