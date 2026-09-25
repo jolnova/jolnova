@@ -2,6 +2,24 @@
    lang.js bu dosyayi RJ_FR olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_FR = {
+ "Total members":"Membres au total",
+ "Paying":"Payants",
+ "Gifted":"Offerts",
+ "Joined today":"Inscrits aujourd'hui",
+ "Monthly revenue":"Revenu mensuel",
+ "All":"Tous",
+ "Gift":"Offert",
+ "No subscription":"Sans abonnement",
+ "Search e-mail or id…":"Rechercher un e-mail ou un id…",
+ "E-mail":"E-mail",
+ "Joined":"Inscrit",
+ "Active":"Actif",
+ "Canceled":"Annulé",
+ "None":"Aucun",
+ "Full access":"Accès complet",
+ "No matching members.":"Aucun membre correspondant.",
+ "{a}–{b} of {n}":"{a}–{b} sur {n}",
+ "{n} members":"{n} membres",
  "gift":"offert",
  "Heads-up: the server has not been updated yet, so plans you granted by hand are still counted as revenue.":"Attention : le serveur n'est pas encore à jour, donc les forfaits accordés à la main comptent toujours comme du revenu.",
   // yonetici: uyeler listesi (account.html)

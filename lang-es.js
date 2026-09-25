@@ -2,6 +2,24 @@
    lang.js bu dosyayi RJ_ES olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_ES = {
+ "Total members":"Miembros en total",
+ "Paying":"De pago",
+ "Gifted":"Regalados",
+ "Joined today":"Se unieron hoy",
+ "Monthly revenue":"Ingresos mensuales",
+ "All":"Todos",
+ "Gift":"Regalo",
+ "No subscription":"Sin suscripción",
+ "Search e-mail or id…":"Buscar correo o id…",
+ "E-mail":"Correo",
+ "Joined":"Se unió",
+ "Active":"Activa",
+ "Canceled":"Cancelada",
+ "None":"Ninguna",
+ "Full access":"Acceso total",
+ "No matching members.":"No hay miembros que coincidan.",
+ "{a}–{b} of {n}":"{a}–{b} de {n}",
+ "{n} members":"{n} miembros",
  "gift":"regalo",
  "Heads-up: the server has not been updated yet, so plans you granted by hand are still counted as revenue.":"Aviso: el servidor aún no está actualizado, así que los planes que diste a mano siguen contando como ingresos.",
   // yonetici: uyeler listesi (account.html)

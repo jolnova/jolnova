@@ -1458,7 +1458,15 @@ html[data-scope="single"] .s-all,html[data-scope="all"] .s-single{display:none}
    kutucuklarla dugme arasinda 200 px'lik bos bir alan aciliyor ve bu,
    "burada bir sey eksik" gibi okunuyor. Sutunlarin farkli boylarda bitmesi
    bir panelde normal; kartin ICINDE aciklanamayan bosluk degil. */
-.acc-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:start}
+/* IKI SUTUN AYNI YUKSEKLIKTE. Onceden `align-items:start` vardi: her
+   sutun kendi icerigine yapisiyordu ve abonelik karti yan sutundan kisa
+   kalinca altinda kocaman bir bosluk olusuyordu (kullanici bildirdi).
+   `stretch` varsayilani geri geliyor; kart zaten flex column oldugu icin
+   ici de dogru dagiliyor. Tek sutuna dusen dar ekranda bir etkisi yok. */
+.acc-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:stretch}
+/* Abonelik kartinda alt eylem (Abonelik & fiyatlar) DIBE yaslansin ki
+   kart uzadiginda dugme ortada asili kalmasin. */
+#subcard>.acc-cta{margin-top:auto}
 .acc-side{display:flex;flex-direction:column;gap:22px}
 @media(max-width:1000px){.acc-grid{grid-template-columns:1fr}}
 
@@ -1779,46 +1787,105 @@ html[data-scope="single"] .s-all,html[data-scope="all"] .s-single{display:none}
 details.acc{display:block;padding:0;gap:0}
 
 /* =====================================================================
-   YONETICI: UYELER TABLOSU (account.html)
-   Sayfanin geri kalaniyla ayni jetonlari kullanir; yeni bir renk ya da
-   yuzey uydurulmadi. Tek ozel sey tablonun DAR EKRANDA yatay kaymasi:
-   yedi sutun telefona sigmaz ve sutun atmak yerine kaydirmak, sayilari
-   yan yana okumayi koruyan tek yol.
+   YONETICI: UYELER (account.html)
+   Tasarim dili UYGULAMADAKI "Üyeler" sayfasinin aynisi: ikon kutulu
+   istatistik kartlari (.mstats/.mstat), arama + sayili filtre cipleri
+   (.mtools/.msearch/.mfilters), avatarli satir (.mrow/.mav), abonelik
+   rozeti (.msub) ve sayfalama (.mpager/.pg-b). Sinif adlari da bilerek
+   ayni: iki taraftan biri degisince otekinde neyin karsilik geldigi
+   aranmadan gorulsun.
+   Renkler sitenin KENDI jetonlarindan; uygulamanin sabit renk kodlari
+   kopyalanmadi, iki urun ayni tema degiskenlerine sahip degil.
    ===================================================================== */
 .acc-mem{gap:0}
-.acc-mem .acc-prof-h{margin-bottom:16px}
-.mem-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
-.acc-mem .seg{display:inline-flex;gap:2px;padding:3px;border-radius:10px;
+.acc-mem .acc-prof-h{margin-bottom:18px}
+
+/* --- istatistik kartlari --- */
+.mstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));
+  gap:12px;margin:0 0 20px}
+.mstat{display:flex;align-items:center;gap:12px;background:var(--surface-2);
+  border:1px solid var(--border-subtle);border-radius:14px;padding:14px 16px}
+.ms-i{width:38px;height:38px;border-radius:11px;background:var(--surface-3);
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ms-v{font-size:21px;font-weight:700;line-height:1.1;letter-spacing:-.02em;
+  color:var(--text-primary);font-variant-numeric:tabular-nums}
+.ms-l{color:var(--text-muted);font-size:12px;margin-top:2px}
+
+/* --- arac cubugu --- */
+.mtools{display:flex;align-items:center;gap:11px;margin-bottom:16px;flex-wrap:wrap}
+.msearch{display:flex;align-items:center;gap:9px;background:var(--surface-2);
+  border:1px solid var(--border-subtle);border-radius:12px;padding:0 13px;
+  flex:1;min-width:210px;max-width:340px;transition:.15s}
+.msearch:focus-within{border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(255,197,61,.10)}
+.msearch span{color:var(--text-muted);font-size:13px}
+.msearch input{flex:1;background:none;border:0;outline:none;color:var(--text-primary);
+  font:14px inherit;font-family:inherit;padding:10px 0;min-width:0}
+.mfilters{display:flex;gap:4px;background:var(--surface-2);
+  border:1px solid var(--border-subtle);border-radius:12px;padding:4px;flex-wrap:wrap}
+.mf{background:none;border:0;color:var(--text-secondary);padding:8px 13px;
+  border-radius:9px;cursor:pointer;font:600 12.5px/1 inherit;white-space:nowrap;
+  transition:.15s}
+.mf:hover{color:var(--text-primary);background:var(--surface-hover)}
+.mf b{opacity:.55;font-weight:700;margin-left:2px}
+.mf.on{background:var(--accent);color:#14100A}
+.mf.on b{opacity:.7}
+.mem-range{display:inline-flex;gap:2px;padding:3px;border-radius:12px;
   background:var(--surface-2);border:1px solid var(--border-subtle)}
-.acc-mem .seg button{background:none;border:0;border-radius:8px;cursor:pointer;
+.mem-range button{background:none;border:0;border-radius:9px;cursor:pointer;
   font:600 12.5px/1 inherit;color:var(--text-secondary);padding:8px 12px;transition:.15s}
-.acc-mem .seg button:hover{color:var(--text-primary);background:var(--surface-hover)}
-.acc-mem .seg button.on{background:var(--accent);color:#14100A}
-.mem-sum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:16px}
-.mem-sum>div{background:var(--surface-2);border:1px solid var(--border-subtle);
-  border-radius:12px;padding:11px 13px}
-.mem-sum b{display:block;font-size:19px;font-weight:700;color:var(--text-primary);
-  letter-spacing:-.02em;line-height:1.2}
-.mem-sum span{display:block;font-size:11.5px;color:var(--text-muted);margin-top:3px}
-@media(max-width:640px){.mem-sum{grid-template-columns:repeat(2,minmax(0,1fr))}}
-/* Yatay kayma KENDI kutusunda: sayfanin govdesi asla yana kaymaz. */
-.mem-wrap{overflow-x:auto}
-.mem-table{min-width:680px}
-.memrow{display:grid;grid-template-columns:1.4fr .9fr .7fr .7fr .7fr .8fr 1fr;
-  gap:10px;align-items:center;padding:11px 4px;font-size:13px;
-  border-top:1px solid var(--border-subtle)}
-.memrow.memhead{border-top:0;font-size:11px;font-weight:700;color:var(--text-muted);
-  text-transform:uppercase;letter-spacing:.05em;padding-bottom:8px}
-.memrow>div{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.memrow .memid{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--text-primary)}
-.memrow .memnum{font-variant-numeric:tabular-nums;color:var(--text-secondary)}
-.memrow .memdate{color:var(--text-muted);font-size:12px}
+.mem-range button:hover{color:var(--text-primary);background:var(--surface-hover)}
+.mem-range button.on{background:var(--accent);color:#14100A}
+
+/* --- tablo ---
+   Yatay kayma KENDI kutusunda: sayfanin govdesi asla yana kaymaz. */
+.mem-wrap{overflow-x:auto;border:1px solid var(--border-subtle);border-radius:14px}
+.mem-table{min-width:660px}
+.mem-table.epostali{min-width:800px}
+.mrow{display:grid;grid-template-columns:1.5fr .9fr 1fr .7fr .9fr;
+  gap:12px;align-items:center;padding:11px 16px;font-size:13.5px;
+  border-bottom:1px solid var(--border-subtle)}
+.mem-table.epostali .mrow{grid-template-columns:1.3fr 1.6fr .9fr 1fr .6fr .8fr}
+.mrow:last-child{border-bottom:0}
+.mrow:not(.mhead):hover{background:var(--surface-2)}
+.mrow.mhead{background:var(--surface-2);color:var(--text-muted);font-size:11px;
+  font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:10px 16px}
+.mrow.adminrow{background:linear-gradient(90deg,rgba(255,197,61,.06),transparent 60%)}
+.mrow>div{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.memwho{display:flex;align-items:center;gap:10px}
+.mav{width:30px;height:30px;border-radius:50%;flex-shrink:0;display:flex;
+  align-items:center;justify-content:center;font-size:12.5px;font-weight:700;
+  color:var(--text-primary);background:var(--surface-3)}
+.memwho-t{min-width:0;display:flex;flex-direction:column;line-height:1.25}
+.memwho-t b{font-weight:650;color:var(--text-primary);overflow:hidden;
+  text-overflow:ellipsis}
+.memrol{font-style:normal;font-size:10.5px;color:var(--accent);margin-top:1px}
+.memmail{color:var(--text-secondary);font-size:12.5px}
+.memnum{font-variant-numeric:tabular-nums;color:var(--text-secondary)}
+.memdate{color:var(--text-muted);font-size:12.5px}
 .mempill{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11.5px;
   font-weight:700;background:var(--surface-3);color:var(--text-secondary)}
 .mempill.odeyen{background:rgba(255,197,61,.14);color:var(--accent)}
-.mempill.deneme{background:rgba(124,198,255,.13);color:#7CC6FF}
 .mempill.admin{background:rgba(140,255,90,.13);color:#8CFF5A}
 /* Hediye paket: para getirmez, rengi de para rengi (kehribar) OLMAZ. */
 .mempill.hediye{background:rgba(146,163,190,.16);color:var(--text-secondary)}
+.msub{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px;
+  white-space:nowrap;display:inline-block}
+.msub.ok{background:rgba(255,197,61,.13);color:var(--accent)}
+.msub.tr{background:rgba(124,198,255,.13);color:#7CC6FF}
+.msub.cn{background:rgba(255,93,104,.10);color:#FF9AA0}
+.msub.no{background:var(--surface-3);color:var(--text-muted)}
+.mem-bos{padding:26px 16px;text-align:center;color:var(--text-muted);font-size:13px}
+
+/* --- sayfalama --- */
+.mpager{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;margin-top:13px;color:var(--text-muted);font-size:12.5px}
+.pg-set{display:flex;gap:6px;align-items:center}
+.pg-b{background:var(--surface-2);border:1px solid var(--border-subtle);
+  color:var(--text-secondary);border-radius:9px;min-width:32px;padding:6px 9px;
+  cursor:pointer;font:600 12.5px/1 inherit;transition:.15s}
+.pg-b:hover:not(:disabled){color:var(--text-primary);border-color:var(--border-strong)}
+.pg-b.on{background:var(--accent);border-color:var(--accent);color:#14100A}
+.pg-b:disabled{opacity:.4;cursor:default}
 .mem-note{color:var(--text-muted);font-size:12.5px;margin-top:12px;min-height:16px}
-.mem-more{margin-top:12px;align-self:flex-start}
+@media(max-width:640px){.mstats{grid-template-columns:repeat(2,minmax(0,1fr))}}

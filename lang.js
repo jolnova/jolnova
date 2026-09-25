@@ -2,6 +2,24 @@
    Site ana dili İNGİLİZCE. TR seçilince metin düğümleri sözlükten çevrilir.
    Orijinal İngilizce düğümde saklanır (node.__en) -> TR<->EN kayıpsız geçiş. */
 const TR = {
+  "Total members": "Toplam üye",
+  "Paying": "Ödeyen",
+  "Gifted": "Hediye",
+  "Joined today": "Bugün katılan",
+  "Monthly revenue": "Aylık gelir",
+  "All": "Tümü",
+  "Gift": "Hediye",
+  "No subscription": "Abonelik yok",
+  "Search e-mail or id…": "E-posta ya da kimlik ara…",
+  "E-mail": "E-posta",
+  "Joined": "Katıldı",
+  "Active": "Aktif",
+  "Canceled": "İptal",
+  "None": "Yok",
+  "Full access": "Tam erişim",
+  "No matching members.": "Eşleşen üye yok.",
+  "{a}–{b} of {n}": "{n} üyenin {a}–{b} arası",
+  "{n} members": "{n} üye",
   "gift": "hediye",
   "Heads-up: the server has not been updated yet, so plans you granted by hand are still counted as revenue.": "Dikkat: sunucu henüz güncellenmedi, bu yüzden elle verdiğin paketler hâlâ gelir sayılıyor.",
   // yonetici: uyeler listesi (account.html)
@@ -1673,7 +1691,16 @@ function _rjWalk(root) {
     if (tn.__en === undefined) {
       const ham = tn.nodeValue, kirp = ham.trim();
       let asil = ham;
-      if (kirp) {
+      /* ⚠️ HARFSIZ DUGUMDE TERS ARAMA YAPILMAZ.
+         Ters tablo "bu metin zaten cevrilmis, Ingilizce asli neydi?"
+         sorusunu cevaplamak icin var. Ama lang-de/fr/es sozluklerinde
+         "n/a" -> "—" kaydi duruyor; ters tablo da "—" -> "n/a" diyor.
+         Sonuc: sayfadaki HER yalniz tire "n/a" sanilip Turkce'de "yok"a
+         cevriliyordu. Hesap sayfasinda tarih ve kimlik yer tutuculari
+         tam olarak "—" idi ve tablo boyunca "yok" yaziyordu.
+         Harf icermeyen bir dugum (—, ·, ?, 0) hicbir cumlenin cevirisi
+         olamaz; ters aramaya hic sokmuyoruz. */
+      if (kirp && /\p{L}/u.test(kirp)) {
         for (const l in REVS) {
           const g = REVS[l][kirp];
           if (g) { asil = ham.replace(kirp, g); break; }

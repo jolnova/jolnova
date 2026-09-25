@@ -2,6 +2,24 @@
    lang.js bu dosyayi RJ_DE olarak okur; yuklenmezse metin
    Ingilizce kalir (kirik metin gorunmez). */
 var RJ_DE = {
+ "Total members":"Mitglieder gesamt",
+ "Paying":"Zahlend",
+ "Gifted":"Geschenkt",
+ "Joined today":"Heute beigetreten",
+ "Monthly revenue":"Monatlicher Umsatz",
+ "All":"Alle",
+ "Gift":"Geschenk",
+ "No subscription":"Kein Abo",
+ "Search e-mail or id…":"E-Mail oder ID suchen…",
+ "E-mail":"E-Mail",
+ "Joined":"Beigetreten",
+ "Active":"Aktiv",
+ "Canceled":"Gekündigt",
+ "None":"Keins",
+ "Full access":"Voller Zugriff",
+ "No matching members.":"Keine passenden Mitglieder.",
+ "{a}–{b} of {n}":"{a}–{b} von {n}",
+ "{n} members":"{n} Mitglieder",
  "gift":"Geschenk",
  "Heads-up: the server has not been updated yet, so plans you granted by hand are still counted as revenue.":"Hinweis: Der Server ist noch nicht aktualisiert, daher zählen von Hand vergebene Tarife weiterhin als Umsatz.",
   // yonetici: uyeler listesi (account.html)
