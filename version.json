@@ -1,9 +1,9 @@
 {
-  "version": "1.70.13",
+  "version": "1.70.14",
   "url": "https://github.com/jolnova/jolnova/releases/latest/download/Jolnova-Setup.exe",
-  "notes": "The Sharing screen no longer says your visibility choice comes from Settings. It never did any more: the Private / Unlisted / Public picker on that screen is what both \"Upload now\" and \"Schedule for later\" use, and a scheduled clip keeps the title, description and visibility you chose at the time you scheduled it. Only the wording was wrong, in all five languages, and it is now correct.\n\nThe YouTube logo is no longer faded. A platform tab with no clips in it was drawn dimmed, and that dimmed the official YouTube mark along with it. The tab still looks quiet when it is empty, but the mark itself is now always shown at full strength, the way YouTube's brand guidelines require.",
+  "notes": "Good clips were being thrown away. When a recording was deleted while a clip from it was still being scored, the clip's audio could not be read, so it scored zero for speech and was rejected as \"boring\". It looked exactly like a genuinely dull clip in the log, so there was no way to notice. Recordings a clip is still being cut from are now protected from cleanup, the recording budget is no longer smaller than the recordings themselves can grow, and a clip whose source has gone is skipped and said so plainly instead of being given a made-up score.\n\nJolnova now tells you about a new version by itself. The update bar at the top of the window checks on startup and every few hours; until now it only ever asked a cached answer that was always \"no update\", so it never appeared and you had to go to Settings and press Check. The bar also stays one line now, whatever the length of the release note.\n\nUpdating no longer signs you out. Because the app is closed while the update installs, the saved session had often expired by the time it reopened, and you were dropped at the sign-in screen with a message about your internet connection - even though the session refreshed itself moments later. The session is now refreshed and re-checked before anything is shown, the app waits for its own service to finish starting instead of giving up at once, and if the session becomes valid a moment later the app opens by itself.",
   "size_mb": 180,
-  "sha256": "f542ca7f6d860b1c003414bbe5fb1121d53fbf00c90f1b7667732e60bd27c8c3",
+  "sha256": "0dfe6460741160b6f911f5c6549cf03274b6fc896afc21ec8b3103195b4d21b9",
   "released": "2026-09-26",
   "min": "1.0.0"
 }
