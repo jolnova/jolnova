@@ -1,9 +1,9 @@
 {
-  "version": "1.70.12",
+  "version": "1.70.13",
   "url": "https://github.com/jolnova/jolnova/releases/latest/download/Jolnova-Setup.exe",
-  "notes": "Updating is now one button. Settings > Application shows the new version with an Install button: it downloads, shows the progress, and installs on its own. Jolnova closes and opens again by itself — you never have to download and run the setup file again. Jolnova also keeps looking for updates while it runs, not only when it starts, so a computer left on for days still hears about a new version.\n\nEverything on that screen, and the update banner at the top, now appears in your own language. Some of it used to stay in English.\n\nIf a clip comes out with the wrong area at the top, open it and press \"Fix the camera\": the 16:9 frame the clip was cut from opens, you drag a box over the streamer's camera, and the clip is rebuilt from the original recording — same resolution, subtitles intact. Jolnova can remember that area for the streamer so new clips come out right. Clips made by older versions are protected too: while their recording is still on disk, the source piece is saved before the recording is cleaned up.\n\nYou now decide how every clip goes up. Pressing Publish opens an upload window with the title, the description and who can see it (Private / Unlisted / Public) already filled in. The Sharing page has the same controls, and its calendar now shows your next upload and the month's totals.",
+  "notes": "The Sharing screen no longer says your visibility choice comes from Settings. It never did any more: the Private / Unlisted / Public picker on that screen is what both \"Upload now\" and \"Schedule for later\" use, and a scheduled clip keeps the title, description and visibility you chose at the time you scheduled it. Only the wording was wrong, in all five languages, and it is now correct.\n\nThe YouTube logo is no longer faded. A platform tab with no clips in it was drawn dimmed, and that dimmed the official YouTube mark along with it. The tab still looks quiet when it is empty, but the mark itself is now always shown at full strength, the way YouTube's brand guidelines require.",
   "size_mb": 180,
-  "sha256": "8a726dea6cb9f2fe319bdea6fb4ada69c0959bf19cc070b8fe6b7d2882fa2d23",
-  "released": "2026-09-25",
+  "sha256": "f542ca7f6d860b1c003414bbe5fb1121d53fbf00c90f1b7667732e60bd27c8c3",
+  "released": "2026-09-26",
   "min": "1.0.0"
 }
