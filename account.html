@@ -1290,6 +1290,55 @@ async function memPaketAta(el){
   const eski=el.getAttribute('data-prev')||'';
   const yeni=el.value;
   if(!uid || yeni===eski)return;
+  const msg=document.getElementById('mem-msg');
+
+  /* 🔴 STRIPE ILE ODEYEN UYENIN PAKETI BURADAN DEGISTIRILEMEZ.
+     UC AYRI SEBEP, ucu de olculdu:
+
+     1) KALICI DEGIL. stripe-webhook, customer.subscription.updated
+        olayinda abonelikYaz'i plan = PRICE_MAP[price_id] ile cagiriyor.
+        Yani elle yazdigimiz paket bir sonraki AY YENILEMEDE sessizce
+        Stripe'in planina geri doner; uye ozelligi kaybeder, kimse fark
+        etmez.
+     2) GELIRI BOZUYOR. subscription_is_paid =
+          granted_paid OR (granted_by IS NULL AND granted_at IS NULL
+                           AND stripe var)
+        Buradan yazarsak granted_by/granted_at damgalanir ve ikinci kosul
+        DUSER. "Hediye" dersek granted_paid=false olur ve GERCEKTEN para
+        odeyen uye gelirden komple kaybolur. "Odeme aldim" dersek de
+        gelire odedigi fiyat degil YENI planin fiyati yazilir.
+     3) PARAYI DEGISTIRMIYOR. Ne bu sayfa ne uygulama Stripe'a tek bir
+        istek atmiyor; kart hala eski planin parasini ceker. Yani "Agency
+        yaptim" demek, uye Solo odemeye devam ederken bedava yukseltme
+        vermek olur.
+
+     Dogru yol Stripe'in kendisi: fiyat orada degisince farki oransal
+     tahsil eder, webhook plani zaten yazar ve yenilemede de kalir.
+
+     KAPSAM: yalnizca satirda stripe_subscription_id VARSA engelleniyor.
+     Webhook hic calismadiysa alan bos olur ve elle atama serbest kalir -
+     odeme geldi ama hak yazilmadi durumunda elimiz baglanmasin. */
+  let stripeSub=null;
+  try{
+    const {data:mv}=await sb.from('subscriptions')
+      .select('stripe_subscription_id').eq('user_id',uid).limit(1);
+    stripeSub=(mv&&mv[0]&&mv[0].stripe_subscription_id)||null;
+  }catch(e){ stripeSub=null; }   /* okuyamadik -> eski davranis */
+  if(stripeSub){
+    el.value=eski;               /* secim geri alinir: kaydedilmedi */
+    window.alert(
+      t2('This member pays through Stripe.')+'\n\n'
+      +t2('Changing the plan here would not last: Stripe writes the plan '
+          +'back at the next renewal, the card is still charged the old '
+          +'price, and the revenue figure breaks.')+'\n\n'
+      +t2('Change it in Stripe instead: Customers → the subscription '
+          +'→ Update subscription. Stripe charges the difference and '
+          +'the new plan arrives here by itself.'));
+    if(msg){ msg.textContent=t2('Plan not changed — managed by Stripe.');
+             msg.className='mem-note'; }
+    return;
+  }
+
   /* ⚠️ PARASI ALINDI MI? Odeme altyapisi canli degil; arkadaslar havale
      ile odeyip paketi yonetici elle atiyor. "Elle atandi" tek basina
      "hediye" demek degil artik: hediye de olabilir, parasi alinmis satis
@@ -1304,7 +1353,6 @@ async function memPaketAta(el){
       +t2('OK = Payment received (counts as revenue)')+'\n'
       +t2('Cancel = Gift (not counted)'));
   }
-  const msg=document.getElementById('mem-msg');
   el.disabled=true;
   if(msg){ msg.textContent=t2('Saving…'); msg.className='mem-note'; }
   try{
@@ -1313,19 +1361,6 @@ async function memPaketAta(el){
     if(!ben) throw new Error('no-session');
     const simdi=new Date();
     const bitis=new Date(simdi.getTime()+365*86400000);
-    /* 🔴 STRIPE ABONELIGININ FATURA DONEMINE DOKUNMA.
-       Olculdu (26 Eylul 2026): webhook 18:34'te gercek bir Stripe aboneligi
-       yazdi (AYLIK donem), 18:55'te buradan paket verilince ayni satirin
-       donemi +1 YILA cekildi. Stripe her ay yeniliyor ama bizim kayit
-       "bir yil hakki var" diyordu; uye iptal etse bizde bir yil acik
-       kalirdi. Satirda Stripe kaydi varsa donem alanlari HIC gonderilmez -
-       upsert yalnizca gonderilen sutunlari gunceller. */
-    let stripeli=false;
-    try{
-      const {data:mv}=await sb.from('subscriptions')
-        .select('stripe_subscription_id').eq('user_id',uid).limit(1);
-      stripeli=!!(mv&&mv[0]&&mv[0].stripe_subscription_id);
-    }catch(e){ stripeli=false; }   /* okunamadi -> eski davranis */
     const govde={
       user_id: uid,
       plan: yeni,
@@ -1338,12 +1373,12 @@ async function memPaketAta(el){
          ona yapistirilirsa uye gelirde asili kalir. */
       granted_paid: (odendi && yeni!=='free')
     };
-    if(!stripeli){
-      /* Stripe kaydi yoksa donemi biz belirleriz: elle verilen paket bir
-         yil gecerli. Varsa bu iki alan gonderilmez. */
-      govde.current_period_start = simdi.toISOString();
-      govde.current_period_end   = bitis.toISOString();
-    }
+    /* DONEM: buraya gelebildiysek satirda Stripe aboneligi YOK (varsa
+       yukarida geri donuyoruz). Yani donemi biz belirliyoruz: elle verilen
+       paket bir yil gecerli. Stripe'in yazdigi doneme hicbir kosulda
+       dokunmuyoruz - 26 Eylul'de burasi bir aylik donemi +1 yila cekmisti. */
+    govde.current_period_start = simdi.toISOString();
+    govde.current_period_end   = bitis.toISOString();
     const {error}=await sb.from('subscriptions').upsert(govde,
                                                         {onConflict:'user_id'});
     if(error) throw error;
