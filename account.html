@@ -1313,20 +1313,39 @@ async function memPaketAta(el){
     if(!ben) throw new Error('no-session');
     const simdi=new Date();
     const bitis=new Date(simdi.getTime()+365*86400000);
-    const {error}=await sb.from('subscriptions').upsert({
+    /* 🔴 STRIPE ABONELIGININ FATURA DONEMINE DOKUNMA.
+       Olculdu (26 Eylul 2026): webhook 18:34'te gercek bir Stripe aboneligi
+       yazdi (AYLIK donem), 18:55'te buradan paket verilince ayni satirin
+       donemi +1 YILA cekildi. Stripe her ay yeniliyor ama bizim kayit
+       "bir yil hakki var" diyordu; uye iptal etse bizde bir yil acik
+       kalirdi. Satirda Stripe kaydi varsa donem alanlari HIC gonderilmez -
+       upsert yalnizca gonderilen sutunlari gunceller. */
+    let stripeli=false;
+    try{
+      const {data:mv}=await sb.from('subscriptions')
+        .select('stripe_subscription_id').eq('user_id',uid).limit(1);
+      stripeli=!!(mv&&mv[0]&&mv[0].stripe_subscription_id);
+    }catch(e){ stripeli=false; }   /* okunamadi -> eski davranis */
+    const govde={
       user_id: uid,
       plan: yeni,
       /* "free" bir ABONELIK degil, aboneligin YOKLUGU: durumu inactive
          yaziyoruz ki ekranlarda "aktif abone" sayilmasin. */
       status: yeni==='free' ? 'inactive' : 'active',
-      current_period_start: simdi.toISOString(),
-      current_period_end: bitis.toISOString(),
       granted_by: ben.id,
       granted_at: simdi.toISOString(),
       /* "free" bir satis degil, paketin GERI ALINMASI: odendi isareti
          ona yapistirilirsa uye gelirde asili kalir. */
       granted_paid: (odendi && yeni!=='free')
-    }, {onConflict:'user_id'});
+    };
+    if(!stripeli){
+      /* Stripe kaydi yoksa donemi biz belirleriz: elle verilen paket bir
+         yil gecerli. Varsa bu iki alan gonderilmez. */
+      govde.current_period_start = simdi.toISOString();
+      govde.current_period_end   = bitis.toISOString();
+    }
+    const {error}=await sb.from('subscriptions').upsert(govde,
+                                                        {onConflict:'user_id'});
     if(error) throw error;
     el.setAttribute('data-prev', yeni);
     /* SIRA: once listeyi tazele, SONRA mesaji yaz. Tersi olursa memCiz ->
