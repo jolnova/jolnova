@@ -28,6 +28,11 @@ var RJ_DE = {
  "{a}–{b} of {n}":"{a}–{b} von {n}",
  "{n} members":"{n} Mitglieder",
  "gift":"Geschenk",
+ "Was this plan paid for?":"Wurde für dieses Paket bezahlt?",
+ "OK = Payment received (counts as revenue)":"OK = Zahlung erhalten (zählt als Umsatz)",
+ "Cancel = Gift (not counted)":"Abbrechen = Geschenk (zählt nicht)",
+ "paid":"bezahlt",
+ "Marked as paid by you — counted as revenue.":"Von dir als bezahlt markiert – zählt zum Umsatz.",
  "Heads-up: the server has not been updated yet, so plans you granted by hand are still counted as revenue.":"Hinweis: Der Server ist noch nicht aktualisiert, daher zählen von Hand vergebene Tarife weiterhin als Umsatz.",
   // yonetici: uyeler listesi (account.html)
  "Members":"Mitglieder",

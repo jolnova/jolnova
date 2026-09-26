@@ -1869,6 +1869,10 @@ details.acc{display:block;padding:0;gap:0}
 .mempill.admin{background:rgba(140,255,90,.13);color:#8CFF5A}
 /* Hediye paket: para getirmez, rengi de para rengi (kehribar) OLMAZ. */
 .mempill.hediye{background:rgba(146,163,190,.16);color:var(--text-secondary)}
+/* Elle atanmis ama PARASI ALINMIS paket. Hediyeden ayri renkte olmali:
+   ikisi de "elle atandi" ama yalnizca bu gelire giriyor. Yesil, odeyen
+   uye rozetiyle ayni dil. */
+.mempill.odendi{background:rgba(52,199,123,.15);color:#7FE3AC}
 .msub{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px;
   white-space:nowrap;display:inline-block}
 .msub.ok{background:rgba(255,197,61,.13);color:var(--accent)}

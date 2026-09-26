@@ -28,6 +28,11 @@ var RJ_ES = {
  "{a}–{b} of {n}":"{a}–{b} de {n}",
  "{n} members":"{n} miembros",
  "gift":"regalo",
+ "Was this plan paid for?":"¿Se ha pagado este plan?",
+ "OK = Payment received (counts as revenue)":"Aceptar = Pago recibido (cuenta como ingreso)",
+ "Cancel = Gift (not counted)":"Cancelar = Regalo (no cuenta)",
+ "paid":"pagado",
+ "Marked as paid by you — counted as revenue.":"Lo marcaste como pagado: cuenta como ingreso.",
  "Heads-up: the server has not been updated yet, so plans you granted by hand are still counted as revenue.":"Aviso: el servidor aún no está actualizado, así que los planes que diste a mano siguen contando como ingresos.",
   // yonetici: uyeler listesi (account.html)
  "Members":"Miembros",

@@ -28,6 +28,11 @@ const TR = {
   "{a}–{b} of {n}": "{n} üyenin {a}–{b} arası",
   "{n} members": "{n} üye",
   "gift": "hediye",
+  "Was this plan paid for?":"Bu paketin parası alındı mı?",
+  "OK = Payment received (counts as revenue)":"Tamam = Ödeme alındı (gelire eklenir)",
+  "Cancel = Gift (not counted)":"İptal = Hediye (gelire eklenmez)",
+  "paid":"ödendi",
+  "Marked as paid by you — counted as revenue.":"Ödeme alındı olarak işaretledin — gelire katılıyor.",
   "Heads-up: the server has not been updated yet, so plans you granted by hand are still counted as revenue.": "Dikkat: sunucu henüz güncellenmedi, bu yüzden elle verdiğin paketler hâlâ gelir sayılıyor.",
   // yonetici: uyeler listesi (account.html)
   "Members": "Üyeler",
@@ -1839,7 +1844,26 @@ function rjStatikUrl(l) {
 }
 
 function rjSetLang(l) {
-  if (_rjSunucuda) { location.href = rjStatikUrl(l); return; }
+  if (_rjSunucuda) {
+    /* 🔴 TERCIH YONLENDIRMEDEN ONCE YAZILMALI.
+       Eskiden bu dal dogrudan location.href atiyor, secimi HIC
+       kaydetmiyordu. tr/de/fr/es icin sorun cikmiyordu: o sayfalar
+       onceden uretiliyor ve <html data-static-lang="xx"> ile dili
+       kendileri sabitliyor (yukaridaki blok onu kaydediyor da).
+       AMA INGILIZCE KOKTE DURUYOR ve kokun data-static-lang'i YOK.
+       Dolayisiyla "English" secilince: kaydetmeden koke gidiliyor,
+       kokte kayitli tercih bulunamiyor, _lang TARAYICI DILINE
+       dusuyor ve sayfa yeniden Turkceye cevriliyordu.
+       Sonuc: Turkce tarayicisi olan bir ziyaretci Ingilizceye HIC
+       gecemiyordu (canli sitede dogrulandi).
+       Kokun kendisine data-static-lang="en" vermek de cozerdi ama o,
+       "tarayici dili tr ise varsayilan Turkce" davranisini bozardi:
+       ilk kez gelen Turk ziyaretci Ingilizce gorurdu. Dogru yer burasi -
+       yalnizca KULLANICI SECTIGINDE yaziyoruz. */
+    try { localStorage.setItem('rj_lang', l); } catch (e) {}
+    location.href = rjStatikUrl(l);
+    return;
+  }
   _lang = l;
   try { localStorage.setItem('rj_lang', l); } catch (e) {}
   document.documentElement.lang = l;
