@@ -1873,6 +1873,16 @@ details.acc{display:block;padding:0;gap:0}
    ikisi de "elle atandi" ama yalnizca bu gelire giriyor. Yesil, odeyen
    uye rozetiyle ayni dil. */
 .mempill.odendi{background:rgba(52,199,123,.15);color:#7FE3AC}
+/* HEDIYE YUKSELTME HUCRESI: solda ODENEN paket (degistirilemez - parayi
+   Stripe belirliyor), sagda HEDIYE secici. Ikisi yan yana durmali: yonetici
+   "ne oduyor / ne kullaniyor" sorusunun ikisini de tek bakista gormeli.
+   Dar ekranda secici kuculur, odenen paket okunur kalir. */
+.memgiftcell{display:inline-flex;align-items:center;gap:5px;min-width:0;
+  max-width:100%}
+.memgiftcell .mempill{flex:0 0 auto;white-space:nowrap}
+.memgiftar{flex:0 0 auto;color:var(--text-secondary);font-size:12px;
+  line-height:1}
+select.memgiftsel{flex:1 1 auto;min-width:0}
 .msub{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px;
   white-space:nowrap;display:inline-block}
 .msub.ok{background:rgba(255,197,61,.13);color:var(--accent)}
