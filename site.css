@@ -1128,6 +1128,34 @@ html[data-scope="single"] .s-all,html[data-scope="all"] .s-single{display:none}
 @media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
 .foot-brand p{color:var(--text-muted);font-size:14px;line-height:1.65;margin-top:16px;max-width:320px}
 .foot-os{margin-top:18px}
+/* ---- INSTAGRAM ----
+   Kullanicinin istegi acikti: "instagram butonu bizim sitemizin renklerine
+   gore olsun". Bu yuzden Instagram'in kendi mor-kirmizi-turuncu gradyani
+   KULLANILMIYOR; ikon ve yazi sitenin amber vurgusunu (--accent) aliyor.
+   Ikon marka dogru (Simple Icons) - sekil dogru, renk bizim.
+   Duraganda sakin durur (ikincil yazi rengi), uzerine gelince vurguya
+   doner: alt bilgide dikkat calan bir leke olmasin ama tiklanabilir
+   oldugu da belli olsun. */
+.foot-social{margin-top:14px}
+.foot-ig{display:inline-flex;align-items:center;gap:9px;
+  padding:8px 14px 8px 11px;border-radius:999px;
+  background:var(--surface-2);border:1px solid var(--border-subtle);
+  color:var(--text-secondary);font-size:13.5px;font-weight:600;
+  text-decoration:none;line-height:1;
+  transition:color .16s ease,border-color .16s ease,background .16s ease,
+             transform .16s ease}
+.foot-ig svg{flex:0 0 auto;transition:transform .16s ease}
+.foot-ig:hover,.foot-ig:focus-visible{
+  color:var(--accent);border-color:rgba(255,197,61,.42);
+  background:rgba(255,197,61,.10)}
+.foot-ig:hover svg{transform:scale(1.08)}
+/* Klavye ile gezen kullanici odagi GORMELI: hover ile ayni renk yeterli
+   degil, halka sart (sitenin geri kalaninda da ayni desen). */
+.foot-ig:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){
+  .foot-ig,.foot-ig svg{transition:none}
+  .foot-ig:hover svg{transform:none}
+}
 /* h4 -> h2. Sayfalarda baslik hiyerarsisi h1/h2'den DOGRUDAN h4'e
    atliyordu (her sayfada, alt bilgideki uc sutun yuzunden). Ekran
    okuyucu kullanicisi icin bu "arada iki baslik seviyesi kacirdim mi"
