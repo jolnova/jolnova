@@ -1,9 +1,9 @@
 {
-  "version": "1.70.36",
+  "version": "1.70.37",
   "url": "https://github.com/jolnova/jolnova/releases/latest/download/Jolnova-Setup.exe",
-  "notes": "Oyunu izleyen klip: CS2 kill tespiti\n\nYENI: Program artik CS2 yayinlarinda kill feed'i OKUYOR ve yayincinin\nKENDI kill'ini baskasinin kill'inden ayirt ediyor. Ses duymasa bile.\n\n- Kill feed renginden karar veriyor: siyah dolgu + kirmizi kenarlik =\n  yayinci oldurdu, duz kirmizi dolgu = yayinci oldu, kirmizi yok =\n  baskasinin kill'i (atlanir).\n- Klip kill aninda DEGIL, 4 saniye ONCESINDEN basliyor - kill'e giden\n  hamle de klibin icinde.\n- Ust uste killer tek klipte toplaniyor ve daha yuksek puan aliyor.\n- Yayinci konusmasa bile kill'li an artik elenmiyor; gorsel kanit\n  sessizlik cezasini hafifletiyor.\n- Hem canli yayinlarda hem ice aktarilan video/eski yayinlarda calisiyor.\n\nOlculdu: gozle dogrulanmis 11 serit kaydinin 11'i dogru siniflandi;\nLoL ve TFT kayitlarinda 8 dakikada sifir yanlis alarm.\n\nAyarlar (gelismis): game.killfeed_enabled, game.kill_lead_sec.\n\nValorant henuz yok - dogru olcum icin gercek Valorant yayini gerekiyor.",
+  "notes": "VALORANT kill tespiti eklendi\n\nProgram artik CS2'nin yani sira VALORANT yayinlarinda da yayincinin\nKENDI kill'ini goruyor - takim arkadasinin kill'inden ayirarak.\n\n- Valorant feed'inde yesil/kirmizi yalnizca TAKIMI gosteriyor, kimi\n  degil. Oyun, oynayanin bulundugu tarafi ALTIN SARISI cerceve ile\n  isaretliyor: altin solda = yayinci oldurdu, altin sagda = yayinci\n  oldu, altin yok = baskasinin kill'i (atlanir).\n- Oyun adina, hesap adina ya da \"Me\"/\"Ben\" yazisina HIC bakmiyor -\n  dil ve isim degisse de calisir.\n- CS2 ve Valorant TEK GECISTE taraniyor; ikinci oyun neredeyse\n  bedava geldi (video bir kez cozuluyor).\n- Klip yine kill aninda degil, 4 saniye ONCESINDEN basliyor.\n\nOlculdu (gercek canli yayin kayitlari uzerinde):\n- Valorant: gozle dogrulanmis seritlerin hepsi dogru siniflandi,\n  takim arkadasinin kill'i dogru sekilde atlandi.\n- Capraz karisma yok: Valorant dedektoru CS2 kaydinda, CS2 dedektoru\n  Valorant kaydinda sessiz.\n- LoL ve TFT kayitlarinda sifir yanlis alarm.",
   "size_mb": 184,
-  "sha256": "4c7ffbe59e31e428e3afe66a7dacfbe5e5ebbb129877dfbc31a5c4f8aac840a1",
+  "sha256": "5eb4143ccc64b722e416acfa2260694e18bdab67183464e6834bca9ef74dd261",
   "released": "2026-10-05",
   "min": "1.0.0"
 }
