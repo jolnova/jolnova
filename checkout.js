@@ -66,7 +66,7 @@
           return k.indexOf("sb-") === 0 && k.indexOf("-auth-token") > 0;
         });
     } catch (e) { /* ozel sekme: bilinmiyor say */ }
-    location.href = (tanidik ? "/login.html?next=" : "/signup.html?next=") + next;
+    location.href = (tanidik ? "/login?next=" : "/signup?next=") + next;
   }
 
   /* HATA BASILAN DUGMENIN ALTINA DA YAZILIR.
